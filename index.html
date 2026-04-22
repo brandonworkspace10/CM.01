@@ -1,0 +1,1376 @@
+<!DOCTYPE html><html lang="en" style="--accent: oklch(0.74 0.17 55); --accent-2: oklch(0.64 0.18 50); --accent-soft: oklch(0.74 0.17 55 / 0.12); animation-duration: 1s;"><head>
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calling Matrix — 24/7 AI Receptionist for Home Service Businesses</title>
+<meta name="description" content="Calling Matrix is the AI receptionist built for home service businesses. Answer every call, book jobs 24/7, cancel and reschedule, and follow up with customers — in a voice that sounds human. Stop missing calls. Start booking more jobs.">
+<meta name="keywords" content="AI receptionist, AI answering service, virtual receptionist, 24/7 answering service, home service answering service, HVAC receptionist, plumbing answering service, electrician answering service, roofing call answering, appointment booking AI, missed call solution, after hours answering service">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://callingmatrix.com/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Calling Matrix — The AI Receptionist That Books Jobs While You Work">
+<meta property="og:description" content="Never miss another service call. Calling Matrix answers, books, reschedules, and follows up 24/7 — sounds like a human, costs less than a phone plan.">
+<meta property="og:url" content="https://callingmatrix.com/">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Calling Matrix — 24/7 AI Receptionist for Home Service Businesses">
+<meta name="twitter:description" content="Answer every call. Book every job. Sound human. Built for HVAC, plumbing, electrical, roofing, and cleaning businesses.">
+
+<!-- Structured data: Organization + SoftwareApplication + FAQ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "Calling Matrix",
+      "url": "https://callingmatrix.com",
+      "description": "AI receptionist purpose-built for home service businesses.",
+      "sameAs": []
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Calling Matrix AI Receptionist",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Cloud",
+      "description": "24/7 AI receptionist that answers questions, books and cancels appointments, and follows up with customers for home service businesses.",
+      "offers": { "@type": "Offer", "price": "299", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Does the AI receptionist actually sound human?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Callers rarely realize they are speaking to an AI. It listens, interrupts naturally, handles objections, and speaks with the pacing of a trained dispatcher." } },
+        { "@type": "Question", "name": "Can it book into my existing calendar?", "acceptedAnswer": { "@type": "Answer", "text": "Calling Matrix integrates directly with Housecall Pro, ServiceTitan, Jobber, Google Calendar, and most field service CRMs." } },
+        { "@type": "Question", "name": "How fast can I get set up?", "acceptedAnswer": { "@type": "Answer", "text": "Most home service businesses are live in under 48 hours. We clone your dispatcher's script, train on your services and pricing, and port your number." } },
+        { "@type": "Question", "name": "What happens to calls after hours?", "acceptedAnswer": { "@type": "Answer", "text": "Calling Matrix answers 24/7/365. Emergency calls get routed to on-call technicians. Non-urgent calls get booked for the next available slot." } }
+      ]
+    }
+  ]
+}
+</script>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+
+<style>
+:root {
+  --bg: #0E0D0B;
+  --bg-2: #151310;
+  --bg-3: #1C1915;
+  --fg: #F6F2EB;
+  --fg-dim: #A6A097;
+  --fg-mute: #6E685F;
+  --line: #2A2620;
+  --accent: oklch(0.74 0.17 55);
+  --accent-2: oklch(0.64 0.18 50);
+  --accent-soft: oklch(0.74 0.17 55 / 0.12);
+  --serif: 'Instrument Serif', 'Times New Roman', serif;
+  --sans: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--sans);
+  font-weight: 400;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
+
+/* ============ UTIL ============ */
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+.mono { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-mute); }
+.serif { font-family: var(--serif); font-weight: 400; letter-spacing: -0.02em; }
+.italic { font-style: italic; }
+.accent { color: var(--accent); }
+
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1); }
+.reveal.in-load { opacity: 1; transform: none; transition: opacity 1s ease-out, transform 1s ease-out; }
+.reveal.in { opacity: 1; transform: none; }
+.reveal.d1 { transition-delay: .08s; }
+.reveal.d2 { transition-delay: .16s; }
+.reveal.d3 { transition-delay: .24s; }
+.reveal.d4 { transition-delay: .32s; }
+
+/* ============ NAV ============ */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 18px 32px;
+  background: rgba(14,13,11,0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid transparent;
+  transition: border-color .3s;
+}
+.nav.scrolled { border-bottom-color: var(--line); }
+.nav-inner { max-width: 1240px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+.logo { display: flex; align-items: center; gap: 10px; font-family: var(--serif); font-size: 22px; letter-spacing: -0.01em; }
+.logo-mark { width: 26px; height: 26px; position: relative; display: inline-block; }
+.logo-mark svg { width: 100%; height: 100%; }
+.nav-links { display: flex; gap: 36px; font-size: 14px; color: var(--fg-dim); }
+.nav-links a { transition: color .2s; }
+.nav-links a:hover { color: var(--fg); }
+.nav-cta {
+  padding: 10px 18px; background: var(--fg); color: var(--bg);
+  border-radius: 999px; font-size: 13px; font-weight: 500;
+  transition: transform .2s, box-shadow .2s;
+}
+.nav-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(246,242,235,0.15); }
+@media (max-width: 780px) { .nav-links { display: none; } }
+
+/* ============ HERO ============ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  padding: 140px 0 80px;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(60% 50% at 75% 20%, oklch(0.72 0.17 55 / 0.14), transparent 60%),
+    radial-gradient(40% 40% at 10% 80%, oklch(0.72 0.17 55 / 0.06), transparent 60%);
+  pointer-events: none;
+}
+.hero-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 80px 80px;
+  opacity: 0.25;
+  mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
+  pointer-events: none;
+}
+.hero-inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+@media (max-width: 1080px) { .hero-inner { grid-template-columns: 1fr; gap: 60px; } }
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-dim);
+  margin-bottom: 28px;
+}
+.eyebrow .dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 0 var(--accent);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 oklch(0.74 0.17 55 / 0.6); }
+  70% { box-shadow: 0 0 0 10px oklch(0.74 0.17 55 / 0); }
+  100% { box-shadow: 0 0 0 0 oklch(0.74 0.17 55 / 0); }
+}
+
+h1.hero-title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(42px, 6.2vw, 88px);
+  line-height: 1.0;
+  letter-spacing: -0.025em;
+  margin-bottom: 28px;
+  text-wrap: balance;
+}
+h1.hero-title .swap {
+  display: inline-block;
+  font-style: italic;
+  color: var(--accent);
+  position: relative;
+}
+h1.hero-title .swap::after {
+  content: '';
+  position: absolute; left: 0; right: 0; bottom: 0.05em; height: 0.08em;
+  background: var(--accent);
+  opacity: 0.25;
+}
+
+.hero-sub {
+  font-size: 19px; line-height: 1.55; color: var(--fg-dim);
+  max-width: 560px; margin-bottom: 40px;
+}
+.hero-sub strong { color: var(--fg); font-weight: 500; }
+
+.cta-row { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 16px 26px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 500;
+  transition: transform .2s, background .2s, box-shadow .3s;
+}
+.btn-primary {
+  background: var(--accent); color: #1a0e00;
+  box-shadow: 0 10px 30px -10px oklch(0.74 0.17 55 / 0.6);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 20px 40px -15px oklch(0.74 0.17 55 / 0.8); }
+.btn-primary svg { transition: transform .25s; }
+.btn-primary:hover svg { transform: translateX(4px); }
+.btn-ghost { color: var(--fg); border: 1px solid var(--line); }
+.btn-ghost:hover { border-color: var(--fg-dim); }
+
+.hero-proof {
+  margin-top: 48px;
+  display: flex; gap: 40px; flex-wrap: wrap;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+.hero-proof .stat-num { font-family: var(--serif); font-size: 38px; line-height: 1; letter-spacing: -0.02em; margin-bottom: 6px; }
+.hero-proof .stat-lbl { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-mute); }
+
+/* --- Live call card in hero --- */
+.call-card {
+  position: relative;
+  background: linear-gradient(180deg, var(--bg-2), var(--bg-3));
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 40px 80px -30px rgba(0,0,0,0.6), 0 0 0 1px oklch(0.74 0.17 55 / 0.05) inset;
+  overflow: hidden;
+}
+.call-card::before {
+  content: '';
+  position: absolute; inset: -1px;
+  border-radius: 20px;
+  padding: 1px;
+  background: linear-gradient(180deg, oklch(0.74 0.17 55 / 0.4), transparent 40%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+.call-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-bottom: 18px; border-bottom: 1px solid var(--line);
+  margin-bottom: 18px;
+}
+.call-caller { display: flex; align-items: center; gap: 12px; }
+.caller-av {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: linear-gradient(135deg, oklch(0.55 0.08 30), oklch(0.4 0.03 30));
+  display: grid; place-items: center;
+  font-family: var(--serif); font-size: 18px;
+}
+.caller-name { font-weight: 500; font-size: 14px; }
+.caller-num { font-family: var(--mono); font-size: 11px; color: var(--fg-mute); }
+.call-status {
+  display: flex; align-items: center; gap: 8px;
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--accent);
+}
+.call-status .live-dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; animation: pulse 1.5s infinite; }
+
+.waveform { display: flex; align-items: center; gap: 3px; height: 40px; margin-bottom: 18px; }
+.waveform .bar {
+  flex: 1; background: var(--accent); border-radius: 2px;
+  opacity: 0.7;
+  animation: wave 1.1s ease-in-out infinite;
+}
+@keyframes wave {
+  0%,100% { height: 10%; }
+  50% { height: 90%; }
+}
+
+.transcript { min-height: 220px; display: flex; flex-direction: column; gap: 12px; }
+.msg { display: flex; gap: 10px; max-width: 88%; animation: msgIn .5s ease-out backwards; }
+@keyframes msgIn { from { opacity: 0; transform: translateY(6px); } }
+.msg.customer { align-self: flex-start; }
+.msg.ai { align-self: flex-end; flex-direction: row-reverse; }
+.msg-bubble {
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+.msg.customer .msg-bubble { background: var(--bg-3); border: 1px solid var(--line); border-bottom-left-radius: 4px; }
+.msg.ai .msg-bubble { background: var(--accent-soft); color: var(--fg); border: 1px solid oklch(0.74 0.17 55 / 0.3); border-bottom-right-radius: 4px; }
+.msg-tag {
+  font-family: var(--mono); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--fg-mute); margin-top: 4px; display: block;
+}
+.typing-bubble { background: var(--bg-3); border: 1px solid var(--line); padding: 12px 14px; border-radius: 14px; border-bottom-right-radius: 4px; display: inline-flex; gap: 4px; }
+.typing-bubble span { width: 6px; height: 6px; background: var(--fg-mute); border-radius: 50%; animation: typing 1.2s infinite; }
+.typing-bubble span:nth-child(2) { animation-delay: 0.15s; }
+.typing-bubble span:nth-child(3) { animation-delay: 0.3s; }
+@keyframes typing { 0%,60%,100% { opacity: 0.3; transform: translateY(0); } 30% { opacity: 1; transform: translateY(-3px); } }
+
+.booking-chip {
+  margin-top: 12px;
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px;
+  background: var(--bg);
+  border: 1px solid oklch(0.74 0.17 55 / 0.3);
+  border-radius: 12px;
+  font-size: 13px;
+  opacity: 0; transform: translateY(8px);
+  transition: all .6s .2s ease-out;
+}
+.booking-chip.show { opacity: 1; transform: none; }
+.booking-chip .check { width: 22px; height: 22px; border-radius: 50%; background: var(--accent); color: #1a0e00; display: grid; place-items: center; flex-shrink: 0; font-weight: 700; font-size: 13px; }
+.booking-chip .meta { font-family: var(--mono); font-size: 10px; color: var(--fg-mute); margin-top: 2px; letter-spacing: 0.12em; text-transform: uppercase; }
+
+/* ============ SECTION ============ */
+section { padding: 140px 0; position: relative; }
+.sec-head { margin-bottom: 72px; max-width: 780px; }
+.sec-label { margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+.sec-label::before { content: ''; width: 24px; height: 1px; background: var(--accent); }
+h2.sec-title {
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(40px, 5.2vw, 64px);
+  line-height: 1.02; letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+h2.sec-title .italic { color: var(--accent); }
+.sec-sub { font-size: 18px; color: var(--fg-dim); max-width: 640px; line-height: 1.55; }
+
+/* ============ PROBLEM ============ */
+.problem { background: var(--bg); }
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+@media (max-width: 880px) { .problem-grid { grid-template-columns: 1fr; } }
+.problem-cell {
+  padding: 48px 36px;
+  border-right: 1px solid var(--line);
+  position: relative;
+}
+.problem-cell:last-child { border-right: 0; }
+@media (max-width: 880px) { .problem-cell { border-right: 0; border-bottom: 1px solid var(--line); } .problem-cell:last-child { border-bottom: 0; } }
+.big-num {
+  font-family: var(--serif);
+  font-size: 96px;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  color: var(--accent);
+  margin-bottom: 16px;
+  font-feature-settings: "ss01";
+}
+.big-num .suf { font-size: 40px; vertical-align: super; }
+.problem-cell h3 { font-size: 18px; font-weight: 500; margin-bottom: 8px; }
+.problem-cell p { color: var(--fg-dim); font-size: 14.5px; line-height: 1.55; }
+
+.problem-tagline {
+  margin-top: 72px;
+  font-family: var(--serif);
+  font-size: clamp(28px, 3.2vw, 44px);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  max-width: 900px;
+}
+.problem-tagline .strike {
+  color: var(--fg-mute);
+  text-decoration: line-through;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 2px;
+}
+
+/* ============ FEATURES ============ */
+.features { background: var(--bg-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.feat-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 16px;
+}
+@media (max-width: 980px) { .feat-grid { grid-template-columns: 1fr; } }
+.feat {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color .3s, transform .3s;
+}
+.feat:hover { border-color: oklch(0.74 0.17 55 / 0.5); transform: translateY(-3px); }
+.feat.large { grid-column: span 1; grid-row: span 2; padding: 36px; }
+@media (max-width: 980px) { .feat.large { grid-row: span 1; } }
+.feat h3 { font-family: var(--serif); font-size: 28px; font-weight: 400; letter-spacing: -0.01em; margin-bottom: 12px; line-height: 1.1; }
+.feat p { font-size: 14.5px; color: var(--fg-dim); line-height: 1.55; }
+.feat .mono { margin-bottom: 24px; }
+
+/* Feature: 24/7 clock */
+.viz-clock { height: 180px; display: grid; place-items: center; margin-bottom: 24px; }
+.clock-ring { width: 140px; height: 140px; border-radius: 50%; border: 1px dashed var(--line); position: relative; display: grid; place-items: center; }
+.clock-ring::before { content: ''; position: absolute; inset: 10px; border-radius: 50%; border: 1px solid var(--line); }
+.clock-hand { position: absolute; top: 50%; left: 50%; width: 2px; height: 50px; background: var(--accent); transform-origin: top center; animation: spin 8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.clock-center { font-family: var(--serif); font-size: 32px; color: var(--fg); z-index: 2; }
+.clock-labels { position: absolute; inset: 0; font-family: var(--mono); font-size: 9px; color: var(--fg-mute); letter-spacing: 0.1em; }
+.clock-labels span { position: absolute; }
+.clock-labels .l12 { top: -16px; left: 50%; transform: translateX(-50%); }
+.clock-labels .l6 { bottom: -16px; left: 50%; transform: translateX(-50%); }
+.clock-labels .l3 { right: -20px; top: 50%; transform: translateY(-50%); }
+.clock-labels .l9 { left: -20px; top: 50%; transform: translateY(-50%); }
+
+/* Feature: calendar */
+.viz-cal { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin-bottom: 20px; }
+.cal-cell { aspect-ratio: 1; border-radius: 6px; background: var(--bg-3); display: grid; place-items: center; font-family: var(--mono); font-size: 10px; color: var(--fg-mute); }
+.cal-cell.booked { background: var(--accent); color: #1a0e00; font-weight: 600; animation: bookIn .6s backwards; }
+.cal-cell.booked.d1 { animation-delay: .1s; }
+.cal-cell.booked.d2 { animation-delay: .3s; }
+.cal-cell.booked.d3 { animation-delay: .5s; }
+.cal-cell.booked.d4 { animation-delay: .7s; }
+@keyframes bookIn { from { transform: scale(0); opacity: 0; } }
+
+/* Feature: voice waveform */
+.viz-voice { height: 90px; display: flex; align-items: center; justify-content: center; gap: 4px; margin-bottom: 20px; }
+.viz-voice .vb { width: 4px; background: var(--accent); border-radius: 2px; animation: wave 1.2s ease-in-out infinite; }
+.viz-voice .vb:nth-child(odd) { animation-delay: .2s; }
+.viz-voice .vb:nth-child(3n) { animation-delay: .4s; }
+
+/* Feature: follow up SMS */
+.viz-sms { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; font-size: 12px; }
+.sms { padding: 10px 12px; border-radius: 10px; background: var(--bg-3); border: 1px solid var(--line); max-width: 85%; line-height: 1.4; }
+.sms.out { align-self: flex-end; background: var(--accent-soft); border-color: oklch(0.74 0.17 55 / 0.3); }
+
+/* Feature: integrations */
+.viz-int { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.int-chip { padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--fg-dim); text-transform: uppercase; }
+
+/* ============ HOW IT WORKS ============ */
+.how { }
+.how-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+@media (max-width: 980px) { .how-inner { grid-template-columns: 1fr; gap: 40px; } }
+.steps { display: flex; flex-direction: column; gap: 4px; }
+.step {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+  display: grid; grid-template-columns: 60px 1fr; gap: 24px;
+  cursor: pointer;
+  transition: opacity .3s;
+}
+.step[data-active="false"] { opacity: 0.4; }
+.step[data-active="false"]:hover { opacity: 0.7; }
+.step .num { font-family: var(--serif); font-size: 32px; color: var(--accent); line-height: 1; }
+.step h4 { font-family: var(--serif); font-size: 26px; font-weight: 400; letter-spacing: -0.01em; margin-bottom: 8px; }
+.step p { color: var(--fg-dim); font-size: 14.5px; line-height: 1.55; max-height: 0; overflow: hidden; transition: max-height .4s ease; }
+.step[data-active="true"] p { max-height: 200px; margin-top: 8px; }
+.how-viz {
+  position: sticky; top: 120px;
+  aspect-ratio: 1/1.1;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  overflow: hidden;
+  display: grid; place-items: center;
+  padding: 40px;
+}
+.how-panel { display: none; text-align: center; width: 100%; }
+.how-panel.active { display: block; animation: msgIn .5s; }
+.panel-icon { width: 80px; height: 80px; border: 1px solid var(--line); border-radius: 50%; margin: 0 auto 24px; display: grid; place-items: center; color: var(--accent); }
+.panel-icon svg { width: 36px; height: 36px; }
+.how-panel h5 { font-family: var(--serif); font-size: 32px; margin-bottom: 12px; }
+.how-panel p { color: var(--fg-dim); font-size: 15px; max-width: 320px; margin: 0 auto; }
+
+/* ============ STATS STRIP ============ */
+.strip { background: var(--accent); color: #1a0e00; padding: 60px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.strip-inner { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+@media (max-width: 780px) { .strip-inner { grid-template-columns: repeat(2, 1fr); } }
+.stat-big { font-family: var(--serif); font-size: clamp(48px, 6vw, 72px); line-height: 0.9; letter-spacing: -0.03em; }
+.stat-lbl-d { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(26,14,0,0.7); margin-top: 10px; }
+
+/* ============ TESTIMONIALS ============ */
+.tests-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+@media (max-width: 980px) { .tests-grid { grid-template-columns: 1fr; } }
+.test {
+  padding: 32px;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  display: flex; flex-direction: column; justify-content: space-between; gap: 24px;
+  transition: transform .3s, border-color .3s;
+}
+.test:hover { transform: translateY(-4px); border-color: oklch(0.74 0.17 55 / 0.4); }
+.test .quote { font-family: var(--serif); font-size: 22px; line-height: 1.3; letter-spacing: -0.01em; }
+.test .quote::before { content: '"'; color: var(--accent); font-size: 48px; line-height: 0; vertical-align: -0.25em; margin-right: 4px; }
+.test-by { display: flex; align-items: center; gap: 12px; }
+.test-av { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), oklch(0.5 0.1 30)); display: grid; place-items: center; font-family: var(--serif); color: #1a0e00; font-size: 16px; }
+.test-info .name { font-size: 14px; font-weight: 500; }
+.test-info .role { font-size: 12px; color: var(--fg-mute); font-family: var(--mono); letter-spacing: 0.1em; text-transform: uppercase; }
+.test-metric { font-family: var(--mono); font-size: 11px; color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase; padding-top: 16px; border-top: 1px solid var(--line); }
+
+/* ============ COMPARISON ============ */
+.compare-table {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  overflow: hidden;
+}
+@media (max-width: 880px) { .compare-table { grid-template-columns: 1fr; } }
+.compare-table > div {
+  padding: 20px 24px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+  display: flex; align-items: center;
+}
+.compare-table > div:nth-child(4n) { border-right: 0; }
+@media (max-width: 880px) { .compare-table > div { border-right: 0; } }
+.compare-table .head {
+  background: var(--bg-3);
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--fg-dim);
+}
+.compare-table .head.us { color: var(--accent); }
+.compare-table .row-label { font-weight: 500; color: var(--fg); }
+.compare-table .yes { color: var(--accent); }
+.compare-table .no { color: var(--fg-mute); }
+
+/* ============ PRICING ============ */
+.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+@media (max-width: 980px) { .pricing-grid { grid-template-columns: 1fr; } }
+.plan {
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 36px 32px;
+  position: relative;
+  transition: transform .3s, border-color .3s;
+}
+.plan:hover { transform: translateY(-4px); }
+.plan.featured { background: var(--bg-3); border-color: var(--accent); }
+.plan.featured::before {
+  content: 'Most popular';
+  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  padding: 4px 14px; background: var(--accent); color: #1a0e00;
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+  border-radius: 999px; font-weight: 600;
+}
+.plan-name { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-mute); margin-bottom: 10px; }
+.plan-price { font-family: var(--serif); font-size: 52px; line-height: 1; letter-spacing: -0.02em; }
+.plan-price .unit { font-size: 14px; color: var(--fg-mute); font-family: var(--sans); margin-left: 4px; }
+.plan-desc { color: var(--fg-dim); font-size: 14px; margin: 12px 0 24px; line-height: 1.5; }
+.plan-features { list-style: none; margin-bottom: 28px; display: flex; flex-direction: column; gap: 10px; }
+.plan-features li { font-size: 13.5px; display: flex; gap: 10px; color: var(--fg-dim); }
+.plan-features li::before { content: ''; width: 14px; height: 14px; border-radius: 50%; background: var(--accent-soft); border: 1px solid oklch(0.74 0.17 55 / 0.4); flex-shrink: 0; margin-top: 3px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M2.5 6.5L5 9L9.5 3.5' stroke='%23E89B6C' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: center; }
+.plan .btn { width: 100%; justify-content: center; }
+.plan-note { text-align: center; color: var(--fg-mute); font-size: 12px; margin-top: 12px; font-family: var(--mono); letter-spacing: 0.1em; text-transform: uppercase; }
+
+/* ============ FAQ ============ */
+.faq-list { max-width: 880px; margin: 0 auto; }
+.faq-item {
+  border-bottom: 1px solid var(--line);
+  padding: 28px 0;
+  cursor: pointer;
+}
+.faq-q { display: flex; justify-content: space-between; align-items: center; gap: 20px; font-family: var(--serif); font-size: 24px; font-weight: 400; letter-spacing: -0.01em; }
+.faq-plus { width: 24px; height: 24px; position: relative; flex-shrink: 0; }
+.faq-plus::before, .faq-plus::after { content: ''; position: absolute; background: var(--fg-dim); transition: transform .3s; }
+.faq-plus::before { left: 0; right: 0; top: 50%; height: 1px; transform: translateY(-50%); }
+.faq-plus::after { top: 0; bottom: 0; left: 50%; width: 1px; transform: translateX(-50%); }
+.faq-item.open .faq-plus::after { transform: translateX(-50%) rotate(90deg); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height .4s ease, margin .3s; color: var(--fg-dim); font-size: 16px; line-height: 1.6; }
+.faq-item.open .faq-a { max-height: 300px; margin-top: 16px; }
+
+/* ============ FINAL CTA ============ */
+.final {
+  text-align: center;
+  padding: 180px 0;
+  background: radial-gradient(60% 60% at 50% 50%, oklch(0.74 0.17 55 / 0.15), transparent 70%), var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+.final::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 80px 80px;
+  opacity: 0.2;
+  mask-image: radial-gradient(ellipse at center, black 10%, transparent 60%);
+}
+.final .inner { position: relative; }
+.final h2 {
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(48px, 8vw, 104px);
+  line-height: 0.95; letter-spacing: -0.03em;
+  margin-bottom: 32px;
+}
+.final h2 .italic { color: var(--accent); }
+.final p { font-size: 20px; color: var(--fg-dim); max-width: 620px; margin: 0 auto 48px; line-height: 1.55; }
+.final .btn-primary { padding: 20px 36px; font-size: 17px; }
+
+/* ============ FOOTER ============ */
+footer {
+  padding: 60px 0 40px;
+  border-top: 1px solid var(--line);
+  background: var(--bg);
+}
+.foot-inner { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+@media (max-width: 780px) { .foot-inner { grid-template-columns: 1fr 1fr; } }
+.foot-col h6 { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-mute); margin-bottom: 16px; }
+.foot-col a { display: block; font-size: 14px; color: var(--fg-dim); margin-bottom: 8px; transition: color .2s; }
+.foot-col a:hover { color: var(--fg); }
+.foot-brand p { color: var(--fg-dim); font-size: 14px; max-width: 340px; margin-top: 12px; line-height: 1.5; }
+.foot-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 32px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-mute); }
+
+</style>
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"><script src="https://assets.calendly.com/assets/external/widget.js" async></script></head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="logo" href="#">
+      <span class="logo-mark">
+        <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="1" width="24" height="24" rx="6" stroke="currentColor" stroke-opacity="0.4"></rect>
+          <path d="M8 10 Q8 8 10 8 L12 8 L14 12 L12 14 Q14 17 16 18 L18 16 L22 18 L22 20 Q22 22 20 22 Q13 22 8 17 Q6 14 6 11 Z" fill="var(--accent)"></path>
+          <circle cx="20" cy="6" r="2" fill="var(--accent)"></circle>
+        </svg>
+      </span>
+      Calling Matrix
+    </a>
+    <div class="nav-links">
+      <a href="#how">How it works</a>
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a href="#demo" class="nav-cta">Book a demo →</a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid" style=""></div>
+  <div class="wrap hero-inner">
+    <div>
+      <span class="eyebrow reveal in"><span class="dot"></span>Built for home service pros</span>
+      <h1 class="hero-title reveal d1 in">
+        Never miss<br>
+        another <span class="swap">service call.</span>
+      </h1>
+      <p class="hero-sub reveal d2 in">
+        Calling Matrix is the <strong>24/7 AI receptionist</strong> built for HVAC, plumbing, electrical, roofing, and cleaning businesses. It answers questions, books and cancels appointments, and follows up with every customer — <strong>in a voice that sounds human</strong>.
+      </p>
+      <div class="cta-row reveal d3 in">
+        <a href="#demo" class="btn btn-primary">
+          Book a free 15-min demo
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </a>
+        <a href="#how" class="btn btn-ghost">Hear a call →</a>
+      </div>
+      <div class="hero-proof reveal d4 in">
+        <div>
+          <div class="stat-num" data-count="100" data-suffix="%">100%</div>
+          <div class="stat-lbl">Calls answered</div>
+        </div>
+        <div>
+          <div class="stat-num">&lt;2<span style="font-size:20px; color: var(--fg-mute)">s</span></div>
+          <div class="stat-lbl">Pick-up time</div>
+        </div>
+        <div>
+          <div class="stat-num" data-count="37" data-suffix="%">37%</div>
+          <div class="stat-lbl">More bookings</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live call card -->
+    <div class="call-card reveal d2 in" id="callCard">
+      <div class="call-header">
+        <div class="call-caller">
+          <div class="caller-av">M</div>
+          <div>
+            <div class="caller-name">Maria Gonzales</div>
+            <div class="caller-num">+1 (512) 555-0143 · Incoming</div>
+          </div>
+        </div>
+        <div class="call-status"><span class="live-dot"></span>Live · 00:42</div>
+      </div>
+      <div class="waveform" id="waveform"><div class="bar" style="animation-delay: 0s; animation-duration: 1.47s;"></div><div class="bar" style="animation-delay: 0.06s; animation-duration: 1.26s;"></div><div class="bar" style="animation-delay: 0.12s; animation-duration: 0.93s;"></div><div class="bar" style="animation-delay: 0.18s; animation-duration: 1.43s;"></div><div class="bar" style="animation-delay: 0.24s; animation-duration: 1.69s;"></div><div class="bar" style="animation-delay: 0.3s; animation-duration: 1.39s;"></div><div class="bar" style="animation-delay: 0.36s; animation-duration: 1.6s;"></div><div class="bar" style="animation-delay: 0.42s; animation-duration: 0.97s;"></div><div class="bar" style="animation-delay: 0.48s; animation-duration: 1.6s;"></div><div class="bar" style="animation-delay: 0.54s; animation-duration: 1.68s;"></div><div class="bar" style="animation-delay: 0.6s; animation-duration: 0.99s;"></div><div class="bar" style="animation-delay: 0.66s; animation-duration: 1.55s;"></div><div class="bar" style="animation-delay: 0.72s; animation-duration: 0.94s;"></div><div class="bar" style="animation-delay: 0.78s; animation-duration: 1.43s;"></div><div class="bar" style="animation-delay: 0.84s; animation-duration: 1.1s;"></div><div class="bar" style="animation-delay: 0.9s; animation-duration: 1.41s;"></div><div class="bar" style="animation-delay: 0.96s; animation-duration: 1.51s;"></div><div class="bar" style="animation-delay: 1.02s; animation-duration: 1.61s;"></div><div class="bar" style="animation-delay: 1.08s; animation-duration: 1.66s;"></div><div class="bar" style="animation-delay: 1.14s; animation-duration: 1.03s;"></div><div class="bar" style="animation-delay: 1.2s; animation-duration: 1.66s;"></div><div class="bar" style="animation-delay: 1.26s; animation-duration: 1.27s;"></div><div class="bar" style="animation-delay: 1.32s; animation-duration: 1.2s;"></div><div class="bar" style="animation-delay: 1.38s; animation-duration: 1.42s;"></div><div class="bar" style="animation-delay: 1.44s; animation-duration: 1.57s;"></div><div class="bar" style="animation-delay: 1.5s; animation-duration: 1.51s;"></div><div class="bar" style="animation-delay: 1.56s; animation-duration: 1.69s;"></div><div class="bar" style="animation-delay: 1.62s; animation-duration: 1.27s;"></div><div class="bar" style="animation-delay: 1.68s; animation-duration: 1.65s;"></div><div class="bar" style="animation-delay: 1.74s; animation-duration: 0.99s;"></div><div class="bar" style="animation-delay: 1.8s; animation-duration: 1.06s;"></div><div class="bar" style="animation-delay: 1.86s; animation-duration: 1.68s;"></div><div class="bar" style="animation-delay: 1.92s; animation-duration: 1.02s;"></div><div class="bar" style="animation-delay: 1.98s; animation-duration: 1.7s;"></div><div class="bar" style="animation-delay: 2.04s; animation-duration: 1.67s;"></div><div class="bar" style="animation-delay: 2.1s; animation-duration: 1.52s;"></div><div class="bar" style="animation-delay: 2.16s; animation-duration: 1.38s;"></div><div class="bar" style="animation-delay: 2.22s; animation-duration: 1.25s;"></div><div class="bar" style="animation-delay: 2.28s; animation-duration: 1.56s;"></div><div class="bar" style="animation-delay: 2.34s; animation-duration: 1.67s;"></div><div class="bar" style="animation-delay: 2.4s; animation-duration: 1.05s;"></div><div class="bar" style="animation-delay: 2.46s; animation-duration: 1.56s;"></div><div class="bar" style="animation-delay: 2.52s; animation-duration: 1.36s;"></div><div class="bar" style="animation-delay: 2.58s; animation-duration: 0.98s;"></div><div class="bar" style="animation-delay: 2.64s; animation-duration: 0.97s;"></div><div class="bar" style="animation-delay: 2.7s; animation-duration: 1.25s;"></div><div class="bar" style="animation-delay: 2.76s; animation-duration: 1.06s;"></div><div class="bar" style="animation-delay: 2.82s; animation-duration: 1.08s;"></div></div>
+      <div class="transcript" id="transcript"><div class="msg customer"><div class="msg-bubble">Hi, my AC stopped cooling last night — any chance someone can come out this week?</div></div><div class="msg ai"><div class="msg-bubble">Sorry to hear that. I can get a technician out as early as Thursday at 2 PM. Does that work for you?</div></div><div class="msg customer" id="typingMsg"><div class="typing-bubble"><span></span><span></span><span></span></div></div></div>
+      <div class="booking-chip" id="bookingChip">
+        <div class="check">✓</div>
+        <div>
+          <div>AC tune-up booked · Thursday, 2:00 PM</div>
+          <div class="meta">Synced to Housecall Pro · Confirmation texted</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ PROBLEM ============ -->
+<section class="problem" id="problem">
+  <div class="wrap">
+    <div class="sec-head reveal in">
+      <div class="sec-label"><span class="mono">01 / The problem</span></div>
+      <h2 class="sec-title">Every missed call is a <span class="italic">job on your competitor's truck.</span></h2>
+      <p class="sec-sub">Home service customers don't leave voicemails. They don't wait until Monday. They call the next business on the list — and that's where your revenue goes.</p>
+    </div>
+
+    <div class="problem-grid">
+      <div class="problem-cell reveal in">
+        <div class="big-num" data-count="62" data-suffix="%">62%</div>
+        <h3>of service calls go unanswered</h3>
+        <p>Across HVAC, plumbing, and electrical, the average shop misses 6 of every 10 inbound calls during a busy week.</p>
+      </div>
+      <div class="problem-cell reveal d1 in">
+        <div class="big-num">$<span data-count="287">287</span><span class="suf">/ea</span></div>
+        <h3>Average value of a missed call</h3>
+        <p>A missed service call isn't just a lead — it's the full lifetime value of a customer who was ready to book today.</p>
+      </div>
+      <div class="problem-cell reveal d2 in">
+        <div class="big-num" data-count="85" data-suffix="%">85%</div>
+        <h3>of callers won't leave a voicemail</h3>
+        <p>They'll call the next shop on Google Maps before you've finished the current job. Nine out of ten never call back.</p>
+      </div>
+    </div>
+
+    <p class="problem-tagline reveal in">
+      You shouldn't have to choose between <span class="strike">answering the phone</span> and actually doing the job you're paid for.
+    </p>
+  </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<section class="features" id="features">
+  <div class="wrap">
+    <div class="sec-head reveal in">
+      <div class="sec-label"><span class="mono">02 / What it does</span></div>
+      <h2 class="sec-title">A receptionist that never clocks out, <span class="italic">never forgets to follow up.</span></h2>
+      <p class="sec-sub">Trained on your services, your pricing, your territory. Built to sound like the best dispatcher you've ever hired.</p>
+    </div>
+
+    <div class="feat-grid">
+      <div class="feat large reveal in">
+        <div class="mono">Core · Always on</div>
+        <div class="viz-clock">
+          <div class="clock-ring">
+            <div class="clock-hand"></div>
+            <div class="clock-center">24/7</div>
+            <div class="clock-labels">
+              <span class="l12">12</span><span class="l6">6</span><span class="l3">3</span><span class="l9">9</span>
+            </div>
+          </div>
+        </div>
+        <h3>Answers every call — 2 a.m., holidays, during the Super Bowl.</h3>
+        <p>No voicemail. No call tree. No "please hold." Calling Matrix picks up in under two seconds, every single time. The burst pipe at midnight gets booked before your competitor's phone even rings.</p>
+      </div>
+
+      <div class="feat reveal d1 in">
+        <div class="mono">Booking</div>
+        <div class="viz-cal" id="vizCal"><div class="cal-cell" style="font-size: 9px;">M</div><div class="cal-cell" style="font-size: 9px;">T</div><div class="cal-cell booked" style="font-size: 9px;">●</div><div class="cal-cell" style="font-size: 9px;">T</div><div class="cal-cell" style="font-size: 9px;">F</div><div class="cal-cell booked" style="font-size: 9px;">●</div><div class="cal-cell" style="font-size: 9px;">S</div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell booked">●</div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell booked">●</div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell booked">●</div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell booked">●</div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell booked">●</div></div>
+        <h3>Books &amp; reschedules — straight into your calendar.</h3>
+        <p>Integrates with Housecall Pro, ServiceTitan, Jobber, and Google Calendar. Checks your team's availability, respects territory rules, holds the slot.</p>
+      </div>
+
+      <div class="feat reveal d2 in">
+        <div class="mono">Voice</div>
+        <div class="viz-voice">
+          <div class="vb" style="height:20%"></div><div class="vb" style="height:60%"></div><div class="vb" style="height:35%"></div>
+          <div class="vb" style="height:85%"></div><div class="vb" style="height:50%"></div><div class="vb" style="height:70%"></div>
+          <div class="vb" style="height:30%"></div><div class="vb" style="height:90%"></div><div class="vb" style="height:45%"></div>
+          <div class="vb" style="height:65%"></div><div class="vb" style="height:25%"></div><div class="vb" style="height:75%"></div>
+          <div class="vb" style="height:40%"></div><div class="vb" style="height:55%"></div><div class="vb" style="height:80%"></div>
+          <div class="vb" style="height:30%"></div><div class="vb" style="height:60%"></div><div class="vb" style="height:45%"></div>
+        </div>
+        <h3>Sounds like a human — a good one.</h3>
+        <p>Interrupts naturally, handles "um," accents, bad reception. Picks up your dispatcher's best lines.</p>
+      </div>
+
+      <div class="feat reveal d1 in">
+        <div class="mono">Follow up</div>
+        <div class="viz-sms">
+          <div class="sms">Hi Maria — just checking in on Thursday's AC tune-up. Any questions before we come out?</div>
+          <div class="sms out">Perfect, see you Thursday!</div>
+        </div>
+        <h3>Follows up automatically — by text and call.</h3>
+        <p>Confirms appointments, chases no-shows, re-engages quotes that went cold. Brings back 1 in 5 on average.</p>
+      </div>
+
+      <div class="feat reveal d2 in">
+        <div class="mono">Stack</div>
+        <div class="viz-int">
+          <span class="int-chip">Housecall Pro</span>
+          <span class="int-chip">ServiceTitan</span>
+          <span class="int-chip">Jobber</span>
+          <span class="int-chip">Google Cal</span>
+          <span class="int-chip">Zapier</span>
+          <span class="int-chip">Twilio</span>
+        </div>
+        <h3>Plugs into what you already run.</h3>
+        <p>Port your number in 24 hours. Keep your existing CRM, dispatcher, and tech stack.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="how" id="how">
+  <div class="wrap">
+    <div class="sec-head reveal in">
+      <div class="sec-label"><span class="mono">03 / How it works</span></div>
+      <h2 class="sec-title">Live in 48 hours. Booking jobs the <span class="italic">same afternoon.</span></h2>
+    </div>
+    <div class="how-inner">
+      <div class="steps" id="steps">
+        <div class="step" data-step="0" data-active="false">
+          <div class="num">01</div>
+          <div>
+            <h4>We clone your best dispatcher.</h4>
+            <p>30-minute onboarding call. We capture your services, pricing, territory, emergency protocols, and tone — then build a voice that matches the shop.</p>
+          </div>
+        </div>
+        <div class="step" data-step="1" data-active="false">
+          <div class="num">02</div>
+          <div>
+            <h4>We port your number.</h4>
+            <p>Your existing business line forwards or ports to Calling Matrix. Customers keep dialing the number on the back of the truck.</p>
+          </div>
+        </div>
+        <div class="step" data-step="2" data-active="false">
+          <div class="num">03</div>
+          <div>
+            <h4>We integrate your calendar.</h4>
+            <p>Direct, two-way sync with Housecall Pro, ServiceTitan, Jobber, or Google Calendar. Bookings appear in real time.</p>
+          </div>
+        </div>
+        <div class="step" data-step="3" data-active="true">
+          <div class="num">04</div>
+          <div>
+            <h4>We go live — and keep tuning.</h4>
+            <p>You get a live dashboard, every call recording, and a human specialist who tunes the AI monthly based on what your customers actually ask.</p>
+          </div>
+        </div>
+      </div>
+      <div class="how-viz">
+        <div class="how-panel" data-panel="0">
+          <div class="panel-icon">
+            <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="12" r="5" stroke="currentColor" stroke-width="1.5"></circle><path d="M6 26c0-5 4-9 10-9s10 4 10 9" stroke="currentColor" stroke-width="1.5"></path></svg>
+          </div>
+          <h5>Day 1 · Onboarding</h5>
+          <p>A 30-minute call where we capture everything your dispatcher knows.</p>
+        </div>
+        <div class="how-panel" data-panel="1">
+          <div class="panel-icon">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M8 10 Q8 8 10 8 L12 8 L14 14 L12 16 Q15 20 18 22 L20 20 L26 22 L26 24 Q26 26 24 26 Q16 26 10 20 Q6 14 6 11 Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path></svg>
+          </div>
+          <h5>Day 2 · Number live</h5>
+          <p>Your business line rings through to Calling Matrix in under 24 hours.</p>
+        </div>
+        <div class="how-panel" data-panel="2">
+          <div class="panel-icon">
+            <svg viewBox="0 0 32 32" fill="none"><rect x="5" y="8" width="22" height="19" rx="2" stroke="currentColor" stroke-width="1.5"></rect><path d="M5 13h22M11 5v6M21 5v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path><circle cx="16" cy="19" r="2" fill="currentColor"></circle></svg>
+          </div>
+          <h5>Day 2 · Calendar synced</h5>
+          <p>Bookings drop into Housecall Pro, ServiceTitan, Jobber, or Google Cal in real time.</p>
+        </div>
+        <div class="how-panel active" data-panel="3">
+          <div class="panel-icon">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M4 20l6-6 5 5 8-9 5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="10" cy="14" r="1.5" fill="currentColor"></circle><circle cx="15" cy="19" r="1.5" fill="currentColor"></circle><circle cx="23" cy="10" r="1.5" fill="currentColor"></circle></svg>
+          </div>
+          <h5>Day 3+ · Booking jobs</h5>
+          <p>Live dashboard, recordings, and monthly tuning by a real human specialist.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS STRIP ============ -->
+<section class="strip" style="padding: 80px 0;">
+  <div class="wrap strip-inner">
+    <div class="reveal in">
+      <div class="stat-big"><span data-count="37">37</span>%</div>
+      <div class="stat-lbl-d">more bookings in 90 days</div>
+    </div>
+    <div class="reveal d1 in">
+      <div class="stat-big"><span data-count="1.4">1.4</span>s</div>
+      <div class="stat-lbl-d">average pick-up time</div>
+    </div>
+    <div class="reveal d2 in">
+      <div class="stat-big">24/7</div>
+      <div class="stat-lbl-d">including holidays &amp; 2am</div>
+    </div>
+    <div class="reveal d3 in">
+      <div class="stat-big"><span data-count="94">94</span>%</div>
+      <div class="stat-lbl-d">customer CSAT on calls</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section id="customers">
+  <div class="wrap">
+    <div class="sec-head reveal in">
+      <div class="sec-label"><span class="mono">04 / Proof</span></div>
+      <h2 class="sec-title">Shops that stopped missing calls — and <span class="italic">started booking them instead.</span></h2>
+    </div>
+    <div class="tests-grid">
+      <div class="test reveal in">
+        <p class="quote">We were losing about 40 calls a week after hours. Calling Matrix booked 17 of them its first weekend. Paid for itself by Monday.</p>
+        <div>
+          <div class="test-by">
+            <div class="test-av">R</div>
+            <div class="test-info">
+              <div class="name">Rick Delgado</div>
+              <div class="role">Owner · Delgado HVAC, Austin TX</div>
+            </div>
+          </div>
+          <div class="test-metric">+$48,000 recovered revenue / quarter</div>
+        </div>
+      </div>
+      <div class="test reveal d1 in">
+        <p class="quote">My wife used to take calls from the dinner table. Now she doesn't — and our calendar is fuller than it's ever been.</p>
+        <div>
+          <div class="test-by">
+            <div class="test-av">J</div>
+            <div class="test-info">
+              <div class="name">Jason Pham</div>
+              <div class="role">Owner · Pham Plumbing, Sacramento CA</div>
+            </div>
+          </div>
+          <div class="test-metric">0 missed calls · 90 days straight</div>
+        </div>
+      </div>
+      <div class="test reveal d2 in">
+        <p class="quote">Customers don't know it's AI. I barely know it's AI. It handles the weird questions better than half the receptionists I've hired.</p>
+        <div>
+          <div class="test-by">
+            <div class="test-av">T</div>
+            <div class="test-info">
+              <div class="name">Tasha Bell</div>
+              <div class="role">GM · Bell Electric, Charlotte NC</div>
+            </div>
+          </div>
+          <div class="test-metric">37% more booked jobs in Q1</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMPARISON ============ -->
+<section style="background: var(--bg-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+  <div class="wrap">
+    <div class="sec-head reveal in">
+      <div class="sec-label"><span class="mono">05 / Why Calling Matrix</span></div>
+      <h2 class="sec-title">The answering service playbook, <span class="italic">rewritten for 2026.</span></h2>
+    </div>
+    <div class="compare-table reveal in">
+      <div class="head">&nbsp;</div>
+      <div class="head us">Calling Matrix</div>
+      <div class="head">Human answering service</div>
+      <div class="head">Generic AI voice bot</div>
+
+      <div class="row-label">Answers in &lt; 2 seconds</div>
+      <div class="yes">● Always</div>
+      <div class="no">○ 20-60s hold</div>
+      <div class="yes">● Usually</div>
+
+      <div class="row-label">Books into your calendar</div>
+      <div class="yes">● Native sync</div>
+      <div class="no">○ Manual relay</div>
+      <div class="no">○ Add-on only</div>
+
+      <div class="row-label">Trained on your services</div>
+      <div class="yes">● Your dispatcher, cloned</div>
+      <div class="no">○ Generic script</div>
+      <div class="no">○ Generic template</div>
+
+      <div class="row-label">Works 24/7/365</div>
+      <div class="yes">● Yes</div>
+      <div class="no">○ Extra fees</div>
+      <div class="yes">● Yes</div>
+
+      <div class="row-label">Follows up automatically</div>
+      <div class="yes">● Text + voice</div>
+      <div class="no">○ No</div>
+      <div class="no">○ No</div>
+
+      <div class="row-label" style="border-bottom:0;">Cost per booking</div>
+      <div class="yes" style="border-bottom:0;">● ~$4</div>
+      <div class="no" style="border-bottom:0;">○ ~$18</div>
+      <div class="no" style="border-bottom:0;">○ ~$9</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section id="pricing">
+  <div class="wrap">
+    <div class="sec-head reveal in">
+      <div class="sec-label"><span class="mono">06 / Pricing</span></div>
+      <h2 class="sec-title">Pay less than a part-time hire. <span class="italic">Book more than a full team.</span></h2>
+      <p class="sec-sub">Every plan includes unlimited minutes, calendar integration, call recording, and monthly human tuning. No per-call fees. No overage surprises.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="plan reveal in">
+        <div class="plan-name">Starter</div>
+        <div class="plan-price">$299<span class="unit">/ mo</span></div>
+        <p class="plan-desc">For solo operators and 1-truck shops getting off voicemail for the first time.</p>
+        <ul class="plan-features">
+          <li>Up to 200 calls / month</li>
+          <li>24/7 answering &amp; booking</li>
+          <li>Google Calendar sync</li>
+          <li>SMS follow-up</li>
+          <li>Call recordings &amp; dashboard</li>
+        </ul>
+        <a href="#demo" class="btn btn-ghost">Start with Starter</a>
+      </div>
+      <div class="plan featured reveal d1 in">
+        <div class="plan-name">Growth</div>
+        <div class="plan-price">$599<span class="unit">/ mo</span></div>
+        <p class="plan-desc">For 2-10 truck shops scaling bookings without scaling admin hires.</p>
+        <ul class="plan-features">
+          <li>Up to 1,000 calls / month</li>
+          <li>Housecall Pro, Jobber, ServiceTitan sync</li>
+          <li>SMS + voice follow-up sequences</li>
+          <li>Emergency call routing to on-call tech</li>
+          <li>Monthly tuning with a real human specialist</li>
+          <li>Multi-language (English + Spanish)</li>
+        </ul>
+        <a href="#demo" class="btn btn-primary">Book a demo →</a>
+        <div class="plan-note">Most shops pay back in week 1</div>
+      </div>
+      <div class="plan reveal d2 in">
+        <div class="plan-name">Scale</div>
+        <div class="plan-price">Custom</div>
+        <p class="plan-desc">For multi-location operators, franchises, and shops doing $5M+ in revenue.</p>
+        <ul class="plan-features">
+          <li>Unlimited call volume</li>
+          <li>Multi-location territory routing</li>
+          <li>Custom CRM &amp; telephony integrations</li>
+          <li>Dedicated success engineer</li>
+          <li>White-glove onboarding</li>
+          <li>99.99% uptime SLA</li>
+        </ul>
+        <a href="#demo" class="btn btn-ghost">Talk to sales</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" style="background: var(--bg-2); border-top: 1px solid var(--line);">
+  <div class="wrap">
+    <div class="sec-head reveal in" style="margin: 0 auto 60px; text-align: center;">
+      <div class="sec-label" style="justify-content: center;"><span class="mono">07 / Questions</span></div>
+      <h2 class="sec-title">Common questions from <span class="italic">busy owners.</span></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal in">
+        <div class="faq-q">Does it actually sound human?<div class="faq-plus"></div></div>
+        <div class="faq-a">Yes — and callers almost never realize it's AI. Calling Matrix interrupts naturally, handles accents and background noise, and follows the pacing of a trained dispatcher. Hear a real recording on your demo call.</div>
+      </div>
+      <div class="faq-item reveal in">
+        <div class="faq-q">Will it work with my existing CRM?<div class="faq-plus"></div></div>
+        <div class="faq-a">Native, two-way integrations with Housecall Pro, ServiceTitan, Jobber, and Google Calendar. Also connects via Zapier and webhooks to anything else you run. Keep your existing stack.</div>
+      </div>
+      <div class="faq-item reveal in open">
+        <div class="faq-q">How long does it take to get set up?<div class="faq-plus"></div></div>
+        <div class="faq-a">Most shops are live in under 48 hours. Day 1 is a 30-minute onboarding call. Day 2 your number is live and your calendar is synced. Booking jobs that same afternoon is the norm.</div>
+      </div>
+      <div class="faq-item reveal in">
+        <div class="faq-q">What happens if the AI can't answer something?<div class="faq-plus"></div></div>
+        <div class="faq-a">It either transfers to an on-call human you specify, or it captures the full context and sends you a text so you can call back in seconds — never 24 hours later.</div>
+      </div>
+      <div class="faq-item reveal in">
+        <div class="faq-q">Can it handle after-hours emergencies?<div class="faq-plus"></div></div>
+        <div class="faq-a">Yes. You define what counts as an emergency (burst pipe, no heat, electrical hazard). Emergencies route straight to your on-call tech. Non-urgent calls get booked for next-available.</div>
+      </div>
+      <div class="faq-item reveal in">
+        <div class="faq-q">Is there a long-term contract?<div class="faq-plus"></div></div>
+        <div class="faq-a">No. Month-to-month on every plan. 30-day money-back guarantee. If it doesn't pay for itself in more bookings, you don't pay.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final" id="demo">
+  <div class="wrap inner">
+    <h2 class="reveal in">Every call, answered.<br><span class="italic">Every job, booked.</span></h2>
+    <p class="reveal d1 in">See a live demo with your own business. 15 minutes. No slides. Just a working receptionist, trained on your services, ready to take a test call.</p>
+    <div class="reveal d2 in">
+      <a href="#" class="btn btn-primary" onclick="event.preventDefault(); Calendly.initPopupWidget({url: 'https://calendly.com/callingmatrix/30min'}); return false;">
+        Book a free 15-min demo
+        <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      </a>
+      <div style="margin-top: 18px; color: var(--fg-mute); font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;">
+        No card · 30-day money back · Live in 48 hours
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-inner">
+      <div class="foot-brand">
+        <a class="logo" href="#">
+          <span class="logo-mark">
+            <svg viewBox="0 0 26 26" fill="none"><rect x="1" y="1" width="24" height="24" rx="6" stroke="currentColor" stroke-opacity="0.4"></rect><path d="M8 10 Q8 8 10 8 L12 8 L14 12 L12 14 Q14 17 16 18 L18 16 L22 18 L22 20 Q22 22 20 22 Q13 22 8 17 Q6 14 6 11 Z" fill="var(--accent)"></path><circle cx="20" cy="6" r="2" fill="var(--accent)"></circle></svg>
+          </span>
+          Calling Matrix
+        </a>
+        <p>The AI receptionist built for home service businesses. Answer every call. Book every job. Sound like a human.</p>
+      </div>
+      <div class="foot-col">
+        <h6>Product</h6>
+        <a href="#features">Features</a>
+        <a href="#how">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="foot-col">
+        <h6>Built for</h6>
+        <a href="#">HVAC</a>
+        <a href="#">Plumbing</a>
+        <a href="#">Electrical</a>
+        <a href="#">Roofing</a>
+        <a href="#">Cleaning</a>
+      </div>
+      <div class="foot-col">
+        <h6>Company</h6>
+        <a href="#">About</a>
+        <a href="#">Customers</a>
+        <a href="#">Careers</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 Calling Matrix, Inc.</div>
+      <div>Privacy · Terms · SOC 2</div>
+    </div>
+  </div>
+</footer>
+
+      <div class="sw" data-hue="145" style="background: oklch(0.74 0.17 145);"></div>
+      <div class="sw" data-hue="220" style="background: oklch(0.74 0.17 220);"></div>
+      <div class="sw" data-hue="340" style="background: oklch(0.74 0.17 340);"></div>
+    </div>
+  </div>
+  <div class="tweak-row">
+    <label>Grid overlay</label>
+    <input type="checkbox" id="gridTog" checked="">
+  </div>
+  <div class="tweak-row">
+    <label>Animation speed</label>
+    <select id="speedSel" style="background: var(--bg-3); color: var(--fg); border: 1px solid var(--line); border-radius: 6px; padding: 4px 8px; font-family: var(--mono); font-size: 11px;">
+      <option value="1">Normal</option>
+      <option value="0.5">Slow</option>
+      <option value="2">Fast</option>
+    </select>
+  </div>
+</div>
+
+<script>
+/* ======= Nav shadow ======= */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 8); });
+
+/* ======= Scroll reveals ======= */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// Above-the-fold: reveal on load (in case IO doesn't trigger for already-visible elements)
+requestAnimationFrame(() => {
+  document.querySelectorAll('.reveal').forEach(el => {
+    const r = el.getBoundingClientRect();
+    if (r.top < window.innerHeight && r.bottom > 0) {
+      el.classList.add('in');
+    }
+  });
+});
+
+/* ======= Count up ======= */
+const countIO = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target;
+    const target = parseFloat(el.dataset.count);
+    const suffix = el.dataset.suffix || '';
+    const dur = 1400;
+    const start = performance.now();
+    const isFloat = !Number.isInteger(target);
+    const step = (t) => {
+      const p = Math.min((t - start) / dur, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      const val = target * eased;
+      el.textContent = (isFloat ? val.toFixed(1) : Math.floor(val)) + suffix;
+      if (p < 1) requestAnimationFrame(step);
+      else el.textContent = (isFloat ? target.toFixed(1) : target) + suffix;
+    };
+    requestAnimationFrame(step);
+    countIO.unobserve(el);
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('[data-count]').forEach(el => countIO.observe(el));
+
+/* ======= Waveform bars ======= */
+const wf = document.getElementById('waveform');
+for (let i = 0; i < 48; i++) {
+  const b = document.createElement('div');
+  b.className = 'bar';
+  b.style.animationDelay = `${(i * 0.06).toFixed(2)}s`;
+  b.style.animationDuration = `${(0.9 + Math.random() * 0.8).toFixed(2)}s`;
+  wf.appendChild(b);
+}
+
+/* ======= Hero transcript ======= */
+const transcript = document.getElementById('transcript');
+const bookingChip = document.getElementById('bookingChip');
+const script = [
+  { who: 'customer', text: "Hi, my AC stopped cooling last night — any chance someone can come out this week?" },
+  { who: 'ai', text: "Sorry to hear that. I can get a technician out as early as Thursday at 2 PM. Does that work for you?" },
+  { who: 'customer', text: "Thursday's perfect. What's the service fee?" },
+  { who: 'ai', text: "Our diagnostic is $89, waived if you book the repair. I'll send a confirmation text now. Address is 2412 Elmwood?" },
+  { who: 'customer', text: "That's right. Thank you!" },
+];
+let idx = 0;
+function appendMessage(m) {
+  const wrap = document.createElement('div');
+  wrap.className = 'msg ' + m.who;
+  const bubble = document.createElement('div');
+  bubble.className = 'msg-bubble';
+  bubble.textContent = m.text;
+  wrap.appendChild(bubble);
+  transcript.appendChild(wrap);
+  transcript.scrollTop = transcript.scrollHeight;
+}
+function showTyping(who) {
+  const wrap = document.createElement('div');
+  wrap.className = 'msg ' + who;
+  wrap.id = 'typingMsg';
+  const b = document.createElement('div');
+  b.className = 'typing-bubble';
+  b.innerHTML = '<span></span><span></span><span></span>';
+  wrap.appendChild(b);
+  transcript.appendChild(wrap);
+}
+function removeTyping() {
+  const t = document.getElementById('typingMsg');
+  if (t) t.remove();
+}
+function runTranscript() {
+  transcript.innerHTML = '';
+  bookingChip.classList.remove('show');
+  idx = 0;
+  stepTranscript();
+}
+function stepTranscript() {
+  if (idx >= script.length) {
+    setTimeout(() => bookingChip.classList.add('show'), 600);
+    setTimeout(runTranscript, 4000);
+    return;
+  }
+  const m = script[idx];
+  showTyping(m.who);
+  setTimeout(() => {
+    removeTyping();
+    appendMessage(m);
+    idx++;
+    setTimeout(stepTranscript, 1200 + m.text.length * 20);
+  }, 700 + Math.random() * 500);
+}
+runTranscript();
+
+/* ======= Calendar fill animation ======= */
+const vc = document.getElementById('vizCal');
+const days = ['M','T','W','T','F','S','S'];
+const bookedIdx = [2, 5, 10, 16, 19, 23, 27];
+for (let i = 0; i < 28; i++) {
+  const c = document.createElement('div');
+  c.className = 'cal-cell';
+  if (i < 7) { c.textContent = days[i]; c.style.fontSize = '9px'; }
+  vc.appendChild(c);
+}
+const calIO = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const cells = vc.querySelectorAll('.cal-cell');
+    bookedIdx.forEach((i, k) => {
+      setTimeout(() => { if (cells[i]) { cells[i].classList.add('booked'); cells[i].textContent = '●'; } }, k * 250);
+    });
+    calIO.unobserve(e.target);
+  });
+}, { threshold: 0.4 });
+calIO.observe(vc);
+
+/* ======= How it works: step cycling ======= */
+const steps = [...document.querySelectorAll('.step')];
+const panels = [...document.querySelectorAll('.how-panel')];
+let activeStep = 0;
+let stepTimer;
+function setStep(i) {
+  activeStep = i;
+  steps.forEach(s => s.dataset.active = (parseInt(s.dataset.step) === i) ? 'true' : 'false');
+  panels.forEach(p => p.classList.toggle('active', parseInt(p.dataset.panel) === i));
+}
+function cycleSteps() {
+  stepTimer = setInterval(() => { setStep((activeStep + 1) % steps.length); }, 3800);
+}
+steps.forEach(s => s.addEventListener('click', () => {
+  clearInterval(stepTimer);
+  setStep(parseInt(s.dataset.step));
+  cycleSteps();
+}));
+const howIO = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) cycleSteps();
+    else clearInterval(stepTimer);
+  });
+}, { threshold: 0.2 });
+howIO.observe(document.querySelector('.how'));
+
+/* ======= FAQ ======= */
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.addEventListener('click', () => item.classList.toggle('open'));
+});
+
+</script>
+
+
+
+<script>
+document.addEventListener('click', function(e){
+  var a = e.target.closest('a[href="#demo"]');
+  if (!a) return;
+  e.preventDefault();
+  if (window.Calendly && typeof Calendly.initPopupWidget === 'function') {
+    Calendly.initPopupWidget({url: 'https://calendly.com/callingmatrix/30min'});
+  } else {
+    window.open('https://calendly.com/callingmatrix/30min', '_blank', 'noopener');
+  }
+  return false;
+});
+</script></body></html>

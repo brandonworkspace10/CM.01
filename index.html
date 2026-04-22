@@ -1161,8 +1161,7 @@ footer {
         <h6>Company</h6>
         <a href="#">About</a>
         <a href="#">Customers</a>
-        <a href="#">Careers</a>
-        <a href="#">Contact</a>
+        <a href="#" id="contactLink">Contact</a>
       </div>
     </div>
     <div class="foot-bottom">
@@ -1172,6 +1171,70 @@ footer {
   </div>
 </footer>
 
+<!-- ============ CONTACT MODAL ============ -->
+<div id="contactModal" style="display:none; position:fixed; inset:0; z-index:500; background:rgba(14,13,11,0.85); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); align-items:center; justify-content:center; padding:20px;">
+  <div id="contactBox" style="background:var(--bg-2); border:1px solid var(--line); border-radius:24px; padding:48px 40px; max-width:520px; width:100%; position:relative; box-shadow:0 40px 80px rgba(0,0,0,0.6); transform:translateY(24px); opacity:0; transition:transform .4s cubic-bezier(.2,.7,.2,1), opacity .4s ease;">
+    <button onclick="closeContact()" style="position:absolute;top:20px;right:20px;width:32px;height:32px;border-radius:50%;background:var(--bg-3);border:1px solid var(--line);color:var(--fg-dim);font-size:18px;display:grid;place-items:center;cursor:pointer;line-height:1;">×</button>
+    <div style="font-family:var(--mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--fg-mute);margin-bottom:12px;">Get in touch</div>
+    <h3 style="font-family:var(--serif);font-size:32px;font-weight:400;letter-spacing:-0.02em;margin-bottom:8px;">Let's talk about your business.</h3>
+    <p style="color:var(--fg-dim);font-size:14px;line-height:1.55;margin-bottom:32px;">Fill out the form and we'll get back to you within one business day.</p>
+
+    <form id="contactForm" style="display:flex;flex-direction:column;gap:16px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div>
+          <label style="font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--fg-mute);display:block;margin-bottom:6px;">Full Name *</label>
+          <input name="name" required placeholder="Rick Delgado" style="width:100%;background:var(--bg-3);border:1px solid var(--line);border-radius:10px;padding:12px 14px;color:var(--fg);font-family:var(--sans);font-size:14px;outline:none;transition:border-color .2s;" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--line)'">
+        </div>
+        <div>
+          <label style="font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--fg-mute);display:block;margin-bottom:6px;">Business Name *</label>
+          <input name="business" required placeholder="Delgado HVAC" style="width:100%;background:var(--bg-3);border:1px solid var(--line);border-radius:10px;padding:12px 14px;color:var(--fg);font-family:var(--sans);font-size:14px;outline:none;transition:border-color .2s;" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--line)'">
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div>
+          <label style="font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--fg-mute);display:block;margin-bottom:6px;">Email *</label>
+          <input name="email" type="email" required placeholder="rick@delgadohvac.com" style="width:100%;background:var(--bg-3);border:1px solid var(--line);border-radius:10px;padding:12px 14px;color:var(--fg);font-family:var(--sans);font-size:14px;outline:none;transition:border-color .2s;" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--line)'">
+        </div>
+        <div>
+          <label style="font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--fg-mute);display:block;margin-bottom:6px;">Phone *</label>
+          <input name="phone" type="tel" required placeholder="(512) 555-0143" style="width:100%;background:var(--bg-3);border:1px solid var(--line);border-radius:10px;padding:12px 14px;color:var(--fg);font-family:var(--sans);font-size:14px;outline:none;transition:border-color .2s;" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--line)'">
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div>
+          <label style="font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--fg-mute);display:block;margin-bottom:6px;">Business Type</label>
+          <select name="type" style="width:100%;background:var(--bg-3);border:1px solid var(--line);border-radius:10px;padding:12px 14px;color:var(--fg);font-family:var(--sans);font-size:14px;outline:none;appearance:none;">
+            <option value="">Select one…</option>
+            <option>HVAC</option>
+            <option>Plumbing</option>
+            <option>Electrical</option>
+            <option>Roofing</option>
+            <option>Cleaning</option>
+            <option>Other Home Service</option>
+          </select>
+        </div>
+        <div>
+          <label style="font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--fg-mute);display:block;margin-bottom:6px;">Calls / Month</label>
+          <select name="volume" style="width:100%;background:var(--bg-3);border:1px solid var(--line);border-radius:10px;padding:12px 14px;color:var(--fg);font-family:var(--sans);font-size:14px;outline:none;appearance:none;">
+            <option value="">Estimate…</option>
+            <option>Under 100</option>
+            <option>100 – 300</option>
+            <option>300 – 1,000</option>
+            <option>1,000+</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <label style="font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--fg-mute);display:block;margin-bottom:6px;">Message</label>
+        <textarea name="message" rows="3" placeholder="Tell us what you're dealing with — missed calls, after-hours gaps, anything." style="width:100%;background:var(--bg-3);border:1px solid var(--line);border-radius:10px;padding:12px 14px;color:var(--fg);font-family:var(--sans);font-size:14px;outline:none;resize:vertical;transition:border-color .2s;" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--line)'"></textarea>
+      </div>
+      <button type="submit" id="contactSubmit" style="background:var(--accent);color:#1a0e00;border:0;border-radius:999px;padding:16px 26px;font-size:15px;font-weight:500;font-family:var(--sans);cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 10px 30px -10px oklch(0.74 0.17 55 / 0.6);">
+        Send message →
+      </button>
+      <div id="contactStatus" style="text-align:center;font-family:var(--mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--fg-mute);display:none;"></div>
+    </form>
+  </div>
+</div>
 
 <script>
 /* ======= Nav shadow ======= */
@@ -1355,4 +1418,92 @@ document.addEventListener('click', function(e){
   }
   return false;
 });
-</script></body></html>
+</script>
+
+<script>
+/* ======= Contact Modal ======= */
+function openContact() {
+  const modal = document.getElementById('contactModal');
+  const box = document.getElementById('contactBox');
+  modal.style.display = 'flex';
+  requestAnimationFrame(() => {
+    box.style.transform = 'translateY(0)';
+    box.style.opacity = '1';
+  });
+  document.body.style.overflow = 'hidden';
+}
+function closeContact() {
+  const modal = document.getElementById('contactModal');
+  const box = document.getElementById('contactBox');
+  box.style.transform = 'translateY(24px)';
+  box.style.opacity = '0';
+  setTimeout(() => { modal.style.display = 'none'; document.body.style.overflow = ''; }, 400);
+}
+document.getElementById('contactLink').addEventListener('click', function(e) {
+  e.preventDefault(); openContact();
+});
+document.getElementById('contactModal').addEventListener('click', function(e) {
+  if (e.target === this) closeContact();
+});
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeContact(); });
+
+/* ======= Contact Form Submit via Resend ======= */
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('contactSubmit');
+  const status = document.getElementById('contactStatus');
+  const data = Object.fromEntries(new FormData(this));
+
+  btn.textContent = 'Sending…';
+  btn.style.opacity = '0.7';
+  btn.disabled = true;
+  status.style.display = 'none';
+
+  try {
+    const res = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        'Authorization': 'Bearer re_X8UNdiJn_2MYV7an1LeAp6wWfTtcDxNy8',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        from: 'Calling Matrix Contact <onboarding@resend.dev>',
+        to: ['callingmatrix@gmail.com'],
+        reply_to: data.email,
+        subject: `New Contact: ${data.business} — ${data.type || 'Home Service'}`,
+        html: `
+          <h2>New Contact Form Submission</h2>
+          <table style="font-family:sans-serif;font-size:15px;line-height:1.6;">
+            <tr><td><strong>Name:</strong></td><td>${data.name}</td></tr>
+            <tr><td><strong>Business:</strong></td><td>${data.business}</td></tr>
+            <tr><td><strong>Email:</strong></td><td>${data.email}</td></tr>
+            <tr><td><strong>Phone:</strong></td><td>${data.phone}</td></tr>
+            <tr><td><strong>Business Type:</strong></td><td>${data.type || '—'}</td></tr>
+            <tr><td><strong>Calls / Month:</strong></td><td>${data.volume || '—'}</td></tr>
+            <tr><td><strong>Message:</strong></td><td>${data.message || '—'}</td></tr>
+          </table>
+        `
+      })
+    });
+
+    if (res.ok) {
+      document.getElementById('contactForm').innerHTML = `
+        <div style="text-align:center;padding:40px 0;">
+          <div style="width:56px;height:56px;border-radius:50%;background:var(--accent);color:#1a0e00;font-size:24px;display:grid;place-items:center;margin:0 auto 20px;">✓</div>
+          <h4 style="font-family:var(--serif);font-size:26px;font-weight:400;margin-bottom:8px;">Message sent.</h4>
+          <p style="color:var(--fg-dim);font-size:14px;">We'll be in touch within one business day.</p>
+        </div>`;
+    } else {
+      throw new Error('Send failed');
+    }
+  } catch(err) {
+    btn.textContent = 'Send message →';
+    btn.style.opacity = '1';
+    btn.disabled = false;
+    status.textContent = 'Something went wrong — email us directly at callingmatrix@gmail.com';
+    status.style.display = 'block';
+    status.style.color = '#ff6b6b';
+  }
+});
+</script>
+</body></html>

@@ -406,7 +406,7 @@ h2.sec-title .italic { color: var(--accent); }
 
 /* ============ INTEGRATIONS MARQUEE ============ */
 .marquee-section {
-  padding: 40px 0;
+  padding: 48px 0 56px;
   border-bottom: 1px solid var(--line);
   background: var(--bg);
   overflow: hidden;
@@ -418,31 +418,32 @@ h2.sec-title .italic { color: var(--accent); }
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--fg-mute);
-  margin-bottom: 28px;
+  margin-bottom: 32px;
 }
 .marquee-track {
   position: relative;
   width: 100%;
   overflow: hidden;
-  mask-image: linear-gradient(90deg, transparent 0%, black 12%, black 88%, transparent 100%);
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 12%, black 88%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
 }
+.marquee-track + .marquee-track { margin-top: 14px; }
 .marquee-inner {
   display: flex;
   gap: 12px;
   width: max-content;
-  animation: marquee 32s linear infinite;
 }
+.marquee-inner.left  { animation: marquee-left  40s linear infinite; }
+.marquee-inner.right { animation: marquee-right 40s linear infinite; }
 .marquee-inner:hover { animation-play-state: paused; }
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
+@keyframes marquee-left  { 0% { transform: translateX(0); }     100% { transform: translateX(-50%); } }
+@keyframes marquee-right { 0% { transform: translateX(-50%); }  100% { transform: translateX(0); } }
+
 .logo-chip {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
+  gap: 10px;
+  padding: 12px 20px;
   background: var(--bg-2);
   border: 1px solid var(--line);
   border-radius: 999px;
@@ -450,12 +451,17 @@ h2.sec-title .italic { color: var(--accent); }
   font-size: 13px;
   font-weight: 500;
   color: var(--fg-dim);
-  transition: border-color .2s, color .2s;
+  transition: border-color .25s, color .25s, transform .25s;
   cursor: default;
+  flex-shrink: 0;
 }
-.logo-chip:hover { border-color: oklch(0.74 0.17 55 / 0.5); color: var(--fg); }
+.logo-chip:hover { border-color: oklch(0.74 0.17 55 / 0.55); color: var(--fg); transform: translateY(-2px); }
+.logo-chip img { width: 20px; height: 20px; object-fit: contain; flex-shrink: 0; }
 .logo-chip .chip-dot {
-  width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+  width: 20px; height: 20px; border-radius: 6px;
+  display: grid; place-items: center;
+  font-size: 11px; font-weight: 700; color: #fff;
+  flex-shrink: 0;
 }
 
 /* ============ FEATURES ============ */
@@ -793,45 +799,60 @@ footer {
 <!-- ============ INTEGRATIONS MARQUEE ============ -->
 <div class="marquee-section">
   <div class="marquee-label">Connects with your favorite tools</div>
+
+  <!-- Row 1 — slides left -->
   <div class="marquee-track">
-    <div class="marquee-inner" id="marqueeInner">
-
-      <!-- Row 1 (duplicated below for infinite loop) -->
-      <div class="logo-chip"><span class="chip-dot" style="background:#4CAF50;"></span>Housecall Pro</div>
-      <div class="logo-chip"><span class="chip-dot" style="background:#FF6B35;"></span>ServiceTitan</div>
-      <div class="logo-chip"><span class="chip-dot" style="background:#2196F3;"></span>Jobber</div>
-      <div class="logo-chip"><span class="chip-dot" style="background:#4285F4;"></span>Google Calendar</div>
-      <div class="logo-chip"><span class="chip-dot" style="background:#FF4A00;"></span>Zapier</div>
-      <div class="logo-chip"><span class="chip-dot" style="background:#F22F46;"></span>Twilio</div>
-      <div class="logo-chip"><span class="chip-dot" style="background:#217346;"></span>Microsoft Excel</div>
-      <div class="logo-chip"><span class="chip-dot" style="background:#2CA01C;"></span>QuickBooks</div>
-      <div class="logo-chip"><span class="chip-dot" style="background:#FF7A59;"></span>HubSpot</div>
-      <div class="logo-chip"><span class="chip-dot" style="background:#4A154B;"></span>Slack</div>
-      <div class="logo-chip"><span class="chip-dot" style="background:#00A1E0;"></span>Salesforce</div>
-      <div class="logo-chip"><span class="chip-dot" style="background:#0078D4;"></span>Outlook</div>
-      <div class="logo-chip"><span class="chip-dot" style="background:#34A853;"></span>Google Sheets</div>
-      <div class="logo-chip"><span class="chip-dot" style="background:#635BFF;"></span>Stripe</div>
-      <div class="logo-chip"><span class="chip-dot" style="background:#3ECF8E;"></span>Square</div>
-      <div class="logo-chip"><span class="chip-dot" style="background:#FFB900;"></span>ServiceMax</div>
-
+    <div class="marquee-inner left">
+      <!-- Original set -->
+      <div class="logo-chip"><span class="chip-dot" style="background:#1E8E3E;">H</span>Housecall Pro</div>
+      <div class="logo-chip"><span class="chip-dot" style="background:#FF6B35;">S</span>ServiceTitan</div>
+      <div class="logo-chip"><span class="chip-dot" style="background:#1E73BE;">J</span>Jobber</div>
+      <div class="logo-chip"><img src="https://cdn.simpleicons.org/googlecalendar/4285F4" alt="">Google Calendar</div>
+      <div class="logo-chip"><img src="https://cdn.simpleicons.org/zapier/FF4A00" alt="">Zapier</div>
+      <div class="logo-chip"><img src="https://cdn.simpleicons.org/twilio/F22F46" alt="">Twilio</div>
+      <div class="logo-chip"><img src="https://cdn.simpleicons.org/hubspot/FF7A59" alt="">HubSpot</div>
+      <div class="logo-chip"><img src="https://cdn.simpleicons.org/salesforce/00A1E0" alt="">Salesforce</div>
+      <div class="logo-chip"><img src="https://cdn.simpleicons.org/slack/4A154B" alt="">Slack</div>
+      <div class="logo-chip"><img src="https://cdn.simpleicons.org/stripe/635BFF" alt="">Stripe</div>
       <!-- Duplicate for seamless loop -->
-      <div class="logo-chip"><span class="chip-dot" style="background:#4CAF50;"></span>Housecall Pro</div>
-      <div class="logo-chip"><span class="chip-dot" style="background:#FF6B35;"></span>ServiceTitan</div>
-      <div class="logo-chip"><span class="chip-dot" style="background:#2196F3;"></span>Jobber</div>
-      <div class="logo-chip"><span class="chip-dot" style="background:#4285F4;"></span>Google Calendar</div>
-      <div class="logo-chip"><span class="chip-dot" style="background:#FF4A00;"></span>Zapier</div>
-      <div class="logo-chip"><span class="chip-dot" style="background:#F22F46;"></span>Twilio</div>
-      <div class="logo-chip"><span class="chip-dot" style="background:#217346;"></span>Microsoft Excel</div>
-      <div class="logo-chip"><span class="chip-dot" style="background:#2CA01C;"></span>QuickBooks</div>
-      <div class="logo-chip"><span class="chip-dot" style="background:#FF7A59;"></span>HubSpot</div>
-      <div class="logo-chip"><span class="chip-dot" style="background:#4A154B;"></span>Slack</div>
-      <div class="logo-chip"><span class="chip-dot" style="background:#00A1E0;"></span>Salesforce</div>
-      <div class="logo-chip"><span class="chip-dot" style="background:#0078D4;"></span>Outlook</div>
-      <div class="logo-chip"><span class="chip-dot" style="background:#34A853;"></span>Google Sheets</div>
-      <div class="logo-chip"><span class="chip-dot" style="background:#635BFF;"></span>Stripe</div>
-      <div class="logo-chip"><span class="chip-dot" style="background:#3ECF8E;"></span>Square</div>
-      <div class="logo-chip"><span class="chip-dot" style="background:#FFB900;"></span>ServiceMax</div>
+      <div class="logo-chip"><span class="chip-dot" style="background:#1E8E3E;">H</span>Housecall Pro</div>
+      <div class="logo-chip"><span class="chip-dot" style="background:#FF6B35;">S</span>ServiceTitan</div>
+      <div class="logo-chip"><span class="chip-dot" style="background:#1E73BE;">J</span>Jobber</div>
+      <div class="logo-chip"><img src="https://cdn.simpleicons.org/googlecalendar/4285F4" alt="">Google Calendar</div>
+      <div class="logo-chip"><img src="https://cdn.simpleicons.org/zapier/FF4A00" alt="">Zapier</div>
+      <div class="logo-chip"><img src="https://cdn.simpleicons.org/twilio/F22F46" alt="">Twilio</div>
+      <div class="logo-chip"><img src="https://cdn.simpleicons.org/hubspot/FF7A59" alt="">HubSpot</div>
+      <div class="logo-chip"><img src="https://cdn.simpleicons.org/salesforce/00A1E0" alt="">Salesforce</div>
+      <div class="logo-chip"><img src="https://cdn.simpleicons.org/slack/4A154B" alt="">Slack</div>
+      <div class="logo-chip"><img src="https://cdn.simpleicons.org/stripe/635BFF" alt="">Stripe</div>
+    </div>
+  </div>
 
+  <!-- Row 2 — slides right -->
+  <div class="marquee-track">
+    <div class="marquee-inner right">
+      <!-- Original set -->
+      <div class="logo-chip"><img src="https://cdn.simpleicons.org/googlesheets/34A853" alt="">Google Sheets</div>
+      <div class="logo-chip"><img src="https://cdn.simpleicons.org/microsoftexcel/217346" alt="">Microsoft Excel</div>
+      <div class="logo-chip"><img src="https://cdn.simpleicons.org/microsoftoutlook/0078D4" alt="">Outlook</div>
+      <div class="logo-chip"><img src="https://cdn.simpleicons.org/quickbooks/2CA01C" alt="">QuickBooks</div>
+      <div class="logo-chip"><img src="https://cdn.simpleicons.org/gmail/EA4335" alt="">Gmail</div>
+      <div class="logo-chip"><img src="https://cdn.simpleicons.org/square/3ECF8E" alt="">Square</div>
+      <div class="logo-chip"><img src="https://cdn.simpleicons.org/calendly/006BFF" alt="">Calendly</div>
+      <div class="logo-chip"><img src="https://cdn.simpleicons.org/notion/FFFFFF" alt="">Notion</div>
+      <div class="logo-chip"><img src="https://cdn.simpleicons.org/airtable/18BFFF" alt="">Airtable</div>
+      <div class="logo-chip"><img src="https://cdn.simpleicons.org/mailchimp/FFE01B" alt="">Mailchimp</div>
+      <!-- Duplicate for seamless loop -->
+      <div class="logo-chip"><img src="https://cdn.simpleicons.org/googlesheets/34A853" alt="">Google Sheets</div>
+      <div class="logo-chip"><img src="https://cdn.simpleicons.org/microsoftexcel/217346" alt="">Microsoft Excel</div>
+      <div class="logo-chip"><img src="https://cdn.simpleicons.org/microsoftoutlook/0078D4" alt="">Outlook</div>
+      <div class="logo-chip"><img src="https://cdn.simpleicons.org/quickbooks/2CA01C" alt="">QuickBooks</div>
+      <div class="logo-chip"><img src="https://cdn.simpleicons.org/gmail/EA4335" alt="">Gmail</div>
+      <div class="logo-chip"><img src="https://cdn.simpleicons.org/square/3ECF8E" alt="">Square</div>
+      <div class="logo-chip"><img src="https://cdn.simpleicons.org/calendly/006BFF" alt="">Calendly</div>
+      <div class="logo-chip"><img src="https://cdn.simpleicons.org/notion/FFFFFF" alt="">Notion</div>
+      <div class="logo-chip"><img src="https://cdn.simpleicons.org/airtable/18BFFF" alt="">Airtable</div>
+      <div class="logo-chip"><img src="https://cdn.simpleicons.org/mailchimp/FFE01B" alt="">Mailchimp</div>
     </div>
   </div>
 </div>

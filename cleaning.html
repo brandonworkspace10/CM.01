@@ -1,0 +1,195 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>AI Receptionist for Cleaning Services | Calling Matrix</title>
+<meta name="description" content="Your crews are cleaning. New clients are calling. Calling Matrix is the AI receptionist for cleaning businesses — handles inquiries, books recurring appointments, follows up on quotes.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://callingmatrix.com/cleaning">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI Receptionist for Cleaning Services | Calling Matrix">
+<meta property="og:description" content="Your crews are cleaning. New clients are calling. AI receptionist for cleaning businesses — books recurring appointments, follows up on quotes automatically.">
+<meta property="og:url" content="https://callingmatrix.com/cleaning">
+<meta property="og:image" content="https://callingmatrix.com/api/og">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Receptionist for Cleaning Services | Calling Matrix">
+<meta name="twitter:image" content="https://callingmatrix.com/api/og">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"Calling Matrix","url":"https://callingmatrix.com"},{"@type":"Service","name":"Cleaning Service AI Receptionist","serviceType":"Cleaning Business Answering Service","provider":{"@type":"Organization","name":"Calling Matrix"},"description":"24/7 AI receptionist for cleaning businesses — handles new client intake, books recurring appointments, follows up on quotes automatically.","areaServed":{"@type":"Country","name":"United States"},"offers":{"@type":"Offer","price":"299","priceCurrency":"USD"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can it book recurring weekly or biweekly appointments?","acceptedAnswer":{"@type":"Answer","text":"Yes. It books single sessions and recurring schedules, confirms the recurrence with the client, and syncs to your calendar automatically."}},{"@type":"Question","name":"Does it follow up on quote requests?","acceptedAnswer":{"@type":"Answer","text":"Yes. If a caller requests a quote but doesn't book, automated follow-up messages go out at 24, 48, and 72 hours."}}]}]}</script>
+<script type="module" src="/public/analytics.bundle.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<style>
+:root{--bg:#0E0D0B;--bg-2:#151310;--bg-3:#1C1915;--fg:#F6F2EB;--fg-dim:#A6A097;--fg-mute:#6E685F;--line:#2A2620;--accent:oklch(0.74 0.17 55);--accent-soft:oklch(0.74 0.17 55 / 0.12);--serif:'Instrument Serif',serif;--sans:'Geist',sans-serif;--mono:'JetBrains Mono',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-weight:400;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+.italic{font-style:italic}.accent{color:var(--accent)}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 32px;background:rgba(14,13,11,0.82);backdrop-filter:blur(16px);border-bottom:1px solid transparent;transition:border-color .3s}
+.nav.scrolled{border-bottom-color:var(--line)}
+.nav-inner{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:22px;letter-spacing:-0.01em}
+.logo-mark{width:26px;height:26px}.logo-mark svg{width:100%;height:100%}
+.nav-links{display:flex;gap:32px;font-size:14px;color:var(--fg-dim)}
+.nav-links a{transition:color .2s}.nav-links a:hover{color:var(--fg)}
+.nav-cta{padding:10px 18px;background:var(--fg);color:var(--bg);border-radius:999px;font-size:13px;font-weight:500;transition:transform .2s,box-shadow .2s}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(246,242,235,0.15)}
+@media(max-width:720px){.nav-links{display:none}}
+.hero{position:relative;min-height:100vh;padding:160px 0 100px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(60% 50% at 70% 30%,oklch(0.72 0.17 55 / 0.13),transparent 60%),radial-gradient(40% 40% at 10% 80%,oklch(0.72 0.17 55 / 0.05),transparent 60%);pointer-events:none}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:80px 80px;opacity:.2;mask-image:radial-gradient(ellipse at center,black 20%,transparent 70%);pointer-events:none}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border:1px solid var(--line);border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-dim);margin-bottom:28px}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 oklch(0.74 0.17 55 / 0.6)}70%{box-shadow:0 0 0 10px oklch(0.74 0.17 55 / 0)}100%{box-shadow:0 0 0 0 oklch(0.74 0.17 55 / 0)}}
+h1.hero-title{font-family:var(--serif);font-weight:400;font-size:clamp(42px,6.5vw,92px);line-height:1.0;letter-spacing:-0.025em;margin-bottom:28px}
+.hero-sub{font-size:19px;line-height:1.55;color:var(--fg-dim);max-width:580px;margin-bottom:40px}
+.hero-sub strong{color:var(--fg);font-weight:500}
+.cta-row{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 26px;border-radius:999px;font-size:15px;font-weight:500;transition:transform .2s,box-shadow .3s}
+.btn-primary{background:var(--accent);color:#1a0e00;box-shadow:0 10px 30px -10px oklch(0.74 0.17 55 / 0.6)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 20px 40px -15px oklch(0.74 0.17 55 / 0.8)}
+.btn-ghost{color:var(--fg);border:1px solid var(--line)}.btn-ghost:hover{border-color:var(--fg-dim)}
+.hero-stats{margin-top:56px;display:flex;gap:48px;flex-wrap:wrap;padding-top:32px;border-top:1px solid var(--line)}
+.hero-stats .s-num{font-family:var(--serif);font-size:42px;line-height:1;letter-spacing:-0.02em;margin-bottom:6px;color:var(--accent)}
+.hero-stats .s-lbl{font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--fg-mute);max-width:140px}
+section{padding:120px 0;position:relative}
+.sec-head{margin-bottom:64px}
+.sec-label{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.sec-label::before{content:'';width:20px;height:1px;background:var(--accent)}
+h2.sec-title{font-family:var(--serif);font-weight:400;font-size:clamp(36px,5vw,60px);line-height:1.05;letter-spacing:-0.02em;margin-bottom:18px}
+h2.sec-title .italic{color:var(--accent)}
+.sec-sub{font-size:17px;color:var(--fg-dim);max-width:600px;line-height:1.55}
+.pain{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.pain-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+@media(max-width:860px){.pain-grid{grid-template-columns:1fr}}
+.pain-cell{padding:48px 36px;border-right:1px solid var(--line)}
+.pain-cell:last-child{border-right:0}
+@media(max-width:860px){.pain-cell{border-right:0;border-bottom:1px solid var(--line)}.pain-cell:last-child{border-bottom:0}}
+.big-num{font-family:var(--serif);font-size:88px;line-height:.9;letter-spacing:-0.04em;color:var(--accent);margin-bottom:16px}
+.pain-cell h3{font-size:17px;font-weight:500;margin-bottom:8px}.pain-cell p{color:var(--fg-dim);font-size:14px;line-height:1.55}
+.features{background:var(--bg)}
+.feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media(max-width:760px){.feat-grid{grid-template-columns:1fr}}
+.feat{background:var(--bg-2);border:1px solid var(--line);border-radius:20px;padding:36px;transition:border-color .3s,transform .3s}
+.feat:hover{border-color:oklch(0.74 0.17 55 / 0.5);transform:translateY(-3px)}
+.feat-icon{width:44px;height:44px;border-radius:12px;background:var(--accent-soft);border:1px solid oklch(0.74 0.17 55 / 0.25);display:grid;place-items:center;margin-bottom:20px;color:var(--accent)}
+.feat h3{font-family:var(--serif);font-size:24px;font-weight:400;letter-spacing:-0.01em;margin-bottom:10px}
+.feat p{font-size:14px;color:var(--fg-dim);line-height:1.6}
+.faq{background:var(--bg-2);border-top:1px solid var(--line)}
+.faq-list{max-width:860px}
+.faq-item{border-bottom:1px solid var(--line);padding:28px 0;cursor:pointer}
+.faq-q{display:flex;justify-content:space-between;align-items:center;gap:20px;font-family:var(--serif);font-size:22px;font-weight:400;letter-spacing:-0.01em}
+.faq-plus{width:22px;height:22px;position:relative;flex-shrink:0}
+.faq-plus::before,.faq-plus::after{content:'';position:absolute;background:var(--fg-dim);transition:transform .3s}
+.faq-plus::before{left:0;right:0;top:50%;height:1px;transform:translateY(-50%)}
+.faq-plus::after{top:0;bottom:0;left:50%;width:1px;transform:translateX(-50%)}
+.faq-item.open .faq-plus::after{transform:translateX(-50%) rotate(90deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,margin .3s;color:var(--fg-dim);font-size:15.5px;line-height:1.65}
+.faq-item.open .faq-a{max-height:240px;margin-top:14px}
+.final{text-align:center;padding:160px 0;background:radial-gradient(60% 60% at 50% 50%,oklch(0.74 0.17 55 / 0.13),transparent 70%),var(--bg);position:relative;overflow:hidden}
+.final::before{content:'';position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:80px 80px;opacity:.18;mask-image:radial-gradient(ellipse at center,black 10%,transparent 60%)}
+.final .inner{position:relative}
+.final h2{font-family:var(--serif);font-weight:400;font-size:clamp(44px,7vw,96px);line-height:.97;letter-spacing:-0.03em;margin-bottom:28px}
+.final h2 .italic{color:var(--accent)}
+.final p{font-size:19px;color:var(--fg-dim);max-width:580px;margin:0 auto 44px;line-height:1.55}
+.final .btn-primary{padding:20px 36px;font-size:17px}
+footer{padding:56px 0 36px;border-top:1px solid var(--line)}
+.foot-inner{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:40px}
+@media(max-width:680px){.foot-inner{grid-template-columns:1fr 1fr}}
+.foot-col h6{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-mute);margin-bottom:14px}
+.foot-col a{display:block;font-size:13.5px;color:var(--fg-dim);margin-bottom:8px;transition:color .2s}
+.foot-col a:hover{color:var(--fg)}
+.foot-brand p{color:var(--fg-dim);font-size:13.5px;max-width:300px;margin-top:10px;line-height:1.5}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;border-top:1px solid var(--line);font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-mute);flex-wrap:wrap;gap:10px}
+</style>
+</head>
+<body>
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="logo"><span class="logo-mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#0E0D0B"/><path d="M10 12 Q10 10 12 10 L14 10 L16.5 14.5 L14.5 16.5 Q16.5 19.5 19 21 L21 19 L25 21 L25 23 Q25 25 23 25 Q15 25 10 20 Q7 16.5 7 13 Z" fill="#E89B6C"/><circle cx="23" cy="9" r="2.5" fill="#E89B6C"/></svg></span>Calling Matrix</a>
+    <nav class="nav-links"><a href="#features">Features</a><a href="#faq">FAQ</a><a href="/#pricing">Pricing</a></nav>
+    <a href="#" class="nav-cta" onclick="Calendly.initPopupWidget({url:'https://calendly.com/callingmatrix/30min'});return false;">Book a demo</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-bg"></div><div class="hero-grid"></div>
+  <div class="wrap">
+    <span class="eyebrow reveal in"><span class="dot"></span>Built for cleaning businesses</span>
+    <h1 class="hero-title reveal in d1">Book more cleaning jobs<br>while you're <span class="italic accent">already cleaning.</span></h1>
+    <p class="hero-sub reveal in d2">You're running a crew. Your phone is ringing with a new client. Calling Matrix handles every inquiry, <strong>books recurring appointments</strong>, and follows up on every quote — so nothing falls through the cracks.</p>
+    <div class="cta-row reveal in d3">
+      <a href="#" class="btn btn-primary" onclick="Calendly.initPopupWidget({url:'https://calendly.com/callingmatrix/30min'});return false;">Book a free 15-min demo <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="#features" class="btn btn-ghost">See how it works →</a>
+    </div>
+    <div class="hero-stats reveal in d3">
+      <div><div class="s-num">65%</div><div class="s-lbl">Cleaning businesses miss new client calls</div></div>
+      <div><div class="s-num">$2,400</div><div class="s-lbl">Average recurring client annual value</div></div>
+      <div><div class="s-num">3×</div><div class="s-lbl">Higher booking rate with instant response</div></div>
+    </div>
+  </div>
+</header>
+
+<section class="pain">
+  <div class="wrap">
+    <div class="sec-head reveal in"><div class="sec-label">The problem</div><h2 class="sec-title">New clients call once.<br><span class="italic">Then they call someone else.</span></h2></div>
+    <div class="pain-grid">
+      <div class="pain-cell reveal in"><div class="big-num">65%</div><h3>New client calls go unanswered</h3><p>When your crew lead is managing a job, new clients calling your main number hit voicemail and book someone else — often permanently.</p></div>
+      <div class="pain-cell reveal in d1"><div class="big-num">$2,400</div><h3>Annual value of each recurring client</h3><p>A single missed call could be a client you'd retain for years. That's thousands of dollars walking away every time your phone goes unanswered.</p></div>
+      <div class="pain-cell reveal in d2"><div class="big-num">3×</div><h3>More likely to book with instant response</h3><p>Cleaning customers comparison shop. The business that answers immediately wins the job almost every time — the one that calls back an hour later usually doesn't.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="features" id="features">
+  <div class="wrap">
+    <div class="sec-head reveal in"><div class="sec-label">Features</div><h2 class="sec-title">Built for how cleaning<br><span class="italic">businesses actually run.</span></h2><p class="sec-sub">Handles new client intake, manages recurring bookings, follows up on quotes, and syncs everything to your scheduling software.</p></div>
+    <div class="feat-grid">
+      <div class="feat reveal in"><div class="feat-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2v16M2 10h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div><h3>New client intake</h3><p>Captures service address, home size, cleaning type (standard, deep, move-in/out), and preferred schedule during the first call — so new clients are booked before they hang up.</p></div>
+      <div class="feat reveal in d1"><div class="feat-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="4" width="14" height="13" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M7 2v4M13 2v4M3 9h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div><h3>Recurring booking management</h3><p>Books one-time and recurring appointments, confirms schedules with clients, and handles rescheduling requests — without any involvement from your team.</p></div>
+      <div class="feat reveal in d2"><div class="feat-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 10h14M10 3v14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div><h3>Quote follow-up sequences</h3><p>Automatically follows up with prospects who requested a quote but haven't booked — at 24, 48, and 72 hours — increasing conversion from first contact to paid job.</p></div>
+      <div class="feat reveal in d3"><div class="feat-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l4 4 6-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Jobber &amp; Housecall Pro sync</h3><p>Every booking flows into your scheduling software with full client details — address, cleaning type, frequency, and special instructions — automatically populated.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="sec-head reveal in"><div class="sec-label">FAQ</div><h2 class="sec-title">Questions cleaning business owners<br><span class="italic">ask us every day.</span></h2></div>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-q">Can it book recurring weekly or biweekly appointments?<span class="faq-plus"></span></div><div class="faq-a">Yes. It books single sessions and recurring schedules, confirms the recurrence with the client, and syncs everything to your calendar. Clients can also call back to change their frequency and it handles that automatically.</div></div>
+      <div class="faq-item"><div class="faq-q">What if a client needs to reschedule?<span class="faq-plus"></span></div><div class="faq-a">Calling Matrix handles reschedule requests, finds the next available slot based on your calendar, confirms the new time with the client, and updates your scheduling software — without any involvement from your team.</div></div>
+      <div class="faq-item"><div class="faq-q">Does it follow up on quote requests?<span class="faq-plus"></span></div><div class="faq-a">Yes. If a caller requests a quote but doesn't book, automated follow-up messages go out at 24, 48, and 72 hours after the initial call — turning cold leads into confirmed appointments.</div></div>
+      <div class="faq-item"><div class="faq-q">Can it screen for our service area?<span class="faq-plus"></span></div><div class="faq-a">Yes. It asks for the client's zip code and confirms whether it's within your service territory before proceeding with intake — so you never send a crew to an out-of-range address.</div></div>
+      <div class="faq-item"><div class="faq-q">How does it handle questions about our pricing?<span class="faq-plus"></span></div><div class="faq-a">We load your pricing during onboarding — rates by home size, cleaning type, and frequency — so callers get accurate quotes immediately without waiting for a callback.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="final"><div class="wrap inner">
+  <h2 class="reveal in">Every missed call is a<br><span class="italic">recurring client lost.</span></h2>
+  <p class="reveal in d1">Your best clients called someone else because you were busy cleaning. Calling Matrix makes sure that never happens again.</p>
+  <a href="#" class="btn btn-primary reveal in d2" onclick="Calendly.initPopupWidget({url:'https://calendly.com/callingmatrix/30min'});return false;">Book a free 15-min demo <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="foot-inner">
+    <div class="foot-brand"><a href="/" class="logo" style="font-family:var(--serif);font-size:20px;display:flex;align-items:center;gap:8px;"><span class="logo-mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#0E0D0B"/><path d="M10 12 Q10 10 12 10 L14 10 L16.5 14.5 L14.5 16.5 Q16.5 19.5 19 21 L21 19 L25 21 L25 23 Q25 25 23 25 Q15 25 10 20 Q7 16.5 7 13 Z" fill="#E89B6C"/><circle cx="23" cy="9" r="2.5" fill="#E89B6C"/></svg></span>Calling Matrix</a><p>24/7 AI receptionist for home service businesses. Answer every call. Book every job.</p></div>
+    <div class="foot-col"><h6>Industries</h6><a href="/hvac">HVAC</a><a href="/plumbing">Plumbing</a><a href="/electrical">Electrical</a><a href="/roofing">Roofing</a><a href="/cleaning">Cleaning</a></div>
+    <div class="foot-col"><h6>Product</h6><a href="/#features">Features</a><a href="/#pricing">Pricing</a><a href="/#faq">FAQ</a><a href="/#how">How it works</a></div>
+  </div>
+  <div class="foot-bottom"><span>© 2026 Calling Matrix. All rights reserved.</span><span>callingmatrix.com</span></div>
+</div></footer>
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20)});
+const io=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.1});
+document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
+document.querySelectorAll('.faq-item').forEach(i=>i.addEventListener('click',()=>i.classList.toggle('open')));
+</script>
+</body></html>

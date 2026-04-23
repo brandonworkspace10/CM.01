@@ -433,9 +433,9 @@ h2.sec-title .italic { color: var(--accent); }
   gap: 12px;
   width: max-content;
 }
-.marquee-inner.left  { animation: marquee-left  40s linear infinite; }
-.marquee-inner.right { animation: marquee-right 40s linear infinite; }
-.marquee-inner:hover { animation-play-state: paused; }
+.marquee-inner.left  { animation: marquee-left  40s linear infinite; will-change: transform; }
+.marquee-inner.right { animation: marquee-right 40s linear infinite; will-change: transform; }
+.marquee-track:hover .marquee-inner { animation-play-state: paused; }
 @keyframes marquee-left  { 0% { transform: translateX(0); }     100% { transform: translateX(-50%); } }
 @keyframes marquee-right { 0% { transform: translateX(-50%); }  100% { transform: translateX(0); } }
 
@@ -455,7 +455,7 @@ h2.sec-title .italic { color: var(--accent); }
   cursor: default;
   flex-shrink: 0;
 }
-.logo-chip:hover { border-color: oklch(0.74 0.17 55 / 0.55); color: var(--fg); transform: translateY(-2px); }
+.logo-chip:hover { border-color: oklch(0.74 0.17 55 / 0.55); color: var(--fg); background: var(--bg-3); }
 .logo-chip img { width: 20px; height: 20px; object-fit: contain; flex-shrink: 0; }
 .logo-chip .chip-dot {
   width: 20px; height: 20px; border-radius: 6px;

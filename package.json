@@ -2,7 +2,14 @@
   "name": "calling-matrix",
   "version": "1.0.0",
   "type": "module",
+  "scripts": {
+    "build": "esbuild analytics.js --bundle --format=esm --outfile=public/analytics.bundle.js"
+  },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "@vercel/og": "^0.6.2"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.0"
   }
 }

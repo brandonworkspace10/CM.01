@@ -1315,6 +1315,10 @@ footer {
     <p style="color:var(--fg-dim);font-size:14px;line-height:1.55;margin-bottom:32px;">Fill out the form and we'll get back to you within one business day.</p>
 
     <form id="contactForm" style="display:flex;flex-direction:column;gap:16px;">
+      <!-- Honeypot: hidden from users, bots fill it in -->
+      <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
+        <label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+      </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
         <div>
           <label style="font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--fg-mute);display:block;margin-bottom:6px;">Full Name *</label>

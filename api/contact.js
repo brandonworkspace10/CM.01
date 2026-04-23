@@ -1,7 +1,12 @@
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).end();
 
-  const { name, business, email, phone, type, volume, message } = req.body;
+  if (!process.env.RESEND_API_KEY) {
+    console.error('RESEND_API_KEY env variable is missing');
+    return res.status(500).json({ error: 'Email service not configured' });
+  }
+
+  const { name, business, email, phone, type, volume, message } = req.body || {};
 
   if (!name || !business || !email || !phone) {
     return res.status(400).json({ error: 'Missing required fields' });
@@ -14,7 +19,7 @@ export default async function handler(req, res) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      from: 'Calling Matrix Contact <onboarding@resend.dev>',
+      from: 'Calling Matrix <hello@callingmatrix.com>',
       to: ['callingmatrix@gmail.com'],
       reply_to: email,
       subject: `New Lead: ${business} — ${type || 'Home Service'}`,
@@ -43,7 +48,10 @@ export default async function handler(req, res) {
     res.status(200).json({ ok: true });
   } else {
     const err = await r.json().catch(() => ({}));
-    console.error('Resend error:', err);
-    res.status(500).json({ error: 'Failed to send' });
+    console.error('Resend error:', JSON.stringify(err));
+    res.status(500).json({
+      error: err.message || err.name || 'Failed to send',
+      details: err
+    });
   }
 }

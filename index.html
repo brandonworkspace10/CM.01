@@ -1609,15 +1609,20 @@ document.getElementById('contactForm').addEventListener('submit', async function
           <p style="color:var(--fg-dim);font-size:14px;">We'll be in touch within one business day.</p>
         </div>`;
     } else {
-      throw new Error('Send failed');
+      const errData = await res.json().catch(() => ({}));
+      throw new Error(errData.error || 'Send failed');
     }
   } catch(err) {
     btn.textContent = 'Send message →';
     btn.style.opacity = '1';
     btn.disabled = false;
-    status.textContent = 'Something went wrong — email us directly at callingmatrix@gmail.com';
+    status.textContent = (err.message || 'Something went wrong') + ' — or email callingmatrix@gmail.com';
     status.style.display = 'block';
     status.style.color = '#ff6b6b';
+    status.style.textTransform = 'none';
+    status.style.letterSpacing = '0';
+    status.style.fontFamily = 'var(--sans)';
+    status.style.fontSize = '13px';
   }
 });
 </script>

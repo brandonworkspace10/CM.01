@@ -81,7 +81,7 @@ export default async function handler(req, res) {
             <tr><td style="padding:8px 0;color:#666;width:160px;">Name</td><td style="padding:8px 0;font-weight:600;">${esc(capped.name)}</td></tr>
             <tr style="background:#f9f9f9"><td style="padding:8px 12px;color:#666;">Business</td><td style="padding:8px 12px;font-weight:600;">${esc(capped.business)}</td></tr>
             <tr><td style="padding:8px 0;color:#666;">Email</td><td style="padding:8px 0;"><a href="mailto:${esc(capped.email)}">${esc(capped.email)}</a></td></tr>
-            <tr style="background:#f9f9f9"><td style="padding:8px 12px;color:#666;">Phone</td><td style="padding:8px 12px;"><a href="tel:${esc(capped.phone)}">${esc(capped.phone)}</a></td></tr>
+            <tr style="background:#f9f9f9"><td style="padding:8px 12px;color:#666;">Phone</td><td style="padding:8px 12px;"><a href="tel:${capped.phone.replace(/[^+\d\s\-().]/g, '')}">${esc(capped.phone)}</a></td></tr>
             <tr><td style="padding:8px 0;color:#666;">Business Type</td><td style="padding:8px 0;">${esc(capped.type) || '—'}</td></tr>
             <tr style="background:#f9f9f9"><td style="padding:8px 12px;color:#666;">Calls / Month</td><td style="padding:8px 12px;">${esc(capped.volume) || '—'}</td></tr>
             <tr><td style="padding:8px 0;color:#666;vertical-align:top;">Message</td><td style="padding:8px 0;">${esc(capped.message) || '—'}</td></tr>

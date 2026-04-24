@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Calling Matrix</title>
+  <meta name="description" content="Guides, tips, and insights for home service business owners on handling calls, booking more jobs, and growing revenue with AI.">
+  <link rel="canonical" href="https://callingmatrix.com/blog">
+  <meta property="og:title" content="Blog | Calling Matrix">
+  <meta property="og:description" content="Guides, tips, and insights for home service business owners on handling calls, booking more jobs, and growing revenue with AI.">
+  <meta property="og:url" content="https://callingmatrix.com/blog">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://callingmatrix.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blog | Calling Matrix">
+  <meta name="twitter:description" content="Guides, tips, and insights for home service business owners on handling calls, booking more jobs, and growing revenue with AI.">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&display=swap"></noscript>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0E0D0B; --bg-2: #141310; --bg-3: #1A1916;
+      --fg: #F6F2EB; --fg-dim: #A09890; --fg-mute: #5A5650;
+      --accent: #E89B6C; --line: rgba(255,255,255,0.07);
+      --serif: 'Instrument Serif', Georgia, serif;
+      --sans: 'Geist', system-ui, sans-serif;
+    }
+    body { background: var(--bg); color: var(--fg); font-family: var(--sans); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* NAV */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 16px 24px; transition: border-bottom .3s; border-bottom: 1px solid transparent; background: rgba(14,13,11,0.85); backdrop-filter: blur(12px); }
+    .nav.scrolled { border-bottom-color: var(--line); }
+    .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    .logo { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 500; }
+    .logo-mark svg { width: 28px; height: 28px; }
+    .nav-links { display: flex; gap: 32px; font-size: 14px; color: var(--fg-dim); }
+    .nav-links a { transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--fg); }
+    .nav-cta { padding: 10px 18px; background: var(--fg); color: var(--bg); border-radius: 999px; font-size: 13px; font-weight: 500; transition: transform .2s, box-shadow .2s; }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(246,242,235,0.15); }
+    @media (max-width: 720px) { .nav-links { display: none; } }
+
+    /* HERO */
+    .blog-hero { padding: 140px 24px 60px; text-align: center; border-bottom: 1px solid var(--line); }
+    .blog-hero .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-mute); margin-bottom: 20px; font-family: 'Geist Mono', monospace; }
+    .blog-hero .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+    .blog-hero h1 { font-family: var(--serif); font-size: clamp(36px, 5vw, 56px); font-weight: 400; line-height: 1.15; margin-bottom: 16px; }
+    .blog-hero p { color: var(--fg-dim); font-size: 17px; max-width: 480px; margin: 0 auto; }
+
+    /* POSTS GRID */
+    .posts-section { padding: 72px 24px 120px; }
+    .posts-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 28px; }
+    .post-card { background: var(--bg-2); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; transition: transform .2s, border-color .2s; display: flex; flex-direction: column; }
+    .post-card:hover { transform: translateY(-4px); border-color: rgba(255,255,255,0.14); }
+    .post-card-img { height: 200px; background: var(--bg-3); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+    .post-card-img svg { width: 100%; height: 100%; }
+    .post-card-body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
+    .post-tag { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); background: rgba(232,155,108,0.1); border-radius: 4px; padding: 3px 8px; margin-bottom: 14px; }
+    .post-card h2 { font-family: var(--serif); font-size: 22px; font-weight: 400; line-height: 1.3; margin-bottom: 10px; }
+    .post-card p { color: var(--fg-dim); font-size: 14px; line-height: 1.6; flex: 1; margin-bottom: 20px; }
+    .post-meta { display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: var(--fg-mute); }
+    .post-read-more { font-size: 13px; color: var(--accent); font-weight: 500; display: flex; align-items: center; gap: 6px; }
+    .post-read-more svg { transition: transform .2s; }
+    .post-card:hover .post-read-more svg { transform: translateX(4px); }
+
+    /* FOOTER */
+    footer { border-top: 1px solid var(--line); padding: 60px 24px 32px; }
+    .foot-inner { max-width: 1200px; margin: 0 auto; }
+    .foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 48px; }
+    .foot-brand p { color: var(--fg-dim); font-size: 13.5px; margin-top: 12px; max-width: 240px; line-height: 1.6; }
+    .foot-col h6 { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-mute); margin-bottom: 14px; }
+    .foot-col a { display: block; font-size: 13.5px; color: var(--fg-dim); margin-bottom: 8px; transition: color .2s; }
+    .foot-col a:hover { color: var(--fg); }
+    .foot-bottom { display: flex; justify-content: space-between; font-size: 12px; color: var(--fg-mute); padding-top: 24px; border-top: 1px solid var(--line); }
+    @media (max-width: 640px) { .foot-grid { grid-template-columns: 1fr; } .foot-bottom { flex-direction: column; gap: 8px; } }
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <span class="logo-mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#0E0D0B"/><path d="M10 12 Q10 10 12 10 L14 10 L16.5 14.5 L14.5 16.5 Q16.5 19.5 19 21 L21 19 L25 21 L25 23 Q25 25 23 25 Q15 25 10 20 Q7 16.5 7 13 Z" fill="#E89B6C"/><circle cx="23" cy="9" r="2.5" fill="#E89B6C"/></svg></span>
+      Calling Matrix
+    </a>
+    <div class="nav-links">
+      <a href="/#how">How it works</a>
+      <a href="/#features">Features</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/blog" class="active">Blog</a>
+    </div>
+    <a href="/#demo" class="nav-cta">Book a demo →</a>
+  </div>
+</nav>
+
+<section class="blog-hero">
+  <span class="eyebrow"><span class="dot"></span>Resources</span>
+  <h1>The Calling Matrix Blog</h1>
+  <p>Guides and insights for home service business owners who want to answer every call and book more jobs.</p>
+</section>
+
+<section class="posts-section">
+  <div class="posts-grid">
+
+    <a href="/blog/hvac-answering-service-cost" class="post-card">
+      <div class="post-card-img">
+        <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="200" fill="#141310"/>
+          <rect x="40" y="120" width="40" height="50" rx="4" fill="#1A1916" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+          <rect x="40" y="100" width="40" height="20" rx="2" fill="#E89B6C" opacity="0.3"/>
+          <rect x="100" y="80" width="40" height="90" rx="4" fill="#1A1916" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+          <rect x="100" y="60" width="40" height="20" rx="2" fill="#E89B6C" opacity="0.5"/>
+          <rect x="160" y="60" width="40" height="110" rx="4" fill="#1A1916" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+          <rect x="160" y="40" width="40" height="20" rx="2" fill="#E89B6C" opacity="0.7"/>
+          <rect x="220" y="40" width="40" height="130" rx="4" fill="#1A1916" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+          <rect x="220" y="20" width="40" height="20" rx="2" fill="#E89B6C" opacity="0.9"/>
+          <rect x="280" y="30" width="40" height="140" rx="4" fill="#E89B6C" opacity="0.15" stroke="#E89B6C" stroke-width="1"/>
+          <rect x="280" y="10" width="40" height="20" rx="2" fill="#E89B6C"/>
+          <line x1="30" y1="170" x2="370" y2="170" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+          <text x="200" y="190" text-anchor="middle" fill="#5A5650" font-size="10" font-family="system-ui">Cost comparison by service type</text>
+          <text x="60" y="96" text-anchor="middle" fill="#A09890" font-size="9" font-family="system-ui">IVR</text>
+          <text x="120" y="76" text-anchor="middle" fill="#A09890" font-size="9" font-family="system-ui">Basic</text>
+          <text x="180" y="56" text-anchor="middle" fill="#A09890" font-size="9" font-family="system-ui">Live</text>
+          <text x="240" y="36" text-anchor="middle" fill="#A09890" font-size="9" font-family="system-ui">Premium</text>
+          <text x="300" y="26" text-anchor="middle" fill="#E89B6C" font-size="9" font-family="system-ui" font-weight="600">AI</text>
+        </svg>
+      </div>
+      <div class="post-card-body">
+        <span class="post-tag">HVAC</span>
+        <h2>How Much Does an Answering Service Cost for HVAC Companies?</h2>
+        <p>From basic IVR to live operators to AI — we break down the real costs, what you get at each price point, and which option actually makes your business money.</p>
+        <div class="post-meta">
+          <span>Apr 24, 2026 · 7 min read</span>
+          <span class="post-read-more">Read more <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="#E89B6C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="/" class="logo" style="display:inline-flex;">
+          <span class="logo-mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#0E0D0B"/><path d="M10 12 Q10 10 12 10 L14 10 L16.5 14.5 L14.5 16.5 Q16.5 19.5 19 21 L21 19 L25 21 L25 23 Q25 25 23 25 Q15 25 10 20 Q7 16.5 7 13 Z" fill="#E89B6C"/><circle cx="23" cy="9" r="2.5" fill="#E89B6C"/></svg></span>
+          Calling Matrix
+        </a>
+        <p>24/7 AI receptionist for home service businesses. Answer every call. Book every job.</p>
+      </div>
+      <div class="foot-col">
+        <h6>Industries</h6>
+        <a href="/hvac">HVAC</a>
+        <a href="/plumbing">Plumbing</a>
+        <a href="/electrical">Electrical</a>
+        <a href="/roofing">Roofing</a>
+        <a href="/cleaning">Cleaning</a>
+      </div>
+      <div class="foot-col">
+        <h6>Company</h6>
+        <a href="/#features">Features</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/blog">Blog</a>
+        <a href="/#faq">FAQ</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Calling Matrix, Inc.</span>
+      <span>Privacy · Terms</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 8);
+});
+</script>
+</body>
+</html>

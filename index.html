@@ -1704,7 +1704,7 @@ const scripts = {
   ],
 };
 let currentScript = scripts.en;
-let idx = 0;
+let transcriptGen = 0;
 function appendMessage(m) {
   const wrap = document.createElement('div');
   wrap.className = 'msg ' + m.who;
@@ -1730,24 +1730,25 @@ function removeTyping() {
   if (t) t.remove();
 }
 function runTranscript() {
+  transcriptGen++;
   transcript.innerHTML = '';
   bookingChip.classList.remove('show');
-  idx = 0;
-  stepTranscript();
+  stepTranscript(transcriptGen, 0);
 }
-function stepTranscript() {
+function stepTranscript(gen, idx) {
+  if (gen !== transcriptGen) return;
   if (idx >= currentScript.length) {
-    setTimeout(() => bookingChip.classList.add('show'), 600);
-    setTimeout(runTranscript, 4000);
+    setTimeout(() => { if (gen === transcriptGen) bookingChip.classList.add('show'); }, 600);
+    setTimeout(() => { if (gen === transcriptGen) runTranscript(); }, 4000);
     return;
   }
   const m = currentScript[idx];
   showTyping(m.who);
   setTimeout(() => {
+    if (gen !== transcriptGen) return;
     removeTyping();
     appendMessage(m);
-    idx++;
-    setTimeout(stepTranscript, 1200 + m.text.length * 20);
+    setTimeout(() => stepTranscript(gen, idx + 1), 1200 + m.text.length * 20);
   }, 700 + Math.random() * 500);
 }
 runTranscript();

@@ -1,6 +1,6 @@
 // In-memory rate limit (best-effort; persists per warm instance)
 const submissions = new Map();
-const RATE_LIMIT = 3;
+const RATE_LIMIT = 5;
 const RATE_WINDOW = 60 * 60 * 1000; // 1 hour
 
 function checkRate(ip) {
@@ -101,48 +101,57 @@ export default async function handler(req, res) {
   }
 
   // Confirmation email to the lead
-  await fetch('https://api.resend.com/emails', {
-    method: 'POST',
-    headers: {
-      'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      from: 'Calling Matrix <hello@callingmatrix.com>',
-      to: [capped.email],
-      reply_to: 'hello@callingmatrix.com',
-      subject: `Got it, ${capped.name.split(' ')[0]} — we'll be in touch soon`,
-      html: `
-        <div style="font-family:sans-serif;max-width:560px;margin:0 auto;color:#1a1a1a;background:#ffffff;">
-          <div style="background:#0E0D0B;padding:32px 40px;border-radius:12px 12px 0 0;">
-            <p style="color:#C17B3F;font-size:13px;font-family:monospace;letter-spacing:2px;margin:0 0 8px;">CALLING MATRIX</p>
-            <h1 style="color:#F6F2EB;font-size:28px;font-weight:400;margin:0;line-height:1.2;">We got your message,<br>${esc(capped.name.split(' ')[0])}.</h1>
+  const firstName = esc(capped.name.split(' ')[0]);
+  try {
+    const r2 = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        from: 'Calling Matrix <hello@callingmatrix.com>',
+        to: [capped.email],
+        reply_to: 'hello@callingmatrix.com',
+        subject: `Got it, ${firstName} — we'll be in touch soon`,
+        html: `
+          <div style="font-family:sans-serif;max-width:560px;margin:0 auto;color:#1a1a1a;">
+            <div style="background:#0E0D0B;padding:32px 40px;border-radius:12px 12px 0 0;">
+              <p style="color:#C17B3F;font-size:12px;font-family:monospace;letter-spacing:2px;margin:0 0 10px;">CALLING MATRIX</p>
+              <h1 style="color:#F6F2EB;font-size:28px;font-weight:400;margin:0;line-height:1.2;">We got your message,<br>${firstName}.</h1>
+            </div>
+            <div style="padding:32px 40px;border:1px solid #e8e8e8;border-top:none;border-radius:0 0 12px 12px;">
+              <p style="font-size:16px;line-height:1.7;color:#333;margin:0 0 20px;">
+                Thanks for reaching out. We received your request for <strong>${esc(capped.business)}</strong> and someone from our team will follow up within <strong>1 business day</strong>.
+              </p>
+              <p style="font-size:15px;line-height:1.7;color:#555;margin:0 0 28px;">
+                Want to talk sooner? Grab a 15-minute slot on our calendar:
+              </p>
+              <a href="https://calendly.com/callingmatrix/30min"
+                 style="display:inline-block;background:#C17B3F;color:#fff;text-decoration:none;padding:14px 28px;border-radius:999px;font-size:15px;font-weight:500;">
+                Book a demo call →
+              </a>
+              <hr style="border:none;border-top:1px solid #eee;margin:32px 0;">
+              <p style="font-size:13px;color:#999;margin:0;">
+                What you submitted:<br>
+                <span style="color:#555;">Business: ${esc(capped.business)} &nbsp;·&nbsp; Type: ${esc(capped.type) || '—'} &nbsp;·&nbsp; Phone: ${esc(capped.phone)}</span>
+              </p>
+            </div>
+            <p style="text-align:center;font-size:12px;color:#bbb;margin-top:20px;">
+              Calling Matrix &nbsp;·&nbsp; 24/7 AI Receptionist for Home Service Businesses<br>
+              <a href="https://callingmatrix.com" style="color:#bbb;">callingmatrix.com</a>
+            </p>
           </div>
-          <div style="padding:32px 40px;border:1px solid #e8e8e8;border-top:none;border-radius:0 0 12px 12px;">
-            <p style="font-size:16px;line-height:1.7;color:#333;margin:0 0 20px;">
-              Thanks for reaching out. We've received your request for <strong>${esc(capped.business)}</strong> and someone from our team will follow up within <strong>1 business day</strong>.
-            </p>
-            <p style="font-size:15px;line-height:1.7;color:#555;margin:0 0 28px;">
-              If you'd rather talk now, you can grab a 15-minute slot directly on our calendar:
-            </p>
-            <a href="https://calendly.com/callingmatrix/30min"
-               style="display:inline-block;background:#C17B3F;color:#ffffff;text-decoration:none;padding:14px 28px;border-radius:999px;font-size:15px;font-weight:500;">
-              Book a demo call →
-            </a>
-            <hr style="border:none;border-top:1px solid #eee;margin:32px 0;">
-            <p style="font-size:13px;color:#999;margin:0;">
-              Here's what you submitted:<br>
-              <span style="color:#555;">Business: ${esc(capped.business)} · Type: ${esc(capped.type) || '—'} · Phone: ${esc(capped.phone)}</span>
-            </p>
-          </div>
-          <p style="text-align:center;font-size:12px;color:#bbb;margin-top:20px;">
-            Calling Matrix · 24/7 AI Receptionist for Home Service Businesses<br>
-            <a href="https://callingmatrix.com" style="color:#bbb;">callingmatrix.com</a>
-          </p>
-        </div>
-      `,
-    }),
-  });
+        `,
+      }),
+    });
+    if (!r2.ok) {
+      const err2 = await r2.json().catch(() => ({}));
+      console.error('Confirmation email error:', JSON.stringify(err2));
+    }
+  } catch (e) {
+    console.error('Confirmation email exception:', e);
+  }
 
   res.status(200).json({ ok: true });
 }

@@ -1461,13 +1461,23 @@ for (let i = 0; i < 48; i++) {
 /* ======= Hero transcript ======= */
 const transcript = document.getElementById('transcript');
 const bookingChip = document.getElementById('bookingChip');
-const script = [
-  { who: 'customer', text: "Hi, my AC stopped cooling last night — any chance someone can come out this week?" },
-  { who: 'ai', text: "Sorry to hear that. I can get a technician out as early as Thursday at 2 PM. Does that work for you?" },
-  { who: 'customer', text: "Thursday's perfect. What's the service fee?" },
-  { who: 'ai', text: "Our diagnostic is $89, waived if you book the repair. I'll send a confirmation text now. Address is 2412 Elmwood?" },
-  { who: 'customer', text: "That's right. Thank you!" },
-];
+const scripts = {
+  en: [
+    { who: 'customer', text: "Hi, my AC stopped cooling last night — any chance someone can come out this week?" },
+    { who: 'ai', text: "Sorry to hear that. I can get a technician out as early as Thursday at 2 PM. Does that work for you?" },
+    { who: 'customer', text: "Thursday's perfect. What's the service fee?" },
+    { who: 'ai', text: "Our diagnostic is $89, waived if you book the repair. I'll send a confirmation text now. Address is 2412 Elmwood?" },
+    { who: 'customer', text: "That's right. Thank you!" },
+  ],
+  es: [
+    { who: 'customer', text: "Hola, mi AC dejó de enfriar anoche — ¿pueden venir esta semana?" },
+    { who: 'ai', text: "Entiendo. Puedo enviar un técnico el jueves a las 2 PM. ¿Le viene bien?" },
+    { who: 'customer', text: "Perfecto. ¿Cuánto cuesta el diagnóstico?" },
+    { who: 'ai', text: "El diagnóstico es $89, sin cargo si reserva la reparación. Le mando confirmación por texto. ¿Dirección 2412 Elmwood?" },
+    { who: 'customer', text: "Sí, exacto. ¡Muchas gracias!" },
+  ],
+};
+let currentScript = scripts.en;
 let idx = 0;
 function appendMessage(m) {
   const wrap = document.createElement('div');
@@ -1500,12 +1510,12 @@ function runTranscript() {
   stepTranscript();
 }
 function stepTranscript() {
-  if (idx >= script.length) {
+  if (idx >= currentScript.length) {
     setTimeout(() => bookingChip.classList.add('show'), 600);
     setTimeout(runTranscript, 4000);
     return;
   }
-  const m = script[idx];
+  const m = currentScript[idx];
   showTyping(m.who);
   setTimeout(() => {
     removeTyping();
@@ -1742,7 +1752,13 @@ document.getElementById('contactForm').addEventListener('submit', async function
   function setLang(lang) {
     currentLang = lang;
     localStorage.setItem('cm-lang', lang);
-    loadLang(lang).then(function(t) { applyLang(t, lang); });
+    loadLang(lang).then(function(t) {
+      applyLang(t, lang);
+      if (typeof scripts !== 'undefined') {
+        currentScript = scripts[lang] || scripts.en;
+        runTranscript();
+      }
+    });
   }
 
   document.querySelectorAll('.lang-btn').forEach(function(btn) {

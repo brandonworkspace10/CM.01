@@ -181,6 +181,20 @@ footer { padding: 56px 0 36px; border-top: 1px solid var(--line); }
 .foot-col a:hover { color: var(--fg); }
 .foot-brand p { color: var(--fg-dim); font-size: 13.5px; max-width: 300px; margin-top: 10px; line-height: 1.5; }
 .foot-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 28px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-mute); flex-wrap: wrap; gap: 10px; }
+
+.lang-switch{display:flex;align-items:center;gap:6px}
+.lang-sep{color:var(--fg-mute);font-size:12px}
+.lang-btn{background:none;border:none;cursor:pointer;font-size:12px;font-weight:600;font-family:var(--mono);letter-spacing:.1em;color:var(--fg-mute);padding:4px 2px;transition:color .2s}
+.lang-btn:hover{color:var(--fg)}.lang-btn.active{color:var(--accent)}
+@media(max-width:780px){.lang-switch{display:none}}
+.lang-float-mob{display:none}
+@media(max-width:780px){
+  .lang-float-mob{display:flex;align-items:center;gap:6px;position:fixed;bottom:28px;right:18px;z-index:300;background:var(--bg-2);border:1px solid oklch(0.74 0.17 55 / 0.4);border-radius:999px;padding:9px 16px;box-shadow:0 4px 24px rgba(0,0,0,0.55);transition:opacity .6s ease,transform .6s ease;cursor:pointer}
+  .lang-float-mob.peek{opacity:.22;transform:translateX(62%);pointer-events:auto}
+  .lang-float-mob.show{opacity:1;transform:translateX(0)}
+  .lang-float-mob .lang-btn{font-size:13px;padding:2px 4px}
+  .lang-float-mob .lang-sep{font-size:13px}
+}
 </style>
 </head>
 <body>
@@ -192,12 +206,13 @@ footer { padding: 56px 0 36px; border-top: 1px solid var(--line); }
       Calling Matrix
     </a>
     <nav class="nav-links">
-      <a href="#features">Features</a>
-      <a href="#faq">FAQ</a>
-      <a href="/#pricing">Pricing</a>
-      <a href="/blog">Blog</a>
+      <a href="#features" data-i18n="ind.nav.features">Features</a>
+      <a href="#faq" data-i18n="ind.nav.faq">FAQ</a>
+      <a href="/#pricing" data-i18n="ind.nav.pricing">Pricing</a>
+      <a href="/blog" data-i18n="ind.nav.blog">Blog</a>
     </nav>
-    <a href="#" class="nav-cta" onclick="Calendly.initPopupWidget({url:'https://calendly.com/callingmatrix/30min'});return false;">Book a demo</a>
+    <div class="lang-switch"><button class="lang-btn" data-lang="en">EN</button><span class="lang-sep">/</span><button class="lang-btn" data-lang="es">ES</button></div>
+    <a href="#" class="nav-cta" data-i18n="ind.nav.cta" onclick="Calendly.initPopupWidget({url:'https://calendly.com/callingmatrix/30min'});return false;">Book a demo</a>
   </div>
 </nav>
 
@@ -205,20 +220,20 @@ footer { padding: 56px 0 36px; border-top: 1px solid var(--line); }
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
   <div class="wrap">
-    <span class="eyebrow reveal in"><span class="dot"></span>Built for HVAC companies</span>
-    <h1 class="hero-title reveal in d1">Never miss an AC<br>emergency <span class="italic accent">call again.</span></h1>
-    <p class="hero-sub reveal in d2">When a homeowner's AC goes out at 2 AM, they call the first company that picks up. Calling Matrix answers every call <strong>24/7</strong>, routes emergencies to on-call techs, and books tune-ups automatically.</p>
+    <span class="eyebrow reveal in"><span class="dot"></span><span data-i18n="hvac.eyebrow">Built for HVAC companies</span></span>
+    <h1 class="hero-title reveal in d1" data-i18n="hvac.h1">Never miss an AC<br>emergency <span class="italic accent">call again.</span></h1>
+    <p class="hero-sub reveal in d2" data-i18n="hvac.sub">When a homeowner's AC goes out at 2 AM, they call the first company that picks up. Calling Matrix answers every call <strong>24/7</strong>, routes emergencies to on-call techs, and books tune-ups automatically.</p>
     <div class="cta-row reveal in d3">
       <a href="#" class="btn btn-primary" onclick="Calendly.initPopupWidget({url:'https://calendly.com/callingmatrix/30min'});return false;">
-        Book a free 15-min demo
+        <span data-i18n="hvac.cta1">Book a free 15-min demo</span>
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
-      <a href="#features" class="btn btn-ghost">See how it works →</a>
+      <a href="#features" class="btn btn-ghost" data-i18n="hvac.cta2">See how it works →</a>
     </div>
     <div class="hero-stats reveal in d3">
-      <div><div class="s-num">67%</div><div class="s-lbl">HVAC calls after business hours</div></div>
-      <div><div class="s-num">$380</div><div class="s-lbl">Average job value per missed call</div></div>
-      <div><div class="s-num">&lt;2s</div><div class="s-lbl">Answer time, every time</div></div>
+      <div><div class="s-num">67%</div><div class="s-lbl" data-i18n="hvac.stat1.lbl">HVAC calls after business hours</div></div>
+      <div><div class="s-num">$380</div><div class="s-lbl" data-i18n="hvac.stat2.lbl">Average job value per missed call</div></div>
+      <div><div class="s-num">&lt;2s</div><div class="s-lbl" data-i18n="hvac.stat3.lbl">Answer time, every time</div></div>
     </div>
   </div>
 </header>
@@ -226,24 +241,24 @@ footer { padding: 56px 0 36px; border-top: 1px solid var(--line); }
 <section class="pain">
   <div class="wrap">
     <div class="sec-head reveal in">
-      <div class="sec-label">The problem</div>
-      <h2 class="sec-title">Your competitors are answering.<br><span class="italic">You're sending calls to voicemail.</span></h2>
+      <div class="sec-label" data-i18n="hvac.pain.label">The problem</div>
+      <h2 class="sec-title" data-i18n="hvac.pain.title">Your competitors are answering.<br><span class="italic">You're sending calls to voicemail.</span></h2>
     </div>
     <div class="pain-grid">
       <div class="pain-cell reveal in">
         <div class="big-num">63%</div>
-        <h3>After-hours calls go unanswered</h3>
-        <p>Homeowners with broken AC don't wait until morning. They call three companies and book the first one that answers.</p>
+        <h3 data-i18n="hvac.pain1.h3">After-hours calls go unanswered</h3>
+        <p data-i18n="hvac.pain1.p">Homeowners with broken AC don't wait until morning. They call three companies and book the first one that answers.</p>
       </div>
       <div class="pain-cell reveal in d1">
         <div class="big-num">$4.2k</div>
-        <h3>Lost per week in peak season</h3>
-        <p>Missing just 3 calls a day during summer adds up fast. One month of Calling Matrix costs less than a single missed job.</p>
+        <h3 data-i18n="hvac.pain2.h3">Lost per week in peak season</h3>
+        <p data-i18n="hvac.pain2.p">Missing just 3 calls a day during summer adds up fast. One month of Calling Matrix costs less than a single missed job.</p>
       </div>
       <div class="pain-cell reveal in d2">
         <div class="big-num">2 min</div>
-        <h3>Before callers go to your competitor</h3>
-        <p>68% of callers move on to the next HVAC company on Google if no one answers within 2 minutes.</p>
+        <h3 data-i18n="hvac.pain3.h3">Before callers go to your competitor</h3>
+        <p data-i18n="hvac.pain3.p">68% of callers move on to the next HVAC company on Google if no one answers within 2 minutes.</p>
       </div>
     </div>
   </div>
@@ -252,38 +267,38 @@ footer { padding: 56px 0 36px; border-top: 1px solid var(--line); }
 <section class="features" id="features">
   <div class="wrap">
     <div class="sec-head reveal in">
-      <div class="sec-label">Features</div>
-      <h2 class="sec-title">Built for how HVAC<br><span class="italic">businesses actually work.</span></h2>
-      <p class="sec-sub">Trained on your services, pricing, and territory. Handles emergencies, seasonal surges, and routine bookings without missing a beat.</p>
+      <div class="sec-label" data-i18n="hvac.feat.label">Features</div>
+      <h2 class="sec-title" data-i18n="hvac.feat.title">Built for how HVAC<br><span class="italic">businesses actually work.</span></h2>
+      <p class="sec-sub" data-i18n="hvac.feat.sub">Trained on your services, pricing, and territory. Handles emergencies, seasonal surges, and routine bookings without missing a beat.</p>
     </div>
     <div class="feat-grid">
       <div class="feat reveal in">
         <div class="feat-icon">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2v16M2 10h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
         </div>
-        <h3>Emergency call routing</h3>
-        <p>Identifies urgent calls — no AC, no heat, system not responding — and immediately notifies your on-call technician via text or call forwarding. No emergencies slip through.</p>
+        <h3 data-i18n="hvac.feat1.h3">Emergency call routing</h3>
+        <p data-i18n="hvac.feat1.p">Identifies urgent calls — no AC, no heat, system not responding — and immediately notifies your on-call technician via text or call forwarding. No emergencies slip through.</p>
       </div>
       <div class="feat reveal in d1">
         <div class="feat-icon">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 18a8 8 0 100-16 8 8 0 000 16z" stroke="currentColor" stroke-width="1.5"/><path d="M10 6v4l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
         </div>
-        <h3>Seasonal surge handling</h3>
-        <p>Handles 10× normal call volume during summer heat waves and winter cold snaps without adding staff. Every caller gets a live answer within 2 seconds.</p>
+        <h3 data-i18n="hvac.feat2.h3">Seasonal surge handling</h3>
+        <p data-i18n="hvac.feat2.p">Handles 10× normal call volume during summer heat waves and winter cold snaps without adding staff. Every caller gets a live answer within 2 seconds.</p>
       </div>
       <div class="feat reveal in d2">
         <div class="feat-icon">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 10h14M3 5h14M3 15h9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
         </div>
-        <h3>Service agreement upsells</h3>
-        <p>Trained to naturally mention your maintenance plan and capture service agreement signups during every booking call — turning one-time customers into recurring revenue.</p>
+        <h3 data-i18n="hvac.feat3.h3">Service agreement upsells</h3>
+        <p data-i18n="hvac.feat3.p">Trained to naturally mention your maintenance plan and capture service agreement signups during every booking call — turning one-time customers into recurring revenue.</p>
       </div>
       <div class="feat reveal in d3">
         <div class="feat-icon">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l4 4 6-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-        <h3>Housecall Pro &amp; ServiceTitan sync</h3>
-        <p>Jobs book directly into your existing software. No double entry, no missed slots, no manual scheduling. Your technicians see new jobs the moment they're booked.</p>
+        <h3 data-i18n="hvac.feat4.h3">Housecall Pro &amp; ServiceTitan sync</h3>
+        <p data-i18n="hvac.feat4.p">Jobs book directly into your existing software. No double entry, no missed slots, no manual scheduling. Your technicians see new jobs the moment they're booked.</p>
       </div>
     </div>
   </div>
@@ -292,29 +307,29 @@ footer { padding: 56px 0 36px; border-top: 1px solid var(--line); }
 <section class="faq" id="faq">
   <div class="wrap">
     <div class="sec-head reveal in">
-      <div class="sec-label">FAQ</div>
-      <h2 class="sec-title">Questions HVAC owners<br><span class="italic">ask us every day.</span></h2>
+      <div class="sec-label" data-i18n="hvac.faq.label">FAQ</div>
+      <h2 class="sec-title" data-i18n="hvac.faq.title">Questions HVAC owners<br><span class="italic">ask us every day.</span></h2>
     </div>
     <div class="faq-list">
       <div class="faq-item">
-        <div class="faq-q">Does it handle AC emergency calls differently?<span class="faq-plus"></span></div>
-        <div class="faq-a">Yes. It identifies urgent situations — no cooling, no heat, system not responding — and immediately texts your on-call technician with the customer's name, number, address, and issue description. Emergency routing is configured during onboarding to match your escalation protocol.</div>
+        <div class="faq-q"><span data-i18n="hvac.faq1.q">Does it handle AC emergency calls differently?</span><span class="faq-plus"></span></div>
+        <div class="faq-a" data-i18n="hvac.faq1.a">Yes. It identifies urgent situations — no cooling, no heat, system not responding — and immediately texts your on-call technician with the customer's name, number, address, and issue description. Emergency routing is configured during onboarding to match your escalation protocol.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Can it handle the summer surge in call volume?<span class="faq-plus"></span></div>
-        <div class="faq-a">Calling Matrix never gets overloaded. Whether you get 10 calls or 300 during a heat wave, every caller is answered within 2 seconds. There's no staffing up, no overflow, and no missed calls regardless of volume.</div>
+        <div class="faq-q"><span data-i18n="hvac.faq2.q">Can it handle the summer surge in call volume?</span><span class="faq-plus"></span></div>
+        <div class="faq-a" data-i18n="hvac.faq2.a">Calling Matrix never gets overloaded. Whether you get 10 calls or 300 during a heat wave, every caller is answered within 2 seconds. There's no staffing up, no overflow, and no missed calls regardless of volume.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Will it know our service area and pricing?<span class="faq-plus"></span></div>
-        <div class="faq-a">Yes. During onboarding we load your zip codes, service types, diagnostic fees, and seasonal pricing so the AI can answer questions accurately and decline calls outside your territory.</div>
+        <div class="faq-q"><span data-i18n="hvac.faq3.q">Will it know our service area and pricing?</span><span class="faq-plus"></span></div>
+        <div class="faq-a" data-i18n="hvac.faq3.a">Yes. During onboarding we load your zip codes, service types, diagnostic fees, and seasonal pricing so the AI can answer questions accurately and decline calls outside your territory.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Does it integrate with Housecall Pro?<span class="faq-plus"></span></div>
-        <div class="faq-a">Yes. Bookings sync directly to Housecall Pro, ServiceTitan, and Jobber. Jobs appear in your schedule automatically with full customer details — address, issue description, requested time, and any notes from the call.</div>
+        <div class="faq-q"><span data-i18n="hvac.faq4.q">Does it integrate with Housecall Pro?</span><span class="faq-plus"></span></div>
+        <div class="faq-a" data-i18n="hvac.faq4.a">Yes. Bookings sync directly to Housecall Pro, ServiceTitan, and Jobber. Jobs appear in your schedule automatically with full customer details — address, issue description, requested time, and any notes from the call.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">How quickly can we go live?<span class="faq-plus"></span></div>
-        <div class="faq-a">Most HVAC companies are live in 48 hours. We start with a 30-minute onboarding call to capture your services, pricing, territory, and emergency protocols, then build and deploy your AI receptionist. Same-week go-live is standard.</div>
+        <div class="faq-q"><span data-i18n="hvac.faq5.q">How quickly can we go live?</span><span class="faq-plus"></span></div>
+        <div class="faq-a" data-i18n="hvac.faq5.a">Most HVAC companies are live in 48 hours. We start with a 30-minute onboarding call to capture your services, pricing, territory, and emergency protocols, then build and deploy your AI receptionist. Same-week go-live is standard.</div>
       </div>
     </div>
   </div>
@@ -322,10 +337,10 @@ footer { padding: 56px 0 36px; border-top: 1px solid var(--line); }
 
 <section class="final">
   <div class="wrap inner">
-    <h2 class="reveal in">Stop losing jobs to<br><span class="italic">voicemail.</span></h2>
-    <p class="reveal in d1">See how HVAC companies are booking 37% more jobs with an AI receptionist that never takes a day off — not during heat waves, not at 2 AM, not on holidays.</p>
+    <h2 class="reveal in" data-i18n="hvac.final.h2">Stop losing jobs to<br><span class="italic">voicemail.</span></h2>
+    <p class="reveal in d1" data-i18n="hvac.final.p">See how HVAC companies are booking 37% more jobs with an AI receptionist that never takes a day off — not during heat waves, not at 2 AM, not on holidays.</p>
     <a href="#" class="btn btn-primary reveal in d2" onclick="Calendly.initPopupWidget({url:'https://calendly.com/callingmatrix/30min'});return false;">
-      Book a free 15-min demo
+      <span data-i18n="hvac.final.cta">Book a free 15-min demo</span>
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
   </div>
@@ -339,10 +354,10 @@ footer { padding: 56px 0 36px; border-top: 1px solid var(--line); }
           <span class="logo-mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#0E0D0B"/><path d="M10 12 Q10 10 12 10 L14 10 L16.5 14.5 L14.5 16.5 Q16.5 19.5 19 21 L21 19 L25 21 L25 23 Q25 25 23 25 Q15 25 10 20 Q7 16.5 7 13 Z" fill="#E89B6C"/><circle cx="23" cy="9" r="2.5" fill="#E89B6C"/></svg></span>
           Calling Matrix
         </a>
-        <p>24/7 AI receptionist for home service businesses. Answer every call. Book every job.</p>
+        <p data-i18n="ind.foot.tagline">24/7 AI receptionist for home service businesses. Answer every call. Book every job.</p>
       </div>
       <div class="foot-col">
-        <h6>Industries</h6>
+        <h6 data-i18n="ind.foot.industries">Industries</h6>
         <a href="/hvac">HVAC</a>
         <a href="/plumbing">Plumbing</a>
         <a href="/electrical">Electrical</a>
@@ -350,16 +365,16 @@ footer { padding: 56px 0 36px; border-top: 1px solid var(--line); }
         <a href="/cleaning">Cleaning</a>
       </div>
       <div class="foot-col">
-        <h6>Product</h6>
-        <a href="/#features">Features</a>
-        <a href="/#pricing">Pricing</a>
-        <a href="/#faq">FAQ</a>
-        <a href="/#how">How it works</a>
-        <a href="/blog">Blog</a>
+        <h6 data-i18n="ind.foot.product">Product</h6>
+        <a href="/#features" data-i18n="ind.foot.features">Features</a>
+        <a href="/#pricing" data-i18n="ind.foot.pricing">Pricing</a>
+        <a href="/#faq" data-i18n="ind.foot.faq">FAQ</a>
+        <a href="/#how" data-i18n="ind.foot.how">How it works</a>
+        <a href="/blog" data-i18n="ind.foot.blog">Blog</a>
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 Calling Matrix. All rights reserved.</span>
+      <span data-i18n="ind.foot.copy">© 2026 Calling Matrix. All rights reserved.</span>
       <span>callingmatrix.com</span>
     </div>
   </div>
@@ -378,5 +393,34 @@ document.querySelectorAll('.faq-item').forEach(item => {
     item.classList.toggle('open');
   });
 });
+</script>
+
+<div class="lang-float-mob" id="langFloatMob">
+  <button class="lang-btn" data-lang="en">EN</button>
+  <span class="lang-sep">/</span>
+  <button class="lang-btn" data-lang="es">ES</button>
+</div>
+<script>
+(function(){
+  var stored=localStorage.getItem('cm-lang');
+  function applyTrans(t){
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      if(t[el.dataset.i18n]!==undefined)el.innerHTML=t[el.dataset.i18n];
+    });
+    var lang=localStorage.getItem('cm-lang')||'en';
+    document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.toggle('active',b.dataset.lang===lang);});
+  }
+  if(stored&&stored!=='en'){fetch('/locales/'+stored+'.json?v=2').then(function(r){return r.json();}).then(applyTrans);}
+  else{document.querySelectorAll('.lang-btn[data-lang="en"]').forEach(function(b){b.classList.add('active');});}
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.addEventListener('click',function(){
+      localStorage.setItem('cm-lang',b.dataset.lang);
+      if(b.dataset.lang==='en')location.reload();
+      else fetch('/locales/'+b.dataset.lang+'.json?v=2').then(function(r){return r.json();}).then(applyTrans);
+    });
+  });
+  var mob=document.getElementById('langFloatMob');
+  if(mob){var t2;function show2(){mob.classList.remove('peek');mob.classList.add('show');clearTimeout(t2);t2=setTimeout(function(){mob.classList.remove('show');mob.classList.add('peek');},5000);}show2();mob.addEventListener('click',show2);}
+})();
 </script>
 </body></html>

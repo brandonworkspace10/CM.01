@@ -109,89 +109,133 @@ footer{padding:56px 0 36px;border-top:1px solid var(--line)}
 .foot-col a:hover{color:var(--fg)}
 .foot-brand p{color:var(--fg-dim);font-size:13.5px;max-width:300px;margin-top:10px;line-height:1.5}
 .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;border-top:1px solid var(--line);font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-mute);flex-wrap:wrap;gap:10px}
+
+.lang-switch{display:flex;align-items:center;gap:6px}
+.lang-sep{color:var(--fg-mute);font-size:12px}
+.lang-btn{background:none;border:none;cursor:pointer;font-size:12px;font-weight:600;font-family:var(--mono);letter-spacing:.1em;color:var(--fg-mute);padding:4px 2px;transition:color .2s}
+.lang-btn:hover{color:var(--fg)}.lang-btn.active{color:var(--accent)}
+@media(max-width:780px){.lang-switch{display:none}}
+.lang-float-mob{display:none}
+@media(max-width:780px){
+  .lang-float-mob{display:flex;align-items:center;gap:6px;position:fixed;bottom:28px;right:18px;z-index:300;background:var(--bg-2);border:1px solid oklch(0.74 0.17 55 / 0.4);border-radius:999px;padding:9px 16px;box-shadow:0 4px 24px rgba(0,0,0,0.55);transition:opacity .6s ease,transform .6s ease;cursor:pointer}
+  .lang-float-mob.peek{opacity:.22;transform:translateX(62%);pointer-events:auto}
+  .lang-float-mob.show{opacity:1;transform:translateX(0)}
+  .lang-float-mob .lang-btn{font-size:13px;padding:2px 4px}
+  .lang-float-mob .lang-sep{font-size:13px}
+}
 </style>
 </head>
 <body>
 <nav class="nav" id="nav">
   <div class="nav-inner">
     <a href="/" class="logo"><span class="logo-mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#0E0D0B"/><path d="M10 12 Q10 10 12 10 L14 10 L16.5 14.5 L14.5 16.5 Q16.5 19.5 19 21 L21 19 L25 21 L25 23 Q25 25 23 25 Q15 25 10 20 Q7 16.5 7 13 Z" fill="#E89B6C"/><circle cx="23" cy="9" r="2.5" fill="#E89B6C"/></svg></span>Calling Matrix</a>
-    <nav class="nav-links"><a href="#features">Features</a><a href="#faq">FAQ</a><a href="/#pricing">Pricing</a><a href="/blog">Blog</a></nav>
-    <a href="#" class="nav-cta" onclick="Calendly.initPopupWidget({url:'https://calendly.com/callingmatrix/30min'});return false;">Book a demo</a>
+    <nav class="nav-links"><a href="#features" data-i18n="ind.nav.features">Features</a><a href="#faq" data-i18n="ind.nav.faq">FAQ</a><a href="/#pricing" data-i18n="ind.nav.pricing">Pricing</a><a href="/blog" data-i18n="ind.nav.blog">Blog</a></nav>
+    <div class="lang-switch"><button class="lang-btn" data-lang="en">EN</button><span class="lang-sep">/</span><button class="lang-btn" data-lang="es">ES</button></div>
+    <a href="#" class="nav-cta" data-i18n="ind.nav.cta" onclick="Calendly.initPopupWidget({url:'https://calendly.com/callingmatrix/30min'});return false;">Book a demo</a>
   </div>
 </nav>
 
 <header class="hero">
   <div class="hero-bg"></div><div class="hero-grid"></div>
   <div class="wrap">
-    <span class="eyebrow reveal in"><span class="dot"></span>Built for electrical contractors</span>
-    <h1 class="hero-title reveal in d1">Book more electrical jobs<br>without <span class="italic accent">answering the phone.</span></h1>
-    <p class="hero-sub reveal in d2">Commercial rewires, panel upgrades, and generator installs are too valuable to miss. Calling Matrix <strong>captures every inbound lead</strong>, qualifies the job, and books the estimate while you're in the field.</p>
+    <span class="eyebrow reveal in"><span class="dot"></span><span data-i18n="electrical.eyebrow">Built for electrical contractors</span></span>
+    <h1 class="hero-title reveal in d1" data-i18n="electrical.h1">Book more electrical jobs<br>without <span class="italic accent">answering the phone.</span></h1>
+    <p class="hero-sub reveal in d2" data-i18n="electrical.sub">Commercial rewires, panel upgrades, and generator installs are too valuable to miss. Calling Matrix <strong>captures every inbound lead</strong>, qualifies the job, and books the estimate while you're in the field.</p>
     <div class="cta-row reveal in d3">
-      <a href="#" class="btn btn-primary" onclick="Calendly.initPopupWidget({url:'https://calendly.com/callingmatrix/30min'});return false;">Book a free 15-min demo <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      <a href="#features" class="btn btn-ghost">See how it works →</a>
+      <a href="#" class="btn btn-primary" onclick="Calendly.initPopupWidget({url:'https://calendly.com/callingmatrix/30min'});return false;"><span data-i18n="electrical.cta1">Book a free 15-min demo</span> <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="#features" class="btn btn-ghost" data-i18n="electrical.cta2">See how it works →</a>
     </div>
     <div class="hero-stats reveal in d3">
-      <div><div class="s-num">$650</div><div class="s-lbl">Average electrical job value</div></div>
-      <div><div class="s-num">58%</div><div class="s-lbl">Estimate requests never get a callback</div></div>
-      <div><div class="s-num">48h</div><div class="s-lbl">Average time to go live</div></div>
+      <div><div class="s-num">$650</div><div class="s-lbl" data-i18n="electrical.stat1.lbl">Average electrical job value</div></div>
+      <div><div class="s-num">58%</div><div class="s-lbl" data-i18n="electrical.stat2.lbl">Estimate requests never get a callback</div></div>
+      <div><div class="s-num">48h</div><div class="s-lbl" data-i18n="electrical.stat3.lbl">Average time to go live</div></div>
     </div>
   </div>
 </header>
 
 <section class="pain">
   <div class="wrap">
-    <div class="sec-head reveal in"><div class="sec-label">The problem</div><h2 class="sec-title">High-value leads calling<br><span class="italic">while you're in the panel.</span></h2></div>
+    <div class="sec-head reveal in"><div class="sec-label" data-i18n="electrical.pain.label">The problem</div><h2 class="sec-title" data-i18n="electrical.pain.title">High-value leads calling<br><span class="italic">while you're in the panel.</span></h2></div>
     <div class="pain-grid">
-      <div class="pain-cell reveal in"><div class="big-num">58%</div><h3>Estimate requests never get a callback</h3><p>Most electrical contractors follow up within 24–48 hours. By then, the customer has already booked someone else.</p></div>
-      <div class="pain-cell reveal in d1"><div class="big-num">$8k</div><h3>Average commercial project value missed</h3><p>Missing one commercial lead per month could be costing your business six figures a year — just from slow follow-up.</p></div>
-      <div class="pain-cell reveal in d2"><div class="big-num">1 in 3</div><h3>Callers go to a competitor if unanswered</h3><p>Callers who can't reach you don't wait — they move to the next electrician in search results. First contact wins the job.</p></div>
+      <div class="pain-cell reveal in"><div class="big-num">58%</div><h3 data-i18n="electrical.pain1.h3">Estimate requests never get a callback</h3><p data-i18n="electrical.pain1.p">Most electrical contractors follow up within 24–48 hours. By then, the customer has already booked someone else.</p></div>
+      <div class="pain-cell reveal in d1"><div class="big-num">$8k</div><h3 data-i18n="electrical.pain2.h3">Average commercial project value missed</h3><p data-i18n="electrical.pain2.p">Missing one commercial lead per month could be costing your business six figures a year — just from slow follow-up.</p></div>
+      <div class="pain-cell reveal in d2"><div class="big-num">1 in 3</div><h3 data-i18n="electrical.pain3.h3">Callers go to a competitor if unanswered</h3><p data-i18n="electrical.pain3.p">Callers who can't reach you don't wait — they move to the next electrician in search results. First contact wins the job.</p></div>
     </div>
   </div>
 </section>
 
 <section class="features" id="features">
   <div class="wrap">
-    <div class="sec-head reveal in"><div class="sec-label">Features</div><h2 class="sec-title">Built for how electrical<br><span class="italic">contractors actually work.</span></h2><p class="sec-sub">Qualifies residential vs commercial, captures estimate details, routes safety emergencies, and syncs to your field service software.</p></div>
+    <div class="sec-head reveal in"><div class="sec-label" data-i18n="electrical.feat.label">Features</div><h2 class="sec-title" data-i18n="electrical.feat.title">Built for how electrical<br><span class="italic">contractors actually work.</span></h2><p class="sec-sub" data-i18n="electrical.feat.sub">Qualifies residential vs commercial, captures estimate details, routes safety emergencies, and syncs to your field service software.</p></div>
     <div class="feat-grid">
-      <div class="feat reveal in"><div class="feat-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2v16M2 10h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div><h3>Commercial vs. residential screening</h3><p>Qualifies inbound calls by job type — residential service, commercial build-out, or industrial — and routes accordingly so your right team gets the right leads.</p></div>
-      <div class="feat reveal in d1"><div class="feat-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="4" width="14" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M7 8h6M7 11h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div><h3>Estimate appointment booking</h3><p>Books estimate appointments with job details pre-captured — address, scope, square footage if needed — so you arrive prepared and close more estimates on the first visit.</p></div>
-      <div class="feat reveal in d2"><div class="feat-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 3l1.5 4.5H16l-3.75 2.73 1.43 4.4L10 12.1l-3.68 2.63 1.43-4.4L4 7.5h4.5L10 3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></div><h3>Electrical safety call routing</h3><p>Identifies potentially dangerous situations — sparks, burning smell, complete power loss — and escalates immediately to your emergency line before anything else.</p></div>
-      <div class="feat reveal in d3"><div class="feat-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l4 4 6-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Jobber &amp; ServiceTitan sync</h3><p>Every estimate and service call books directly into your field service software. No back-and-forth scheduling, no manual entry, no double-booked slots.</p></div>
+      <div class="feat reveal in"><div class="feat-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2v16M2 10h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div><h3 data-i18n="electrical.feat1.h3">Commercial vs. residential screening</h3><p data-i18n="electrical.feat1.p">Qualifies inbound calls by job type — residential service, commercial build-out, or industrial — and routes accordingly so your right team gets the right leads.</p></div>
+      <div class="feat reveal in d1"><div class="feat-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="4" width="14" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M7 8h6M7 11h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div><h3 data-i18n="electrical.feat2.h3">Estimate appointment booking</h3><p data-i18n="electrical.feat2.p">Books estimate appointments with job details pre-captured — address, scope, square footage if needed — so you arrive prepared and close more estimates on the first visit.</p></div>
+      <div class="feat reveal in d2"><div class="feat-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 3l1.5 4.5H16l-3.75 2.73 1.43 4.4L10 12.1l-3.68 2.63 1.43-4.4L4 7.5h4.5L10 3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></div><h3 data-i18n="electrical.feat3.h3">Electrical safety call routing</h3><p data-i18n="electrical.feat3.p">Identifies potentially dangerous situations — sparks, burning smell, complete power loss — and escalates immediately to your emergency line before anything else.</p></div>
+      <div class="feat reveal in d3"><div class="feat-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l4 4 6-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3 data-i18n="electrical.feat4.h3">Jobber &amp; ServiceTitan sync</h3><p data-i18n="electrical.feat4.p">Every estimate and service call books directly into your field service software. No back-and-forth scheduling, no manual entry, no double-booked slots.</p></div>
     </div>
   </div>
 </section>
 
 <section class="faq" id="faq">
   <div class="wrap">
-    <div class="sec-head reveal in"><div class="sec-label">FAQ</div><h2 class="sec-title">Questions electrical contractors<br><span class="italic">ask us every day.</span></h2></div>
+    <div class="sec-head reveal in"><div class="sec-label" data-i18n="electrical.faq.label">FAQ</div><h2 class="sec-title" data-i18n="electrical.faq.title">Questions electrical contractors<br><span class="italic">ask us every day.</span></h2></div>
     <div class="faq-list">
-      <div class="faq-item"><div class="faq-q">Can it differentiate commercial and residential calls?<span class="faq-plus"></span></div><div class="faq-a">Yes. It asks qualifying questions and routes accordingly — residential bookings go to your scheduling queue, commercial leads get priority handling and expedited follow-up from your sales team.</div></div>
-      <div class="faq-item"><div class="faq-q">What happens with electrical safety emergencies?<span class="faq-plus"></span></div><div class="faq-a">Calls with safety indicators — sparks, burning smell, complete power loss, exposed wiring — are routed immediately to your emergency line. Safety situations are never put in a queue.</div></div>
-      <div class="faq-item"><div class="faq-q">Can it capture details for estimate calls?<span class="faq-plus"></span></div><div class="faq-a">Absolutely. It collects service address, job description, square footage if needed, and preferred appointment windows before confirming the estimate — so you arrive prepared every time.</div></div>
-      <div class="faq-item"><div class="faq-q">Does it integrate with Jobber?<span class="faq-plus"></span></div><div class="faq-a">Yes. Bookings and estimate appointments sync directly to Jobber, ServiceTitan, and Housecall Pro with full client details automatically populated.</div></div>
-      <div class="faq-item"><div class="faq-q">Can we customize what questions it asks?<span class="faq-plus"></span></div><div class="faq-a">Yes. During onboarding we tailor the intake script to your specific services, licensing requirements, job minimums, and any qualification questions your team normally asks on first contact.</div></div>
+      <div class="faq-item"><div class="faq-q"><span data-i18n="electrical.faq1.q">Can it differentiate commercial and residential calls?</span><span class="faq-plus"></span></div><div class="faq-a" data-i18n="electrical.faq1.a">Yes. It asks qualifying questions and routes accordingly — residential bookings go to your scheduling queue, commercial leads get priority handling and expedited follow-up from your sales team.</div></div>
+      <div class="faq-item"><div class="faq-q"><span data-i18n="electrical.faq2.q">What happens with electrical safety emergencies?</span><span class="faq-plus"></span></div><div class="faq-a" data-i18n="electrical.faq2.a">Calls with safety indicators — sparks, burning smell, complete power loss, exposed wiring — are routed immediately to your emergency line. Safety situations are never put in a queue.</div></div>
+      <div class="faq-item"><div class="faq-q"><span data-i18n="electrical.faq3.q">Can it capture details for estimate calls?</span><span class="faq-plus"></span></div><div class="faq-a" data-i18n="electrical.faq3.a">Absolutely. It collects service address, job description, square footage if needed, and preferred appointment windows before confirming the estimate — so you arrive prepared every time.</div></div>
+      <div class="faq-item"><div class="faq-q"><span data-i18n="electrical.faq4.q">Does it integrate with Jobber?</span><span class="faq-plus"></span></div><div class="faq-a" data-i18n="electrical.faq4.a">Yes. Bookings and estimate appointments sync directly to Jobber, ServiceTitan, and Housecall Pro with full client details automatically populated.</div></div>
+      <div class="faq-item"><div class="faq-q"><span data-i18n="electrical.faq5.q">Can we customize what questions it asks?</span><span class="faq-plus"></span></div><div class="faq-a" data-i18n="electrical.faq5.a">Yes. During onboarding we tailor the intake script to your specific services, licensing requirements, job minimums, and any qualification questions your team normally asks on first contact.</div></div>
     </div>
   </div>
 </section>
 
 <section class="final"><div class="wrap inner">
-  <h2 class="reveal in">Stop losing $650 jobs<br><span class="italic">to voicemail.</span></h2>
-  <p class="reveal in d1">Every call your phone misses is a job on your competitor's truck. Calling Matrix makes sure that never happens again.</p>
-  <a href="#" class="btn btn-primary reveal in d2" onclick="Calendly.initPopupWidget({url:'https://calendly.com/callingmatrix/30min'});return false;">Book a free 15-min demo <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  <h2 class="reveal in" data-i18n="electrical.final.h2">Stop losing $650 jobs<br><span class="italic">to voicemail.</span></h2>
+  <p class="reveal in d1" data-i18n="electrical.final.p">Every call your phone misses is a job on your competitor's truck. Calling Matrix makes sure that never happens again.</p>
+  <a href="#" class="btn btn-primary reveal in d2" onclick="Calendly.initPopupWidget({url:'https://calendly.com/callingmatrix/30min'});return false;"><span data-i18n="electrical.final.cta">Book a free 15-min demo</span> <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 </div></section>
 
 <footer><div class="wrap">
   <div class="foot-inner">
-    <div class="foot-brand"><a href="/" class="logo" style="font-family:var(--serif);font-size:20px;display:flex;align-items:center;gap:8px;"><span class="logo-mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#0E0D0B"/><path d="M10 12 Q10 10 12 10 L14 10 L16.5 14.5 L14.5 16.5 Q16.5 19.5 19 21 L21 19 L25 21 L25 23 Q25 25 23 25 Q15 25 10 20 Q7 16.5 7 13 Z" fill="#E89B6C"/><circle cx="23" cy="9" r="2.5" fill="#E89B6C"/></svg></span>Calling Matrix</a><p>24/7 AI receptionist for home service businesses. Answer every call. Book every job.</p></div>
-    <div class="foot-col"><h6>Industries</h6><a href="/hvac">HVAC</a><a href="/plumbing">Plumbing</a><a href="/electrical">Electrical</a><a href="/roofing">Roofing</a><a href="/cleaning">Cleaning</a></div>
-    <div class="foot-col"><h6>Product</h6><a href="/#features">Features</a><a href="/#pricing">Pricing</a><a href="/#faq">FAQ</a><a href="/#how">How it works</a><a href="/blog">Blog</a></div>
+    <div class="foot-brand"><a href="/" class="logo" style="font-family:var(--serif);font-size:20px;display:flex;align-items:center;gap:8px;"><span class="logo-mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#0E0D0B"/><path d="M10 12 Q10 10 12 10 L14 10 L16.5 14.5 L14.5 16.5 Q16.5 19.5 19 21 L21 19 L25 21 L25 23 Q25 25 23 25 Q15 25 10 20 Q7 16.5 7 13 Z" fill="#E89B6C"/><circle cx="23" cy="9" r="2.5" fill="#E89B6C"/></svg></span>Calling Matrix</a><p data-i18n="ind.foot.tagline">24/7 AI receptionist for home service businesses. Answer every call. Book every job.</p></div>
+    <div class="foot-col"><h6 data-i18n="ind.foot.industries">Industries</h6><a href="/hvac">HVAC</a><a href="/plumbing">Plumbing</a><a href="/electrical">Electrical</a><a href="/roofing">Roofing</a><a href="/cleaning">Cleaning</a></div>
+    <div class="foot-col"><h6 data-i18n="ind.foot.product">Product</h6><a href="/#features" data-i18n="ind.foot.features">Features</a><a href="/#pricing" data-i18n="ind.foot.pricing">Pricing</a><a href="/#faq" data-i18n="ind.foot.faq">FAQ</a><a href="/#how" data-i18n="ind.foot.how">How it works</a><a href="/blog" data-i18n="ind.foot.blog">Blog</a></div>
   </div>
-  <div class="foot-bottom"><span>© 2026 Calling Matrix. All rights reserved.</span><span>callingmatrix.com</span></div>
+  <div class="foot-bottom"><span data-i18n="ind.foot.copy">© 2026 Calling Matrix. All rights reserved.</span><span>callingmatrix.com</span></div>
 </div></footer>
 <script>
 window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20)});
 const io=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.1});
 document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
 document.querySelectorAll('.faq-item').forEach(i=>i.addEventListener('click',()=>i.classList.toggle('open')));
+</script>
+
+<div class="lang-float-mob" id="langFloatMob">
+  <button class="lang-btn" data-lang="en">EN</button>
+  <span class="lang-sep">/</span>
+  <button class="lang-btn" data-lang="es">ES</button>
+</div>
+<script>
+(function(){
+  var stored=localStorage.getItem('cm-lang');
+  function applyTrans(t){
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      if(t[el.dataset.i18n]!==undefined)el.innerHTML=t[el.dataset.i18n];
+    });
+    var lang=localStorage.getItem('cm-lang')||'en';
+    document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.toggle('active',b.dataset.lang===lang);});
+  }
+  if(stored&&stored!=='en'){fetch('/locales/'+stored+'.json?v=2').then(function(r){return r.json();}).then(applyTrans);}
+  else{document.querySelectorAll('.lang-btn[data-lang="en"]').forEach(function(b){b.classList.add('active');});}
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.addEventListener('click',function(){
+      localStorage.setItem('cm-lang',b.dataset.lang);
+      if(b.dataset.lang==='en')location.reload();
+      else fetch('/locales/'+b.dataset.lang+'.json?v=2').then(function(r){return r.json();}).then(applyTrans);
+    });
+  });
+  var mob=document.getElementById('langFloatMob');
+  if(mob){var t2;function show2(){mob.classList.remove('peek');mob.classList.add('show');clearTimeout(t2);t2=setTimeout(function(){mob.classList.remove('show');mob.classList.add('peek');},5000);}show2();mob.addEventListener('click',show2);}
+})();
 </script>
 </body></html>

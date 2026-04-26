@@ -109,89 +109,133 @@ footer{padding:56px 0 36px;border-top:1px solid var(--line)}
 .foot-col a:hover{color:var(--fg)}
 .foot-brand p{color:var(--fg-dim);font-size:13.5px;max-width:300px;margin-top:10px;line-height:1.5}
 .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;border-top:1px solid var(--line);font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-mute);flex-wrap:wrap;gap:10px}
+
+.lang-switch{display:flex;align-items:center;gap:6px}
+.lang-sep{color:var(--fg-mute);font-size:12px}
+.lang-btn{background:none;border:none;cursor:pointer;font-size:12px;font-weight:600;font-family:var(--mono);letter-spacing:.1em;color:var(--fg-mute);padding:4px 2px;transition:color .2s}
+.lang-btn:hover{color:var(--fg)}.lang-btn.active{color:var(--accent)}
+@media(max-width:780px){.lang-switch{display:none}}
+.lang-float-mob{display:none}
+@media(max-width:780px){
+  .lang-float-mob{display:flex;align-items:center;gap:6px;position:fixed;bottom:28px;right:18px;z-index:300;background:var(--bg-2);border:1px solid oklch(0.74 0.17 55 / 0.4);border-radius:999px;padding:9px 16px;box-shadow:0 4px 24px rgba(0,0,0,0.55);transition:opacity .6s ease,transform .6s ease;cursor:pointer}
+  .lang-float-mob.peek{opacity:.22;transform:translateX(62%);pointer-events:auto}
+  .lang-float-mob.show{opacity:1;transform:translateX(0)}
+  .lang-float-mob .lang-btn{font-size:13px;padding:2px 4px}
+  .lang-float-mob .lang-sep{font-size:13px}
+}
 </style>
 </head>
 <body>
 <nav class="nav" id="nav">
   <div class="nav-inner">
     <a href="/" class="logo"><span class="logo-mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#0E0D0B"/><path d="M10 12 Q10 10 12 10 L14 10 L16.5 14.5 L14.5 16.5 Q16.5 19.5 19 21 L21 19 L25 21 L25 23 Q25 25 23 25 Q15 25 10 20 Q7 16.5 7 13 Z" fill="#E89B6C"/><circle cx="23" cy="9" r="2.5" fill="#E89B6C"/></svg></span>Calling Matrix</a>
-    <nav class="nav-links"><a href="#features">Features</a><a href="#faq">FAQ</a><a href="/#pricing">Pricing</a><a href="/blog">Blog</a></nav>
-    <a href="#" class="nav-cta" onclick="Calendly.initPopupWidget({url:'https://calendly.com/callingmatrix/30min'});return false;">Book a demo</a>
+    <nav class="nav-links"><a href="#features" data-i18n="ind.nav.features">Features</a><a href="#faq" data-i18n="ind.nav.faq">FAQ</a><a href="/#pricing" data-i18n="ind.nav.pricing">Pricing</a><a href="/blog" data-i18n="ind.nav.blog">Blog</a></nav>
+    <div class="lang-switch"><button class="lang-btn" data-lang="en">EN</button><span class="lang-sep">/</span><button class="lang-btn" data-lang="es">ES</button></div>
+    <a href="#" class="nav-cta" data-i18n="ind.nav.cta" onclick="Calendly.initPopupWidget({url:'https://calendly.com/callingmatrix/30min'});return false;">Book a demo</a>
   </div>
 </nav>
 
 <header class="hero">
   <div class="hero-bg"></div><div class="hero-grid"></div>
   <div class="wrap">
-    <span class="eyebrow reveal in"><span class="dot"></span>Built for roofing contractors</span>
-    <h1 class="hero-title reveal in d1">Storm season hits.<br>Every call is a <span class="italic accent">$12,000 job.</span></h1>
-    <p class="hero-sub reveal in d2">One hailstorm can generate more calls than your team can answer in a week. Calling Matrix handles <strong>every inquiry</strong>, qualifies the damage, schedules the estimate, and follows up until they book.</p>
+    <span class="eyebrow reveal in"><span class="dot"></span><span data-i18n="roofing.eyebrow">Built for roofing contractors</span></span>
+    <h1 class="hero-title reveal in d1" data-i18n="roofing.h1">Storm season hits.<br>Every call is a <span class="italic accent">$12,000 job.</span></h1>
+    <p class="hero-sub reveal in d2" data-i18n="roofing.sub">One hailstorm can generate more calls than your team can answer in a week. Calling Matrix handles <strong>every inquiry</strong>, qualifies the damage, schedules the estimate, and follows up until they book.</p>
     <div class="cta-row reveal in d3">
-      <a href="#" class="btn btn-primary" onclick="Calendly.initPopupWidget({url:'https://calendly.com/callingmatrix/30min'});return false;">Book a free 15-min demo <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      <a href="#features" class="btn btn-ghost">See how it works →</a>
+      <a href="#" class="btn btn-primary" onclick="Calendly.initPopupWidget({url:'https://calendly.com/callingmatrix/30min'});return false;"><span data-i18n="roofing.cta1">Book a free 15-min demo</span> <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="#features" class="btn btn-ghost" data-i18n="roofing.cta2">See how it works →</a>
     </div>
     <div class="hero-stats reveal in d3">
-      <div><div class="s-num">$9–15k</div><div class="s-lbl">Average residential roofing job</div></div>
-      <div><div class="s-num">300+</div><div class="s-lbl">Calls in 48 hrs after a storm</div></div>
-      <div><div class="s-num">40%</div><div class="s-lbl">Leads go to first company that responds</div></div>
+      <div><div class="s-num">$9–15k</div><div class="s-lbl" data-i18n="roofing.stat1.lbl">Average residential roofing job</div></div>
+      <div><div class="s-num">300+</div><div class="s-lbl" data-i18n="roofing.stat2.lbl">Calls in 48 hrs after a storm</div></div>
+      <div><div class="s-num">40%</div><div class="s-lbl" data-i18n="roofing.stat3.lbl">Leads go to first company that responds</div></div>
     </div>
   </div>
 </header>
 
 <section class="pain">
   <div class="wrap">
-    <div class="sec-head reveal in"><div class="sec-label">The problem</div><h2 class="sec-title">The storm passes. The calls<br><span class="italic">keep coming.</span></h2></div>
+    <div class="sec-head reveal in"><div class="sec-label" data-i18n="roofing.pain.label">The problem</div><h2 class="sec-title" data-i18n="roofing.pain.title">The storm passes. The calls<br><span class="italic">keep coming.</span></h2></div>
     <div class="pain-grid">
-      <div class="pain-cell reveal in"><div class="big-num">10×</div><h3>Call volume spikes after storms</h3><p>When the hail stops, your phone doesn't stop. A single storm event can overwhelm even a fully staffed office in under an hour.</p></div>
-      <div class="pain-cell reveal in d1"><div class="big-num">$12k</div><h3>Average job value per missed storm call</h3><p>Roofing leads during a storm event are the most valuable calls you'll ever receive. Missing them is not an option.</p></div>
-      <div class="pain-cell reveal in d2"><div class="big-num">40%</div><h3>Leads book with the first company that responds</h3><p>Speed wins in roofing. The company that answers first — even at 11 PM after a storm — gets the job, every time.</p></div>
+      <div class="pain-cell reveal in"><div class="big-num">10×</div><h3 data-i18n="roofing.pain1.h3">Call volume spikes after storms</h3><p data-i18n="roofing.pain1.p">When the hail stops, your phone doesn't stop. A single storm event can overwhelm even a fully staffed office in under an hour.</p></div>
+      <div class="pain-cell reveal in d1"><div class="big-num">$12k</div><h3 data-i18n="roofing.pain2.h3">Average job value per missed storm call</h3><p data-i18n="roofing.pain2.p">Roofing leads during a storm event are the most valuable calls you'll ever receive. Missing them is not an option.</p></div>
+      <div class="pain-cell reveal in d2"><div class="big-num">40%</div><h3 data-i18n="roofing.pain3.h3">Leads book with the first company that responds</h3><p data-i18n="roofing.pain3.p">Speed wins in roofing. The company that answers first — even at 11 PM after a storm — gets the job, every time.</p></div>
     </div>
   </div>
 </section>
 
 <section class="features" id="features">
   <div class="wrap">
-    <div class="sec-head reveal in"><div class="sec-label">Features</div><h2 class="sec-title">Built for the way roofing<br><span class="italic">business actually flows.</span></h2><p class="sec-sub">Handles storm surges, captures insurance info, books estimates, and follows up with every lead that doesn't convert immediately.</p></div>
+    <div class="sec-head reveal in"><div class="sec-label" data-i18n="roofing.feat.label">Features</div><h2 class="sec-title" data-i18n="roofing.feat.title">Built for the way roofing<br><span class="italic">business actually flows.</span></h2><p class="sec-sub" data-i18n="roofing.feat.sub">Handles storm surges, captures insurance info, books estimates, and follows up with every lead that doesn't convert immediately.</p></div>
     <div class="feat-grid">
-      <div class="feat reveal in"><div class="feat-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2l8 8v8H2v-8l8-8z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></div><h3>Storm surge overflow handling</h3><p>Scales instantly from 10 to 500 concurrent callers. Every homeowner gets answered within 2 seconds — not sent to voicemail, not put on hold.</p></div>
-      <div class="feat reveal in d1"><div class="feat-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 5h14M3 10h14M3 15h9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div><h3>Damage assessment intake</h3><p>Asks the right questions — roof age, damage type, interior leaking — so your estimator shows up with full context and closes the job on the first visit.</p></div>
-      <div class="feat reveal in d2"><div class="feat-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="5" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M7 9h6M7 12h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div><h3>Insurance claim callouts</h3><p>Trained to identify insurance claim scenarios, explain the process, and collect carrier name, policy number, and claim details during the intake call.</p></div>
-      <div class="feat reveal in d3"><div class="feat-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l4 4 6-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Estimate follow-up sequences</h3><p>Automatically follows up with leads who didn't book after the first contact — at 24, 48, and 72 hours — increasing close rate from first-contact misses.</p></div>
+      <div class="feat reveal in"><div class="feat-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2l8 8v8H2v-8l8-8z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></div><h3 data-i18n="roofing.feat1.h3">Storm surge overflow handling</h3><p data-i18n="roofing.feat1.p">Scales instantly from 10 to 500 concurrent callers. Every homeowner gets answered within 2 seconds — not sent to voicemail, not put on hold.</p></div>
+      <div class="feat reveal in d1"><div class="feat-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 5h14M3 10h14M3 15h9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div><h3 data-i18n="roofing.feat2.h3">Damage assessment intake</h3><p data-i18n="roofing.feat2.p">Asks the right questions — roof age, damage type, interior leaking — so your estimator shows up with full context and closes the job on the first visit.</p></div>
+      <div class="feat reveal in d2"><div class="feat-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="5" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M7 9h6M7 12h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div><h3 data-i18n="roofing.feat3.h3">Insurance claim callouts</h3><p data-i18n="roofing.feat3.p">Trained to identify insurance claim scenarios, explain the process, and collect carrier name, policy number, and claim details during the intake call.</p></div>
+      <div class="feat reveal in d3"><div class="feat-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l4 4 6-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3 data-i18n="roofing.feat4.h3">Estimate follow-up sequences</h3><p data-i18n="roofing.feat4.p">Automatically follows up with leads who didn't book after the first contact — at 24, 48, and 72 hours — increasing close rate from first-contact misses.</p></div>
     </div>
   </div>
 </section>
 
 <section class="faq" id="faq">
   <div class="wrap">
-    <div class="sec-head reveal in"><div class="sec-label">FAQ</div><h2 class="sec-title">Questions roofing contractors<br><span class="italic">ask us every day.</span></h2></div>
+    <div class="sec-head reveal in"><div class="sec-label" data-i18n="roofing.faq.label">FAQ</div><h2 class="sec-title" data-i18n="roofing.faq.title">Questions roofing contractors<br><span class="italic">ask us every day.</span></h2></div>
     <div class="faq-list">
-      <div class="faq-item"><div class="faq-q">Can it really handle a storm surge of 300+ calls?<span class="faq-plus"></span></div><div class="faq-a">Yes. There's no capacity limit. Every call is answered within 2 seconds regardless of simultaneous volume — whether it's a quiet Tuesday or the night after a major hailstorm.</div></div>
-      <div class="faq-item"><div class="faq-q">Does it know about insurance claims?<span class="faq-plus"></span></div><div class="faq-a">It's trained to identify insurance claim scenarios and can collect carrier name, policy number, and claim details as part of the intake. It can also explain your company's claim-assist process to homeowners.</div></div>
-      <div class="faq-item"><div class="faq-q">Can it book estimate appointments?<span class="faq-plus"></span></div><div class="faq-a">Yes. It books estimates directly into your calendar with address, damage description, insurance status, and preferred time all captured upfront — so every estimate appointment is fully qualified.</div></div>
-      <div class="faq-item"><div class="faq-q">What if we get calls from outside our service area?<span class="faq-plus"></span></div><div class="faq-a">It screens by zip code and service area before confirming an estimate, so your team only goes out to qualified leads in your territory.</div></div>
-      <div class="faq-item"><div class="faq-q">Does it follow up with leads that don't book right away?<span class="faq-plus"></span></div><div class="faq-a">Yes. Automated follow-up sequences contact every lead that didn't convert, at intervals you set during onboarding — turning cold leads into booked estimates.</div></div>
+      <div class="faq-item"><div class="faq-q"><span data-i18n="roofing.faq1.q">Can it really handle a storm surge of 300+ calls?</span><span class="faq-plus"></span></div><div class="faq-a" data-i18n="roofing.faq1.a">Yes. There's no capacity limit. Every call is answered within 2 seconds regardless of simultaneous volume — whether it's a quiet Tuesday or the night after a major hailstorm.</div></div>
+      <div class="faq-item"><div class="faq-q"><span data-i18n="roofing.faq2.q">Does it know about insurance claims?</span><span class="faq-plus"></span></div><div class="faq-a" data-i18n="roofing.faq2.a">It's trained to identify insurance claim scenarios and can collect carrier name, policy number, and claim details as part of the intake. It can also explain your company's claim-assist process to homeowners.</div></div>
+      <div class="faq-item"><div class="faq-q"><span data-i18n="roofing.faq3.q">Can it book estimate appointments?</span><span class="faq-plus"></span></div><div class="faq-a" data-i18n="roofing.faq3.a">Yes. It books estimates directly into your calendar with address, damage description, insurance status, and preferred time all captured upfront — so every estimate appointment is fully qualified.</div></div>
+      <div class="faq-item"><div class="faq-q"><span data-i18n="roofing.faq4.q">What if we get calls from outside our service area?</span><span class="faq-plus"></span></div><div class="faq-a" data-i18n="roofing.faq4.a">It screens by zip code and service area before confirming an estimate, so your team only goes out to qualified leads in your territory.</div></div>
+      <div class="faq-item"><div class="faq-q"><span data-i18n="roofing.faq5.q">Does it follow up with leads that don't book right away?</span><span class="faq-plus"></span></div><div class="faq-a" data-i18n="roofing.faq5.a">Yes. Automated follow-up sequences contact every lead that didn't convert, at intervals you set during onboarding — turning cold leads into booked estimates.</div></div>
     </div>
   </div>
 </section>
 
 <section class="final"><div class="wrap inner">
-  <h2 class="reveal in">The next storm is coming.<br><span class="italic">Be ready.</span></h2>
-  <p class="reveal in d1">Roofing contractors using Calling Matrix capture every storm lead — even at 2 AM. Book a 15-minute demo to see it in action.</p>
-  <a href="#" class="btn btn-primary reveal in d2" onclick="Calendly.initPopupWidget({url:'https://calendly.com/callingmatrix/30min'});return false;">Book a free 15-min demo <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  <h2 class="reveal in" data-i18n="roofing.final.h2">The next storm is coming.<br><span class="italic">Be ready.</span></h2>
+  <p class="reveal in d1" data-i18n="roofing.final.p">Roofing contractors using Calling Matrix capture every storm lead — even at 2 AM. Book a 15-minute demo to see it in action.</p>
+  <a href="#" class="btn btn-primary reveal in d2" onclick="Calendly.initPopupWidget({url:'https://calendly.com/callingmatrix/30min'});return false;"><span data-i18n="roofing.final.cta">Book a free 15-min demo</span> <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 </div></section>
 
 <footer><div class="wrap">
   <div class="foot-inner">
-    <div class="foot-brand"><a href="/" class="logo" style="font-family:var(--serif);font-size:20px;display:flex;align-items:center;gap:8px;"><span class="logo-mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#0E0D0B"/><path d="M10 12 Q10 10 12 10 L14 10 L16.5 14.5 L14.5 16.5 Q16.5 19.5 19 21 L21 19 L25 21 L25 23 Q25 25 23 25 Q15 25 10 20 Q7 16.5 7 13 Z" fill="#E89B6C"/><circle cx="23" cy="9" r="2.5" fill="#E89B6C"/></svg></span>Calling Matrix</a><p>24/7 AI receptionist for home service businesses. Answer every call. Book every job.</p></div>
-    <div class="foot-col"><h6>Industries</h6><a href="/hvac">HVAC</a><a href="/plumbing">Plumbing</a><a href="/electrical">Electrical</a><a href="/roofing">Roofing</a><a href="/cleaning">Cleaning</a></div>
-    <div class="foot-col"><h6>Product</h6><a href="/#features">Features</a><a href="/#pricing">Pricing</a><a href="/#faq">FAQ</a><a href="/#how">How it works</a><a href="/blog">Blog</a></div>
+    <div class="foot-brand"><a href="/" class="logo" style="font-family:var(--serif);font-size:20px;display:flex;align-items:center;gap:8px;"><span class="logo-mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#0E0D0B"/><path d="M10 12 Q10 10 12 10 L14 10 L16.5 14.5 L14.5 16.5 Q16.5 19.5 19 21 L21 19 L25 21 L25 23 Q25 25 23 25 Q15 25 10 20 Q7 16.5 7 13 Z" fill="#E89B6C"/><circle cx="23" cy="9" r="2.5" fill="#E89B6C"/></svg></span>Calling Matrix</a><p data-i18n="ind.foot.tagline">24/7 AI receptionist for home service businesses. Answer every call. Book every job.</p></div>
+    <div class="foot-col"><h6 data-i18n="ind.foot.industries">Industries</h6><a href="/hvac">HVAC</a><a href="/plumbing">Plumbing</a><a href="/electrical">Electrical</a><a href="/roofing">Roofing</a><a href="/cleaning">Cleaning</a></div>
+    <div class="foot-col"><h6 data-i18n="ind.foot.product">Product</h6><a href="/#features" data-i18n="ind.foot.features">Features</a><a href="/#pricing" data-i18n="ind.foot.pricing">Pricing</a><a href="/#faq" data-i18n="ind.foot.faq">FAQ</a><a href="/#how" data-i18n="ind.foot.how">How it works</a><a href="/blog" data-i18n="ind.foot.blog">Blog</a></div>
   </div>
-  <div class="foot-bottom"><span>© 2026 Calling Matrix. All rights reserved.</span><span>callingmatrix.com</span></div>
+  <div class="foot-bottom"><span data-i18n="ind.foot.copy">© 2026 Calling Matrix. All rights reserved.</span><span>callingmatrix.com</span></div>
 </div></footer>
 <script>
 window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20)});
 const io=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.1});
 document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
 document.querySelectorAll('.faq-item').forEach(i=>i.addEventListener('click',()=>i.classList.toggle('open')));
+</script>
+
+<div class="lang-float-mob" id="langFloatMob">
+  <button class="lang-btn" data-lang="en">EN</button>
+  <span class="lang-sep">/</span>
+  <button class="lang-btn" data-lang="es">ES</button>
+</div>
+<script>
+(function(){
+  var stored=localStorage.getItem('cm-lang');
+  function applyTrans(t){
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      if(t[el.dataset.i18n]!==undefined)el.innerHTML=t[el.dataset.i18n];
+    });
+    var lang=localStorage.getItem('cm-lang')||'en';
+    document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.toggle('active',b.dataset.lang===lang);});
+  }
+  if(stored&&stored!=='en'){fetch('/locales/'+stored+'.json?v=2').then(function(r){return r.json();}).then(applyTrans);}
+  else{document.querySelectorAll('.lang-btn[data-lang="en"]').forEach(function(b){b.classList.add('active');});}
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.addEventListener('click',function(){
+      localStorage.setItem('cm-lang',b.dataset.lang);
+      if(b.dataset.lang==='en')location.reload();
+      else fetch('/locales/'+b.dataset.lang+'.json?v=2').then(function(r){return r.json();}).then(applyTrans);
+    });
+  });
+  var mob=document.getElementById('langFloatMob');
+  if(mob){var t2;function show2(){mob.classList.remove('peek');mob.classList.add('show');clearTimeout(t2);t2=setTimeout(function(){mob.classList.remove('show');mob.classList.add('peek');},5000);}show2();mob.addEventListener('click',show2);}
+})();
 </script>
 </body></html>

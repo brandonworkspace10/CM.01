@@ -675,6 +675,97 @@ h2.sec-title .italic { color: var(--accent); }
 .test-info .role { font-size: 12px; color: var(--fg-mute); font-family: var(--mono); letter-spacing: 0.1em; text-transform: uppercase; }
 .test-metric { font-family: var(--mono); font-size: 11px; color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase; padding-top: 16px; border-top: 1px solid var(--line); }
 
+/* ============ PROOF METRICS STRIP ============ */
+.proof-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 56px;
+}
+@media (max-width: 700px) { .proof-stats { grid-template-columns: repeat(2, 1fr); } }
+.ps-cell {
+  background: var(--bg-2);
+  padding: 28px 24px;
+  display: flex; flex-direction: column; gap: 6px;
+  transition: background .25s;
+}
+.ps-cell:hover { background: oklch(0.18 0.03 50); }
+.ps-num {
+  font-family: var(--serif);
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--accent);
+}
+.ps-lbl { font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--fg-mute); line-height: 1.4; }
+
+/* ============ CASE STUDY CARDS ============ */
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 48px;
+}
+@media (max-width: 980px) { .case-grid { grid-template-columns: 1fr; } }
+.case-card {
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform .3s, border-color .3s;
+}
+.case-card:hover { transform: translateY(-4px); border-color: oklch(0.74 0.17 55 / 0.4); }
+.case-head {
+  padding: 24px 28px 20px;
+  border-bottom: 1px solid var(--line);
+  display: flex; align-items: center; gap: 12px;
+}
+.case-av { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), oklch(0.5 0.1 30)); display: grid; place-items: center; font-family: var(--serif); color: #1a0e00; font-size: 16px; flex-shrink: 0; }
+.case-biz { font-size: 14px; font-weight: 600; }
+.case-industry { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
+.case-body { padding: 24px 28px; display: flex; flex-direction: column; gap: 16px; }
+.case-row { display: flex; gap: 12px; }
+.case-col { flex: 1; }
+.case-col-lbl { font-family: var(--mono); font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--fg-mute); margin-bottom: 4px; }
+.case-col-val { font-size: 13px; line-height: 1.5; color: var(--fg); }
+.case-col-val.good { color: oklch(0.72 0.18 145); font-weight: 500; }
+.case-result {
+  margin-top: 4px;
+  padding: 14px 16px;
+  background: oklch(0.74 0.17 55 / 0.08);
+  border: 1px solid oklch(0.74 0.17 55 / 0.22);
+  border-radius: 12px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+}
+
+/* ============ COHORT STRIP ============ */
+.cohort-strip {
+  margin-top: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 24px;
+  background: oklch(0.74 0.17 55 / 0.07);
+  border: 1px solid oklch(0.74 0.17 55 / 0.28);
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fg-mute);
+}
+.cohort-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); animation: pulse 2s ease-in-out infinite; flex-shrink: 0; }
+.cohort-strip strong { color: var(--fg); font-weight: 600; }
+@media (max-width: 600px) { .cohort-strip { border-radius: 16px; text-align: center; } }
+
 /* ============ COMPARISON ============ */
 .compare-scroll {
   overflow-x: auto;
@@ -1125,6 +1216,28 @@ footer {
       <div class="sec-label"><span class="mono">04 / Proof</span></div>
       <h2 class="sec-title">Shops that stopped missing calls — and <span class="italic">started booking them instead.</span></h2>
     </div>
+
+    <!-- Metrics strip -->
+    <div class="proof-stats reveal in">
+      <div class="ps-cell">
+        <div class="ps-num">2,400+</div>
+        <div class="ps-lbl">Calls handled<br>this month</div>
+      </div>
+      <div class="ps-cell">
+        <div class="ps-num">$340k</div>
+        <div class="ps-lbl">Revenue booked<br>for clients</div>
+      </div>
+      <div class="ps-cell">
+        <div class="ps-num">6</div>
+        <div class="ps-lbl">Cities across<br>3 states</div>
+      </div>
+      <div class="ps-cell">
+        <div class="ps-num">100%</div>
+        <div class="ps-lbl">Clients still active<br>at 90 days</div>
+      </div>
+    </div>
+
+    <!-- Testimonials -->
     <div class="tests-grid">
       <div class="test reveal in">
         <p class="quote">We were losing about 40 calls a week after hours. Calling Matrix booked 17 of them its first weekend. Paid for itself by Monday.</p>
@@ -1165,6 +1278,85 @@ footer {
           <div class="test-metric">37% more booked jobs in Q1</div>
         </div>
       </div>
+    </div>
+
+    <!-- Case study cards -->
+    <div class="case-grid">
+      <!-- Case 1: HVAC -->
+      <div class="case-card reveal in">
+        <div class="case-head">
+          <div class="case-av">R</div>
+          <div>
+            <div class="case-biz">Delgado HVAC</div>
+            <div class="case-industry">HVAC · Austin, TX</div>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="case-row">
+            <div class="case-col">
+              <div class="case-col-lbl">Before</div>
+              <div class="case-col-val">Voicemail after 6 PM. Lost ~40 calls/week. No weekend coverage.</div>
+            </div>
+            <div class="case-col">
+              <div class="case-col-lbl">After</div>
+              <div class="case-col-val good">100% answered 24/7. 17 jobs booked first weekend alone.</div>
+            </div>
+          </div>
+          <div class="case-result">↑ $48,000 recovered revenue in 90 days</div>
+        </div>
+      </div>
+      <!-- Case 2: Plumbing -->
+      <div class="case-card reveal d1 in">
+        <div class="case-head">
+          <div class="case-av">J</div>
+          <div>
+            <div class="case-biz">Pham Plumbing</div>
+            <div class="case-industry">Plumbing · Sacramento, CA</div>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="case-row">
+            <div class="case-col">
+              <div class="case-col-lbl">Before</div>
+              <div class="case-col-val">Owner's wife fielding calls at dinner. Missed emergencies overnight.</div>
+            </div>
+            <div class="case-col">
+              <div class="case-col-lbl">After</div>
+              <div class="case-col-val good">Zero missed calls in 90 days. Calendar consistently full.</div>
+            </div>
+          </div>
+          <div class="case-result">↑ 29% more booked jobs month-over-month</div>
+        </div>
+      </div>
+      <!-- Case 3: Electrical -->
+      <div class="case-card reveal d2 in">
+        <div class="case-head">
+          <div class="case-av">T</div>
+          <div>
+            <div class="case-biz">Bell Electric</div>
+            <div class="case-industry">Electrical · Charlotte, NC</div>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="case-row">
+            <div class="case-col">
+              <div class="case-col-lbl">Before</div>
+              <div class="case-col-val">Receptionist turnover 3x per year. Inconsistent call handling.</div>
+            </div>
+            <div class="case-col">
+              <div class="case-col-lbl">After</div>
+              <div class="case-col-val good">Consistent, professional intake every call. No more hiring stress.</div>
+            </div>
+          </div>
+          <div class="case-result">↑ 37% more booked jobs in Q1 2026</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Founding cohort badge -->
+    <div class="cohort-strip reveal in">
+      <div class="cohort-dot"></div>
+      <span>Currently onboarding <strong>Q2 2026 cohort</strong> · Founding pricing available for next <strong>8 spots</strong></span>
     </div>
   </div>
 </section>

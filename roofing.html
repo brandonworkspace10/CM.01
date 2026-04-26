@@ -228,7 +228,8 @@ document.querySelectorAll('.faq-item').forEach(i=>i.addEventListener('click',()=
     var lang=localStorage.getItem('cm-lang')||'en';
     document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.toggle('active',b.dataset.lang===lang);});
   }
-  var lang=stored||(navigator.language||navigator.userLanguage||'').toLowerCase().startsWith('es')?'es':'en';
+  var auto=(navigator.language||navigator.userLanguage||'').toLowerCase().startsWith('es')?'es':'en';
+  var lang=stored||auto;
   if(!stored)localStorage.setItem('cm-lang',lang);
   if(lang!=='en'){fetch('/locales/'+lang+'.json?v=2').then(function(r){return r.json();}).then(applyTrans);}
   else{document.querySelectorAll('.lang-btn[data-lang="en"]').forEach(function(b){b.classList.add('active');});}

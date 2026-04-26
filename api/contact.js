@@ -112,12 +112,25 @@ export default async function handler(req, res) {
       body: JSON.stringify({
         from: 'Calling Matrix <hello@callingmatrix.com>',
         to: [capped.email],
-        reply_to: 'hello@callingmatrix.com',
+        reply_to: 'callingmatrix@gmail.com',
         subject: `Got it, ${firstName} — we'll be in touch soon`,
         html: `
           <div style="font-family:sans-serif;max-width:560px;margin:0 auto;color:#1a1a1a;">
-            <div style="background:#0E0D0B;padding:32px 40px;border-radius:12px 12px 0 0;">
-              <p style="color:#C17B3F;font-size:12px;font-family:monospace;letter-spacing:2px;margin:0 0 10px;">CALLING MATRIX</p>
+            <div style="background:#0E0D0B;padding:32px 40px;border-radius:12px 12px 0 0;text-align:left;">
+              <table cellpadding="0" cellspacing="0" style="margin-bottom:20px;">
+                <tr>
+                  <td style="vertical-align:middle;padding-right:12px;">
+                    <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+                      <rect x="1" y="1" width="24" height="24" rx="6" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+                      <path d="M8 10 Q8 8 10 8 L12 8 L14 12 L12 14 Q14 17 16 18 L18 16 L22 18 L22 20 Q22 22 20 22 Q13 22 8 17 Q6 14 6 11 Z" fill="#C17B3F"/>
+                      <circle cx="20" cy="6" r="2" fill="#C17B3F"/>
+                    </svg>
+                  </td>
+                  <td style="vertical-align:middle;">
+                    <span style="color:#F6F2EB;font-size:17px;font-family:Georgia,serif;letter-spacing:-0.01em;">Calling Matrix</span>
+                  </td>
+                </tr>
+              </table>
               <h1 style="color:#F6F2EB;font-size:28px;font-weight:400;margin:0;line-height:1.2;">We got your message,<br>${firstName}.</h1>
             </div>
             <div style="padding:32px 40px;border:1px solid #e8e8e8;border-top:none;border-radius:0 0 12px 12px;">

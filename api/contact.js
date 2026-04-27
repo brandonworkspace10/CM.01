@@ -1,15 +1,23 @@
-// In-memory rate limit (best-effort; persists per warm instance)
-const submissions = new Map();
-const RATE_LIMIT = 5;
-const RATE_WINDOW = 60 * 60 * 1000; // 1 hour
+import { Redis } from '@upstash/redis';
 
-function checkRate(ip) {
-  const now = Date.now();
-  const recent = (submissions.get(ip) || []).filter(t => now - t < RATE_WINDOW);
-  if (recent.length >= RATE_LIMIT) return false;
-  recent.push(now);
-  submissions.set(ip, recent);
-  return true;
+const RATE_LIMIT = 5;
+const RATE_WINDOW_SEC = 60 * 60; // 1 hour
+
+// Returns false if the IP has exceeded RATE_LIMIT requests in the current window.
+// Falls back to allowing the request if Redis env vars are not configured.
+async function checkRate(ip) {
+  if (!process.env.UPSTASH_REDIS_REST_URL || !process.env.UPSTASH_REDIS_REST_TOKEN) {
+    console.warn('Upstash env vars missing — rate limiting disabled');
+    return true;
+  }
+  const redis = new Redis({
+    url: process.env.UPSTASH_REDIS_REST_URL,
+    token: process.env.UPSTASH_REDIS_REST_TOKEN,
+  });
+  const key = `rl:${ip}`;
+  const count = await redis.incr(key);
+  if (count === 1) await redis.expire(key, RATE_WINDOW_SEC);
+  return count <= RATE_LIMIT;
 }
 
 function esc(s) {
@@ -30,7 +38,7 @@ export default async function handler(req, res) {
   }
 
   const ip = (req.headers['x-forwarded-for'] || '').split(',')[0].trim() || 'unknown';
-  if (!checkRate(ip)) {
+  if (!await checkRate(ip)) {
     return res.status(429).json({ error: 'Too many submissions. Try again later.' });
   }
 

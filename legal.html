@@ -1,0 +1,460 @@
+<!DOCTYPE html><html lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>Privacy Policy &amp; Terms of Service | Calling Matrix</title>
+<meta name="description" content="Privacy Policy and Terms of Service for Calling Matrix.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://callingmatrix.com/legal">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
+
+<style>
+:root {
+  --bg: #0E0D0B;
+  --bg-2: #151310;
+  --bg-3: #1C1915;
+  --fg: #F6F2EB;
+  --fg-dim: #A6A097;
+  --fg-mute: #6E685F;
+  --line: #2A2620;
+  --accent: oklch(0.74 0.17 55);
+  --serif: 'Instrument Serif', 'Times New Roman', serif;
+  --sans: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--sans);
+  font-weight: 400;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ===== NAV ===== */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 18px 32px;
+  background: rgba(14,13,11,0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--line);
+}
+.nav-inner { max-width: 1240px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+.logo { display: flex; align-items: center; gap: 10px; font-family: var(--serif); font-size: 22px; letter-spacing: -0.01em; color: var(--fg); text-decoration: none; }
+.logo-mark { width: 26px; height: 26px; display: inline-block; }
+.logo-mark svg { width: 100%; height: 100%; }
+.nav-back { font-size: 13px; color: var(--fg-dim); display: flex; align-items: center; gap: 6px; transition: color .2s; }
+.nav-back:hover { color: var(--fg); text-decoration: none; }
+.skip-nav { position:absolute;top:-40px;left:0;background:var(--accent);color:#1a0e00;padding:8px 16px;font-size:13px;font-weight:600;z-index:999;border-radius:0 0 6px 0;transition:top .2s }
+.skip-nav:focus { top:0 }
+
+/* ===== PAGE ===== */
+.page {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 120px 32px 100px;
+}
+
+.page-header {
+  margin-bottom: 56px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--line);
+}
+.page-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-mute);
+  margin-bottom: 16px;
+}
+.page-title {
+  font-family: var(--serif);
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin-bottom: 20px;
+}
+.page-meta {
+  font-size: 14px;
+  color: var(--fg-mute);
+}
+
+/* ===== TOC ===== */
+.toc {
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 24px 28px;
+  margin-bottom: 56px;
+}
+.toc-title {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-mute);
+  margin-bottom: 16px;
+}
+.toc ol {
+  list-style: none;
+  counter-reset: toc;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.toc li { counter-increment: toc; }
+.toc a {
+  font-size: 14px;
+  color: var(--fg-dim);
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  transition: color .2s;
+  text-decoration: none;
+}
+.toc a:hover { color: var(--fg); }
+.toc a::before {
+  content: counter(toc, decimal-leading-zero);
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--fg-mute);
+  flex-shrink: 0;
+}
+
+/* ===== CONTENT ===== */
+.legal-section {
+  margin-bottom: 56px;
+  padding-bottom: 56px;
+  border-bottom: 1px solid var(--line);
+}
+.legal-section:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.section-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-mute);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-label::before {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background: var(--accent);
+}
+h2.section-title {
+  font-family: var(--serif);
+  font-size: clamp(26px, 3.5vw, 36px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 28px;
+}
+h3.sub-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--fg);
+  margin: 28px 0 10px;
+}
+p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--fg-dim);
+  margin-bottom: 16px;
+}
+p:last-child { margin-bottom: 0; }
+ul, ol {
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+li {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--fg-dim);
+  margin-bottom: 6px;
+}
+strong { color: var(--fg); font-weight: 500; }
+.highlight-box {
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 10px 10px 0;
+  padding: 16px 20px;
+  margin: 24px 0;
+}
+.highlight-box p { margin: 0; font-size: 14px; }
+
+/* ===== FOOTER ===== */
+footer {
+  padding: 40px 0;
+  border-top: 1px solid var(--line);
+  background: var(--bg);
+}
+.foot-bottom {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-mute);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.foot-bottom a { color: var(--fg-mute); text-decoration: none; }
+.foot-bottom a:hover { color: var(--fg); }
+</style>
+</head>
+<body>
+
+<a class="skip-nav" href="#main-content">Skip to content</a>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="/">
+      <span class="logo-mark">
+        <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="1" width="24" height="24" rx="6" stroke="currentColor" stroke-opacity="0.4"/>
+          <path d="M8 10 Q8 8 10 8 L12 8 L14 12 L12 14 Q14 17 16 18 L18 16 L22 18 L22 20 Q22 22 20 22 Q13 22 8 17 Q6 14 6 11 Z" fill="var(--accent)"/>
+          <circle cx="20" cy="6" r="2" fill="var(--accent)"/>
+        </svg>
+      </span>
+      Calling Matrix
+    </a>
+    <a href="/" class="nav-back">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Back to site
+    </a>
+  </div>
+</nav>
+
+<main id="main-content" class="page">
+
+  <div class="page-header">
+    <div class="page-label">Legal</div>
+    <h1 class="page-title">Privacy Policy &amp;<br>Terms of Service</h1>
+    <p class="page-meta">Effective date: April 27, 2026 &nbsp;·&nbsp; Calling Matrix, Inc. &nbsp;·&nbsp; New York, NY</p>
+  </div>
+
+  <div class="toc">
+    <div class="toc-title">Contents</div>
+    <ol>
+      <li><a href="#privacy">Privacy Policy</a></li>
+      <li><a href="#what-we-collect">Information we collect</a></li>
+      <li><a href="#how-we-use">How we use your information</a></li>
+      <li><a href="#third-parties">Third-party services</a></li>
+      <li><a href="#data-security">Data security</a></li>
+      <li><a href="#your-rights">Your rights</a></li>
+      <li><a href="#terms">Terms of Service</a></li>
+      <li><a href="#acceptable-use">Acceptable use</a></li>
+      <li><a href="#ip">Intellectual property</a></li>
+      <li><a href="#disclaimers">Disclaimers &amp; liability</a></li>
+      <li><a href="#governing-law">Governing law</a></li>
+      <li><a href="#contact-legal">Contact</a></li>
+    </ol>
+  </div>
+
+  <!-- ===== PRIVACY POLICY ===== -->
+  <div class="legal-section" id="privacy">
+    <div class="section-label">01 / Privacy</div>
+    <h2 class="section-title">Privacy Policy</h2>
+    <p>Calling Matrix, Inc. ("Calling Matrix," "we," "us," or "our") operates the website at callingmatrix.com. This Privacy Policy explains what personal information we collect, how we use it, and your rights regarding that information. By using our website or submitting our contact form, you agree to this policy.</p>
+    <div class="highlight-box">
+      <p><strong>Short version:</strong> We collect only what you give us through our contact form. We use it to respond to your inquiry. We don't sell it.</p>
+    </div>
+  </div>
+
+  <!-- ===== WHAT WE COLLECT ===== -->
+  <div class="legal-section" id="what-we-collect">
+    <div class="section-label">02 / Data collection</div>
+    <h2 class="section-title">Information we collect</h2>
+
+    <h3 class="sub-title">Information you provide directly</h3>
+    <p>When you submit our contact form, we collect:</p>
+    <ul>
+      <li>Full name</li>
+      <li>Business name</li>
+      <li>Email address</li>
+      <li>Phone number</li>
+      <li>Business type (e.g., HVAC, plumbing)</li>
+      <li>Estimated monthly call volume</li>
+      <li>Any message or notes you include</li>
+    </ul>
+    <p>This information is submitted voluntarily. You are not required to provide it to browse the site.</p>
+
+    <h3 class="sub-title">Information collected automatically</h3>
+    <p>When you visit our website, we and our third-party analytics providers automatically collect certain technical data, including your IP address, browser type, operating system, referring URL, pages visited, and time spent on pages. This data is used in aggregate and is not linked to your identity.</p>
+  </div>
+
+  <!-- ===== HOW WE USE ===== -->
+  <div class="legal-section" id="how-we-use">
+    <div class="section-label">03 / Data use</div>
+    <h2 class="section-title">How we use your information</h2>
+    <p>We use the information we collect to:</p>
+    <ul>
+      <li>Respond to your inquiry and schedule demos</li>
+      <li>Send you a confirmation email upon form submission</li>
+      <li>Follow up about Calling Matrix products and services</li>
+      <li>Understand how visitors use our website so we can improve it</li>
+      <li>Comply with legal obligations</li>
+    </ul>
+    <p>We do not sell, rent, or trade your personal information to third parties for their marketing purposes.</p>
+  </div>
+
+  <!-- ===== THIRD PARTIES ===== -->
+  <div class="legal-section" id="third-parties">
+    <div class="section-label">04 / Third parties</div>
+    <h2 class="section-title">Third-party services</h2>
+    <p>We use the following third-party services that may process your data on our behalf. Each operates under its own privacy policy.</p>
+
+    <h3 class="sub-title">Resend</h3>
+    <p>We use Resend to deliver transactional emails. When you submit our contact form, your name, email address, and form contents are transmitted to Resend's servers to send you a confirmation email and to deliver your inquiry to our team. Resend's privacy policy is available at <a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener">resend.com</a>.</p>
+
+    <h3 class="sub-title">Vercel Analytics</h3>
+    <p>Our website is hosted on Vercel, which provides anonymous, aggregated analytics about site usage. Vercel Analytics does not use cookies and does not collect personally identifiable information. Vercel's privacy policy is available at <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">vercel.com</a>.</p>
+
+    <h3 class="sub-title">Ahrefs</h3>
+    <p>We use Ahrefs web analytics to understand traffic sources and search performance. Ahrefs collects anonymous usage data including pages visited and referral sources. Ahrefs' privacy policy is available at <a href="https://ahrefs.com/privacy" target="_blank" rel="noopener">ahrefs.com</a>.</p>
+
+    <h3 class="sub-title">Calendly</h3>
+    <p>If you choose to book a demo through our Calendly link, Calendly collects scheduling information including your name, email address, and selected time slot. That data is governed by Calendly's privacy policy, available at <a href="https://calendly.com/legal/privacy-notice" target="_blank" rel="noopener">calendly.com</a>.</p>
+  </div>
+
+  <!-- ===== DATA SECURITY ===== -->
+  <div class="legal-section" id="data-security">
+    <div class="section-label">05 / Security</div>
+    <h2 class="section-title">Data security</h2>
+    <p>We implement reasonable administrative, technical, and physical safeguards to protect the personal information we collect, consistent with the requirements of the New York SHIELD Act. These measures include rate limiting on form submissions, transport encryption (HTTPS), and access controls limiting who can view submitted contact data.</p>
+    <p>No method of transmission over the internet is 100% secure. While we work to protect your information, we cannot guarantee absolute security.</p>
+
+    <h3 class="sub-title">Data retention</h3>
+    <p>We retain contact form submissions for as long as necessary to manage our business relationship with you or as required by law. If you request deletion of your information, we will remove it from our active records within 30 days, subject to any legal retention requirements.</p>
+
+    <h3 class="sub-title">Children's privacy</h3>
+    <p>Our website is not directed at children under 13. We do not knowingly collect personal information from children. If you believe a child has submitted information to us, contact us and we will delete it promptly.</p>
+  </div>
+
+  <!-- ===== YOUR RIGHTS ===== -->
+  <div class="legal-section" id="your-rights">
+    <div class="section-label">06 / Your rights</div>
+    <h2 class="section-title">Your rights</h2>
+    <p>Regardless of where you are located, you may request:</p>
+    <ul>
+      <li><strong>Access</strong> — a copy of the personal information we hold about you</li>
+      <li><strong>Correction</strong> — an update to inaccurate or incomplete information</li>
+      <li><strong>Deletion</strong> — removal of your personal information from our records</li>
+      <li><strong>Opt-out</strong> — to stop receiving follow-up emails from us at any time</li>
+    </ul>
+    <p>To exercise any of these rights, email us at <a href="mailto:callingmatrix@gmail.com">callingmatrix@gmail.com</a>. We will respond within 30 days.</p>
+
+    <h3 class="sub-title">Changes to this Privacy Policy</h3>
+    <p>We may update this Privacy Policy from time to time. When we do, we will update the effective date at the top of this page. Continued use of our website after changes are posted constitutes your acceptance of the revised policy.</p>
+  </div>
+
+  <!-- ===== TERMS OF SERVICE ===== -->
+  <div class="legal-section" id="terms">
+    <div class="section-label">07 / Terms</div>
+    <h2 class="section-title">Terms of Service</h2>
+    <p>These Terms of Service ("Terms") govern your access to and use of the Calling Matrix website at callingmatrix.com (the "Site"). By accessing the Site, you agree to these Terms. If you do not agree, do not use the Site.</p>
+    <p>These Terms apply to the marketing website only. Separate terms govern any paid Calling Matrix service agreements, which will be provided at the time of contracting.</p>
+  </div>
+
+  <!-- ===== ACCEPTABLE USE ===== -->
+  <div class="legal-section" id="acceptable-use">
+    <div class="section-label">08 / Acceptable use</div>
+    <h2 class="section-title">Acceptable use</h2>
+    <p>You agree not to:</p>
+    <ul>
+      <li>Use the Site for any unlawful purpose or in violation of any applicable law</li>
+      <li>Submit false, misleading, or fraudulent information through any form on the Site</li>
+      <li>Attempt to gain unauthorized access to any part of the Site or its infrastructure</li>
+      <li>Use automated tools to scrape, crawl, or extract content from the Site without our written permission</li>
+      <li>Transmit spam, malware, or any harmful code through the Site</li>
+      <li>Interfere with or disrupt the integrity or performance of the Site</li>
+    </ul>
+    <p>We reserve the right to block access to the Site for any visitor who violates these Terms.</p>
+  </div>
+
+  <!-- ===== IP ===== -->
+  <div class="legal-section" id="ip">
+    <div class="section-label">09 / Intellectual property</div>
+    <h2 class="section-title">Intellectual property</h2>
+    <p>All content on this Site — including text, design, graphics, logos, and code — is owned by or licensed to Calling Matrix, Inc. and is protected by applicable copyright, trademark, and other intellectual property laws.</p>
+    <p>You may not reproduce, distribute, modify, or create derivative works from any content on this Site without our prior written consent. Linking to callingmatrix.com is permitted provided the link does not imply any endorsement or affiliation beyond what is stated on the Site.</p>
+  </div>
+
+  <!-- ===== DISCLAIMERS ===== -->
+  <div class="legal-section" id="disclaimers">
+    <div class="section-label">10 / Disclaimers</div>
+    <h2 class="section-title">Disclaimers &amp; limitation of liability</h2>
+
+    <h3 class="sub-title">No warranties</h3>
+    <p>The Site is provided on an "as is" and "as available" basis without warranties of any kind, either express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, or non-infringement. We do not warrant that the Site will be uninterrupted, error-free, or free of viruses or other harmful components.</p>
+
+    <h3 class="sub-title">Limitation of liability</h3>
+    <p>To the maximum extent permitted by applicable law, Calling Matrix, Inc. and its officers, directors, employees, and agents will not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or related to your use of, or inability to use, the Site — even if we have been advised of the possibility of such damages.</p>
+    <p>Our total liability to you for any claim arising out of these Terms or your use of the Site shall not exceed one hundred dollars ($100).</p>
+
+    <h3 class="sub-title">Third-party links</h3>
+    <p>The Site may contain links to third-party websites. We are not responsible for the content, privacy practices, or terms of those sites. Visiting them is at your own risk.</p>
+  </div>
+
+  <!-- ===== GOVERNING LAW ===== -->
+  <div class="legal-section" id="governing-law">
+    <div class="section-label">11 / Governing law</div>
+    <h2 class="section-title">Governing law</h2>
+    <p>These Terms and any dispute arising out of or related to them or the Site will be governed by the laws of the State of New York, without regard to its conflict of law provisions. You consent to the exclusive jurisdiction of the state and federal courts located in New York County, New York for the resolution of any such dispute.</p>
+
+    <h3 class="sub-title">Changes to these Terms</h3>
+    <p>We reserve the right to modify these Terms at any time. Changes take effect when posted to this page with an updated effective date. Your continued use of the Site after changes are posted constitutes your acceptance of the revised Terms.</p>
+  </div>
+
+  <!-- ===== CONTACT ===== -->
+  <div class="legal-section" id="contact-legal">
+    <div class="section-label">12 / Contact</div>
+    <h2 class="section-title">Contact us</h2>
+    <p>For questions about this Privacy Policy or these Terms, or to exercise your data rights, contact us at:</p>
+    <div class="highlight-box">
+      <p><strong>Calling Matrix, Inc.</strong><br>
+      New York, NY<br>
+      <a href="mailto:callingmatrix@gmail.com">callingmatrix@gmail.com</a></p>
+    </div>
+    <p>We will respond to all privacy-related requests within 30 days.</p>
+  </div>
+
+</main>
+
+<footer>
+  <div class="foot-bottom">
+    <div>© 2026 Calling Matrix, Inc.</div>
+    <div><a href="/">Home</a> &nbsp;·&nbsp; <a href="/legal">Privacy &amp; Terms</a></div>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+if (nav) window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 8); });
+</script>
+</body></html>

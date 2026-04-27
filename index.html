@@ -348,6 +348,12 @@ h1.hero-title .swap::after {
   box-shadow: 0 40px 80px -30px rgba(0,0,0,0.6), 0 0 0 1px oklch(0.74 0.17 55 / 0.05) inset;
   overflow: hidden;
 }
+@keyframes cardPulse {
+  0%   { box-shadow: 0 40px 80px -30px rgba(0,0,0,0.6), 0 0 0 0   oklch(0.74 0.17 55 / 0.8); }
+  60%  { box-shadow: 0 40px 80px -30px rgba(0,0,0,0.6), 0 0 0 10px oklch(0.74 0.17 55 / 0.3); }
+  100% { box-shadow: 0 40px 80px -30px rgba(0,0,0,0.6), 0 0 0 18px oklch(0.74 0.17 55 / 0);   }
+}
+.call-card.pulsing { animation: cardPulse 1s ease-out; }
 .call-card::before {
   content: '';
   position: absolute; inset: -1px;
@@ -953,7 +959,7 @@ footer {
           <span data-i18n="hero.cta1">Book a free 15-min demo</span>
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
         </a>
-        <a href="#how" class="btn btn-ghost" data-i18n="hero.cta2">Hear a call →</a>
+        <a href="#" class="btn btn-ghost" onclick="event.preventDefault(); hearCall();" data-i18n="hero.cta2">Hear a call →</a>
       </div>
       <div class="hero-proof reveal d4 in">
         <div>
@@ -977,7 +983,7 @@ footer {
         <div class="call-caller">
           <div class="caller-av">M</div>
           <div>
-            <div class="caller-name">Maria Gonzales</div>
+            <div class="caller-name">Mike Torres</div>
             <div class="caller-num">+1 (512) 555-0143 · Incoming</div>
           </div>
         </div>
@@ -988,7 +994,7 @@ footer {
       <div class="booking-chip" id="bookingChip">
         <div class="check">✓</div>
         <div>
-          <div>AC tune-up booked · Thursday, 2:00 PM</div>
+          <div>Emergency plumbing booked · Tonight, within 1 hour</div>
           <div class="meta">Synced to Housecall Pro · Confirmation texted</div>
         </div>
       </div>
@@ -1695,22 +1701,27 @@ const transcript = document.getElementById('transcript');
 const bookingChip = document.getElementById('bookingChip');
 const scripts = {
   en: [
-    { who: 'customer', text: "Hi, my AC stopped cooling last night — any chance someone can come out this week?" },
-    { who: 'ai', text: "Sorry to hear that. I can get a technician out as early as Thursday at 2 PM. Does that work for you?" },
-    { who: 'customer', text: "Thursday's perfect. What's the service fee?" },
-    { who: 'ai', text: "Our diagnostic is $89, waived if you book the repair. I'll send a confirmation text now. Address is 2412 Elmwood?" },
-    { who: 'customer', text: "That's right. Thank you!" },
+    { who: 'customer', text: "Hi — I have a pipe that just burst in my basement. Water is everywhere. I need someone tonight if at all possible." },
+    { who: 'ai',       text: "I'm so sorry — let's get someone to you right away. Can I get your address?", audio: '/audio/ai-1.mp3' },
+    { who: 'customer', text: "847 Maple Drive." },
+    { who: 'ai',       text: "Got it. I have an emergency tech available and he can be there within the hour. I'm booking that now and sending you a confirmation text. Is this the best number to reach you?", audio: '/audio/ai-2.mp3' },
+    { who: 'customer', text: "Yes — thank you so much." },
+    { who: 'ai',       text: "You're all set. He'll call when he's 10 minutes out. Thank you for calling. Stay safe.", audio: '/audio/ai-3.mp3' },
   ],
   es: [
-    { who: 'customer', text: "Hola, mi AC dejó de enfriar anoche — ¿pueden venir esta semana?" },
-    { who: 'ai', text: "Entiendo. Puedo enviar un técnico el jueves a las 2 PM. ¿Le viene bien?" },
-    { who: 'customer', text: "Perfecto. ¿Cuánto cuesta el diagnóstico?" },
-    { who: 'ai', text: "El diagnóstico es $89, sin cargo si reserva la reparación. Le mando confirmación por texto. ¿Dirección 2412 Elmwood?" },
-    { who: 'customer', text: "Sí, exacto. ¡Muchas gracias!" },
+    { who: 'customer', text: "Hola — se acaba de romper una tubería en mi sótano. Hay agua por todas partes. Necesito a alguien esta noche si es posible." },
+    { who: 'ai',       text: "Lo siento mucho — vamos a enviarle ayuda de inmediato. ¿Me puede dar su dirección?" },
+    { who: 'customer', text: "847 Maple Drive." },
+    { who: 'ai',       text: "Entendido. Tengo un técnico de emergencias disponible que puede estar allí en menos de una hora. Lo estoy reservando ahora y le envío un mensaje de confirmación. ¿Es este el mejor número para contactarle?" },
+    { who: 'customer', text: "Sí — muchas gracias." },
+    { who: 'ai',       text: "Todo listo. Le llamará cuando esté a 10 minutos. Gracias por llamar. Cuídese." },
   ],
 };
 let currentScript = scripts.en;
 let transcriptGen = 0;
+let audioMode = false;
+let currentAudio = null;
+
 function appendMessage(m) {
   const wrap = document.createElement('div');
   wrap.className = 'msg ' + m.who;
@@ -1735,7 +1746,9 @@ function removeTyping() {
   const t = document.getElementById('typingMsg');
   if (t) t.remove();
 }
-function runTranscript() {
+function runTranscript(withAudio) {
+  if (currentAudio) { currentAudio.pause(); currentAudio = null; }
+  audioMode = !!withAudio;
   transcriptGen++;
   transcript.innerHTML = '';
   bookingChip.classList.remove('show');
@@ -1745,19 +1758,37 @@ function stepTranscript(gen, idx) {
   if (gen !== transcriptGen) return;
   if (idx >= currentScript.length) {
     setTimeout(() => { if (gen === transcriptGen) bookingChip.classList.add('show'); }, 600);
-    setTimeout(() => { if (gen === transcriptGen) runTranscript(); }, 4000);
+    setTimeout(() => { if (gen === transcriptGen) runTranscript(false); }, 4000);
     return;
   }
   const m = currentScript[idx];
   showTyping(m.who);
+  const thinkMs = 700 + Math.random() * 500;
   setTimeout(() => {
     if (gen !== transcriptGen) return;
     removeTyping();
     appendMessage(m);
-    setTimeout(() => stepTranscript(gen, idx + 1), 1200 + m.text.length * 20);
-  }, 700 + Math.random() * 500);
+    if (audioMode && m.audio) {
+      const a = new Audio(m.audio);
+      currentAudio = a;
+      a.play().catch(() => {});
+      a.onended = () => { if (gen === transcriptGen) stepTranscript(gen, idx + 1); };
+      a.onerror = () => { if (gen === transcriptGen) stepTranscript(gen, idx + 1); };
+    } else {
+      setTimeout(() => stepTranscript(gen, idx + 1), 1200 + m.text.length * 20);
+    }
+  }, thinkMs);
 }
-runTranscript();
+runTranscript(false);
+
+function hearCall() {
+  const card = document.getElementById('callCard');
+  card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  card.classList.remove('pulsing');
+  void card.offsetWidth;
+  card.classList.add('pulsing');
+  runTranscript(true);
+}
 
 /* ======= Calendar fill animation ======= */
 const vc = document.getElementById('vizCal');

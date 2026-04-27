@@ -380,7 +380,7 @@ h1.hero-title .swap::after {
 }
 .call-status .live-dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; animation: pulse 1.5s infinite; }
 
-.waveform { display: flex; align-items: center; justify-content: center; gap: 3px; height: 40px; margin-bottom: 18px; }
+.waveform { display: flex; align-items: center; gap: 3px; height: 40px; margin-bottom: 18px; overflow: hidden; }
 .waveform .bar {
   flex: 0 0 3px; background: var(--accent); border-radius: 2px;
   opacity: 0.7;
@@ -1682,7 +1682,7 @@ document.querySelectorAll('[data-count]').forEach(el => countIO.observe(el));
 
 /* ======= Waveform bars ======= */
 const wf = document.getElementById('waveform');
-for (let i = 0; i < 48; i++) {
+for (let i = 0; i < 150; i++) {
   const b = document.createElement('div');
   b.className = 'bar';
   b.style.animationDelay = `${(i * 0.06).toFixed(2)}s`;

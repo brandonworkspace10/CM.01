@@ -1516,6 +1516,10 @@ footer {
       <div style="margin-top: 18px; color: var(--fg-mute); font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;">
         No card · 30-day money back · Live in 48 hours
       </div>
+      <div style="margin-top: 28px; padding-top: 28px; border-top: 1px solid var(--line);">
+        <span style="color: var(--fg-mute); font-size: 14px;">Not ready for a call? &nbsp;</span>
+        <a href="#" onclick="event.preventDefault(); openContact();" style="color: var(--fg-dim); font-size: 14px; text-decoration: underline; text-underline-offset: 3px; transition: color .2s;" onmouseover="this.style.color='var(--fg)'" onmouseout="this.style.color='var(--fg-dim)'">Send us a message and we'll call you back →</a>
+      </div>
     </div>
   </div>
 </section>
@@ -1567,9 +1571,9 @@ footer {
 <div id="contactModal" style="display:none; position:fixed; inset:0; z-index:500; background:rgba(14,13,11,0.85); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); align-items:center; justify-content:center; padding:20px;">
   <div id="contactBox" style="background:var(--bg-2); border:1px solid var(--line); border-radius:24px; padding:48px 40px; max-width:520px; width:100%; position:relative; box-shadow:0 40px 80px rgba(0,0,0,0.6); transform:translateY(24px); opacity:0; transition:transform .4s cubic-bezier(.2,.7,.2,1), opacity .4s ease;">
     <button onclick="closeContact()" style="position:absolute;top:20px;right:20px;width:32px;height:32px;border-radius:50%;background:var(--bg-3);border:1px solid var(--line);color:var(--fg-dim);font-size:18px;display:grid;place-items:center;cursor:pointer;line-height:1;">×</button>
-    <div style="font-family:var(--mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--fg-mute);margin-bottom:12px;">Get in touch</div>
-    <h3 style="font-family:var(--serif);font-size:32px;font-weight:400;letter-spacing:-0.02em;margin-bottom:8px;">Let's talk about your business.</h3>
-    <p style="color:var(--fg-dim);font-size:14px;line-height:1.55;margin-bottom:32px;">Fill out the form and we'll get back to you within one business day.</p>
+    <div style="font-family:var(--mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--fg-mute);margin-bottom:12px;">Have a question?</div>
+    <h3 style="font-family:var(--serif);font-size:32px;font-weight:400;letter-spacing:-0.02em;margin-bottom:8px;">We'll call you back.</h3>
+    <p style="color:var(--fg-dim);font-size:14px;line-height:1.55;margin-bottom:32px;">Not ready to jump on a call yet? Leave your info and we'll reach out within one business day — no pressure.</p>
 
     <form id="contactForm" style="display:flex;flex-direction:column;gap:16px;">
       <!-- Honeypot: hidden from users, bots fill it in -->
@@ -1625,7 +1629,7 @@ footer {
         <textarea name="message" rows="3" placeholder="Tell us what you're dealing with — missed calls, after-hours gaps, anything." style="width:100%;background:var(--bg-3);border:1px solid var(--line);border-radius:10px;padding:12px 14px;color:var(--fg);font-family:var(--sans);font-size:14px;outline:none;resize:vertical;transition:border-color .2s;" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--line)'"></textarea>
       </div>
       <button type="submit" id="contactSubmit" style="background:var(--accent);color:#1a0e00;border:0;border-radius:999px;padding:16px 26px;font-size:15px;font-weight:500;font-family:var(--sans);cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 10px 30px -10px oklch(0.74 0.17 55 / 0.6);">
-        Send message →
+        Request a callback →
       </button>
       <div id="contactStatus" style="text-align:center;font-family:var(--mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--fg-mute);display:none;"></div>
     </form>

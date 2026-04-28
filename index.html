@@ -1771,9 +1771,11 @@ function stepTranscript(gen, idx) {
     if (audioMode && m.audio) {
       const a = new Audio(m.audio);
       currentAudio = a;
-      a.play().catch(() => {});
       a.onended = () => { if (gen === transcriptGen) stepTranscript(gen, idx + 1); };
-      a.onerror = () => { if (gen === transcriptGen) stepTranscript(gen, idx + 1); };
+      a.onerror = () => { if (gen === transcriptGen) setTimeout(() => stepTranscript(gen, idx + 1), 800); };
+      a.play().catch(() => {
+        if (gen === transcriptGen) setTimeout(() => stepTranscript(gen, idx + 1), 1200 + m.text.length * 20);
+      });
     } else {
       setTimeout(() => stepTranscript(gen, idx + 1), 1200 + m.text.length * 20);
     }
@@ -1782,6 +1784,12 @@ function stepTranscript(gen, idx) {
 runTranscript(false);
 
 function hearCall() {
+  // Unlock browser audio within the user gesture before any setTimeout fires
+  try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    ctx.resume().then(() => ctx.close()).catch(() => {});
+  } catch(e) {}
+
   const card = document.getElementById('callCard');
   card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   card.classList.remove('pulsing');

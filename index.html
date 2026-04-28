@@ -1787,14 +1787,16 @@ function stepTranscript(gen, idx) {
 runTranscript(false);
 
 function hearCall() {
-  // Pre-create and silently unlock each clip within the user gesture.
-  // play() at volume 0 then immediately pause registers them as
-  // user-gesture-approved so they can fire freely inside setTimeout later.
+  // Unlock the document for programmatic audio within this user gesture.
+  // muted=true is guaranteed silent on all browsers (unlike volume=0).
+  // One unlock play activates the document; separate objects are used for playback.
+  const unlock = new Audio('/audio/ai-1.mp3');
+  unlock.muted = true;
+  unlock.play().catch(() => {});
+
+  // Fresh playback objects — never pre-played, so no bleed-through
   ['/audio/ai-1.mp3', '/audio/ai-2.mp3', '/audio/ai-3.mp3'].forEach(src => {
-    const a = new Audio(src);
-    a.volume = 0;
-    a.play().then(() => { a.pause(); a.currentTime = 0; a.volume = 1; }).catch(() => {});
-    unlockedAudio[src] = a;
+    unlockedAudio[src] = new Audio(src);
   });
 
   const card = document.getElementById('callCard');

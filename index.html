@@ -1721,6 +1721,7 @@ let currentScript = scripts.en;
 let transcriptGen = 0;
 let audioMode = false;
 let currentAudio = null;
+let unlockedAudio = {};
 
 function appendMessage(m) {
   const wrap = document.createElement('div');
@@ -1769,7 +1770,9 @@ function stepTranscript(gen, idx) {
     removeTyping();
     appendMessage(m);
     if (audioMode && m.audio) {
-      const a = new Audio(m.audio);
+      const a = unlockedAudio[m.audio] || new Audio(m.audio);
+      a.currentTime = 0;
+      a.volume = 1;
       currentAudio = a;
       a.onended = () => { if (gen === transcriptGen) stepTranscript(gen, idx + 1); };
       a.onerror = () => { if (gen === transcriptGen) setTimeout(() => stepTranscript(gen, idx + 1), 800); };
@@ -1784,11 +1787,15 @@ function stepTranscript(gen, idx) {
 runTranscript(false);
 
 function hearCall() {
-  // Unlock browser audio within the user gesture before any setTimeout fires
-  try {
-    const ctx = new (window.AudioContext || window.webkitAudioContext)();
-    ctx.resume().then(() => ctx.close()).catch(() => {});
-  } catch(e) {}
+  // Pre-create and silently unlock each clip within the user gesture.
+  // play() at volume 0 then immediately pause registers them as
+  // user-gesture-approved so they can fire freely inside setTimeout later.
+  ['/audio/ai-1.mp3', '/audio/ai-2.mp3', '/audio/ai-3.mp3'].forEach(src => {
+    const a = new Audio(src);
+    a.volume = 0;
+    a.play().then(() => { a.pause(); a.currentTime = 0; a.volume = 1; }).catch(() => {});
+    unlockedAudio[src] = a;
+  });
 
   const card = document.getElementById('callCard');
   card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });

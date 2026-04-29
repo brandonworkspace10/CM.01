@@ -4,11 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Commands
 
-```bash
-npm run build        # Bundle analytics.js → public/analytics.bundle.js (esbuild)
-```
-
-No linting or test commands. Deployment is via Vercel on push to main.
+No build step required. Deployment is via Vercel on push to main.
 
 ## Architecture
 
@@ -25,7 +21,7 @@ Static marketing site for an AI receptionist SaaS (Calling Matrix). No framework
 
 **Styling** — Each HTML file has a `<style>` block at the top defining CSS custom properties (`:root { --accent: oklch(...) }`). Industry pages vary their accent color this way.
 
-**Analytics** — `analytics.js` wraps `@vercel/analytics` and is bundled to `public/analytics.bundle.js`. Ahrefs tracking script is also embedded inline.
+**Analytics** — Vercel Analytics via `<script defer src="/_vercel/insights/script.js">` (served by Vercel's edge, no build step). Ahrefs tracking script also embedded inline. Both scripts are present in every page `<head>`.
 
 ## Environment Variables
 
@@ -40,6 +36,6 @@ Emails are sent to `callingmatrix@gmail.com`. Confirmation emails go to the lead
 - **New industry page**: Copy an existing industry page (e.g. `hvac.html`), update copy and accent color, add i18n keys to both `locales/*.json`.
 - **Adding i18n strings**: Add matching keys to `locales/en.json` and `locales/es.json`, then use `data-i18n="key"` in HTML.
 - **Blog posts**: Add a new `.html` file in `blog/`, link from `blog/index.html`.
-- **Audio files**: Live in `/audio/` (not `/public/`, which is build output). Hero call demo uses `/audio/ai-1.mp3`, `/audio/ai-2.mp3`, `/audio/ai-3.mp3`.
+- **Audio files**: Live in `/audio/`. Hero call demo uses `/audio/ai-1.mp3`, `/audio/ai-2.mp3`, `/audio/ai-3.mp3`.
 - **Contact form**: Rate-limited (5/hour per IP, in-memory), honeypot field (`name="website"`), HTML-escaped before sending.
 - **Structured data**: Schema.org JSON-LD embedded in `<script type="application/ld+json">` in each page `<head>`.

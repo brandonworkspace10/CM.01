@@ -101,7 +101,7 @@
 </script>
 
 
-<script type="module" src="/public/analytics.bundle.js"></script>
+<script defer src="/_vercel/insights/script.js"></script>
 <script src="https://analytics.ahrefs.com/analytics.js" data-key="94z1bOhN7RVx3o2W/eEUbQ" async></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -1701,11 +1701,11 @@ const transcript = document.getElementById('transcript');
 const bookingChip = document.getElementById('bookingChip');
 const scripts = {
   en: [
-    { who: 'customer', text: "Hi — I have a pipe that just burst in my basement. Water is everywhere. I need someone tonight if at all possible." },
+    { who: 'customer', text: "Hi, how's it going. I have a pipe that just burst in my basement, I have water everywhere — is there any way you can send someone out tonight?" },
     { who: 'ai',       text: "I'm so sorry — let's get someone to you right away. Can I get your address?", audio: '/audio/ai-1.mp3' },
-    { who: 'customer', text: "847 Maple Drive." },
+    { who: 'customer', text: "The address is 847 Maple Drive." },
     { who: 'ai',       text: "Got it. I have an emergency tech available and he can be there within the hour. I'm booking that now and sending you a confirmation text. Is this the best number to reach you?", audio: '/audio/ai-2.mp3' },
-    { who: 'customer', text: "Yes — thank you so much." },
+    { who: 'customer', text: "Yes, this is the best number to reach me. Thank you so much." },
     { who: 'ai',       text: "You're all set. He'll call when he's 10 minutes out. Thank you for calling. Stay safe.", audio: '/audio/ai-3.mp3' },
   ],
   es: [
@@ -1763,8 +1763,8 @@ function stepTranscript(gen, idx) {
     return;
   }
   const m = currentScript[idx];
+  const thinkMs = m.who === 'ai' ? 600 + Math.random() * 400 : 300 + Math.random() * 300;
   showTyping(m.who);
-  const thinkMs = 700 + Math.random() * 500;
   setTimeout(() => {
     if (gen !== transcriptGen) return;
     removeTyping();
@@ -1777,10 +1777,10 @@ function stepTranscript(gen, idx) {
       a.onended = () => { if (gen === transcriptGen) stepTranscript(gen, idx + 1); };
       a.onerror = () => { if (gen === transcriptGen) setTimeout(() => stepTranscript(gen, idx + 1), 800); };
       a.play().catch(() => {
-        if (gen === transcriptGen) setTimeout(() => stepTranscript(gen, idx + 1), 1200 + m.text.length * 20);
+        if (gen === transcriptGen) setTimeout(() => stepTranscript(gen, idx + 1), 600 + m.text.length * 10);
       });
     } else {
-      setTimeout(() => stepTranscript(gen, idx + 1), 1200 + m.text.length * 20);
+      setTimeout(() => stepTranscript(gen, idx + 1), 600 + m.text.length * 10);
     }
   }, thinkMs);
 }
@@ -1796,7 +1796,9 @@ function hearCall() {
 
   // Fresh playback objects — never pre-played, so no bleed-through
   ['/audio/ai-1.mp3', '/audio/ai-2.mp3', '/audio/ai-3.mp3'].forEach(src => {
-    unlockedAudio[src] = new Audio(src);
+    const a = new Audio(src);
+    a.preload = 'auto';
+    unlockedAudio[src] = a;
   });
 
   const card = document.getElementById('callCard');

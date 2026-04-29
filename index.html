@@ -1774,7 +1774,7 @@ function showChip(gen) {
   if (gen !== transcriptGen) return;
   if (!bookingChip.classList.contains('show')) {
     bookingChip.classList.add('show');
-    playPing();
+    if (audioMode) playPing();
   }
 }
 function stepTranscript(gen, idx) {

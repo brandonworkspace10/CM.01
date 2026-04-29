@@ -1770,11 +1770,18 @@ function playPing() {
     osc.stop(ctx.currentTime + 0.35);
   } catch(e) {}
 }
+function showChip(gen) {
+  if (gen !== transcriptGen) return;
+  if (!bookingChip.classList.contains('show')) {
+    bookingChip.classList.add('show');
+    playPing();
+  }
+}
 function stepTranscript(gen, idx) {
   if (gen !== transcriptGen) return;
   if (idx >= currentScript.length) {
-    setTimeout(() => { if (gen === transcriptGen) { bookingChip.classList.add('show'); playPing(); } }, 600);
-    setTimeout(() => { if (gen === transcriptGen) runTranscript(false); }, 6000);
+    showChip(gen);
+    setTimeout(() => { if (gen === transcriptGen) runTranscript(false); }, 8000);
     return;
   }
   const m = currentScript[idx];
@@ -1789,6 +1796,15 @@ function stepTranscript(gen, idx) {
       a.currentTime = 0;
       a.volume = 1;
       currentAudio = a;
+      const isLast = (idx + 1 >= currentScript.length);
+      if (isLast) {
+        a.ontimeupdate = () => {
+          if (a.duration && isFinite(a.duration) && a.currentTime >= a.duration - 2) {
+            a.ontimeupdate = null;
+            showChip(gen);
+          }
+        };
+      }
       a.onended = () => { if (gen === transcriptGen) stepTranscript(gen, idx + 1); };
       a.onerror = () => { if (gen === transcriptGen) setTimeout(() => stepTranscript(gen, idx + 1), 800); };
       a.play().catch(() => {

@@ -402,7 +402,13 @@ h1.hero-title .swap::after {
   50% { height: 90%; }
 }
 
-.transcript { height: 240px; overflow: hidden; display: flex; flex-direction: column; gap: 12px; }
+.transcript { height: 240px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; scrollbar-width: none; }
+.transcript::-webkit-scrollbar { width: 0px; }
+.call-card:hover .transcript { scrollbar-width: thin; scrollbar-color: rgba(232,155,108,0.35) transparent; }
+.call-card:hover .transcript::-webkit-scrollbar { width: 4px; }
+.call-card:hover .transcript::-webkit-scrollbar-track { background: transparent; }
+.call-card:hover .transcript::-webkit-scrollbar-thumb { background: rgba(232,155,108,0.35); border-radius: 999px; }
+.call-card:hover .transcript::-webkit-scrollbar-thumb:hover { background: rgba(232,155,108,0.7); }
 .msg { display: flex; gap: 10px; max-width: 88%; animation: msgIn .5s ease-out backwards; }
 @keyframes msgIn { from { opacity: 0; transform: translateY(6px); } }
 .msg.customer { align-self: flex-start; }

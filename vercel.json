@@ -1,6 +1,10 @@
 {
   "outputDirectory": ".",
   "cleanUrls": true,
+  "redirects": [
+    { "source": "/blog", "destination": "https://callingmatrix.blog", "permanent": true },
+    { "source": "/blog/:path*", "destination": "https://callingmatrix.blog/:path*", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)",

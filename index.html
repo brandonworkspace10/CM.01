@@ -892,6 +892,46 @@ h2.sec-title .italic { color: var(--accent); }
 .final p { font-size: 20px; color: var(--fg-dim); max-width: 620px; margin: 0 auto 48px; line-height: 1.55; }
 .final .btn-primary { padding: 20px 36px; font-size: 17px; }
 
+/* ============ NEWSLETTER ============ */
+.newsletter-strip {
+  padding: 96px 0;
+  background: var(--bg-2);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.newsletter-strip .inner { max-width: 680px; margin: 0 auto; text-align: center; }
+.newsletter-strip h3 {
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(34px, 4vw, 52px);
+  line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 14px;
+}
+.newsletter-strip h3 .italic { font-style: italic; color: var(--accent); }
+.newsletter-strip p { color: var(--fg-dim); font-size: 17px; max-width: 500px; margin: 0 auto 28px; line-height: 1.55; }
+.news-form {
+  display: flex; gap: 8px; max-width: 440px; margin: 0 auto;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px;
+}
+.news-form input {
+  flex: 1; background: transparent; border: 0; outline: none;
+  padding: 10px 16px; font: inherit; color: var(--fg);
+  font-size: 14px;
+}
+.news-form input::placeholder { color: var(--fg-mute); }
+.news-form button {
+  padding: 10px 20px;
+  background: var(--accent);
+  color: #1a0e00;
+  border-radius: 999px;
+  font-size: 13px; font-weight: 500;
+  transition: transform .2s, box-shadow .2s;
+  white-space: nowrap;
+}
+.news-form button:hover { transform: translateY(-1px); box-shadow: 0 8px 24px -8px oklch(0.74 0.17 55 / 0.6); }
+.news-fine { margin-top: 14px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-mute); }
+
 /* ============ FOOTER ============ */
 footer {
   padding: 60px 0 40px;
@@ -905,6 +945,9 @@ footer {
 .foot-col a:hover { color: var(--fg); }
 .foot-brand p { color: var(--fg-dim); font-size: 14px; max-width: 340px; margin-top: 12px; line-height: 1.5; }
 .foot-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 32px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-mute); }
+.foot-social { display: flex; gap: 16px; align-items: center; }
+.foot-social a { color: var(--fg-mute); transition: color .2s; display: flex; }
+.foot-social a:hover { color: var(--fg); }
 
 .skip-nav{position:absolute;top:-40px;left:0;background:var(--accent);color:#1a0e00;padding:8px 16px;font-size:13px;font-weight:600;z-index:999;border-radius:0 0 6px 0;transition:top .2s}.skip-nav:focus{top:0}
 </style>
@@ -1529,6 +1572,20 @@ footer {
   </div>
 </section>
 
+<!-- ============ NEWSLETTER ============ -->
+<section class="newsletter-strip">
+  <div class="wrap inner">
+    <p class="mono reveal" style="margin-bottom:16px;">Stay sharp</p>
+    <h3 class="reveal d1">Get the playbooks. <span class="italic">Skip the fluff.</span></h3>
+    <p class="reveal d2">One short email every Tuesday — tactics, templates, and real call recordings from home service businesses that stopped missing jobs.</p>
+    <form class="news-form reveal d3" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Subscribed ✓'; this.querySelector('button').style.background='var(--fg)';">
+      <input type="email" placeholder="you@yourshop.com" required />
+      <button type="submit">Get the playbook</button>
+    </form>
+    <p class="news-fine reveal">No spam · 1-click unsubscribe · Join 12,400 operators</p>
+  </div>
+</section>
+
 <!-- ============ FOOTER ============ -->
 <footer>
   <div class="wrap">
@@ -1567,6 +1624,17 @@ footer {
     </div>
     <div class="foot-bottom">
       <div>© 2026 Calling Matrix, Inc.</div>
+      <div class="foot-social">
+        <a href="https://twitter.com/callingmatrix" target="_blank" rel="noopener" aria-label="Calling Matrix on X (Twitter)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://linkedin.com/company/callingmatrix" target="_blank" rel="noopener" aria-label="Calling Matrix on LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://instagram.com/callingmatrix" target="_blank" rel="noopener" aria-label="Calling Matrix on Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+      </div>
       <div><a href="/legal" style="color:var(--fg-mute);text-decoration:none;transition:color .2s" onmouseover="this.style.color='var(--fg)'" onmouseout="this.style.color='var(--fg-mute)'">Privacy &amp; Terms</a></div>
     </div>
   </div>

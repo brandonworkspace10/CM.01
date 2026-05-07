@@ -1583,7 +1583,7 @@ footer {
     <p class="mono reveal" style="margin-bottom:16px;">Stay sharp</p>
     <h3 class="reveal d1">Get the playbooks. <span class="italic">Skip the fluff.</span></h3>
     <p class="reveal d2">One short email every Tuesday — tactics, templates, and real call recordings from home service businesses that stopped missing jobs.</p>
-    <form class="news-form reveal d3" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Subscribed ✓'; this.querySelector('button').style.background='var(--fg)';">
+    <form class="news-form reveal d3" onsubmit="(async(e)=>{e.preventDefault();const btn=e.target.querySelector('button');const email=e.target.querySelector('input').value;btn.textContent='Sending…';btn.disabled=true;try{const r=await fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email})});if(r.ok){btn.textContent='Subscribed ✓';btn.style.background='var(--fg)';btn.style.color='var(--bg)';}else{btn.textContent='Try again';btn.disabled=false;}}catch{btn.textContent='Try again';btn.disabled=false;}})(event)">
       <input type="email" placeholder="you@yourshop.com" required />
       <button type="submit">Get the playbook</button>
     </form>

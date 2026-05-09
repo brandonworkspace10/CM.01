@@ -259,7 +259,7 @@
       <a href="/case-studies">Customers</a>
       <a href="/blog">Blog</a>
     </div>
-    <a href="/#demo" class="nav-cta">Book a demo →</a>
+    <button class="nav-cta" onclick="openCalendly();return false;">Book a demo →</button>
   </div>
 </nav>
 
@@ -386,7 +386,7 @@
     <div class="calc-cta" style="margin-top:20px;">
       <h3>Ready to stop losing these calls?</h3>
       <p>Book a 15-min demo and we'll show you a live AI trained on your business — before the call ends.</p>
-      <a href="/#demo" class="btn-dark">Book your free demo →</a>
+      <button class="btn-dark" onclick="openCalendly();return false;">Book your free demo →</button>
       <div class="cta-note">No credit card · Setup in 48 hours · Cancel anytime</div>
     </div>
   </div>
@@ -481,7 +481,7 @@
         <a href="/#how">How it works</a>
         <a href="/#pricing">Pricing</a>
         <a href="/blog">Blog</a>
-        <a href="/#demo">Book a demo</a>
+        <a href="#" onclick="openCalendly();return false;">Book a demo</a>
       </div>
     </div>
     <div class="foot-bottom">
@@ -572,6 +572,22 @@
 
   /* Initial render */
   calc();
+
+  /* Calendly lazy-load */
+  const CALENDLY_URL = 'https://calendly.com/callingmatrix/30min';
+  function openCalendly() {
+    if (window.Calendly) { Calendly.initPopupWidget({ url: CALENDLY_URL }); return; }
+    if (!document.querySelector('link[href*="calendly"]')) {
+      const l = document.createElement('link');
+      l.rel = 'stylesheet';
+      l.href = 'https://assets.calendly.com/assets/external/widget.css';
+      document.head.appendChild(l);
+    }
+    const s = document.createElement('script');
+    s.src = 'https://assets.calendly.com/assets/external/widget.js';
+    s.onload = () => Calendly.initPopupWidget({ url: CALENDLY_URL });
+    document.head.appendChild(s);
+  }
 </script>
 </body>
 </html>

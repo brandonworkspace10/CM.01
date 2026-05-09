@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/favicon.svg">
+  <title>Missed Call Revenue Calculator — AI Answering Service ROI | Calling Matrix</title>
+  <meta name="description" content="Find out how much revenue you're losing to missed calls every month. Enter your call volume and average job value to see your ROI from a 24/7 AI receptionist.">
+  <link rel="canonical" href="https://callingmatrix.com/roi-calculator">
+  <meta property="og:title" content="Missed Call Revenue Calculator — How Much Are You Losing?">
+  <meta property="og:description" content="Enter your call volume and average job value to calculate monthly revenue lost to missed calls — and what an AI receptionist would recover.">
+  <meta property="og:url" content="https://callingmatrix.com/roi-calculator">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://callingmatrix.com/og-image.png">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Missed Call Revenue Calculator — AI Answering Service ROI">
+  <meta name="twitter:description" content="Calculate how much revenue you're losing to missed calls every month.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "Calling Matrix",
+        "url": "https://callingmatrix.com"
+      },
+      {
+        "@type": "WebApplication",
+        "name": "Missed Call Revenue Calculator",
+        "description": "Calculate the monthly revenue your home service business loses to missed calls, and estimate recovery with a 24/7 AI receptionist.",
+        "url": "https://callingmatrix.com/roi-calculator",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "provider": { "@type": "Organization", "name": "Calling Matrix", "url": "https://callingmatrix.com" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://callingmatrix.com" },
+          { "@type": "ListItem", "position": 2, "name": "ROI Calculator", "item": "https://callingmatrix.com/roi-calculator" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does the calculator estimate missed call revenue?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The calculator multiplies your weekly missed calls by 4.3 weeks to get a monthly figure, then applies a 55% booking conversion rate (industry average for answered home service calls). This gives a conservative estimate of revenue lost. For emergency categories like plumbing and HVAC, conversion is often higher."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What capture rate does Calling Matrix achieve?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Calling Matrix answers 100% of inbound calls 24/7, including after hours and weekends. Of those previously missed calls, roughly 85% result in a booked appointment or job — callers who reach a live voice immediately are far more likely to book than those who leave a voicemail."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What counts as a missed call?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Any call that goes to voicemail, rings without answer, or receives a 'we're closed' message. This includes after-hours calls, calls during peak times when staff are on other lines, and calls on weekends when most small service businesses don't have coverage."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does Calling Matrix cost compared to the revenue it recovers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Calling Matrix starts at $149/month. For most home service businesses losing even 5–10 calls per week, the first few recovered jobs more than cover the monthly cost. Our clients typically see 10–30x ROI within the first 90 days."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&display=swap"></noscript>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0E0D0B; --bg-2: #141310; --bg-3: #1A1916;
+      --fg: #F6F2EB; --fg-dim: #A09890; --fg-mute: #5A5650;
+      --accent: #E89B6C; --line: rgba(255,255,255,0.07);
+      --serif: 'Instrument Serif', Georgia, serif;
+      --sans: 'Geist', system-ui, sans-serif;
+      --green: #5DB87A;
+    }
+    body { background: var(--bg); color: var(--fg); font-family: var(--sans); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 16px 24px; border-bottom: 1px solid transparent; background: rgba(14,13,11,0.9); backdrop-filter: blur(12px); transition: border-color .3s; }
+    .nav.scrolled { border-bottom-color: var(--line); }
+    .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    .logo { display: flex; align-items: center; gap: 10px; font-family: var(--serif); font-size: 22px; letter-spacing: -0.01em; }
+    .logo-mark { width: 26px; height: 26px; display: inline-block; }
+    .logo-mark svg { width: 100%; height: 100%; }
+    .nav-links { display: flex; gap: 32px; font-size: 14px; color: var(--fg-dim); }
+    .nav-links a { transition: color .2s; }
+    .nav-links a:hover { color: var(--fg); }
+    .nav-cta { padding: 10px 18px; background: var(--fg); color: var(--bg); border-radius: 999px; font-size: 13px; font-weight: 500; transition: transform .2s, box-shadow .2s; }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(246,242,235,0.15); }
+    @media (max-width: 720px) { .nav-links { display: none; } }
+
+    /* HERO */
+    .page-hero { padding: 120px 24px 64px; border-bottom: 1px solid var(--line); text-align: center; }
+    .page-hero-inner { max-width: 640px; margin: 0 auto; }
+    .breadcrumb { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 13px; color: var(--fg-mute); margin-bottom: 28px; }
+    .breadcrumb a { color: var(--fg-dim); transition: color .2s; }
+    .breadcrumb a:hover { color: var(--fg); }
+    .page-hero h1 { font-family: var(--serif); font-size: clamp(30px, 5vw, 52px); font-weight: 400; line-height: 1.15; margin-bottom: 18px; }
+    .page-hero .subtitle { font-size: 17px; color: var(--fg-dim); line-height: 1.65; }
+
+    /* CALCULATOR LAYOUT */
+    .calc-wrap { max-width: 1060px; margin: 0 auto; padding: 64px 24px 100px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+    @media (max-width: 780px) { .calc-wrap { grid-template-columns: 1fr; } }
+
+    /* INPUTS */
+    .calc-inputs { background: var(--bg-2); border: 1px solid var(--line); border-radius: 20px; padding: 36px; }
+    .calc-inputs h2 { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg-mute); margin-bottom: 28px; }
+
+    .field { margin-bottom: 28px; }
+    .field:last-child { margin-bottom: 0; }
+    .field-label { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; }
+    .field-label span { font-size: 15px; font-weight: 500; color: var(--fg); }
+    .field-val { font-family: var(--serif); font-size: 22px; color: var(--accent); }
+
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 4px;
+      border-radius: 2px;
+      background: var(--bg-3);
+      outline: none;
+      cursor: pointer;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: var(--accent);
+      cursor: pointer;
+      border: 2px solid var(--bg-2);
+      box-shadow: 0 2px 8px rgba(232,155,108,0.4);
+    }
+    input[type="range"]::-moz-range-thumb {
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: var(--accent);
+      cursor: pointer;
+      border: 2px solid var(--bg-2);
+    }
+    .field-hint { font-size: 12px; color: var(--fg-mute); margin-top: 8px; }
+
+    .industry-select { margin-bottom: 28px; }
+    .industry-select label { font-size: 15px; font-weight: 500; color: var(--fg); display: block; margin-bottom: 10px; }
+    select {
+      width: 100%;
+      background: var(--bg-3);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      color: var(--fg);
+      font-family: var(--sans);
+      font-size: 14px;
+      padding: 12px 16px;
+      cursor: pointer;
+      outline: none;
+      -webkit-appearance: none;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235A5650' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+    }
+    select:focus { border-color: rgba(232,155,108,0.4); }
+
+    /* RESULTS */
+    .calc-results { position: sticky; top: 100px; }
+    .result-card { background: var(--bg-2); border: 1px solid var(--line); border-radius: 20px; padding: 36px; margin-bottom: 20px; }
+    .result-card h2 { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg-mute); margin-bottom: 28px; }
+
+    .result-row { display: flex; justify-content: space-between; align-items: baseline; padding: 14px 0; border-bottom: 1px solid var(--line); }
+    .result-row:last-child { border-bottom: none; }
+    .result-label { font-size: 14px; color: var(--fg-dim); }
+    .result-num { font-family: var(--serif); font-size: 24px; color: var(--fg); }
+    .result-num.loss { color: #CF6679; }
+    .result-num.gain { color: var(--green); }
+
+    .result-highlight { background: rgba(93,184,122,0.07); border: 1px solid rgba(93,184,122,0.2); border-radius: 16px; padding: 28px; text-align: center; }
+    .result-highlight .rh-label { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); margin-bottom: 10px; }
+    .result-highlight .rh-num { font-family: var(--serif); font-size: 48px; color: var(--fg); line-height: 1; margin-bottom: 6px; }
+    .result-highlight .rh-sub { font-size: 13px; color: var(--fg-dim); }
+
+    .roi-badge { display: flex; align-items: center; justify-content: space-between; background: var(--bg-3); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px; margin-top: 20px; }
+    .roi-badge-label { font-size: 13px; color: var(--fg-dim); }
+    .roi-badge-val { font-family: var(--serif); font-size: 22px; color: var(--accent); }
+
+    .calc-cta { background: var(--fg); border-radius: 16px; padding: 32px; text-align: center; }
+    .calc-cta h3 { font-family: var(--serif); font-size: 22px; font-weight: 400; color: var(--bg); margin-bottom: 8px; }
+    .calc-cta p { font-size: 14px; color: rgba(14,13,11,0.6); margin-bottom: 20px; line-height: 1.5; }
+    .btn-dark { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; background: var(--bg); color: var(--fg); border-radius: 999px; font-size: 14px; font-weight: 500; transition: transform .2s, box-shadow .2s; }
+    .btn-dark:hover { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
+    .cta-note { font-size: 11px; color: rgba(14,13,11,0.45); margin-top: 12px; }
+
+    /* FAQ */
+    .faq-wrap { max-width: 760px; margin: 0 auto; padding: 0 24px 100px; }
+    .faq-wrap h2 { font-family: var(--serif); font-size: 30px; font-weight: 400; margin-bottom: 32px; }
+    .faq-item { border-top: 1px solid var(--line); }
+    .faq-item:last-child { border-bottom: 1px solid var(--line); }
+    .faq-q { width: 100%; background: none; border: none; color: var(--fg); font-family: var(--sans); font-size: 16px; font-weight: 500; text-align: left; padding: 20px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .faq-q:hover { color: var(--accent); }
+    .faq-icon { font-size: 20px; color: var(--fg-mute); transition: transform .25s; flex-shrink: 0; }
+    .faq-a { font-size: 15px; color: var(--fg-dim); line-height: 1.7; max-height: 0; overflow: hidden; transition: max-height .3s ease, padding .3s ease; }
+    .faq-item.open .faq-a { max-height: 300px; padding-bottom: 20px; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+    /* PROOF STRIP */
+    .proof-strip { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--bg-2); padding: 40px 24px; }
+    .proof-inner { max-width: 1060px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center; }
+    .ps-num { font-family: var(--serif); font-size: 36px; color: var(--accent); margin-bottom: 6px; }
+    .ps-lbl { font-size: 13px; color: var(--fg-dim); line-height: 1.4; }
+    @media (max-width: 640px) { .proof-inner { grid-template-columns: repeat(2, 1fr); } }
+
+    footer { border-top: 1px solid var(--line); padding: 60px 24px 32px; }
+    .foot-inner { max-width: 1200px; margin: 0 auto; }
+    .foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 48px; }
+    .foot-brand p { color: var(--fg-dim); font-size: 13.5px; margin-top: 12px; max-width: 240px; line-height: 1.6; }
+    .foot-col h6 { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-mute); margin-bottom: 14px; }
+    .foot-col a { display: block; font-size: 13.5px; color: var(--fg-dim); margin-bottom: 8px; transition: color .2s; }
+    .foot-col a:hover { color: var(--fg); }
+    .foot-bottom { display: flex; justify-content: space-between; font-size: 12px; color: var(--fg-mute); padding-top: 24px; border-top: 1px solid var(--line); }
+    @media (max-width: 640px) { .foot-grid { grid-template-columns: 1fr; } .foot-bottom { flex-direction: column; gap: 8px; } }
+  </style>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="94z1bOhN7RVx3o2W/eEUbQ" async></script>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <span class="logo-mark"><svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="24" height="24" rx="6" stroke="currentColor" stroke-opacity="0.4"/><path d="M8 10 Q8 8 10 8 L12 8 L14 12 L12 14 Q14 17 16 18 L18 16 L22 18 L22 20 Q22 22 20 22 Q13 22 8 17 Q6 14 6 11 Z" fill="var(--accent)"/><circle cx="20" cy="6" r="2" fill="var(--accent)"/></svg></span>
+      Calling Matrix
+    </a>
+    <div class="nav-links">
+      <a href="/#how">How it works</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/case-studies">Customers</a>
+      <a href="/blog">Blog</a>
+    </div>
+    <a href="/#demo" class="nav-cta">Book a demo →</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb">
+      <a href="/">Home</a>
+      <span>›</span>
+      <span>ROI Calculator</span>
+    </div>
+    <h1>How much revenue are missed calls costing you?</h1>
+    <p class="subtitle">Adjust the sliders to match your business. See what you're losing every month — and what a 24/7 AI receptionist would recover.</p>
+  </div>
+</section>
+
+<div class="calc-wrap">
+
+  <!-- INPUTS -->
+  <div class="calc-inputs">
+    <h2>Your business</h2>
+
+    <div class="industry-select">
+      <label for="industry">Industry</label>
+      <select id="industry">
+        <option value="hvac">HVAC</option>
+        <option value="plumbing" selected>Plumbing</option>
+        <option value="electrical">Electrical</option>
+        <option value="roofing">Roofing</option>
+        <option value="cleaning">Cleaning</option>
+        <option value="landscaping">Landscaping</option>
+        <option value="pest">Pest Control</option>
+        <option value="other">Other Home Service</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <div class="field-label">
+        <span>Inbound calls per week</span>
+        <span class="field-val" id="callsVal">60</span>
+      </div>
+      <input type="range" id="calls" min="10" max="300" step="5" value="60">
+      <div class="field-hint">All inbound calls — quotes, bookings, emergencies, questions</div>
+    </div>
+
+    <div class="field">
+      <div class="field-label">
+        <span>Average job value</span>
+        <span class="field-val" id="jobValDisplay">$350</span>
+      </div>
+      <input type="range" id="jobVal" min="75" max="2500" step="25" value="350">
+      <div class="field-hint">Revenue per booked job (parts + labor, typical ticket)</div>
+    </div>
+
+    <div class="field">
+      <div class="field-label">
+        <span>Calls you currently miss</span>
+        <span class="field-val" id="missRateVal">30%</span>
+      </div>
+      <input type="range" id="missRate" min="5" max="80" step="5" value="30">
+      <div class="field-hint">After-hours voicemails + busy signals + unanswered rings</div>
+    </div>
+
+    <div class="field">
+      <div class="field-label">
+        <span>Booking conversion rate</span>
+        <span class="field-val" id="convVal">55%</span>
+      </div>
+      <input type="range" id="conv" min="20" max="90" step="5" value="55">
+      <div class="field-hint">% of answered calls that turn into booked jobs</div>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="calc-results">
+    <div class="result-card">
+      <h2>Monthly breakdown</h2>
+      <div class="result-row">
+        <span class="result-label">Total calls / month</span>
+        <span class="result-num" id="rTotalCalls">—</span>
+      </div>
+      <div class="result-row">
+        <span class="result-label">Calls going to voicemail</span>
+        <span class="result-num loss" id="rMissed">—</span>
+      </div>
+      <div class="result-row">
+        <span class="result-label">Jobs lost / month</span>
+        <span class="result-num loss" id="rJobsLost">—</span>
+      </div>
+      <div class="result-row">
+        <span class="result-label">Revenue lost / month</span>
+        <span class="result-num loss" id="rRevLost">—</span>
+      </div>
+    </div>
+
+    <div class="result-highlight">
+      <div class="rh-label">With Calling Matrix — recovered monthly</div>
+      <div class="rh-num" id="rRecovered">—</div>
+      <div class="rh-sub" id="rRecoveredSub">based on 85% capture · your conversion rate</div>
+    </div>
+
+    <div class="roi-badge">
+      <span class="roi-badge-label">Estimated annual ROI</span>
+      <span class="roi-badge-val" id="rROI">—</span>
+    </div>
+
+    <div style="margin-top:20px;">
+      <div class="result-card" style="padding:20px 28px;">
+        <h2 style="margin-bottom:16px;">vs. Calling Matrix cost</h2>
+        <div class="result-row">
+          <span class="result-label">Calling Matrix / month</span>
+          <span class="result-num">$149</span>
+        </div>
+        <div class="result-row">
+          <span class="result-label">Revenue recovered / month</span>
+          <span class="result-num gain" id="rRecoveredSmall">—</span>
+        </div>
+        <div class="result-row" style="border-bottom:none;">
+          <span class="result-label">Net gain / month</span>
+          <span class="result-num gain" id="rNet">—</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="calc-cta" style="margin-top:20px;">
+      <h3>Ready to stop losing these calls?</h3>
+      <p>Book a 15-min demo and we'll show you a live AI trained on your business — before the call ends.</p>
+      <a href="/#demo" class="btn-dark">Book your free demo →</a>
+      <div class="cta-note">No credit card · Setup in 48 hours · Cancel anytime</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- PROOF STRIP -->
+<div class="proof-strip">
+  <div class="proof-inner">
+    <div>
+      <div class="ps-num">$340k</div>
+      <div class="ps-lbl">Revenue booked<br>for clients</div>
+    </div>
+    <div>
+      <div class="ps-num">100%</div>
+      <div class="ps-lbl">Clients still active<br>at 90 days</div>
+    </div>
+    <div>
+      <div class="ps-num">$48k</div>
+      <div class="ps-lbl">Recovered for one HVAC<br>client in 90 days</div>
+    </div>
+    <div>
+      <div class="ps-num">10–30×</div>
+      <div class="ps-lbl">Typical ROI<br>in first quarter</div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="faq-wrap" style="margin-top:80px;">
+  <h2>How the calculator works</h2>
+
+  <div class="faq-item">
+    <button class="faq-q" aria-expanded="false">
+      How does the calculator estimate missed call revenue?
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a">The calculator multiplies your weekly call volume by 4.3 weeks to get a monthly figure, applies your miss rate to find lost calls, then applies your booking conversion rate to estimate jobs lost. Each lost job is multiplied by your average job value. This is a conservative estimate — it doesn't account for repeat customers or referrals lost alongside each missed job.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" aria-expanded="false">
+      What is the 85% capture rate based on?
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a">Our client data shows that when callers reach a live voice immediately — even at 11 PM — roughly 85% of previously missed callers book a job or stay on the line to get a callback scheduled. Callers who hit voicemail have an average callback rate under 30%. The difference is urgency: home service customers call because they need help now, not later.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" aria-expanded="false">
+      What counts as a missed call?
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a">Any call that goes to voicemail, rings without answer, or receives a "we're closed" message. This includes after-hours calls (typically 6 PM–8 AM), calls during peak hours when all staff are on other lines, and calls on weekends when most small service businesses have no live coverage. For a typical contractor, 25–45% of inbound calls fall into this category.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" aria-expanded="false">
+      How does Calling Matrix compare to hiring a receptionist?
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a">A full-time receptionist costs $35,000–$50,000/year and covers ~40 hours/week. Calling Matrix costs $149/month ($1,788/year) and covers 168 hours/week — every hour, every day, including nights, weekends, and holidays. The AI doesn't call in sick, doesn't need training when your services change, and handles every call the same way every time.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-q" aria-expanded="false">
+      Is $149/month the real price?
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-a">Yes. Calling Matrix starts at $149/month for the Starter plan — unlimited calls, 24/7 coverage, one phone number, full dashboard access, and monthly AI tuning. There are no per-minute charges. See the full pricing breakdown at <a href="/#pricing" style="color:var(--accent);">callingmatrix.com/#pricing</a>.</div>
+  </div>
+</div>
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="/" class="logo" style="font-family:var(--serif);font-size:20px;display:flex;align-items:center;gap:8px;">
+          <span style="width:22px;height:22px;display:inline-block;"><svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="24" height="24" rx="6" stroke="currentColor" stroke-opacity="0.4"/><path d="M8 10 Q8 8 10 8 L12 8 L14 12 L12 14 Q14 17 16 18 L18 16 L22 18 L22 20 Q22 22 20 22 Q13 22 8 17 Q6 14 6 11 Z" fill="var(--accent)"/><circle cx="20" cy="6" r="2" fill="var(--accent)"/></svg></span>
+          Calling Matrix
+        </a>
+        <p>24/7 AI receptionist for home service businesses. Answers calls, books jobs, and never takes a sick day.</p>
+      </div>
+      <div class="foot-col">
+        <h6>Tools</h6>
+        <a href="/roi-calculator">ROI Calculator</a>
+        <a href="/demo-transcript">Demo call</a>
+        <a href="/case-studies">Case studies</a>
+      </div>
+      <div class="foot-col">
+        <h6>Company</h6>
+        <a href="/#how">How it works</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/blog">Blog</a>
+        <a href="/#demo">Book a demo</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Calling Matrix. All rights reserved.</span>
+      <span>Built for home service businesses.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* NAV scroll */
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 10), { passive: true });
+
+  /* DEFAULTS per industry */
+  const INDUSTRY_DEFAULTS = {
+    hvac:        { jobVal: 425, conv: 60 },
+    plumbing:    { jobVal: 350, conv: 60 },
+    electrical:  { jobVal: 380, conv: 55 },
+    roofing:     { jobVal: 950, conv: 45 },
+    cleaning:    { jobVal: 175, conv: 65 },
+    landscaping: { jobVal: 280, conv: 55 },
+    pest:        { jobVal: 160, conv: 65 },
+    other:       { jobVal: 300, conv: 55 },
+  };
+
+  const $ = (id) => document.getElementById(id);
+  const MONTHLY_WEEKS = 4.3;
+  const CAPTURE_RATE = 0.85;
+  const CM_COST = 149;
+
+  function fmt(n) {
+    return '$' + Math.round(n).toLocaleString();
+  }
+
+  function calc() {
+    const calls = +$('calls').value;
+    const jobVal = +$('jobVal').value;
+    const missRate = +$('missRate').value / 100;
+    const conv = +$('conv').value / 100;
+
+    const totalMonthly = Math.round(calls * MONTHLY_WEEKS);
+    const missedMonthly = Math.round(totalMonthly * missRate);
+    const jobsLost = Math.round(missedMonthly * conv);
+    const revLost = jobsLost * jobVal;
+
+    const recovered = Math.round(missedMonthly * CAPTURE_RATE * conv) * jobVal;
+    const annualROI = ((recovered * 12) / (CM_COST * 12) * 100).toFixed(0);
+    const netGain = recovered - CM_COST;
+
+    $('rTotalCalls').textContent = totalMonthly.toLocaleString();
+    $('rMissed').textContent = missedMonthly.toLocaleString();
+    $('rJobsLost').textContent = jobsLost.toLocaleString();
+    $('rRevLost').textContent = fmt(revLost);
+    $('rRecovered').textContent = fmt(recovered);
+    $('rRecoveredSmall').textContent = fmt(recovered);
+    $('rNet').textContent = netGain >= 0 ? fmt(netGain) : '-' + fmt(Math.abs(netGain));
+    $('rROI').textContent = annualROI + 'x';
+    $('rRecoveredSub').textContent = `based on 85% capture · ${$('conv').value}% conversion`;
+  }
+
+  /* Slider display updates */
+  $('calls').addEventListener('input', () => { $('callsVal').textContent = $('calls').value; calc(); });
+  $('jobVal').addEventListener('input', () => { $('jobValDisplay').textContent = '$' + (+$('jobVal').value).toLocaleString(); calc(); });
+  $('missRate').addEventListener('input', () => { $('missRateVal').textContent = $('missRate').value + '%'; calc(); });
+  $('conv').addEventListener('input', () => { $('convVal').textContent = $('conv').value + '%'; calc(); });
+
+  /* Industry preset */
+  $('industry').addEventListener('change', () => {
+    const d = INDUSTRY_DEFAULTS[$('industry').value] || INDUSTRY_DEFAULTS.other;
+    $('jobVal').value = d.jobVal;
+    $('jobValDisplay').textContent = '$' + d.jobVal.toLocaleString();
+    $('conv').value = d.conv;
+    $('convVal').textContent = d.conv + '%';
+    calc();
+  });
+
+  /* FAQ accordion */
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+      btn.setAttribute('aria-expanded', !isOpen);
+    });
+  });
+
+  /* Initial render */
+  calc();
+</script>
+</body>
+</html>

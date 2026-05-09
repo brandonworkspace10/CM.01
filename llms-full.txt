@@ -1,0 +1,159 @@
+# Calling Matrix — Full Reference
+
+> 24/7 AI receptionist for home service businesses. Purpose-built for HVAC, plumbing, electrical, roofing, cleaning, landscaping, pest control, garage door, appliance repair, and locksmith companies.
+
+---
+
+## Product overview
+
+Calling Matrix is an AI phone answering service that replaces or supplements the front desk for trade businesses. Unlike general-purpose AI phone agents, Calling Matrix is trained specifically on home service intake protocols: emergency classification, service area screening, field-service CRM booking, and surge capacity handling.
+
+Core capabilities:
+- Answers every inbound call within 2 seconds, 24/7/365
+- Identifies emergency vs. non-urgent situations using trade-specific signals
+- Routes emergencies to on-call technicians via SMS before the call ends
+- Books jobs directly into Housecall Pro, ServiceTitan, Jobber, FieldEdge, Google Calendar, and Calendly
+- Handles unlimited simultaneous calls — no queue, no hold time
+- Captures full intake details: caller name, service address, job type, issue description, preferred time
+- Follows up with leads who requested quotes but didn't book
+
+---
+
+## Pricing details
+
+All plans include unlimited inbound calls, 24/7 answering, and emergency routing.
+
+**Starter — $497/month**
+- Unlimited inbound calls
+- Core CRM integration (one platform)
+- Emergency routing
+- Standard intake script
+- 48-hour setup
+
+**Growth — $797/month**
+- Everything in Starter
+- Multiple CRM integrations
+- Custom intake scripts per job type
+- Multi-location support
+- Advanced routing rules
+- Priority onboarding
+
+**Scale — Custom**
+- Everything in Growth
+- Enterprise CRM and ERP integrations
+- Dedicated success manager
+- Custom AI training
+- SLA guarantees
+
+No per-minute charges. No overage fees. Price does not change with call volume.
+
+---
+
+## Industries served
+
+**HVAC**
+Emergency routing for no-cooling/no-heat calls, surge handling during heat waves and cold snaps, integration with HVAC-specific CRMs.
+
+**Plumbing**
+Emergency routing for active leaks, floods, and sewage backups. After-hours plumbing calls routed immediately to on-call plumber.
+
+**Electrical**
+Residential and commercial call differentiation. Safety emergency routing (sparks, burning smell, power loss). Estimate booking with upfront job qualification.
+
+**Roofing**
+Unlimited call capacity for storm surge. Insurance claim intake. Estimate appointment booking with damage description capture.
+
+**Cleaning**
+Recurring appointment booking (weekly, biweekly, monthly). Quote follow-up at 24/48/72 hours. Service area screening by zip code.
+
+**Landscaping**
+Spring surge handling. Residential and commercial intake separation. Estimate capture with property details.
+
+**Pest Control**
+Urgency classification for active infestations. Species-specific intake. PestRoutes and ServiceTitan integration.
+
+**Garage Door**
+After-hours emergency dispatch. Residential and commercial job separation. On-call tech notification with address and issue.
+
+**Appliance Repair**
+Appliance brand, model, and problem capture. Warranty vs. out-of-pocket routing. Same-day scheduling capability.
+
+**Locksmith**
+Immediate dispatch notification with caller location. Automotive, residential, and commercial lockout separation. Service area confirmation before tech commitment.
+
+---
+
+## Integrations
+
+**Field service management**
+- Housecall Pro: Creates jobs with full customer details. Matches existing customer records by phone number. Reads live schedule availability.
+- ServiceTitan: Creates jobs in standard booking workflow. Handles business unit structure. Links to existing customer records.
+- Jobber: Creates jobs and client records. Books both jobs and quote requests. Handles reschedule requests.
+- FieldEdge: Creates jobs with full customer details. Matches existing records. Works with service agreement protocols.
+
+**Calendar scheduling**
+- Google Calendar: Reads live availability across multiple calendars. Creates events with full caller details. Works alongside Calendly.
+- Calendly: Reads event type availability. Respects buffer times and minimum notice. Supports team round-robin.
+
+**Automation**
+- Zapier: Sends structured call data (name, number, job type, outcome) to trigger workflows in 5,000+ connected apps.
+
+---
+
+## Competitive positioning
+
+**vs. Live answering services (Smith.ai, Ruby, AnswerConnect, Moneypenny)**
+- Faster answer: under 2 seconds vs. 30–90 second agent pickup
+- Lower cost: flat rate vs. per-minute billing ($1–2/min)
+- More consistent: same quality every call vs. variable agent performance
+- Direct booking: writes to CRM vs. message relay requiring manual entry
+- Unlimited surge: no agent pool limits
+
+**vs. General AI phone agents (Goodcall, Slang.ai)**
+- Industry-specific training vs. generic or restaurant-focused
+- Trade emergency routing vs. no emergency classification
+- Native field-service CRM integrations vs. no trade-platform integrations
+
+**vs. Voicemail**
+- Every call answered live vs. callers hanging up
+- Immediate emergency routing vs. callbacks the next morning
+
+---
+
+## Setup process
+
+1. Book a 30-minute onboarding call
+2. Provide: services offered, service area (zip codes), pricing, scheduling software credentials, emergency routing contacts
+3. Calling Matrix builds and deploys the AI receptionist
+4. Phone number ported (existing number stays the same)
+5. Live within 48 hours
+
+---
+
+## Common questions
+
+**Will callers know they're talking to AI?**
+Most don't notice during standard intake calls. Disclosure is optional — many businesses disclose upfront and find customers appreciate the instant answer.
+
+**What about complex calls that need a human?**
+Calling Matrix routes to a human when needed — you define the rules (emergencies, complex situations, upset callers, specific phrases). The goal is to eliminate routine intake burden, not all human contact.
+
+**Does it work for after-hours calls?**
+Yes — 24/7 is the default. After-hours call quality is identical to business-hours calls.
+
+**Can I use my existing phone number?**
+Yes. Number porting is handled during onboarding. Customers see no change.
+
+**What if I want to cancel?**
+Month-to-month plans. No long-term contracts.
+
+---
+
+## Links
+
+- Homepage: https://callingmatrix.com
+- Pricing: https://callingmatrix.com/pricing
+- Book a demo: https://callingmatrix.com/book-demo
+- Blog: https://callingmatrix.blog
+- Integrations: https://callingmatrix.com/integrations/housecall-pro
+- Comparisons: https://callingmatrix.com/compare/calling-matrix-vs-smith-ai

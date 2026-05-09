@@ -1,0 +1,58 @@
+# Calling Matrix
+
+> 24/7 AI receptionist purpose-built for home service businesses. Answers every call in under 2 seconds, routes emergencies, books jobs directly into field-service software.
+
+## What Calling Matrix does
+
+Calling Matrix is an AI phone receptionist for trade businesses — HVAC, plumbing, electrical, roofing, cleaning, landscaping, pest control, garage door, appliance repair, and locksmith companies. It answers inbound calls 24/7, qualifies leads, routes emergencies to on-call technicians, and books jobs directly into scheduling software with no manual entry.
+
+## Who it's for
+
+Home service businesses that lose revenue to missed calls: technicians who can't answer while on a job, owners who don't have front-desk staff, businesses that need after-hours coverage without hiring, and companies that handle surge volume (storm season for HVAC and roofing, spring for landscaping).
+
+## Pricing
+
+- Starter: $497/month — unlimited inbound calls, core integrations, 24/7 answering
+- Growth: $797/month — unlimited calls, advanced routing, multi-location support
+- Scale: Custom pricing for enterprise and multi-location operations
+
+Flat monthly rate. No per-minute charges. No overage fees. Call volume does not affect the price.
+
+## Integrations
+
+Native integrations with:
+- Housecall Pro (field service management)
+- ServiceTitan (enterprise field service)
+- Jobber (small/mid business field service)
+- FieldEdge (HVAC/plumbing dispatch)
+- Google Calendar (scheduling)
+- Calendly (appointment booking)
+- Zapier (connects to 5,000+ apps)
+
+## How it works
+
+1. Inbound call answered in under 2 seconds
+2. AI qualifies the caller — service address, job type, urgency
+3. Emergency calls route immediately to on-call tech via SMS
+4. Non-urgent jobs booked directly into scheduling software
+5. Customer receives SMS confirmation
+
+## Setup
+
+Live in 48 hours. Includes a 30-minute onboarding call to capture services, pricing, service area, and emergency routing protocols. Phone number porting handled by Calling Matrix — customers see no change.
+
+## Key differentiators
+
+- Flat-rate pricing vs per-minute live answering services
+- Industry-specific training vs general AI phone agents
+- Direct CRM booking vs message relay that requires manual entry
+- Unlimited surge capacity vs agent-pool limits
+- 48-hour setup vs 1–2 week live answering onboarding
+
+## Company
+
+Calling Matrix
+Website: https://callingmatrix.com
+Book a demo: https://callingmatrix.com/book-demo
+Pricing: https://callingmatrix.com/pricing
+Blog: https://callingmatrix.blog

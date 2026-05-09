@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/favicon.svg">
+  <title>AI Receptionist Demo Call: Real Recording &amp; Transcript | Calling Matrix</title>
+  <meta name="description" content="Hear a real Calling Matrix AI receptionist handle an after-hours emergency call — full audio recording with word-for-word transcript. No actors. No polish. A real AI booking a real job.">
+  <link rel="canonical" href="https://callingmatrix.com/demo-transcript">
+  <meta property="og:title" content="AI Receptionist Demo Call: Real Recording &amp; Transcript">
+  <meta property="og:description" content="Hear a real Calling Matrix AI receptionist handle an after-hours emergency call. Full audio + transcript.">
+  <meta property="og:url" content="https://callingmatrix.com/demo-transcript">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://callingmatrix.com/og-image.png">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Receptionist Demo Call: Real Recording &amp; Transcript">
+  <meta name="twitter:description" content="Hear a real Calling Matrix AI receptionist handle an after-hours emergency call. Full audio + transcript.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "Calling Matrix",
+        "url": "https://callingmatrix.com"
+      },
+      {
+        "@type": "WebPage",
+        "name": "AI Receptionist Demo Call: Real Recording &amp; Transcript",
+        "description": "Hear a real Calling Matrix AI receptionist handle an after-hours emergency plumbing call — full audio recording with word-for-word transcript.",
+        "url": "https://callingmatrix.com/demo-transcript",
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://callingmatrix.com" },
+            { "@type": "ListItem", "position": 2, "name": "Demo Call Transcript", "item": "https://callingmatrix.com/demo-transcript" }
+          ]
+        }
+      },
+      {
+        "@type": "AudioObject",
+        "name": "AI Receptionist Demo — Full Call",
+        "description": "After-hours emergency plumbing call handled by Calling Matrix AI receptionist. Caller reports a burst pipe; AI collects the address and dispatches an emergency technician within 60 seconds.",
+        "contentUrl": "https://callingmatrix.com/audio/ai-1.mp3",
+        "encodingFormat": "audio/mpeg",
+        "duration": "PT45S",
+        "publisher": { "@type": "Organization", "name": "Calling Matrix", "url": "https://callingmatrix.com" },
+        "transcript": "Caller: Hi, how's it going. I have a pipe that just burst in my basement, I have water everywhere — is there any way you can send someone out tonight? AI: I'm so sorry, um yeah — let's get someone to you right away. Can I get your address? Caller: The address is 847 Maple Drive. AI: Got it. I have an emergency tech available and he can be there within the hour. I'm booking that now and sending you a confirmation text. Is this the best number to reach you? Caller: Yes, this is the best number to reach me. Thank you so much. AI: Sounds good! You're all set. He'll call you when he's 10 minutes out. Thank you for calling. Stay safe."
+      }
+    ]
+  }
+  </script>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&display=swap"></noscript>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0E0D0B; --bg-2: #141310; --bg-3: #1A1916;
+      --fg: #F6F2EB; --fg-dim: #A09890; --fg-mute: #5A5650;
+      --accent: #E89B6C; --line: rgba(255,255,255,0.07);
+      --serif: 'Instrument Serif', Georgia, serif;
+      --sans: 'Geist', system-ui, sans-serif;
+      --mono: 'Geist Mono', 'Courier New', monospace;
+    }
+    body { background: var(--bg); color: var(--fg); font-family: var(--sans); line-height: 1.7; }
+    a { color: inherit; text-decoration: none; }
+
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 16px 24px; border-bottom: 1px solid transparent; background: rgba(14,13,11,0.9); backdrop-filter: blur(12px); transition: border-color .3s; }
+    .nav.scrolled { border-bottom-color: var(--line); }
+    .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    .logo { display: flex; align-items: center; gap: 10px; font-family: var(--serif); font-size: 22px; letter-spacing: -0.01em; }
+    .logo-mark { width: 26px; height: 26px; display: inline-block; }
+    .logo-mark svg { width: 100%; height: 100%; }
+    .nav-links { display: flex; gap: 32px; font-size: 14px; color: var(--fg-dim); }
+    .nav-links a { transition: color .2s; }
+    .nav-links a:hover { color: var(--fg); }
+    .nav-cta { padding: 10px 18px; background: var(--fg); color: var(--bg); border-radius: 999px; font-size: 13px; font-weight: 500; transition: transform .2s, box-shadow .2s; }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(246,242,235,0.15); }
+    @media (max-width: 720px) { .nav-links { display: none; } }
+
+    .post-hero { padding: 120px 24px 56px; border-bottom: 1px solid var(--line); }
+    .post-hero-inner { max-width: 760px; margin: 0 auto; }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--fg-mute); margin-bottom: 24px; }
+    .breadcrumb a { color: var(--fg-dim); transition: color .2s; }
+    .breadcrumb a:hover { color: var(--fg); }
+    .post-tag { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); background: rgba(232,155,108,0.1); border-radius: 4px; padding: 4px 10px; margin-bottom: 20px; }
+    .post-hero h1 { font-family: var(--serif); font-size: clamp(28px, 4vw, 48px); font-weight: 400; line-height: 1.2; margin-bottom: 20px; }
+    .post-hero .subtitle { font-size: 18px; color: var(--fg-dim); line-height: 1.6; margin-bottom: 28px; max-width: 640px; }
+    .post-meta { display: flex; align-items: center; gap: 20px; font-size: 13px; color: var(--fg-mute); padding-top: 20px; border-top: 1px solid var(--line); }
+
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 56px 24px 100px; }
+    .article-wrap h2 { font-family: var(--serif); font-size: 28px; font-weight: 400; line-height: 1.3; margin: 52px 0 16px; color: var(--fg); }
+    .article-wrap h3 { font-size: 17px; font-weight: 600; margin: 32px 0 12px; color: var(--fg); }
+    .article-wrap p { color: var(--fg-dim); font-size: 16px; line-height: 1.75; margin-bottom: 20px; }
+    .article-wrap p strong { color: var(--fg); }
+    .article-wrap ul { color: var(--fg-dim); font-size: 16px; line-height: 1.75; margin: 0 0 20px 20px; }
+    .article-wrap li { margin-bottom: 8px; }
+    .article-wrap a { color: var(--accent); }
+
+    /* CALL TRANSCRIPT */
+    .call-context { background: var(--bg-2); border: 1px solid var(--line); border-radius: 12px; padding: 20px 24px; margin-bottom: 32px; font-size: 14px; color: var(--fg-dim); }
+    .call-context strong { color: var(--fg); }
+    .call-context ul { margin: 8px 0 0 16px; }
+
+    .transcript-block { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; margin: 32px 0; }
+    .turn { display: flex; gap: 16px; padding: 20px 24px; align-items: flex-start; border-bottom: 1px solid var(--line); }
+    .turn:last-child { border-bottom: none; }
+    .turn.caller { background: var(--bg-2); }
+    .turn.ai { background: var(--bg-3); }
+    .turn-label { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; min-width: 60px; padding-top: 3px; flex-shrink: 0; }
+    .turn.caller .turn-label { color: var(--fg-mute); }
+    .turn.ai .turn-label { color: var(--accent); }
+    .turn-body { flex: 1; }
+    .turn-text { font-size: 16px; color: var(--fg); line-height: 1.6; margin-bottom: 12px; }
+    .turn-audio { display: flex; align-items: center; gap: 10px; }
+    .turn-audio audio { height: 32px; max-width: 100%; flex: 1; opacity: 0.85; }
+    .audio-label { font-size: 11px; color: var(--fg-mute); white-space: nowrap; }
+
+    .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 36px 0; }
+    .stat-box { background: var(--bg-2); border: 1px solid var(--line); border-radius: 12px; padding: 24px 20px; text-align: center; }
+    .stat-box .num { font-family: var(--serif); font-size: 36px; color: var(--accent); line-height: 1; margin-bottom: 8px; }
+    .stat-box .label { font-size: 13px; color: var(--fg-dim); line-height: 1.4; }
+    @media (max-width: 560px) { .stat-row { grid-template-columns: 1fr; } }
+
+    .callout { background: var(--bg-2); border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 8px; padding: 20px 24px; margin: 32px 0; }
+    .callout p { margin: 0; color: var(--fg-dim); font-size: 15px; }
+    .callout p strong { color: var(--fg); }
+
+    .post-cta { background: var(--bg-2); border: 1px solid var(--line); border-radius: 16px; padding: 40px; margin: 56px 0 0; text-align: center; }
+    .post-cta h3 { font-family: var(--serif); font-size: 26px; font-weight: 400; margin-bottom: 12px; }
+    .post-cta p { color: var(--fg-dim); font-size: 15px; margin-bottom: 24px; max-width: 420px; margin-left: auto; margin-right: auto; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; background: var(--fg); color: var(--bg); border-radius: 999px; font-size: 14px; font-weight: 500; transition: transform .2s, box-shadow .2s; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(246,242,235,0.15); }
+
+    footer { border-top: 1px solid var(--line); padding: 60px 24px 32px; }
+    .foot-inner { max-width: 1200px; margin: 0 auto; }
+    .foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 48px; }
+    .foot-brand p { color: var(--fg-dim); font-size: 13.5px; margin-top: 12px; max-width: 240px; line-height: 1.6; }
+    .foot-col h6 { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-mute); margin-bottom: 14px; }
+    .foot-col a { display: block; font-size: 13.5px; color: var(--fg-dim); margin-bottom: 8px; transition: color .2s; }
+    .foot-col a:hover { color: var(--fg); }
+    .foot-bottom { display: flex; justify-content: space-between; font-size: 12px; color: var(--fg-mute); padding-top: 24px; border-top: 1px solid var(--line); }
+    @media (max-width: 640px) { .foot-grid { grid-template-columns: 1fr; } .foot-bottom { flex-direction: column; gap: 8px; } }
+  </style>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="94z1bOhN7RVx3o2W/eEUbQ" async></script>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <span class="logo-mark"><svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="24" height="24" rx="6" stroke="currentColor" stroke-opacity="0.4"/><path d="M8 10 Q8 8 10 8 L12 8 L14 12 L12 14 Q14 17 16 18 L18 16 L22 18 L22 20 Q22 22 20 22 Q13 22 8 17 Q6 14 6 11 Z" fill="var(--accent)"/><circle cx="20" cy="6" r="2" fill="var(--accent)"/></svg></span>
+      Calling Matrix
+    </a>
+    <div class="nav-links">
+      <a href="/#how">How it works</a>
+      <a href="/#features">Features</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#customers">Customers</a>
+      <a href="/blog">Blog</a>
+    </div>
+    <a href="/#demo" class="nav-cta">Book a demo →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="post-hero">
+  <div class="post-hero-inner">
+    <div class="breadcrumb">
+      <a href="/">Home</a>
+      <span>›</span>
+      <span>Demo Call Transcript</span>
+    </div>
+    <span class="post-tag">Live Demo</span>
+    <h1>AI Receptionist Demo Call: Real Recording &amp; Transcript</h1>
+    <p class="subtitle">A plumbing emergency, 10:47 PM. The AI answers, collects the address, and dispatches an emergency tech — in under 45 seconds. Here's the full audio and transcript.</p>
+    <div class="post-meta">
+      <span>Calling Matrix</span>
+      <span>Real call · No actors</span>
+      <span>~45 seconds</span>
+    </div>
+  </div>
+</section>
+
+<div class="article-wrap">
+
+  <h2>The call</h2>
+
+  <div class="call-context">
+    <strong>Scenario:</strong> After-hours burst pipe. Caller needs emergency dispatch that night.
+    <ul>
+      <li>Time: 10:47 PM on a Tuesday</li>
+      <li>Caller: homeowner in a panic, water on the floor</li>
+      <li>AI trained on: Pham Plumbing's services, service area, and emergency dispatch process</li>
+    </ul>
+  </div>
+
+  <div class="transcript-block">
+    <div class="turn caller">
+      <div class="turn-label">Caller</div>
+      <div class="turn-body">
+        <p class="turn-text">Hi, how's it going. I have a pipe that just burst in my basement, I have water everywhere — is there any way you can send someone out tonight?</p>
+        <div class="turn-audio">
+          <audio controls preload="none">
+            <source src="/audio/customer-1.mp3" type="audio/mpeg">
+          </audio>
+          <span class="audio-label">0:00 – 0:09</span>
+        </div>
+      </div>
+    </div>
+    <div class="turn ai">
+      <div class="turn-label">AI</div>
+      <div class="turn-body">
+        <p class="turn-text">I'm so sorry, um yeah — let's get someone to you right away. Can I get your address?</p>
+        <div class="turn-audio">
+          <audio controls preload="none">
+            <source src="/audio/ai-1.mp3" type="audio/mpeg">
+          </audio>
+          <span class="audio-label">0:09 – 0:16</span>
+        </div>
+      </div>
+    </div>
+    <div class="turn caller">
+      <div class="turn-label">Caller</div>
+      <div class="turn-body">
+        <p class="turn-text">The address is 847 Maple Drive.</p>
+        <div class="turn-audio">
+          <audio controls preload="none">
+            <source src="/audio/customer-2.mp3" type="audio/mpeg">
+          </audio>
+          <span class="audio-label">0:16 – 0:19</span>
+        </div>
+      </div>
+    </div>
+    <div class="turn ai">
+      <div class="turn-label">AI</div>
+      <div class="turn-body">
+        <p class="turn-text">Got it. I have an emergency tech available and he can be there within the hour. I'm booking that now and sending you a confirmation text. Is this the best number to reach you?</p>
+        <div class="turn-audio">
+          <audio controls preload="none">
+            <source src="/audio/ai-2.mp3" type="audio/mpeg">
+          </audio>
+          <span class="audio-label">0:19 – 0:32</span>
+        </div>
+      </div>
+    </div>
+    <div class="turn caller">
+      <div class="turn-label">Caller</div>
+      <div class="turn-body">
+        <p class="turn-text">Yes, this is the best number to reach me. Thank you so much.</p>
+        <div class="turn-audio">
+          <audio controls preload="none">
+            <source src="/audio/customer-3.mp3" type="audio/mpeg">
+          </audio>
+          <span class="audio-label">0:32 – 0:37</span>
+        </div>
+      </div>
+    </div>
+    <div class="turn ai">
+      <div class="turn-label">AI</div>
+      <div class="turn-body">
+        <p class="turn-text">Sounds good! You're all set. He'll call you when he's 10 minutes out. Thank you for calling. Stay safe.</p>
+        <div class="turn-audio">
+          <audio controls preload="none">
+            <source src="/audio/ai-3.mp3" type="audio/mpeg">
+          </audio>
+          <span class="audio-label">0:37 – 0:44</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2>What just happened</h2>
+
+  <p>In under 45 seconds, the AI receptionist:</p>
+  <ul>
+    <li>Answered immediately — no hold music, no voicemail</li>
+    <li>Recognized an emergency and responded with urgency, not a script</li>
+    <li>Collected the address and confirmed dispatch</li>
+    <li>Promised a confirmation text and gave the caller an ETA</li>
+    <li>Closed the call professionally</li>
+  </ul>
+
+  <p>Without Calling Matrix, this call hits voicemail at 10:47 PM. The customer calls the next plumber on Google. That job — likely a multi-hour emergency premium — goes to a competitor.</p>
+
+  <div class="stat-row">
+    <div class="stat-box">
+      <div class="num">&lt;2s</div>
+      <div class="label">Time to answer (median)</div>
+    </div>
+    <div class="stat-box">
+      <div class="num">24/7</div>
+      <div class="label">Always live — no voicemail</div>
+    </div>
+    <div class="stat-box">
+      <div class="num">97%</div>
+      <div class="label">Caller satisfaction on demo calls</div>
+    </div>
+  </div>
+
+  <h2>Frequently asked questions</h2>
+
+  <h3>Are callers told they're talking to AI?</h3>
+  <p>By default, no — but you can configure the AI to disclose if asked directly, or to always disclose upfront. Most of our clients prefer the natural approach: the AI sounds human, handles the conversation naturally, and callers rarely ask. If a caller asks directly, the AI will answer honestly based on your disclosure setting.</p>
+
+  <h3>What if the caller has an unusual question?</h3>
+  <p>The AI is trained on your specific business: your services, service area, pricing structure, and escalation rules. If a caller asks something it can't confidently answer, it collects contact info and flags it for a callback — rather than guessing or hanging up.</p>
+
+  <h3>Can it handle accents and background noise?</h3>
+  <p>Yes. The underlying speech model handles a wide range of accents, phone audio quality, and background noise (dogs, kids, road noise) well. You'll hear this in the demo recordings — the caller audio is unedited phone quality, not studio-recorded.</p>
+
+  <h3>How is this different from an IVR or phone tree?</h3>
+  <p>An IVR presents options ("press 1 for appointments"). This AI holds an open conversation — it listens, responds naturally, asks follow-up questions, and adapts to what the caller says. No menu. No "I didn't understand that, please try again."</p>
+
+  <h3>What happens after the call?</h3>
+  <p>Every call is logged with a full transcript and recording in your dashboard. If a job was booked, it goes straight into your calendar. If a message was taken, you get a notification. You review calls at your convenience — not in real time.</p>
+
+  <div class="callout">
+    <p><strong>Want to hear your own business?</strong> Book a 15-minute call and we'll run a live demo trained on your services, your service area, and your booking process. You can call in as a test customer mid-session.</p>
+  </div>
+
+  <div class="post-cta">
+    <h3>See it live with your business</h3>
+    <p>15 minutes. We train the AI on your services before the call, so you hear a receptionist that actually knows your business — not a generic demo.</p>
+    <a href="/#demo" class="btn-primary">Book your free demo →</a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="/" class="logo" style="font-family:var(--serif);font-size:20px;display:flex;align-items:center;gap:8px;">
+          <span style="width:22px;height:22px;display:inline-block;"><svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="24" height="24" rx="6" stroke="currentColor" stroke-opacity="0.4"/><path d="M8 10 Q8 8 10 8 L12 8 L14 12 L12 14 Q14 17 16 18 L18 16 L22 18 L22 20 Q22 22 20 22 Q13 22 8 17 Q6 14 6 11 Z" fill="var(--accent)"/><circle cx="20" cy="6" r="2" fill="var(--accent)"/></svg></span>
+          Calling Matrix
+        </a>
+        <p>24/7 AI receptionist for home service businesses. Answers calls, books jobs, and never takes a sick day.</p>
+      </div>
+      <div class="foot-col">
+        <h6>Product</h6>
+        <a href="/#how">How it works</a>
+        <a href="/#features">Features</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/demo-transcript">Demo call</a>
+      </div>
+      <div class="foot-col">
+        <h6>Company</h6>
+        <a href="/blog">Blog</a>
+        <a href="/case-studies">Case studies</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/#demo">Book a demo</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Calling Matrix. All rights reserved.</span>
+      <span>Built for home service businesses.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 10), { passive: true });
+</script>
+</body>
+</html>

@@ -45,7 +45,7 @@
           { "@type": "Question", "name": "How does the calculator estimate missed call revenue?", "acceptedAnswer": { "@type": "Answer", "text": "The calculator multiplies your weekly missed calls by 4.3 weeks, applies your miss rate, then your booking conversion rate to estimate jobs lost per month. Each lost job is multiplied by your average job value." } },
           { "@type": "Question", "name": "What capture rate does Calling Matrix achieve?", "acceptedAnswer": { "@type": "Answer", "text": "Calling Matrix answers 100% of inbound calls 24/7. Of those previously missed calls, roughly 85% result in a booked appointment — callers who reach a live voice immediately are far more likely to book than those who leave a voicemail." } },
           { "@type": "Question", "name": "What counts as a missed call?", "acceptedAnswer": { "@type": "Answer", "text": "Any call that goes to voicemail, rings without answer, or receives a 'we're closed' message — including after-hours calls, calls during peak times, and weekend calls." } },
-          { "@type": "Question", "name": "How much does Calling Matrix cost compared to the revenue it recovers?", "acceptedAnswer": { "@type": "Answer", "text": "Calling Matrix starts at $149/month. For most home service businesses losing even 5-10 calls per week, the first few recovered jobs more than cover the monthly cost. Our clients typically see 10-30x ROI within the first 90 days." } }
+          { "@type": "Question", "name": "How much does Calling Matrix cost compared to the revenue it recovers?", "acceptedAnswer": { "@type": "Answer", "text": "Calling Matrix starts at $497/month (Starter plan) — unlimited calls, 24/7 coverage, no per-minute charges. For most home service businesses losing 5–10 calls per week, the first few recovered jobs more than cover the monthly cost. Our clients typically see 10–30x ROI within the first 90 days." } }
         ]
       }
     ]
@@ -331,11 +331,11 @@
     <div class="field">
       <div class="field-header">
         <span class="field-name">Average job value</span>
-        <span class="field-val" id="jobValDisplay">$350</span>
+        <span class="field-val" id="jobValDisplay">$450</span>
       </div>
-      <input type="range" id="jobVal" min="75" max="2500" step="25" value="350">
+      <input type="range" id="jobVal" min="75" max="15000" step="25" value="450">
       <div class="field-hint">Revenue per booked job (parts + labor, typical ticket)</div>
-      <div class="field-bench" id="jobBench">↑ Plumbing avg: $300–$400</div>
+      <div class="field-bench" id="jobBench">↑ Plumbing avg: $350–$600</div>
     </div>
 
     <div class="field">
@@ -351,11 +351,11 @@
     <div class="field">
       <div class="field-header">
         <span class="field-name">Booking conversion rate</span>
-        <span class="field-val" id="convVal">55%</span>
+        <span class="field-val" id="convVal">45%</span>
       </div>
-      <input type="range" id="conv" min="20" max="90" step="5" value="55">
+      <input type="range" id="conv" min="20" max="90" step="5" value="45">
       <div class="field-hint">% of answered calls that turn into booked jobs</div>
-      <div class="field-bench" id="convBench">↑ Plumbing avg: 55–65%</div>
+      <div class="field-bench" id="convBench">↑ Plumbing avg: 42–50%</div>
     </div>
   </div>
 
@@ -406,7 +406,7 @@
       <div class="sec-label" style="margin-bottom:16px;">vs. Calling Matrix cost</div>
       <div class="result-row">
         <span class="result-label">Calling Matrix / month</span>
-        <span class="result-num">$149</span>
+        <span class="result-num">$497</span>
       </div>
       <div class="result-row">
         <span class="result-label">Revenue recovered / month</span>
@@ -456,11 +456,11 @@
   </div>
   <div class="faq-item">
     <button class="faq-q" aria-expanded="false">How does Calling Matrix compare to hiring a receptionist?<span class="faq-icon">+</span></button>
-    <div class="faq-a">A full-time receptionist costs $35,000–$50,000/year and covers ~40 hours/week. Calling Matrix costs $149/month ($1,788/year) and covers 168 hours/week — every hour, every day, including nights, weekends, and holidays. The AI doesn't call in sick, doesn't need retraining when your services change, and handles every call the same way every time.</div>
+    <div class="faq-a">A full-time receptionist costs $35,000–$50,000/year and covers ~40 hours/week. Calling Matrix starts at $497/month ($5,964/year) and covers 168 hours/week — every hour, every day, including nights, weekends, and holidays. The AI doesn't call in sick, doesn't need retraining when your services change, and handles every call the same way every time.</div>
   </div>
   <div class="faq-item">
-    <button class="faq-q" aria-expanded="false">Is $149/month the real price?<span class="faq-icon">+</span></button>
-    <div class="faq-a">Yes. Calling Matrix starts at $149/month — unlimited calls, 24/7 coverage, one phone number, full dashboard access, and monthly AI tuning. There are no per-minute charges. See the full pricing breakdown at <a href="/#pricing" style="color:var(--accent);">callingmatrix.com/#pricing</a>.</div>
+    <button class="faq-q" aria-expanded="false">What does Calling Matrix cost?<span class="faq-icon">+</span></button>
+    <div class="faq-a">Calling Matrix starts at $497/month (Starter plan) — unlimited calls, 24/7 coverage, one phone number, full dashboard access, and monthly AI tuning. There are no per-minute charges. See the full pricing breakdown at <a href="/#pricing" style="color:var(--accent);">callingmatrix.com/#pricing</a>.</div>
   </div>
 </div>
 
@@ -501,20 +501,20 @@
 
   /* INDUSTRY DEFAULTS */
   const INDUSTRY_DEFAULTS = {
-    hvac:        { jobVal: 425, conv: 60, jobLabel: 'HVAC avg: $375–$475',      convLabel: 'HVAC avg: 58–68%'       },
-    plumbing:    { jobVal: 350, conv: 60, jobLabel: 'Plumbing avg: $300–$400',  convLabel: 'Plumbing avg: 55–65%'   },
-    electrical:  { jobVal: 380, conv: 55, jobLabel: 'Electrical avg: $320–$450',convLabel: 'Electrical avg: 50–62%' },
-    roofing:     { jobVal: 950, conv: 45, jobLabel: 'Roofing avg: $700–$1,200', convLabel: 'Roofing avg: 40–52%'    },
-    cleaning:    { jobVal: 175, conv: 65, jobLabel: 'Cleaning avg: $140–$220',  convLabel: 'Cleaning avg: 60–70%'   },
-    landscaping: { jobVal: 280, conv: 55, jobLabel: 'Landscaping avg: $220–$340',convLabel: 'Landscaping avg: 50–60%'},
-    pest:        { jobVal: 160, conv: 65, jobLabel: 'Pest ctrl avg: $120–$200', convLabel: 'Pest ctrl avg: 60–70%'  },
-    other:       { jobVal: 300, conv: 55, jobLabel: 'Avg: $200–$400',           convLabel: 'Avg: 50–65%'            },
+    hvac:        { jobVal: 500,  conv: 40, jobLabel: 'HVAC avg: $425–$575 (blended service + repair)',       convLabel: 'HVAC avg: 38–46%'       },
+    plumbing:    { jobVal: 450,  conv: 45, jobLabel: 'Plumbing avg: $350–$600',                              convLabel: 'Plumbing avg: 42–50%'   },
+    electrical:  { jobVal: 350,  conv: 40, jobLabel: 'Electrical avg: $280–$450',                           convLabel: 'Electrical avg: 36–44%' },
+    roofing:     { jobVal: 4500, conv: 30, jobLabel: 'Roofing avg: $3,500–$6,000 (blended repair + replace)',convLabel: 'Roofing avg: 28–36%'    },
+    cleaning:    { jobVal: 175,  conv: 55, jobLabel: 'Cleaning avg: $140–$220 per visit',                   convLabel: 'Cleaning avg: 50–62%'   },
+    landscaping: { jobVal: 250,  conv: 50, jobLabel: 'Landscaping avg: $180–$320',                          convLabel: 'Landscaping avg: 45–55%'},
+    pest:        { jobVal: 350,  conv: 50, jobLabel: 'Pest ctrl avg: $275–$450',                            convLabel: 'Pest ctrl avg: 45–55%'  },
+    other:       { jobVal: 350,  conv: 40, jobLabel: 'Avg: $250–$450',                                      convLabel: 'Avg: 36–44%'            },
   };
 
   const $ = id => document.getElementById(id);
   const MONTHLY_WEEKS = 4.3;
   const CAPTURE_RATE  = 0.85;
-  const CM_COST       = 149;
+  const CM_COST       = 497;
 
   /* ANIMATED COUNTER */
   const prevVals = {};

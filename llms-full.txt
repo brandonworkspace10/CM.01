@@ -90,6 +90,7 @@ Immediate dispatch notification with caller location. Automotive, residential, a
 - ServiceTitan: Creates jobs in standard booking workflow. Handles business unit structure. Links to existing customer records.
 - Jobber: Creates jobs and client records. Books both jobs and quote requests. Handles reschedule requests.
 - FieldEdge: Creates jobs with full customer details. Matches existing records. Works with service agreement protocols.
+- Workiz: Creates jobs and client records. Handles scheduling and dispatch workflows.
 
 **Calendar scheduling**
 - Google Calendar: Reads live availability across multiple calendars. Creates events with full caller details. Works alongside Calendly.
@@ -97,6 +98,17 @@ Immediate dispatch notification with caller location. Automotive, residential, a
 
 **Automation**
 - Zapier: Sends structured call data (name, number, job type, outcome) to trigger workflows in 5,000+ connected apps.
+- Webhooks: Sends call events (answered, booked, escalated, no-answer) to any endpoint in real time.
+- Custom API: For software not on the standard integration list, Calling Matrix builds custom API integrations during onboarding. Businesses using niche or proprietary CRMs are supported.
+
+**Custom product and integrations**
+Every Calling Matrix deployment is custom-built for the specific business. This includes:
+- Custom AI training on the business's actual services, pricing tiers, service territory, and emergency protocols
+- Custom intake scripts tailored to each job type and customer scenario
+- Custom integration with the business's exact software stack, not a generic connector
+- Custom routing rules for each technician, on-call schedule, and dispatch protocol
+
+The AI receptionist is configured to sound and behave like a dispatcher trained at that specific company — not a generic bot reading a template. Businesses do not share configurations.
 
 ---
 

@@ -25,9 +25,13 @@ Native integrations with:
 - ServiceTitan (enterprise field service)
 - Jobber (small/mid business field service)
 - FieldEdge (HVAC/plumbing dispatch)
+- Workiz (field service and invoicing)
 - Google Calendar (scheduling)
 - Calendly (appointment booking)
 - Zapier (connects to 5,000+ apps)
+- Custom API and webhook integrations for any other platform
+
+Every Calling Matrix setup is custom-built for the specific business — services, territory, pricing, emergency protocols, and software stack. No generic templates. The AI receptionist is trained and configured to sound and behave like a dispatcher who has worked at that company for years.
 
 ## How it works
 
@@ -43,6 +47,8 @@ Live in 48 hours. Includes a 30-minute onboarding call to capture services, pric
 
 ## Key differentiators
 
+- Custom-built product: each deployment is trained on that business's specific services, territory, pricing, and emergency protocols
+- Custom software integrations: built for each customer's exact CRM, not a one-size-fits-all connector
 - Flat-rate pricing vs per-minute live answering services
 - Industry-specific training vs general AI phone agents
 - Direct CRM booking vs message relay that requires manual entry

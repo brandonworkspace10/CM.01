@@ -45,16 +45,17 @@
     ]
   }
   </script>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg: #0E0D0B; --bg-2: #141310; --bg-3: #1A1916;
-      --fg: #F6F2EB; --fg-dim: #A09890; --fg-mute: #5A5650;
-      --accent: #E89B6C; --line: rgba(255,255,255,0.07);
+      --bg: #0E0D0B; --bg-2: #151310; --bg-3: #1C1915;
+      --fg: #F6F2EB; --fg-dim: #A6A097; --fg-mute: #6E685F;
+      --accent: oklch(0.74 0.17 55); --line: #2A2620;
       --serif: 'Instrument Serif', Georgia, serif;
       --sans: 'Geist', system-ui, sans-serif;
+      --mono: 'JetBrains Mono', monospace;
     }
     body { background: var(--bg); color: var(--fg); font-family: var(--sans); line-height: 1.6; }
     a { color: inherit; text-decoration: none; }
@@ -89,7 +90,7 @@
     .post-card-img { height: 200px; background: var(--bg-3); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
     .post-card-img svg { width: 100%; height: 100%; }
     .post-card-body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
-    .post-tag { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); background: rgba(232,155,108,0.1); border-radius: 4px; padding: 3px 8px; margin-bottom: 14px; }
+    .post-tag { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); background: oklch(0.74 0.17 55 / 0.1); border-radius: 4px; padding: 3px 8px; margin-bottom: 14px; }
     .post-card h2 { font-family: var(--serif); font-size: 22px; font-weight: 400; line-height: 1.3; margin-bottom: 10px; }
     .post-card p { color: var(--fg-dim); font-size: 14px; line-height: 1.6; flex: 1; margin-bottom: 20px; }
     .post-meta { display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: var(--fg-mute); }
@@ -148,11 +149,11 @@
           <rect x="260" y="72" width="24" height="56" rx="4" fill="#1A1916" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
           <rect x="264" y="128" width="96" height="24" rx="4" fill="#1A1916" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
           <!-- Emergency drop -->
-          <circle cx="160" cy="70" r="14" fill="rgba(232,155,108,0.15)" stroke="#E89B6C" stroke-width="1.5"/>
-          <text x="160" y="75" text-anchor="middle" fill="#E89B6C" font-size="14" font-family="system-ui">!</text>
+          <circle cx="160" cy="70" r="14" fill="oklch(0.74 0.17 55 / 0.15)" stroke="oklch(0.74 0.17 55)" stroke-width="1.5"/>
+          <text x="160" y="75" text-anchor="middle" fill="oklch(0.74 0.17 55)" font-size="14" font-family="system-ui">!</text>
           <!-- Phone icon -->
-          <rect x="300" y="40" width="52" height="52" rx="8" fill="rgba(232,155,108,0.1)" stroke="#E89B6C" stroke-width="1"/>
-          <path d="M316 56 Q316 54 318 54 L320 54 L322 58 L320 60 Q322 63 324 64 L326 62 L330 64 L330 66 Q330 68 328 68 Q323 68 318 63 Q315 60 315 57 Z" fill="#E89B6C"/>
+          <rect x="300" y="40" width="52" height="52" rx="8" fill="oklch(0.74 0.17 55 / 0.1)" stroke="oklch(0.74 0.17 55)" stroke-width="1"/>
+          <path d="M316 56 Q316 54 318 54 L320 54 L322 58 L320 60 Q322 63 324 64 L326 62 L330 64 L330 66 Q330 68 328 68 Q323 68 318 63 Q315 60 315 57 Z" fill="oklch(0.74 0.17 55)"/>
           <!-- Stats text -->
           <text x="200" y="170" text-anchor="middle" fill="#5A5650" font-size="10" font-family="system-ui">72% of emergency calls come after hours</text>
           <text x="80" y="155" text-anchor="middle" fill="#A09890" font-size="9" font-family="system-ui">burst pipe</text>
@@ -165,7 +166,7 @@
         <p>Emergency calls at 2 AM, burst pipes, panicked customers — here's which answering service actually captures every job and routes every emergency correctly.</p>
         <div class="post-meta">
           <span>Apr 27, 2026 · 7 min read</span>
-          <span class="post-read-more">Read more <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="#E89B6C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="post-read-more">Read more <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="oklch(0.74 0.17 55)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </div>
       </div>
     </a>
@@ -188,8 +189,8 @@
           <circle cx="200" cy="140" r="4" fill="#1A1916" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
           <circle cx="280" cy="100" r="4" fill="#1A1916" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
           <!-- Lightning bolt / missed call icon -->
-          <rect x="218" y="72" width="44" height="44" rx="8" fill="rgba(232,155,108,0.1)" stroke="#E89B6C" stroke-width="1"/>
-          <polygon points="245,80 236,96 241,96 235,108 250,90 244,90" fill="#E89B6C"/>
+          <rect x="218" y="72" width="44" height="44" rx="8" fill="oklch(0.74 0.17 55 / 0.1)" stroke="oklch(0.74 0.17 55)" stroke-width="1"/>
+          <polygon points="245,80 236,96 241,96 235,108 250,90 244,90" fill="oklch(0.74 0.17 55)"/>
           <!-- Revenue stat -->
           <text x="200" y="182" text-anchor="middle" fill="#5A5650" font-size="10" font-family="system-ui">$650 avg job value — every missed call = lost revenue</text>
         </svg>
@@ -200,7 +201,7 @@
         <p>Estimate-heavy calls, commercial leads, and safety emergencies — a generic answering service drops the ball. Here's what electrical contractors actually need.</p>
         <div class="post-meta">
           <span>May 1, 2026 · 7 min read</span>
-          <span class="post-read-more">Read more <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="#E89B6C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="post-read-more">Read more <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="oklch(0.74 0.17 55)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </div>
       </div>
     </a>
@@ -213,17 +214,17 @@
           <polygon points="200,30 60,120 340,120" fill="#1A1916" stroke="rgba(255,255,255,0.07)" stroke-width="1.5"/>
           <rect x="60" y="120" width="280" height="40" rx="0" fill="#1A1916" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
           <!-- Storm call spike bar chart (small, overlaid) -->
-          <rect x="80" y="100" width="14" height="20" rx="2" fill="rgba(232,155,108,0.2)" stroke="#E89B6C" stroke-width="0.5"/>
-          <rect x="100" y="80" width="14" height="40" rx="2" fill="rgba(232,155,108,0.3)" stroke="#E89B6C" stroke-width="0.5"/>
-          <rect x="120" y="50" width="14" height="70" rx="2" fill="#E89B6C" opacity="0.8"/>
-          <rect x="140" y="70" width="14" height="50" rx="2" fill="rgba(232,155,108,0.5)" stroke="#E89B6C" stroke-width="0.5"/>
-          <rect x="160" y="90" width="14" height="30" rx="2" fill="rgba(232,155,108,0.3)" stroke="#E89B6C" stroke-width="0.5"/>
+          <rect x="80" y="100" width="14" height="20" rx="2" fill="oklch(0.74 0.17 55 / 0.2)" stroke="oklch(0.74 0.17 55)" stroke-width="0.5"/>
+          <rect x="100" y="80" width="14" height="40" rx="2" fill="oklch(0.74 0.17 55 / 0.3)" stroke="oklch(0.74 0.17 55)" stroke-width="0.5"/>
+          <rect x="120" y="50" width="14" height="70" rx="2" fill="oklch(0.74 0.17 55)" opacity="0.8"/>
+          <rect x="140" y="70" width="14" height="50" rx="2" fill="oklch(0.74 0.17 55 / 0.5)" stroke="oklch(0.74 0.17 55)" stroke-width="0.5"/>
+          <rect x="160" y="90" width="14" height="30" rx="2" fill="oklch(0.74 0.17 55 / 0.3)" stroke="oklch(0.74 0.17 55)" stroke-width="0.5"/>
           <!-- Storm icon -->
-          <text x="127" y="46" text-anchor="middle" fill="#E89B6C" font-size="10" font-family="system-ui" font-weight="600">⚡</text>
+          <text x="127" y="46" text-anchor="middle" fill="oklch(0.74 0.17 55)" font-size="10" font-family="system-ui" font-weight="600">⚡</text>
           <!-- Phone ringing -->
-          <rect x="280" y="50" width="52" height="52" rx="8" fill="rgba(232,155,108,0.1)" stroke="#E89B6C" stroke-width="1"/>
-          <path d="M296 66 Q296 64 298 64 L300 64 L302 68 L300 70 Q302 73 304 74 L306 72 L310 74 L310 76 Q310 78 308 78 Q303 78 298 73 Q295 70 295 67 Z" fill="#E89B6C"/>
-          <text x="318" y="62" fill="#E89B6C" font-size="8" font-family="system-ui">340</text>
+          <rect x="280" y="50" width="52" height="52" rx="8" fill="oklch(0.74 0.17 55 / 0.1)" stroke="oklch(0.74 0.17 55)" stroke-width="1"/>
+          <path d="M296 66 Q296 64 298 64 L300 64 L302 68 L300 70 Q302 73 304 74 L306 72 L310 74 L310 76 Q310 78 308 78 Q303 78 298 73 Q295 70 295 67 Z" fill="oklch(0.74 0.17 55)"/>
+          <text x="318" y="62" fill="oklch(0.74 0.17 55)" font-size="8" font-family="system-ui">340</text>
           <text x="314" y="72" fill="#A09890" font-size="7" font-family="system-ui">calls/day</text>
           <text x="200" y="182" text-anchor="middle" fill="#5A5650" font-size="10" font-family="system-ui">Storm surges: 300+ calls in 24 hrs — most go unanswered</text>
         </svg>
@@ -234,7 +235,7 @@
         <p>Storm season floods your phone with 10× normal volume. The contractor who answers first wins the job. Here's how to never miss a storm call again.</p>
         <div class="post-meta">
           <span>May 1, 2026 · 7 min read</span>
-          <span class="post-read-more">Read more <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="#E89B6C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="post-read-more">Read more <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="oklch(0.74 0.17 55)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </div>
       </div>
     </a>
@@ -244,22 +245,22 @@
         <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
           <rect width="400" height="200" fill="#141310"/>
           <rect x="40" y="120" width="40" height="50" rx="4" fill="#1A1916" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
-          <rect x="40" y="100" width="40" height="20" rx="2" fill="#E89B6C" opacity="0.3"/>
+          <rect x="40" y="100" width="40" height="20" rx="2" fill="oklch(0.74 0.17 55)" opacity="0.3"/>
           <rect x="100" y="80" width="40" height="90" rx="4" fill="#1A1916" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
-          <rect x="100" y="60" width="40" height="20" rx="2" fill="#E89B6C" opacity="0.5"/>
+          <rect x="100" y="60" width="40" height="20" rx="2" fill="oklch(0.74 0.17 55)" opacity="0.5"/>
           <rect x="160" y="60" width="40" height="110" rx="4" fill="#1A1916" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
-          <rect x="160" y="40" width="40" height="20" rx="2" fill="#E89B6C" opacity="0.7"/>
+          <rect x="160" y="40" width="40" height="20" rx="2" fill="oklch(0.74 0.17 55)" opacity="0.7"/>
           <rect x="220" y="40" width="40" height="130" rx="4" fill="#1A1916" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
-          <rect x="220" y="20" width="40" height="20" rx="2" fill="#E89B6C" opacity="0.9"/>
-          <rect x="280" y="30" width="40" height="140" rx="4" fill="#E89B6C" opacity="0.15" stroke="#E89B6C" stroke-width="1"/>
-          <rect x="280" y="10" width="40" height="20" rx="2" fill="#E89B6C"/>
+          <rect x="220" y="20" width="40" height="20" rx="2" fill="oklch(0.74 0.17 55)" opacity="0.9"/>
+          <rect x="280" y="30" width="40" height="140" rx="4" fill="oklch(0.74 0.17 55)" opacity="0.15" stroke="oklch(0.74 0.17 55)" stroke-width="1"/>
+          <rect x="280" y="10" width="40" height="20" rx="2" fill="oklch(0.74 0.17 55)"/>
           <line x1="30" y1="170" x2="370" y2="170" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
           <text x="200" y="190" text-anchor="middle" fill="#5A5650" font-size="10" font-family="system-ui">Cost comparison by service type</text>
           <text x="60" y="96" text-anchor="middle" fill="#A09890" font-size="9" font-family="system-ui">IVR</text>
           <text x="120" y="76" text-anchor="middle" fill="#A09890" font-size="9" font-family="system-ui">Basic</text>
           <text x="180" y="56" text-anchor="middle" fill="#A09890" font-size="9" font-family="system-ui">Live</text>
           <text x="240" y="36" text-anchor="middle" fill="#A09890" font-size="9" font-family="system-ui">Premium</text>
-          <text x="300" y="26" text-anchor="middle" fill="#E89B6C" font-size="9" font-family="system-ui" font-weight="600">AI</text>
+          <text x="300" y="26" text-anchor="middle" fill="oklch(0.74 0.17 55)" font-size="9" font-family="system-ui" font-weight="600">AI</text>
         </svg>
       </div>
       <div class="post-card-body">
@@ -268,7 +269,7 @@
         <p>From basic IVR to live operators to AI — we break down the real costs, what you get at each price point, and which option actually makes your business money.</p>
         <div class="post-meta">
           <span>Apr 24, 2026 · 7 min read</span>
-          <span class="post-read-more">Read more <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="#E89B6C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="post-read-more">Read more <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="oklch(0.74 0.17 55)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </div>
       </div>
     </a>

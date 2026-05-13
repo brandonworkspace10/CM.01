@@ -52,16 +52,17 @@
     ]
   }
   </script>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg: #0E0D0B; --bg-2: #141310; --bg-3: #1A1916;
-      --fg: #F6F2EB; --fg-dim: #A09890; --fg-mute: #5A5650;
-      --accent: #E89B6C; --line: rgba(255,255,255,0.07);
+      --bg: #0E0D0B; --bg-2: #151310; --bg-3: #1C1915;
+      --fg: #F6F2EB; --fg-dim: #A6A097; --fg-mute: #6E685F;
+      --accent: oklch(0.74 0.17 55); --line: #2A2620;
       --serif: 'Instrument Serif', Georgia, serif;
       --sans: 'Geist', system-ui, sans-serif;
+      --mono: 'JetBrains Mono', monospace;
       --mono: 'Geist Mono', 'Courier New', monospace;
     }
     body { background: var(--bg); color: var(--fg); font-family: var(--sans); line-height: 1.7; }
@@ -85,7 +86,7 @@
     .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--fg-mute); margin-bottom: 24px; }
     .breadcrumb a { color: var(--fg-dim); transition: color .2s; }
     .breadcrumb a:hover { color: var(--fg); }
-    .post-tag { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); background: rgba(232,155,108,0.1); border-radius: 4px; padding: 4px 10px; margin-bottom: 20px; }
+    .post-tag { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); background: oklch(0.74 0.17 55 / 0.1); border-radius: 4px; padding: 4px 10px; margin-bottom: 20px; }
     .post-hero h1 { font-family: var(--serif); font-size: clamp(28px, 4vw, 48px); font-weight: 400; line-height: 1.2; margin-bottom: 20px; }
     .post-hero .subtitle { font-size: 18px; color: var(--fg-dim); line-height: 1.6; margin-bottom: 28px; max-width: 640px; }
     .post-meta { display: flex; align-items: center; gap: 20px; font-size: 13px; color: var(--fg-mute); padding-top: 20px; border-top: 1px solid var(--line); }

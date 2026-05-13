@@ -34,16 +34,17 @@
     "image": "https://callingmatrix.com/og-image.png"
   }
   </script>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg: #0E0D0B; --bg-2: #141310; --bg-3: #1A1916;
-      --fg: #F6F2EB; --fg-dim: #A09890; --fg-mute: #5A5650;
-      --accent: #E89B6C; --line: rgba(255,255,255,0.07);
+      --bg: #0E0D0B; --bg-2: #151310; --bg-3: #1C1915;
+      --fg: #F6F2EB; --fg-dim: #A6A097; --fg-mute: #6E685F;
+      --accent: oklch(0.74 0.17 55); --line: #2A2620;
       --serif: 'Instrument Serif', Georgia, serif;
       --sans: 'Geist', system-ui, sans-serif;
+      --mono: 'JetBrains Mono', monospace;
     }
     body { background: var(--bg); color: var(--fg); font-family: var(--sans); line-height: 1.7; }
     a { color: inherit; text-decoration: none; }
@@ -67,7 +68,7 @@
     .breadcrumb a { color: var(--fg-dim); transition: color .2s; }
     .breadcrumb a:hover { color: var(--fg); }
     .breadcrumb span { color: var(--fg-mute); }
-    .post-tag { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); background: rgba(232,155,108,0.1); border-radius: 4px; padding: 4px 10px; margin-bottom: 20px; }
+    .post-tag { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); background: oklch(0.74 0.17 55 / 0.1); border-radius: 4px; padding: 4px 10px; margin-bottom: 20px; }
     .post-hero h1 { font-family: var(--serif); font-size: clamp(28px, 4vw, 48px); font-weight: 400; line-height: 1.2; margin-bottom: 20px; }
     .post-hero .subtitle { font-size: 18px; color: var(--fg-dim); line-height: 1.6; margin-bottom: 28px; max-width: 640px; }
     .post-meta { display: flex; align-items: center; gap: 20px; font-size: 13px; color: var(--fg-mute); padding-top: 20px; border-top: 1px solid var(--line); }
@@ -83,7 +84,7 @@
     .article-wrap p strong { color: var(--fg); font-weight: 500; }
     .article-wrap ul, .article-wrap ol { color: var(--fg-dim); font-size: 16px; line-height: 1.75; margin: 0 0 20px 20px; }
     .article-wrap li { margin-bottom: 8px; }
-    .article-wrap a { color: var(--accent); text-decoration: underline; text-decoration-color: rgba(232,155,108,0.3); }
+    .article-wrap a { color: var(--accent); text-decoration: underline; text-decoration-color: oklch(0.74 0.17 55 / 0.3); }
     .article-wrap a:hover { text-decoration-color: var(--accent); }
 
     .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 36px 0; }
@@ -97,13 +98,13 @@
     .price-table td { padding: 14px 16px; border-bottom: 1px solid var(--line); color: var(--fg-dim); vertical-align: top; }
     .price-table tr:last-child td { border-bottom: none; }
     .price-table td:first-child { color: var(--fg); font-weight: 500; }
-    .price-table .highlight td { background: rgba(232,155,108,0.05); }
+    .price-table .highlight td { background: oklch(0.74 0.17 55 / 0.05); }
     .price-table .highlight td:first-child { color: var(--accent); }
-    .badge { display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 6px; border-radius: 3px; background: rgba(232,155,108,0.15); color: var(--accent); margin-left: 6px; }
+    .badge { display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 6px; border-radius: 3px; background: oklch(0.74 0.17 55 / 0.15); color: var(--accent); margin-left: 6px; }
 
     .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 32px 0; }
     .compare-box { background: var(--bg-2); border: 1px solid var(--line); border-radius: 12px; padding: 24px; }
-    .compare-box.good { border-color: rgba(232,155,108,0.25); }
+    .compare-box.good { border-color: oklch(0.74 0.17 55 / 0.25); }
     .compare-box h4 { font-size: 13px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 16px; color: var(--fg-mute); }
     .compare-box.good h4 { color: var(--accent); }
     .compare-box ul { list-style: none; margin: 0; padding: 0; }
@@ -204,11 +205,11 @@
     <text x="380" y="262" text-anchor="middle" fill="#7A7570" font-size="11" font-family="system-ui, sans-serif">5 missed/week</text>
 
     <!-- 10 missed/week → $33,800/yr → highlight, height=168, top=72 -->
-    <rect x="557" y="72" width="100" height="168" rx="5" fill="rgba(232,155,108,0.18)" stroke="#E89B6C" stroke-width="1.5"/>
-    <text x="607" y="67" text-anchor="middle" fill="#E89B6C" font-size="12" font-weight="700" font-family="system-ui, sans-serif">$33,800</text>
-    <text x="607" y="262" text-anchor="middle" fill="#E89B6C" font-size="11" font-weight="600" font-family="system-ui, sans-serif">10 missed/week</text>
-    <rect x="566" y="79" width="82" height="19" rx="9" fill="rgba(232,155,108,0.22)" stroke="rgba(232,155,108,0.5)" stroke-width="1"/>
-    <text x="607" y="92" text-anchor="middle" fill="#E89B6C" font-size="10" font-weight="700" font-family="system-ui, sans-serif">INDUSTRY AVG</text>
+    <rect x="557" y="72" width="100" height="168" rx="5" fill="oklch(0.74 0.17 55 / 0.18)" stroke="oklch(0.74 0.17 55)" stroke-width="1.5"/>
+    <text x="607" y="67" text-anchor="middle" fill="oklch(0.74 0.17 55)" font-size="12" font-weight="700" font-family="system-ui, sans-serif">$33,800</text>
+    <text x="607" y="262" text-anchor="middle" fill="oklch(0.74 0.17 55)" font-size="11" font-weight="600" font-family="system-ui, sans-serif">10 missed/week</text>
+    <rect x="566" y="79" width="82" height="19" rx="9" fill="oklch(0.74 0.17 55 / 0.22)" stroke="oklch(0.74 0.17 55 / 0.5)" stroke-width="1"/>
+    <text x="607" y="92" text-anchor="middle" fill="oklch(0.74 0.17 55)" font-size="10" font-weight="700" font-family="system-ui, sans-serif">INDUSTRY AVG</text>
   </svg>
 </div>
 
@@ -364,7 +365,7 @@
     <div class="foot-grid">
       <div class="foot-brand">
         <a href="/" class="logo" style="font-family: 'Instrument Serif', Georgia, serif; font-size: 20px; display: flex; align-items: center; gap: 8px;">
-          <span class="logo-mark"><svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="24" height="24" rx="6" stroke="currentColor" stroke-opacity="0.4"/><path d="M8 10 Q8 8 10 8 L12 8 L14 12 L12 14 Q14 17 16 18 L18 16 L22 18 L22 20 Q22 22 20 22 Q13 22 8 17 Q6 14 6 11 Z" fill="#E89B6C"/><circle cx="20" cy="6" r="2" fill="#E89B6C"/></svg></span>
+          <span class="logo-mark"><svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="24" height="24" rx="6" stroke="currentColor" stroke-opacity="0.4"/><path d="M8 10 Q8 8 10 8 L12 8 L14 12 L12 14 Q14 17 16 18 L18 16 L22 18 L22 20 Q22 22 20 22 Q13 22 8 17 Q6 14 6 11 Z" fill="oklch(0.74 0.17 55)"/><circle cx="20" cy="6" r="2" fill="oklch(0.74 0.17 55)"/></svg></span>
           Calling Matrix
         </a>
         <p>24/7 AI receptionist for home service businesses. Answer every call. Book every job.</p>

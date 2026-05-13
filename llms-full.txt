@@ -166,6 +166,29 @@ Month-to-month plans. No long-term contracts.
 - Homepage: https://callingmatrix.com
 - Pricing: https://callingmatrix.com/pricing
 - Book a demo: https://callingmatrix.com/book-demo
+- ROI calculator: https://callingmatrix.com/roi-calculator
 - Blog: https://callingmatrix.blog
 - Integrations: https://callingmatrix.com/integrations/housecall-pro
 - Comparisons: https://callingmatrix.com/compare/calling-matrix-vs-smith-ai
+
+---
+
+## Blog content
+
+The Calling Matrix Blog publishes field guides, playbooks, and industry-specific content for home service business owners.
+
+**Editorial posts**
+- **The 14-second rule** (callingmatrix.blog/the-14-second-rule) — analysis of 1.2 million inbound calls showing the average caller hangs up at 14 seconds and dials a competitor within 60 seconds
+- **After-hours routing** (callingmatrix.blog/after-hours-routing) — 3-tier emergency triage model; reduced Delgado HVAC's overnight escalations by 62%
+- **Every missed call is worth $287** (callingmatrix.blog/missed-call-value) — lifetime-value math derived from 1,400 home service businesses
+- **Spanish-language calls on every plan** (callingmatrix.blog/spanish-language-calls) — bilingual handoff, accent-aware booking, tested across 40 cities in Texas, Florida, and California
+- **Pham Plumbing case study** (callingmatrix.blog/pham-plumbing-case-study) — 4-truck Sacramento shop eliminated 40 missed calls/week in 90 days without hiring
+- **Heat-wave pricing** (callingmatrix.blog/heat-wave-pricing) — dynamic dispatch strategies for HVAC owners when summer demand spikes 4×
+- **The dispatcher script** (callingmatrix.blog/dispatcher-script) — word-for-word first-12-seconds script built from 8,000 recorded calls
+
+**Buyer guides**
+- **HVAC answering service cost** (callingmatrix.blog/hvac-answering-service-cost) — pricing breakdown comparing live answering services, voicemail, and AI options for HVAC companies
+- **Answering service for plumbers** (callingmatrix.blog/answering-service-for-plumbers) — what to look for, what to avoid, and how AI handles emergency routing
+- **Answering service for roofing contractors** (callingmatrix.blog/answering-service-for-roofing-contractors) — storm surge capacity, insurance claim intake, and estimate booking
+- **Answering service for electrical contractors** (callingmatrix.blog/answering-service-for-electrical-contractors) — safety emergency classification and residential vs. commercial differentiation
+- **Answering service for cleaning businesses** (callingmatrix.blog/answering-service-for-cleaning-businesses) — recurring appointment booking, 24/48/72-hour quote follow-up, service area screening

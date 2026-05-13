@@ -424,6 +424,9 @@
 <script>
   var nav = document.getElementById('nav');
   window.addEventListener('scroll', function() { nav.classList.toggle('scrolled', window.scrollY > 20); }, { passive: true });
+  var CALENDLY_URL='https://calendly.com/callingmatrix/30min';
+  function openCalendly(){if(window.Calendly){Calendly.initPopupWidget({url:CALENDLY_URL});return;}if(!document.querySelector('link[href*="calendly"]')){var l=document.createElement('link');l.rel='stylesheet';l.href='https://assets.calendly.com/assets/external/widget.css';document.head.appendChild(l);}var s=document.createElement('script');s.src='https://assets.calendly.com/assets/external/widget.js';s.onload=function(){Calendly.initPopupWidget({url:CALENDLY_URL});};document.head.appendChild(s);}
+  document.addEventListener('click',function(e){var a=e.target.closest('a[href="/#demo"],a[href="#demo"]');if(!a)return;e.preventDefault();openCalendly();});
 </script>
 </body>
 </html>

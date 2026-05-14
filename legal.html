@@ -225,6 +225,23 @@ footer {
 }
 .foot-bottom a { color: var(--fg-mute); text-decoration: none; }
 .foot-bottom a:hover { color: var(--fg); }
+
+/* ==== MOBILE HAMBURGER + SPACING ==== */
+.mob-menu-btn { display: none; flex-direction: column; justify-content: space-between; width: 44px; height: 44px; padding: 11px 10px; border-radius: 8px; border: 1px solid var(--line); transition: border-color .2s; flex-shrink: 0; }
+.mob-menu-btn:hover { border-color: var(--fg-dim); }
+.mob-menu-btn span { display: block; width: 100%; height: 1.5px; background: var(--fg); transition: transform .3s, opacity .3s; }
+.mob-menu-btn.mob-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.mob-menu-btn.mob-open span:nth-child(2) { opacity: 0; }
+.mob-menu-btn.mob-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+@media (max-width: 720px) {
+  .mob-menu-btn { display: flex; }
+  .nav-links.mob-open { display: flex !important; flex-direction: column; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--bg); z-index: 98; padding: 80px 24px 28px; gap: 0; overflow-y: auto; border-top: 1px solid var(--line); }
+  .nav-links.mob-open a, .nav-links.mob-open button { padding: 16px 0; font-size: 17px; color: var(--fg) !important; border-bottom: 1px solid var(--line); display: block; width: 100%; text-align: left; background: none; }
+  section { padding: 72px 0; }
+  .hero { min-height: unset; padding: 100px 0 60px; }
+  .final { padding: 80px 0; }
+  .wrap { padding: 0 20px; }
+}
 </style>
 <script defer src="/_vercel/insights/script.js"></script>
 <script src="https://analytics.ahrefs.com/analytics.js" data-key="94z1bOhN7RVx3o2W/eEUbQ" async></script>

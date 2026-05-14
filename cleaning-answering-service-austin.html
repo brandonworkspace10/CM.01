@@ -52,6 +52,8 @@
       <a href="https://callingmatrix.blog">Blog</a>
     </nav>
     <a href="#" class="nav-cta" onclick="openCalendly();return false;">Book a demo</a>
+    <button class="mob-menu-btn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+
   </div>
 </nav>
 
@@ -200,5 +202,26 @@ document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
 document.querySelectorAll('.faq-item').forEach(i=>i.addEventListener('click',()=>i.classList.toggle('open')));
 const CALENDLY_URL='https://calendly.com/callingmatrix/30min';
 function openCalendly(){if(window.Calendly){Calendly.initPopupWidget({url:CALENDLY_URL});return;}if(!document.querySelector('link[href*="calendly"]')){const l=document.createElement('link');l.rel='stylesheet';l.href='https://assets.calendly.com/assets/external/widget.css';document.head.appendChild(l);}const s=document.createElement('script');s.src='https://assets.calendly.com/assets/external/widget.js';s.onload=()=>Calendly.initPopupWidget({url:CALENDLY_URL});document.head.appendChild(s);}
+</script>
+<script>
+(function(){
+  var b=document.querySelector('.mob-menu-btn');
+  var n=document.querySelector('.nav-links');
+  if(!b||!n)return;
+  b.addEventListener('click',function(){
+    var o=n.classList.toggle('mob-open');
+    b.classList.toggle('mob-open',o);
+    b.setAttribute('aria-expanded',String(o));
+    document.body.style.overflow=o?'hidden':'';
+  });
+  n.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      n.classList.remove('mob-open');
+      b.classList.remove('mob-open');
+      b.setAttribute('aria-expanded','false');
+      document.body.style.overflow='';
+    });
+  });
+})();
 </script>
 </body></html>

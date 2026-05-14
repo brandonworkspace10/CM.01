@@ -2096,8 +2096,8 @@ document.addEventListener('click', function(e) {
 <script>
 /* ======= Integrations Marquee ======= */
 const row1Logos = [
-  /* Housecall Pro — green H mark */
-  { name: 'Housecall Pro', svg: '<svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="20" rx="5" fill="#1A8C3F"/><rect x="4.5" y="5" width="2.5" height="10" rx="1" fill="white"/><rect x="13" y="5" width="2.5" height="10" rx="1" fill="white"/><rect x="4.5" y="8.75" width="11" height="2.5" rx="1" fill="white"/></svg>' },
+  /* Housecall Pro — yellow bg, navy house mark */
+  { name: 'Housecall Pro', svg: '<svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="20" rx="5" fill="#FEB705"/><path d="M10 3.5L17 9.5H15V16.5H5V9.5H3Z" fill="#002942"/><rect x="8" y="12.5" width="4" height="4" rx="0.5" fill="#FEB705"/></svg>' },
   /* ServiceTitan — navy blue, bold S mark */
   { name: 'ServiceTitan',  svg: '<svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="20" rx="5" fill="#003D6B"/><path d="M10.3 5.5c-2.1 0-3.3 1-3.3 2.4 0 2.6 4.3 1.9 4.3 3.3 0 .6-.5.9-1.4.9-1.2 0-2.3-.5-3-1.1v2.1c.8.5 1.9.8 3 .8 2.2 0 3.5-.9 3.5-2.4 0-2.7-4.3-2-4.3-3.3 0-.5.4-.8 1.2-.8 1 0 2 .4 2.8.9V6.2c-.8-.4-1.7-.7-2.8-.7z" fill="white"/></svg>' },
   /* Jobber — blue, J with curved tail */
@@ -2108,8 +2108,8 @@ const row1Logos = [
   { name: 'Zapier',        svg: '<svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="20" rx="5" fill="#FF4A00"/><path d="M5 5h10v2.2L8.2 13.8H15V16H5v-2.2L11.8 7H5z" fill="white"/></svg>' },
   /* Twilio — red, ring with two dots (their actual mark) */
   { name: 'Twilio',        svg: '<svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="20" rx="5" fill="#F22F46"/><circle cx="10" cy="10" r="4.5" fill="none" stroke="white" stroke-width="1.8"/><circle cx="8.2" cy="8.2" r="1.2" fill="white"/><circle cx="11.8" cy="11.8" r="1.2" fill="white"/></svg>' },
-  /* HubSpot — orange, sprocket: center circle + 4 arms + outer circles */
-  { name: 'HubSpot',       svg: '<svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="20" rx="5" fill="#FF7A59"/><circle cx="10" cy="10" r="2.3" fill="white"/><circle cx="10" cy="4.2" r="1.6" fill="white"/><circle cx="10" cy="15.8" r="1.6" fill="white"/><circle cx="4.2" cy="10" r="1.6" fill="white"/><circle cx="15.8" cy="10" r="1.6" fill="white"/><line x1="10" y1="5.8" x2="10" y2="7.7" stroke="white" stroke-width="1.6"/><line x1="10" y1="12.3" x2="10" y2="14.2" stroke="white" stroke-width="1.6"/><line x1="5.8" y1="10" x2="7.7" y2="10" stroke="white" stroke-width="1.6"/><line x1="12.3" y1="10" x2="14.2" y2="10" stroke="white" stroke-width="1.6"/></svg>' },
+  /* HubSpot — orange, sprocket: center circle + 3 arms (120° apart) + outer circles */
+  { name: 'HubSpot',       svg: '<svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="20" rx="5" fill="#FF7A59"/><circle cx="10" cy="10" r="2.2" fill="white"/><line x1="10" y1="7.8" x2="10" y2="6" stroke="white" stroke-width="1.8"/><circle cx="10" cy="4.5" r="1.5" fill="white"/><line x1="11.9" y1="11.1" x2="13.5" y2="12" stroke="white" stroke-width="1.8"/><circle cx="14.8" cy="12.8" r="1.5" fill="white"/><line x1="8.1" y1="11.1" x2="6.5" y2="12" stroke="white" stroke-width="1.8"/><circle cx="5.2" cy="12.8" r="1.5" fill="white"/></svg>' },
   /* Salesforce — light blue, cloud shape */
   { name: 'Salesforce',    svg: '<svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="20" rx="5" fill="#00A1E0"/><path d="M8 13.5a3 3 0 01-2.8-4 2.5 2.5 0 012.3-3.4 2.5 2.5 0 012-1A2.5 2.5 0 0112 6.3a2 2 0 011.3-.5 2 2 0 012 2 2 2 0 01-.4 1.2A2.5 2.5 0 0114 12H8.5z" fill="white"/></svg>' },
   /* Slack — purple bg, 4-color pinwheel (their actual mark) */
@@ -2124,16 +2124,16 @@ const row2Logos = [
   { name: 'Microsoft Excel', svg: '<svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="20" rx="5" fill="#217346"/><path d="M6 5.5l2.7 4.3-2.9 4.7H8l2-3.2 1.9 3.2H14l-2.9-4.7 2.7-4.3H12l-2 3.3-2-3.3z" fill="white"/></svg>' },
   /* Outlook — blue, envelope with O overlay */
   { name: 'Outlook',       svg: '<svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="20" rx="5" fill="#0078D4"/><rect x="2.5" y="7" width="9" height="7.5" rx="1.5" fill="white" opacity=".95"/><ellipse cx="7" cy="10.75" rx="2.3" ry="2.8" fill="#0078D4"/><ellipse cx="7" cy="10.75" rx="1.1" ry="1.6" fill="white"/><rect x="11.5" y="8.5" width="6" height="4.5" rx="1" fill="white" opacity=".8"/><path d="M11.5 9.2l3 1.8 3-1.8" stroke="#0078D4" stroke-width=".9" fill="none"/></svg>' },
-  /* QuickBooks — green, interlocking QB ring */
-  { name: 'QuickBooks',    svg: '<svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="20" rx="5" fill="#2CA01C"/><circle cx="8.5" cy="10" r="4" fill="none" stroke="white" stroke-width="2.2"/><rect x="10.3" y="6.8" width="2.2" height="6.4" rx="1.1" fill="white"/><circle cx="12.4" cy="9.5" r="1.1" fill="white"/></svg>' },
+  /* QuickBooks — Intuit green #108000, QB ring mark */
+  { name: 'QuickBooks',    svg: '<svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="20" rx="5" fill="#108000"/><circle cx="8.5" cy="10" r="4" fill="none" stroke="white" stroke-width="2.2"/><rect x="10.3" y="6.8" width="2.2" height="6.4" rx="1.1" fill="white"/><circle cx="12.4" cy="9.5" r="1.1" fill="white"/></svg>' },
   /* Gmail — white bg, M-shape in red (their envelope M mark) */
   { name: 'Gmail',         svg: '<svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="20" rx="5" fill="#fff"/><rect x="2.5" y="5.5" width="15" height="10" rx="1" fill="white" stroke="#e0e0e0" stroke-width=".8"/><path d="M2.5 6.5l7.5 5.2 7.5-5.2" stroke="#EA4335" stroke-width="1.8" fill="none" stroke-linecap="round"/><rect x="2.5" y="6.5" width="1.5" height="9" rx=".5" fill="#4285F4"/><rect x="16" y="6.5" width="1.5" height="9" rx=".5" fill="#34A853"/></svg>' },
   /* Square — black, nested square mark */
   { name: 'Square',        svg: '<svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="20" rx="5" fill="#121212"/><rect x="4.5" y="4.5" width="11" height="11" rx="2" fill="white"/><rect x="7" y="7" width="6" height="6" rx="1" fill="#121212"/></svg>' },
   /* Calendly — blue, calendar with dot grid */
   { name: 'Calendly',      svg: '<svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="20" rx="5" fill="#006BFF"/><rect x="3.5" y="5.5" width="13" height="11" rx="1.5" fill="white" opacity=".95"/><rect x="3.5" y="5.5" width="13" height="4" fill="#006BFF"/><rect x="7" y="3.5" width="1.5" height="4" rx=".75" fill="white"/><rect x="11.5" y="3.5" width="1.5" height="4" rx=".75" fill="white"/><circle cx="7" cy="13" r="1.2" fill="#006BFF"/><circle cx="10" cy="13" r="1.2" fill="#006BFF"/><circle cx="13" cy="13" r="1.2" fill="#006BFF"/></svg>' },
-  /* Notion — dark bg, bold italic N mark */
-  { name: 'Notion',        svg: '<svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="20" rx="5" fill="#191919"/><path d="M5 5v10l3-1.5V8l7 7V5l-3 1.5v7L5 5z" fill="white"/></svg>' },
+  /* Notion — pure black bg, white N mark */
+  { name: 'Notion',        svg: '<svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="20" rx="5" fill="#000000"/><path d="M5 5v10l3-1.5V8l7 7V5l-3 1.5v7L5 5z" fill="white"/></svg>' },
   /* Airtable — yellow, A-shape with colored columns */
   { name: 'Airtable',      svg: '<svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="20" rx="5" fill="#FCB400"/><path d="M3 7.5l7-3.5 7 3.5-7 2.5L3 7.5z" fill="white"/><rect x="3" y="9.5" width="6" height="6.5" rx="1" fill="#18BFFF"/><rect x="11" y="9.5" width="6" height="6.5" rx="1" fill="#F82B60"/></svg>' },
   /* Mailchimp — yellow, Freddie chimp face */

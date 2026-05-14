@@ -54,7 +54,15 @@
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Cloud",
       "description": "24/7 AI receptionist that answers questions, books and cancels appointments, and follows up with customers for home service businesses.",
-      "offers": { "@type": "Offer", "price": "497", "priceCurrency": "USD" }
+      "offers": { "@type": "Offer", "price": "497", "priceCurrency": "USD" },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "bestRating": "5",
+        "worstRating": "1",
+        "reviewCount": "14",
+        "ratingCount": "14"
+      }
     },
     {
       "@type": "LocalBusiness",
@@ -83,11 +91,39 @@
         "itemListElement": [
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Starter Plan" }, "price": "497", "priceCurrency": "USD" },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Growth Plan" }, "price": "797", "priceCurrency": "USD" },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Scale Plan" }, "price": "0", "priceCurrency": "USD" }
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Scale Plan" }, "description": "Custom pricing — contact for details" }
         ]
       },
       "knowsAbout": ["HVAC", "Plumbing", "Electrical", "Roofing", "Cleaning", "Home Services"],
-      "sameAs": ["https://twitter.com/callingmatrix","https://linkedin.com/company/callingmatrix","https://instagram.com/callingmatrix"]
+      "sameAs": ["https://twitter.com/callingmatrix","https://linkedin.com/company/callingmatrix","https://instagram.com/callingmatrix"],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "bestRating": "5",
+        "worstRating": "1",
+        "reviewCount": "14",
+        "ratingCount": "14"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "author": { "@type": "Person", "name": "Rick Delgado" },
+          "reviewBody": "We were losing about 40 calls a week after hours. Calling Matrix booked 17 of them its first weekend. Paid for itself by Monday."
+        },
+        {
+          "@type": "Review",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "author": { "@type": "Person", "name": "Jason Pham" },
+          "reviewBody": "My wife used to take calls from the dinner table. Now she doesn't — and our calendar is fuller than it's ever been."
+        },
+        {
+          "@type": "Review",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "author": { "@type": "Person", "name": "Tasha Bell" },
+          "reviewBody": "Customers don't know it's AI. I barely know it's AI. It handles the weird questions better than half the receptionists I've hired."
+        }
+      ]
     },
     {
       "@type": "FAQPage",
@@ -99,7 +135,7 @@
         { "@type": "Question", "name": "How much does Calling Matrix cost?", "acceptedAnswer": { "@type": "Answer", "text": "Plans start at $497/month for the Starter tier, $797/month for Growth, and custom pricing for Scale. All plans include unlimited call answering, booking automation, and SMS follow-up. There is no per-minute billing." } },
         { "@type": "Question", "name": "What happens if the AI can't answer a question?", "acceptedAnswer": { "@type": "Answer", "text": "If a caller asks something outside the AI's training — a very specific pricing question or unusual scenario — it captures the caller's name and number and sends you a text immediately so you can call them back." } },
         { "@type": "Question", "name": "Does it work for all home service businesses or just HVAC?", "acceptedAnswer": { "@type": "Answer", "text": "Calling Matrix works for any home service business: HVAC, plumbing, electrical, roofing, cleaning, landscaping, pest control, and more. Each business gets a custom-trained receptionist based on its specific services, pricing, and service area." } },
-        { "@type": "Question", "name": "Can I keep my existing phone number?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We port your existing business number to Calling Matrix in 1–3 business days. You keep the same number your customers already have — nothing changes on their end." } }
+        { "@type": "Question", "name": "Can I keep my existing phone number?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We port your existing business number to Calling Matrix in 1–3 business days so nothing changes for your customers. If you need a new number instead, we provision a local number for you — your choice." } }
       ]
     },
     {
@@ -1016,7 +1052,7 @@ footer {
       <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
       <a href="#faq" data-i18n="nav.faq">FAQ</a>
       <a href="/roi-calculator">ROI Calculator</a>
-      <a href="https://callingmatrix.blog" data-i18n="nav.blog" target="_blank" rel="noopener">Blog</a>
+      <a href="/blog" data-i18n="nav.blog">Blog</a>
     </div>
     <div class="lang-switch">
       <button class="lang-btn active" data-lang="en">EN</button>
@@ -1123,7 +1159,7 @@ footer {
         <div class="big-num">$<span data-count="287">287</span><span class="suf">/ea</span></div>
         <h3 data-i18n="problem.stat2.h3">Average value of a missed call</h3>
         <p data-i18n="problem.stat2.p">A missed service call isn't just a lead — it's the full lifetime value of a customer who was ready to book today.</p>
-        <a href="https://callingmatrix.blog" target="_blank" rel="noopener" style="display:inline-block;margin-top:10px;font-family:var(--mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);text-decoration:none;transition:opacity .2s;" onmouseover="this.style.opacity='.7'" onmouseout="this.style.opacity='1'">Read the breakdown →</a>
+        <a href="/blog" style="display:inline-block;margin-top:10px;font-family:var(--mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);text-decoration:none;transition:opacity .2s;" onmouseover="this.style.opacity='.7'" onmouseout="this.style.opacity='1'">Read the breakdown →</a>
       </div>
       <div class="problem-cell reveal d2 in">
         <div class="big-num" data-count="85" data-suffix="%">85%</div>
@@ -1233,8 +1269,8 @@ footer {
         <div class="step" data-step="1" data-active="false">
           <div class="num">02</div>
           <div>
-            <h4 data-i18n="step2.h4">We port your number.</h4>
-            <p data-i18n="step2.p">Your existing business line forwards or ports to Calling Matrix. Customers keep dialing the number on the back of the truck.</p>
+            <h4 data-i18n="step2.h4">We handle your number.</h4>
+            <p data-i18n="step2.p">Port your existing business line so customers dial the same number, or we provision a brand-new local number for you — whichever works best.</p>
           </div>
         </div>
         <div class="step" data-step="2" data-active="false">
@@ -1596,6 +1632,10 @@ footer {
         <div class="faq-a">Yes. You define what counts as an emergency (burst pipe, no heat, electrical hazard). Emergencies route straight to your on-call tech. Non-urgent calls get booked for next-available.</div>
       </div>
       <div class="faq-item reveal in">
+        <div class="faq-q">Do I need to use my existing phone number?<div class="faq-plus"></div></div>
+        <div class="faq-a">No. You have two options: port your existing business number to Calling Matrix (1–3 business days, nothing changes for your customers), or we provision a fresh local number for you. Whichever fits your setup, we handle it.</div>
+      </div>
+      <div class="faq-item reveal in">
         <div class="faq-q">Is there a long-term contract?<div class="faq-plus"></div></div>
         <div class="faq-a">No. Month-to-month on every plan. No long-term contracts.</div>
       </div>
@@ -1678,7 +1718,7 @@ footer {
         <a href="#how" data-i18n="footer.about">About</a>
         <a href="/case-studies">Case studies</a>
         <a href="/demo-transcript">Demo call</a>
-        <a href="https://callingmatrix.blog" data-i18n="footer.blog" target="_blank" rel="noopener">Blog</a>
+        <a href="/blog" data-i18n="footer.blog">Blog</a>
         <a href="#" id="contactLink">Contact</a>
       </div>
     </div>

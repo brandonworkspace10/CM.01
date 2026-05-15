@@ -700,6 +700,19 @@ h2.sec-title .italic { color: var(--accent); }
 .viz-int { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
 .int-chip { padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--fg-dim); text-transform: uppercase; }
 
+/* Feature: call routing */
+.viz-route { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+.route-row { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--line); background: var(--bg-3); font-size: 12px; }
+.route-row.hot { border-color: oklch(0.65 0.18 25 / 0.4); }
+.route-row.book { border-color: oklch(0.74 0.17 55 / 0.3); }
+.route-row.after { border-color: var(--line); }
+.route-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.route-dot.red { background: oklch(0.65 0.18 25); }
+.route-dot.green { background: var(--accent); }
+.route-dot.dim { background: var(--fg-mute); }
+.route-label { color: var(--fg-dim); flex: 1; }
+.route-dest { font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; color: var(--fg-mute); }
+
 /* ============ HOW IT WORKS ============ */
 .how { }
 .how-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
@@ -1094,7 +1107,7 @@ footer {
         <span class="swap">HVAC Companies</span>
       </h1>
       <p class="hero-sub reveal d2 in" data-i18n="hero.sub">
-        Calling Matrix is your <strong>fully managed AI receptionist</strong> — we handle every step of setup so you don't touch a thing. Built for HVAC, plumbing, electrical, roofing, and cleaning. Answers in English and Spanish, books appointments, and follows up with every caller <strong>24/7 — starting in 48 hours.</strong>
+        Think of it as hiring a <strong>custom AI employee</strong> trained exclusively for your business — one that answers every call, books every job, asks the right customer questions, and routes emergencies to a real human. Works 24/7, 365 days a year. <strong>Live in 48 hours.</strong>
       </p>
       <div class="cta-row reveal d3 in">
         <a href="#demo" class="btn btn-primary">
@@ -1198,8 +1211,8 @@ footer {
   <div class="wrap">
     <div class="sec-head reveal in">
       <div class="sec-label"><span class="mono" data-i18n="feat.label">02 / What it does</span></div>
-      <h2 class="sec-title" data-i18n="feat.title">A receptionist that never clocks out, <span class="italic">never forgets to follow up.</span></h2>
-      <p class="sec-sub" data-i18n="feat.sub">100% done-for-you. We handle setup, integrations, and monthly tuning. You just take the jobs.</p>
+      <h2 class="sec-title" data-i18n="feat.title">Your custom AI employee — <span class="italic">never clocks out, never misses a job.</span></h2>
+      <p class="sec-sub" data-i18n="feat.sub">Specialized in four things: answering every call, booking appointments on your calendar, asking the right customer questions, and routing emergencies to a real human. 100% done-for-you. Zero ongoing management.</p>
     </div>
 
     <div class="feat-grid">
@@ -1264,6 +1277,29 @@ footer {
         </div>
         <h3 data-i18n="feat5.h3">Plugs into what you already run.</h3>
         <p data-i18n="feat5.p">Port your existing number or we provide a new one — your choice. Keep your existing CRM, dispatcher, and tech stack.</p>
+      </div>
+
+      <div class="feat reveal d1 in">
+        <div class="mono">Routing</div>
+        <div class="viz-route">
+          <div class="route-row hot">
+            <div class="route-dot red"></div>
+            <span class="route-label">Burst pipe · No AC · Gas leak</span>
+            <span class="route-dest">→ On-call tech</span>
+          </div>
+          <div class="route-row book">
+            <div class="route-dot green"></div>
+            <span class="route-label">Service request · Tune-up · Estimate</span>
+            <span class="route-dest">→ Calendar</span>
+          </div>
+          <div class="route-row after">
+            <div class="route-dot dim"></div>
+            <span class="route-label">After-hours non-urgent inquiry</span>
+            <span class="route-dest">→ Morning queue</span>
+          </div>
+        </div>
+        <h3 data-i18n="feat6.h3">Smart call routing — every call goes exactly where it should.</h3>
+        <p data-i18n="feat6.p">True emergencies reach your on-call tech by call or text within seconds. Non-urgent jobs book directly into your calendar. After-hours inquiries get captured and confirmed for morning. Your AI employee knows the difference every time — no script required.</p>
       </div>
     </div>
   </div>

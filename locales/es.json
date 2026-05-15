@@ -7,7 +7,7 @@
   "nav.cta": "Reservar demo →",
 
   "hero.eyebrow": "Nunca pierdas otra llamada de servicio",
-  "hero.sub": "Calling Matrix es tu <strong>recepcionista de IA totalmente gestionado</strong> — nos encargamos de cada paso de la configuración para que no tengas que hacer nada. Diseñado para HVAC, plomería, electricidad, techos y limpieza. Responde en inglés y español, agenda citas y hace seguimiento con cada llamada <strong>24/7 — desde las 48 horas.</strong>",
+  "hero.sub": "Imagínalo como contratar a un <strong>empleado de IA personalizado</strong> entrenado exclusivamente para tu negocio — uno que contesta cada llamada, agenda cada trabajo, hace las preguntas correctas y dirige las emergencias a una persona real. Trabaja 24/7, 365 días al año. <strong>En vivo en 48 horas.</strong>",
   "hero.cta1": "Demo gratis de 15 min",
   "hero.cta2": "Escuchar una llamada →",
   "hero.stat1": "Llamadas contestadas",
@@ -28,8 +28,10 @@
   "problem.tagline": "No deberías tener que elegir entre <span class=\"strike\">contestar el teléfono</span> y hacer el trabajo por el que te pagan.",
 
   "feat.label": "02 / Lo que hace",
-  "feat.title": "Una recepcionista que nunca termina su turno, <span class=\"italic\">nunca olvida el seguimiento.</span>",
-  "feat.sub": "100% a cargo nuestro. Manejamos la configuración, las integraciones y el ajuste mensual. Tú solo tomas los trabajos.",
+  "feat.title": "Tu empleado de IA personalizado — <span class=\"italic\">nunca termina su turno, nunca pierde un trabajo.</span>",
+  "feat.sub": "Especializado en cuatro cosas: contestar cada llamada, agendar citas en tu calendario, hacer las preguntas correctas al cliente y dirigir emergencias a una persona real. 100% a cargo nuestro. Cero gestión continua.",
+  "feat6.h3": "Enrutamiento inteligente de llamadas — cada llamada va exactamente donde debe.",
+  "feat6.p": "Las verdaderas emergencias llegan a tu técnico de guardia por llamada o mensaje en segundos. Los trabajos no urgentes se agendan directamente en tu calendario. Las consultas fuera de horario se capturan y confirman para la mañana. Tu empleado de IA sabe la diferencia cada vez.",
   "feat1.h3": "Contesta cada llamada — 2 a.m., días festivos, durante el Super Bowl.",
   "feat1.p": "Sin buzón de voz. Sin menú de opciones. Sin \"por favor espere.\" Calling Matrix contesta en menos de dos segundos, cada vez. La tubería rota a medianoche se reserva antes de que el teléfono de tu competencia suene.",
   "feat2.h3": "Reserva y reprograma — directamente en tu calendario.",

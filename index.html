@@ -131,8 +131,8 @@
         { "@type": "Question", "name": "Does the AI receptionist actually sound human?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Callers rarely realize they are speaking to an AI. It listens, interrupts naturally, handles objections, and speaks with the pacing of a trained dispatcher." } },
         { "@type": "Question", "name": "Can it integrate with my scheduling software?", "acceptedAnswer": { "@type": "Answer", "text": "Calling Matrix integrates directly with Housecall Pro, ServiceTitan, Jobber, FieldEdge, Workiz, Google Calendar, and Calendly. For software not on the standard list, we build custom API and webhook integrations. Every Calling Matrix setup is custom-built for your specific tools — not a generic template." } },
         { "@type": "Question", "name": "How fast can I get set up?", "acceptedAnswer": { "@type": "Answer", "text": "Most home service businesses are live in under 48 hours. We clone your dispatcher's script, train on your services and pricing, and port your number." } },
-        { "@type": "Question", "name": "What happens to calls after hours?", "acceptedAnswer": { "@type": "Answer", "text": "Calling Matrix answers 24/7/365. Emergency calls get routed to on-call technicians. Non-urgent calls get booked for the next available slot." } },
-        { "@type": "Question", "name": "How much does Calling Matrix cost?", "acceptedAnswer": { "@type": "Answer", "text": "Plans start at $497/month for the Starter tier, $797/month for Growth, and custom pricing for Scale. All plans include unlimited call answering, booking automation, and SMS follow-up. There is no per-minute billing." } },
+        { "@type": "Question", "name": "What happens to calls after hours?", "acceptedAnswer": { "@type": "Answer", "text": "On 24/7 plans, Calling Matrix answers every call around the clock — emergency calls route to your on-call tech, non-urgent calls get booked for the next available slot. On the After Hours plan, Calling Matrix activates only during your defined off-hours, captures leads, books appointments, and delivers a morning summary while you sleep." } },
+        { "@type": "Question", "name": "How much does Calling Matrix cost?", "acceptedAnswer": { "@type": "Answer", "text": "After Hours coverage starts at $297/month for owners who take their own calls during the day. Full 24/7 plans start at $497/month (Starter), $797/month (Growth), and custom pricing for Scale. All plans include a one-time $797 setup fee, unlimited call answering during covered hours, booking automation, and SMS follow-up. No per-minute billing." } },
         { "@type": "Question", "name": "What happens if the AI can't answer a question?", "acceptedAnswer": { "@type": "Answer", "text": "If a caller asks something outside the AI's training — a very specific pricing question or unusual scenario — it captures the caller's name and number and sends you a text immediately so you can call them back." } },
         { "@type": "Question", "name": "Does it work for all home service businesses or just HVAC?", "acceptedAnswer": { "@type": "Answer", "text": "Calling Matrix works for any home service business: HVAC, plumbing, electrical, roofing, cleaning, landscaping, pest control, and more. Each business gets a custom-trained receptionist based on its specific services, pricing, and service area." } },
         { "@type": "Question", "name": "Can I keep my existing phone number?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We port your existing business number to Calling Matrix in 1–3 business days so nothing changes for your customers. If you need a new number instead, we provision a local number for you — your choice." } },
@@ -912,8 +912,20 @@ h2.sec-title .italic { color: var(--accent); }
 }
 
 /* ============ PRICING ============ */
-.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-@media (max-width: 980px) { .pricing-grid { grid-template-columns: 1fr; } }
+.pricing-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+@media (max-width: 1100px) { .pricing-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px)  { .pricing-grid { grid-template-columns: 1fr; } }
+.plan.after-hours { border-color: oklch(0.55 0.12 260 / 0.45); background: oklch(0.55 0.12 260 / 0.04); }
+.plan.after-hours .plan-name { color: oklch(0.65 0.12 260); }
+.plan.after-hours::before {
+  content: 'New';
+  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  padding: 4px 14px; background: oklch(0.55 0.12 260); color: #fff;
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+  border-radius: 999px; font-weight: 600;
+}
+.hours-badge { display: inline-flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 10px; letter-spacing: .1em; color: oklch(0.65 0.12 260); background: oklch(0.55 0.12 260 / 0.1); border: 1px solid oklch(0.55 0.12 260 / 0.25); padding: 4px 10px; border-radius: 999px; margin-bottom: 16px; }
+.plan-hours-note { font-size: 12px; color: var(--fg-mute); margin-top: 10px; font-style: italic; }
 .plan {
   background: var(--bg-2);
   border: 1px solid var(--line);
@@ -1609,9 +1621,29 @@ footer {
     <div class="sec-head reveal in">
       <div class="sec-label"><span class="mono" data-i18n="pricing.label">06 / Pricing</span></div>
       <h2 class="sec-title" data-i18n="pricing.title">Pay less than a part-time hire. <span class="italic">Book more than a full team.</span></h2>
-      <p class="sec-sub" data-i18n="pricing.sub">All plans include a one-time $797 setup fee. Month-to-month — no long-term contracts.</p>
+      <p class="sec-sub" data-i18n="pricing.sub">All plans include a one-time $797 setup fee. Month-to-month — no long-term contracts. Prefer to take calls yourself during business hours? The After Hours plan captures everything while you sleep.</p>
     </div>
     <div class="pricing-grid">
+      <div class="plan after-hours reveal in">
+        <div class="plan-name">After Hours</div>
+        <div class="plan-price">$297<span class="unit">/ mo</span></div>
+        <div class="hours-badge">
+          <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M6 1a5 5 0 100 10A5 5 0 006 1zm0 1.5V6l2.5 1.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          You set the hours
+        </div>
+        <p class="plan-desc">For owners who handle their own calls during the day — we cover everything outside your business hours so nothing slips overnight.</p>
+        <ul class="plan-features">
+          <li>Coverage during your set off-hours only</li>
+          <li>You define the schedule (e.g. 6 pm – 8 am)</li>
+          <li>Appointment booking + Google Calendar sync</li>
+          <li>Lead intake — asks your custom questions</li>
+          <li>CRM upload &amp; Google Sheets sync</li>
+          <li>SMS confirmation to every caller</li>
+          <li>Call recordings &amp; morning summary</li>
+        </ul>
+        <a href="#demo" class="btn btn-ghost">Get started →</a>
+        <div class="plan-hours-note">Upgrade to Starter anytime for full 24/7 coverage.</div>
+      </div>
       <div class="plan reveal in">
         <div class="plan-name">Starter</div>
         <div class="plan-price">$497<span class="unit">/ mo</span></div>
@@ -1666,6 +1698,10 @@ footer {
       <h2 class="sec-title">Common questions from <span class="italic">busy owners.</span></h2>
     </div>
     <div class="faq-list">
+      <div class="faq-item reveal in">
+        <div class="faq-q">How does the After Hours plan work?<div class="faq-plus"></div></div>
+        <div class="faq-a">You set your business hours — say, 8 am to 6 pm — and Calling Matrix only activates outside those times. Any call that comes in after 6 pm, on weekends, or on holidays is answered immediately, your custom questions are asked, appointments are booked straight into your calendar, and leads are uploaded into your CRM. You wake up to a summary of everything captured overnight. No missed calls, no voicemails, no morning backlog. If you grow and want full 24/7 coverage, upgrading to Starter takes one call.</div>
+      </div>
       <div class="faq-item reveal in">
         <div class="faq-q">Does it actually sound human?<div class="faq-plus"></div></div>
         <div class="faq-a">Yes — and callers almost never realize it's AI. Calling Matrix interrupts naturally, handles accents and background noise, and follows the pacing of a trained dispatcher. Hear a real recording on your demo call.</div>

@@ -1,0 +1,897 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Calling Matrix Blog — Notes on AI, Phones, and Home Service Businesses</title>
+<meta name="description" content="The Calling Matrix Blog — field notes, playbooks, and product updates on AI receptionists, missed-call recovery, and running a better home service business." />
+<meta name="keywords" content="AI receptionist blog, home service marketing, missed calls, HVAC business, plumbing business, calling matrix" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="/blog" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Calling Matrix Blog" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:title" content="The Calling Matrix Blog" />
+<meta property="og:description" content="Field notes and playbooks for home service businesses that want to stop missing calls." />
+<meta property="og:url" content="https://callingmatrix.com/blog" />
+<meta property="og:image" content="https://callingmatrix.com/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="The Calling Matrix Blog" />
+<meta name="twitter:description" content="Field notes and playbooks for home service businesses that want to stop missing calls." />
+<meta name="twitter:image" content="https://callingmatrix.com/og-image.png" />
+
+<link rel="alternate" type="application/rss+xml" title="The Calling Matrix Blog" href="/feed.xml" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/favicon.svg" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "Organization", "name": "Calling Matrix", "url": "https://callingmatrix.com" },
+    {
+      "@type": "Blog",
+      "name": "The Calling Matrix Blog",
+      "description": "Field notes, playbooks, and product updates on AI receptionists, missed-call recovery, and running a better home service business.",
+      "url": "https://callingmatrix.com/blog",
+      "publisher": { "@type": "Organization", "name": "Calling Matrix", "url": "https://callingmatrix.com" },
+      "blogPost": [
+        { "@type": "BlogPosting", "headline": "Calling Matrix vs. Smith.ai: An Honest Comparison (2026)", "url": "https://callingmatrix.com/blog/calling-matrix-vs-smith-ai", "datePublished": "2026-05-15", "author": { "@type": "Person", "name": "Brandon Ortiz" } },
+        { "@type": "BlogPosting", "headline": "Calling Matrix vs. Rosie AI: An Honest Comparison (2026)", "url": "https://callingmatrix.com/blog/calling-matrix-vs-rosie", "datePublished": "2026-05-12", "author": { "@type": "Person", "name": "Brandon Ortiz" } },
+        { "@type": "BlogPosting", "headline": "How Much Does an AI Receptionist Cost in 2026?", "url": "https://callingmatrix.com/blog/how-much-does-ai-receptionist-cost", "datePublished": "2026-05-10", "author": { "@type": "Person", "name": "Rick Delgado" } },
+        { "@type": "BlogPosting", "headline": "7 Best Answering Services for Cleaning Companies in 2026", "url": "https://callingmatrix.com/blog/best-answering-service-for-cleaning-companies", "datePublished": "2026-05-08", "author": { "@type": "Person", "name": "Ana Reyes" } },
+        { "@type": "BlogPosting", "headline": "7 Best AI Receptionists for Electricians in 2026", "url": "https://callingmatrix.com/blog/best-ai-receptionist-for-electricians", "datePublished": "2026-05-05", "author": { "@type": "Person", "name": "Brandon Ortiz" } },
+        { "@type": "BlogPosting", "headline": "The 14-second rule: why home service callers don't wait, and what to do about it", "url": "https://callingmatrix.com/blog/the-14-second-rule", "datePublished": "2026-05-04", "author": { "@type": "Person", "name": "Brandon Ortiz" } },
+        { "@type": "BlogPosting", "headline": "After-hours emergencies: the 3-tier routing model that keeps techs sane", "url": "https://callingmatrix.com/blog/after-hours-routing", "datePublished": "2026-05-02", "author": { "@type": "Person", "name": "Maya Chen" } },
+        { "@type": "BlogPosting", "headline": "Every missed call is worth $287. Here's the math.", "url": "https://callingmatrix.com/blog/missed-call-value", "datePublished": "2026-04-28", "author": { "@type": "Person", "name": "Rick Delgado" } },
+        { "@type": "BlogPosting", "headline": "Spanish-language calls now ship on every plan", "url": "https://callingmatrix.com/blog/spanish-language-calls", "datePublished": "2026-04-24", "author": { "@type": "Person", "name": "Ana Reyes" } },
+        { "@type": "BlogPosting", "headline": "Pham Plumbing: from 40 missed calls a week to zero in 90 days", "url": "https://callingmatrix.com/blog/pham-plumbing-case-study", "datePublished": "2026-04-19", "author": { "@type": "Person", "name": "Jason Pham" } },
+        { "@type": "BlogPosting", "headline": "Pricing the heat-wave call: dynamic dispatch when demand spikes 4x", "url": "https://callingmatrix.com/blog/heat-wave-pricing", "datePublished": "2026-04-14", "author": { "@type": "Person", "name": "Tasha Bell" } },
+        { "@type": "BlogPosting", "headline": "The dispatcher script we built from 8,000 recorded calls", "url": "https://callingmatrix.com/blog/dispatcher-script", "datePublished": "2026-04-08", "author": { "@type": "Person", "name": "Brandon Ortiz" } }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+
+<style>
+:root {
+  --bg: #0E0D0B;
+  --bg-2: #151310;
+  --bg-3: #1C1915;
+  --fg: #F6F2EB;
+  --fg-dim: #A6A097;
+  --fg-mute: #6E685F;
+  --line: #2A2620;
+  --accent: oklch(0.74 0.17 55);
+  --accent-2: oklch(0.64 0.18 50);
+  --accent-soft: oklch(0.74 0.17 55 / 0.12);
+  --serif: 'Instrument Serif', 'Times New Roman', serif;
+  --sans: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--sans);
+  font-weight: 400;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
+
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+.mono { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-mute); }
+.serif { font-family: var(--serif); font-weight: 400; letter-spacing: -0.02em; }
+
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1); }
+.reveal.in { opacity: 1; transform: none; }
+.reveal.d1 { transition-delay: .08s; }
+.reveal.d2 { transition-delay: .16s; }
+.reveal.d3 { transition-delay: .24s; }
+
+/* NAV */
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  padding: 22px 32px;
+  background: rgba(14,13,11,0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--line);
+}
+.nav-inner {
+  max-width: 1240px; margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 32px;
+}
+.logo {
+  display: flex; align-items: center; gap: 12px;
+  font-family: var(--serif);
+  font-size: 26px;
+  letter-spacing: -0.01em;
+}
+.logo-mark { width: 30px; height: 30px; }
+.logo-mark svg { width: 100%; height: 100%; display: block; }
+.logo .blog-tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-left: 1px solid var(--line);
+  padding-left: 12px;
+  margin-left: 4px;
+}
+.nav-links {
+  display: flex; gap: 32px; justify-content: center;
+  font-size: 14px; color: var(--fg-dim);
+}
+.nav-links a { transition: color .2s; position: relative; }
+.nav-links a:hover { color: var(--fg); }
+.nav-links a.active { color: var(--fg); }
+.nav-links a.active::after { content: ''; position: absolute; left: 0; right: 0; bottom: -6px; height: 1px; background: var(--accent); }
+.nav-cta {
+  padding: 10px 18px; background: var(--fg); color: var(--bg);
+  border-radius: 999px; font-size: 13px; font-weight: 500;
+  transition: transform .2s, box-shadow .2s;
+}
+.nav-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(246,242,235,0.15); }
+@media (max-width: 880px) {
+  .nav-inner { grid-template-columns: 1fr auto; }
+  .nav-links { display: none; }
+}
+
+/* MASTHEAD */
+.masthead {
+  position: relative;
+  padding: 100px 0 64px;
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+.masthead-bg {
+  position: absolute; inset: 0;
+  background: radial-gradient(50% 60% at 80% 20%, oklch(0.72 0.17 55 / 0.10), transparent 60%);
+  pointer-events: none;
+}
+.masthead-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 80px 80px;
+  opacity: 0.18;
+  mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
+  pointer-events: none;
+}
+.masthead-inner { position: relative; }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-dim);
+  margin-bottom: 24px;
+}
+.eyebrow .dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 oklch(0.74 0.17 55 / 0.6); }
+  70% { box-shadow: 0 0 0 10px oklch(0.74 0.17 55 / 0); }
+  100% { box-shadow: 0 0 0 0 oklch(0.74 0.17 55 / 0); }
+}
+.masthead h1 {
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(48px, 6.4vw, 88px);
+  line-height: 0.98; letter-spacing: -0.025em;
+  margin-bottom: 20px;
+  text-wrap: balance;
+}
+.masthead h1 .italic { font-style: italic; color: var(--accent); }
+.masthead .lede {
+  font-size: 19px; color: var(--fg-dim); max-width: 640px; line-height: 1.55;
+}
+
+/* TOPIC FILTER */
+.topics {
+  margin-top: 48px;
+  display: flex; flex-wrap: wrap; gap: 8px;
+}
+.topic-chip {
+  padding: 8px 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-dim);
+  cursor: pointer;
+  transition: all .2s;
+}
+.topic-chip:hover { color: var(--fg); border-color: var(--fg-mute); }
+.topic-chip.active { background: var(--accent); border-color: var(--accent); color: #1a0e00; }
+
+/* FEATURED POST */
+.featured {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--line);
+}
+.featured-card {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+@media (max-width: 980px) { .featured-card { grid-template-columns: 1fr; gap: 32px; } }
+.feat-img {
+  aspect-ratio: 4/3;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background:
+    radial-gradient(60% 60% at 30% 30%, oklch(0.74 0.17 55 / 0.4), transparent 60%),
+    linear-gradient(135deg, var(--bg-3), var(--bg-2));
+  position: relative;
+  overflow: hidden;
+  display: grid; place-items: center;
+}
+.feat-img .ring {
+  width: 60%; aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px dashed var(--line);
+  display: grid; place-items: center;
+  position: relative;
+}
+.feat-img .ring::before { content: ''; position: absolute; inset: 12%; border-radius: 50%; border: 1px solid var(--line); }
+.feat-img .ring-icon {
+  width: 36%; aspect-ratio: 1; border-radius: 50%;
+  background: var(--accent-soft);
+  border: 1px solid oklch(0.74 0.17 55 / 0.3);
+  display: grid; place-items: center;
+  color: var(--accent);
+  font-family: var(--serif); font-size: 32px;
+}
+.feat-tag {
+  display: inline-block;
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+.feat-title {
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.05; letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+.feat-title a { transition: color .2s; }
+.feat-title a:hover { color: var(--accent); }
+.feat-excerpt {
+  font-size: 17px; color: var(--fg-dim); line-height: 1.55; margin-bottom: 24px;
+  max-width: 540px;
+}
+.feat-meta {
+  display: flex; gap: 20px; align-items: center;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--fg-mute);
+}
+.feat-meta .author { display: flex; align-items: center; gap: 10px; color: var(--fg-dim); text-transform: none; letter-spacing: 0; font-family: var(--sans); font-size: 13px; }
+.author-av {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), oklch(0.5 0.1 30));
+  display: grid; place-items: center;
+  font-family: var(--serif); color: #1a0e00; font-size: 13px;
+}
+
+/* POST GRID */
+.posts { padding: 80px 0; }
+.sec-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 48px; }
+.sec-head h2 { font-family: var(--serif); font-weight: 400; font-size: 40px; letter-spacing: -0.02em; }
+.sec-head a { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-dim); }
+.sec-head a:hover { color: var(--accent); }
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+@media (max-width: 980px) { .post-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 680px) { .post-grid { grid-template-columns: 1fr; } }
+.post {
+  display: flex; flex-direction: column;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform .3s, border-color .3s, opacity .25s;
+}
+.post.hidden { display: none; }
+.posts-empty { display: none; padding: 64px 0; text-align: center; color: var(--fg-mute); font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; }
+.posts-empty.visible { display: block; }
+.featured { transition: opacity .3s; }
+.featured.hidden { display: none; }
+.post:hover { transform: translateY(-4px); border-color: oklch(0.74 0.17 55 / 0.4); }
+.post:hover .post-img .ring-icon { transform: scale(1.05); }
+.post-img {
+  aspect-ratio: 16/10;
+  position: relative; overflow: hidden;
+  background:
+    radial-gradient(60% 60% at 30% 30%, oklch(0.74 0.17 55 / 0.25), transparent 60%),
+    linear-gradient(135deg, var(--bg-3), var(--bg-2));
+  display: grid; place-items: center;
+  border-bottom: 1px solid var(--line);
+}
+.post-img .ring {
+  width: 50%; aspect-ratio: 1; border-radius: 50%;
+  border: 1px dashed var(--line);
+  display: grid; place-items: center;
+  position: relative;
+}
+.post-img .ring-icon {
+  width: 56%; aspect-ratio: 1; border-radius: 50%;
+  background: var(--accent-soft);
+  border: 1px solid oklch(0.74 0.17 55 / 0.3);
+  display: grid; place-items: center;
+  color: var(--accent);
+  font-family: var(--serif); font-size: 28px;
+  transition: transform .3s;
+}
+.post-body {
+  padding: 24px;
+  display: flex; flex-direction: column; gap: 12px; flex: 1;
+}
+.post-tag {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--accent);
+}
+.post-title {
+  font-family: var(--serif); font-weight: 400;
+  font-size: 24px; line-height: 1.15; letter-spacing: -0.01em;
+}
+.post-title a { transition: color .2s; }
+.post-title a:hover { color: var(--accent); }
+.post-excerpt {
+  font-size: 14.5px; color: var(--fg-dim); line-height: 1.55;
+}
+.post-meta {
+  margin-top: auto; padding-top: 16px; border-top: 1px solid var(--line);
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--fg-mute);
+}
+.post-meta .by { display: flex; align-items: center; gap: 8px; color: var(--fg-dim); text-transform: none; letter-spacing: 0; font-family: var(--sans); font-size: 12px; }
+.post-meta .av { width: 22px; height: 22px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), oklch(0.5 0.1 30)); display: grid; place-items: center; font-family: var(--serif); color: #1a0e00; font-size: 11px; }
+
+/* NEWSLETTER */
+.news {
+  padding: 100px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--bg-2);
+}
+.news-inner {
+  max-width: 720px; margin: 0 auto; text-align: center;
+}
+.news h3 {
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(36px, 4.4vw, 56px);
+  line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 16px;
+  text-wrap: balance;
+}
+.news h3 .italic { font-style: italic; color: var(--accent); }
+.news p { color: var(--fg-dim); font-size: 17px; max-width: 520px; margin: 0 auto 28px; }
+.news-form {
+  display: flex; gap: 8px; max-width: 460px; margin: 0 auto;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px;
+}
+.news-form input {
+  flex: 1; background: transparent; border: 0; outline: none;
+  padding: 10px 16px; font: inherit; color: var(--fg);
+}
+.news-form input::placeholder { color: var(--fg-mute); }
+.news-form button {
+  padding: 10px 22px;
+  background: var(--accent);
+  color: #1a0e00;
+  border-radius: 999px;
+  font-size: 13px; font-weight: 500;
+  transition: transform .2s, box-shadow .2s;
+}
+.news-form button:hover { transform: translateY(-1px); box-shadow: 0 8px 24px -8px oklch(0.74 0.17 55 / 0.6); }
+.news-fine {
+  margin-top: 16px;
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--fg-mute);
+}
+
+/* FOOTER */
+footer {
+  padding: 60px 0 40px;
+  background: var(--bg);
+}
+.foot-inner {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px;
+  margin-bottom: 40px;
+}
+@media (max-width: 780px) { .foot-inner { grid-template-columns: 1fr 1fr; } }
+.foot-col h6 { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-mute); margin-bottom: 16px; }
+.foot-col a, .foot-col span { display: block; font-size: 14px; color: var(--fg-dim); margin-bottom: 8px; transition: color .2s; cursor: default; }
+.foot-col a { cursor: pointer; }
+.foot-col a:hover { color: var(--fg); }
+.foot-brand p { color: var(--fg-dim); font-size: 14px; max-width: 340px; margin-top: 12px; line-height: 1.5; }
+.foot-bottom {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 32px; border-top: 1px solid var(--line);
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--fg-mute);
+}
+.foot-social { display: flex; gap: 16px; align-items: center; }
+.foot-social span { color: var(--fg-mute); display: flex; }
+
+/* ==== MOBILE HAMBURGER + SPACING ==== */
+.mob-menu-btn { display: none; flex-direction: column; justify-content: space-between; width: 44px; height: 44px; padding: 11px 10px; border-radius: 8px; border: 1px solid var(--line); transition: border-color .2s; flex-shrink: 0; }
+.mob-menu-btn:hover { border-color: var(--fg-dim); }
+.mob-menu-btn span { display: block; width: 100%; height: 1.5px; background: var(--fg); transition: transform .3s, opacity .3s; }
+.mob-menu-btn.mob-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.mob-menu-btn.mob-open span:nth-child(2) { opacity: 0; }
+.mob-menu-btn.mob-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+@media (max-width: 880px) {
+  .mob-menu-btn { display: flex; }
+  .nav-links.mob-open { display: flex !important; flex-direction: column; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--bg); z-index: 98; padding: 80px 24px 28px; gap: 0; overflow-y: auto; }
+  .nav-links.mob-open a { padding: 16px 0; font-size: 17px; color: var(--fg) !important; border-bottom: 1px solid var(--line); display: block; }
+}
+@media (max-width: 640px) {
+  .wrap { padding: 0 20px; }
+  .masthead { padding: 64px 0 40px; }
+  .post-hero { padding: 60px 0 40px; }
+  .article { padding: 40px 0; }
+  .post-cta { padding: 40px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <span class="logo">
+      <a href="https://callingmatrix.com" style="display:flex;align-items:center;gap:12px;color:inherit;text-decoration:none;">
+        <span class="logo-mark">
+          <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="1" width="24" height="24" rx="6" stroke="currentColor" stroke-opacity="0.4"/>
+            <path d="M8 10 Q8 8 10 8 L12 8 L14 12 L12 14 Q14 17 16 18 L18 16 L22 18 L22 20 Q22 22 20 22 Q13 22 8 17 Q6 14 6 11 Z" fill="var(--accent)"/>
+            <circle cx="20" cy="6" r="2" fill="var(--accent)"/>
+          </svg>
+        </span>
+        Calling Matrix
+      </a>
+      <a href="/" class="blog-tag">Blog</a>
+    </span>
+    <div class="nav-links">
+      <a href="#posts-section" class="active" data-filter="all">All posts</a>
+      <a href="#posts-section" data-filter="playbook">Playbooks</a>
+      <a href="#posts-section" data-filter="product-update">Product</a>
+      <a href="#posts-section" data-filter="customer-story">Customer stories</a>
+    </div>
+    <a href="https://callingmatrix.com/#demo" class="nav-cta">Book a demo →</a>
+    <button class="mob-menu-btn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+
+  </div>
+</nav>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="masthead-bg"></div>
+  <div class="masthead-grid"></div>
+  <div class="wrap masthead-inner">
+    <span class="eyebrow reveal"><span class="dot"></span>Field notes · Updated weekly</span>
+    <h1 class="reveal d1">Notes from the <span class="italic">other end of the line.</span></h1>
+    <p class="lede reveal d2">Playbooks, product updates, and on-the-truck stories from the home service businesses that stopped missing calls. Written by operators, dispatchers, and the team building Calling Matrix.</p>
+
+    <div class="topics reveal d3">
+      <span class="topic-chip active" data-filter="all">All</span>
+      <span class="topic-chip" data-filter="playbook">Playbooks</span>
+      <span class="topic-chip" data-filter="missed-call-recovery">Missed-call recovery</span>
+      <span class="topic-chip" data-filter="hvac">HVAC</span>
+      <span class="topic-chip" data-filter="plumbing">Plumbing</span>
+      <span class="topic-chip" data-filter="product-update">Product updates</span>
+      <span class="topic-chip" data-filter="customer-story">Customer stories</span>
+      <span class="topic-chip" data-filter="roundup">Roundups</span>
+      <span class="topic-chip" data-filter="comparison">Comparisons</span>
+    </div>
+  </div>
+</header>
+
+<!-- FEATURED -->
+<section class="featured" data-category="playbook">
+  <div class="wrap">
+    <div class="featured-card">
+      <div class="feat-img reveal">
+        <div class="ring">
+          <div class="ring-icon">★</div>
+        </div>
+      </div>
+      <div class="reveal d1">
+        <span class="feat-tag">Featured · Playbook</span>
+        <h2 class="feat-title"><a href="/the-14-second-rule">The 14-second rule: why home service callers don't wait, and what to do about it.</a></h2>
+        <p class="feat-excerpt">Across 1.2 million inbound service calls, we found the average customer hangs up at 14 seconds — then dials the next shop on Google Maps within 60. Here's how the best operators are answering inside that window.</p>
+        <div class="feat-meta">
+          <span class="author"><span class="author-av">B</span>By Brandon Ortiz</span>
+          <span>·</span>
+          <span>May 4, 2026</span>
+          <span>·</span>
+          <span>9 min read</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POST GRID -->
+<section class="posts" id="posts-section">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2 id="posts-heading">Latest</h2>
+      <a href="#posts-section" data-filter="all">Browse all →</a>
+    </div>
+
+    <div class="post-grid">
+      <article class="post reveal" data-category="comparison">
+        <div class="post-img"><div class="ring"><div class="ring-icon">↔</div></div></div>
+        <div class="post-body">
+          <span class="post-tag">Comparison</span>
+          <h3 class="post-title"><a href="/calling-matrix-vs-smith-ai">Calling Matrix vs. Smith.ai: An Honest Comparison (2026).</a></h3>
+          <p class="post-excerpt">Custom AI employee built for home services vs. live-agent hybrid built for everyone. Which one is right for your HVAC, plumbing, or electrical business?</p>
+          <div class="post-meta">
+            <span class="by"><span class="av">B</span>Brandon Ortiz</span>
+            <span>May 15 · 10 min</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="post reveal d1" data-category="comparison">
+        <div class="post-img"><div class="ring"><div class="ring-icon">↔</div></div></div>
+        <div class="post-body">
+          <span class="post-tag">Comparison</span>
+          <h3 class="post-title"><a href="/calling-matrix-vs-rosie">Calling Matrix vs. Rosie AI: An Honest Comparison (2026).</a></h3>
+          <p class="post-excerpt">Where Rosie wins (budget, quick setup), where Calling Matrix wins (custom voice, done-for-you). Which one is actually right for your shop?</p>
+          <div class="post-meta">
+            <span class="by"><span class="av">B</span>Brandon Ortiz</span>
+            <span>May 12 · 9 min</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="post reveal d1" data-category="roundup">
+        <div class="post-img"><div class="ring"><div class="ring-icon">$</div></div></div>
+        <div class="post-body">
+          <span class="post-tag">Pricing</span>
+          <h3 class="post-title"><a href="/how-much-does-ai-receptionist-cost">How Much Does an AI Receptionist Cost in 2026?</a></h3>
+          <p class="post-excerpt">From $49 to $800+/month — what drives the difference and how to figure out which tier actually makes your business more money.</p>
+          <div class="post-meta">
+            <span class="by"><span class="av">R</span>Rick Delgado</span>
+            <span>May 10 · 8 min</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="post reveal d2" data-category="roundup">
+        <div class="post-img"><div class="ring"><div class="ring-icon">✦</div></div></div>
+        <div class="post-body">
+          <span class="post-tag">Roundup</span>
+          <h3 class="post-title"><a href="/best-answering-service-for-cleaning-companies">7 Best Answering Services for Cleaning Companies in 2026.</a></h3>
+          <p class="post-excerpt">Side-by-side on recurring booking, bilingual support, and cancellation handling — and the clear winner for established cleaning businesses.</p>
+          <div class="post-meta">
+            <span class="by"><span class="av">A</span>Ana Reyes</span>
+            <span>May 8 · 11 min</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="post reveal" data-category="roundup">
+        <div class="post-img"><div class="ring"><div class="ring-icon">⚡</div></div></div>
+        <div class="post-body">
+          <span class="post-tag">Roundup</span>
+          <h3 class="post-title"><a href="/best-ai-receptionist-for-electricians">7 Best AI Receptionists for Electricians in 2026.</a></h3>
+          <p class="post-excerpt">Comparing Calling Matrix, Rosie AI, NextPhone, Smith.ai, Allo, Goodcall, and RealVoice AI on pricing, integrations, and bilingual support.</p>
+          <div class="post-meta">
+            <span class="by"><span class="av">B</span>Brandon Ortiz</span>
+            <span>May 5 · 12 min</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="post reveal d1" data-category="playbook">
+        <div class="post-img"><div class="ring"><div class="ring-icon">☎</div></div></div>
+        <div class="post-body">
+          <span class="post-tag">Playbook</span>
+          <h3 class="post-title"><a href="/after-hours-routing">After-hours emergencies: the 3-tier routing model that keeps techs sane.</a></h3>
+          <p class="post-excerpt">A simple decision tree for triaging burst pipes vs. routine inquiries — and why it cut Delgado HVAC's overnight escalations by 62%.</p>
+          <div class="post-meta">
+            <span class="by"><span class="av">M</span>Maya Chen</span>
+            <span>May 2 · 6 min</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="post reveal d1" data-category="missed-call-recovery">
+        <div class="post-img"><div class="ring"><div class="ring-icon">$</div></div></div>
+        <div class="post-body">
+          <span class="post-tag">Missed-call recovery</span>
+          <h3 class="post-title"><a href="/missed-call-value">Every missed call is worth $287. Here's the math.</a></h3>
+          <p class="post-excerpt">We pulled lifetime-value data from 1,400 home service shops. The number per missed call surprised even us.</p>
+          <div class="post-meta">
+            <span class="by"><span class="av">R</span>Rick Delgado</span>
+            <span>Apr 28 · 4 min</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="post reveal d2" data-category="product-update">
+        <div class="post-img"><div class="ring"><div class="ring-icon">⌘</div></div></div>
+        <div class="post-body">
+          <span class="post-tag">Product update</span>
+          <h3 class="post-title"><a href="/spanish-language-calls">Spanish-language calls now ship on every plan.</a></h3>
+          <p class="post-excerpt">Bilingual handoff, accent-aware booking, and what we learned testing it across 40 cities in Texas, Florida, and California.</p>
+          <div class="post-meta">
+            <span class="by"><span class="av">A</span>Ana Reyes</span>
+            <span>Apr 24 · 3 min</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="post reveal" data-category="customer-story">
+        <div class="post-img"><div class="ring"><div class="ring-icon">↗</div></div></div>
+        <div class="post-body">
+          <span class="post-tag">Customer story</span>
+          <h3 class="post-title"><a href="/pham-plumbing-case-study">Pham Plumbing: from 40 missed calls a week to zero in 90 days.</a></h3>
+          <p class="post-excerpt">How a 4-truck shop in Sacramento went from dinner-table dispatching to a fully booked calendar — without hiring.</p>
+          <div class="post-meta">
+            <span class="by"><span class="av">J</span>Jason Pham</span>
+            <span>Apr 19 · 7 min</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="post reveal d1" data-category="hvac">
+        <div class="post-img"><div class="ring"><div class="ring-icon">◐</div></div></div>
+        <div class="post-body">
+          <span class="post-tag">HVAC</span>
+          <h3 class="post-title"><a href="/heat-wave-pricing">Pricing the heat-wave call: dynamic dispatch when demand spikes 4x.</a></h3>
+          <p class="post-excerpt">A field guide for HVAC owners running into peak summer with finite truck capacity. Includes our pricing matrix template.</p>
+          <div class="post-meta">
+            <span class="by"><span class="av">T</span>Tasha Bell</span>
+            <span>Apr 14 · 8 min</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="post reveal d2" data-category="playbook">
+        <div class="post-img"><div class="ring"><div class="ring-icon">▣</div></div></div>
+        <div class="post-body">
+          <span class="post-tag">Playbook</span>
+          <h3 class="post-title"><a href="/dispatcher-script">The dispatcher script we built from 8,000 recorded calls.</a></h3>
+          <p class="post-excerpt">Word-for-word what your AI receptionist (or human one) should say in the first 12 seconds. Free template inside.</p>
+          <div class="post-meta">
+            <span class="by"><span class="av">B</span>Brandon Ortiz</span>
+            <span>Apr 8 · 11 min</span>
+          </div>
+        </div>
+      </article>
+    </div>
+    <p class="posts-empty" id="posts-empty">No posts in this category yet — check back soon.</p>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="news" id="newsletter">
+  <div class="wrap news-inner">
+    <h3 class="reveal">Get the playbooks. <span class="italic">Skip the fluff.</span></h3>
+    <p class="reveal d1">One short email every Tuesday. Tactics, templates, and call recordings from real home service shops. Unsubscribe in one click.</p>
+    <div style="position:relative;max-width:460px;margin:0 auto;">
+      <form class="news-form reveal d2" style="max-width:100%;margin:0;" onsubmit="(async(e)=>{e.preventDefault();const btn=e.target.querySelector('button');const email=e.target.querySelector('input').value;btn.textContent='Sending…';btn.disabled=true;try{const r=await fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email})});if(r.ok){const t=e.target.parentElement.querySelector('.sub-ty');t.style.opacity='1';e.target.querySelector('input').value='';setTimeout(()=>{t.style.opacity='0';setTimeout(()=>{btn.textContent='Subscribe';btn.disabled=false;},500);},2700);}else{btn.textContent='Try again';btn.disabled=false;}}catch{btn.textContent='Try again';btn.disabled=false;}})(event)">
+        <input type="email" placeholder="you@yourshop.com" required />
+        <button type="submit">Subscribe</button>
+      </form>
+      <div class="sub-ty" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:8px;background:rgba(14,13,11,0.97);border:1px solid oklch(0.74 0.17 55 / 0.25);border-radius:999px;opacity:0;pointer-events:none;transition:opacity 0.45s ease;">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="var(--accent)" stroke-width="1.2"/><path d="M5 8l2.5 2.5L11 5.5" stroke="var(--accent)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span style="font-size:13px;font-weight:500;color:var(--accent);letter-spacing:0.01em;">Thanks for subscribing!</span>
+      </div>
+    </div>
+    <p class="news-fine reveal d3">12,400 operators · No spam · 1-click unsubscribe</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-inner">
+      <div class="foot-brand">
+        <a class="logo" href="https://callingmatrix.com">
+          <span class="logo-mark">
+            <svg viewBox="0 0 26 26" fill="none">
+              <rect x="1" y="1" width="24" height="24" rx="6" stroke="currentColor" stroke-opacity="0.4"/>
+              <path d="M8 10 Q8 8 10 8 L12 8 L14 12 L12 14 Q14 17 16 18 L18 16 L22 18 L22 20 Q22 22 20 22 Q13 22 8 17 Q6 14 6 11 Z" fill="var(--accent)"/>
+              <circle cx="20" cy="6" r="2" fill="var(--accent)"/>
+            </svg>
+          </span>
+          Calling Matrix
+        </a>
+        <p>The AI receptionist built for home service businesses. Answer every call. Book every job. Sound like a human.</p>
+      </div>
+      <div class="foot-col">
+        <h6>Blog</h6>
+        <a href="#posts-section" data-filter="playbook">Playbooks</a>
+        <a href="#posts-section" data-filter="product-update">Product</a>
+        <a href="#posts-section" data-filter="customer-story">Customer stories</a>
+        <a href="#newsletter">Newsletter</a>
+      </div>
+      <div class="foot-col">
+        <h6>Product</h6>
+        <a href="https://callingmatrix.com/#features">Features</a>
+        <a href="https://callingmatrix.com/#how">How it works</a>
+        <a href="https://callingmatrix.com/#pricing">Pricing</a>
+        <a href="https://callingmatrix.com/#faq">FAQ</a>
+      </div>
+      <div class="foot-col">
+        <h6>Company</h6>
+        <a href="https://callingmatrix.com/#how">About</a>
+        <a href="https://callingmatrix.com/#customers">Customers</a>
+        <a href="mailto:callingmatrix@gmail.com">Contact</a>
+        <a href="https://callingmatrix.com/#demo">Book a demo</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 Calling Matrix, Inc.</div>
+      <div class="foot-social">
+        <span aria-label="X (Twitter) — coming soon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </span>
+        <span aria-label="LinkedIn — coming soon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </span>
+        <span aria-label="Instagram — coming soon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </span>
+      </div>
+      <div><a href="https://callingmatrix.com/legal" style="color:inherit;text-decoration:none;" target="_blank" rel="noopener">Privacy &amp; Terms</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll reveals
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+requestAnimationFrame(() => {
+  document.querySelectorAll('.reveal').forEach(el => {
+    const r = el.getBoundingClientRect();
+    if (r.top < window.innerHeight && r.bottom > 0) el.classList.add('in');
+  });
+});
+
+// Filter logic
+const LABELS = {
+  'all': 'Latest',
+  'playbook': 'Playbooks',
+  'missed-call-recovery': 'Missed-call recovery',
+  'hvac': 'HVAC',
+  'plumbing': 'Plumbing',
+  'product-update': 'Product updates',
+  'customer-story': 'Customer stories',
+  'roundup': 'Roundups',
+  'comparison': 'Comparisons',
+};
+
+function applyFilter(category) {
+  const posts = document.querySelectorAll('.post-grid .post');
+  const featured = document.querySelector('.featured');
+  const empty = document.getElementById('posts-empty');
+  const heading = document.getElementById('posts-heading');
+
+  // Chips active state
+  document.querySelectorAll('.topic-chip').forEach(c => {
+    c.classList.toggle('active', c.dataset.filter === category);
+  });
+  // Nav links active state
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.classList.toggle('active', a.dataset.filter === category);
+  });
+
+  // Update section heading
+  if (heading) heading.textContent = category === 'all' ? 'Latest' : LABELS[category] || 'Posts';
+
+  // Featured: show only on "all" or if its category matches
+  if (featured) {
+    const featMatches = category === 'all' || featured.dataset.category === category;
+    featured.classList.toggle('hidden', !featMatches);
+  }
+
+  // Fade posts out, swap visibility, fade back in
+  posts.forEach(p => { p.style.opacity = '0'; p.style.transform = 'translateY(8px)'; });
+
+  setTimeout(() => {
+    let visible = 0;
+    posts.forEach(p => {
+      const matches = category === 'all' || p.dataset.category === category;
+      p.classList.toggle('hidden', !matches);
+      if (matches) visible++;
+    });
+
+    empty.classList.toggle('visible', visible === 0);
+
+    requestAnimationFrame(() => {
+      posts.forEach(p => {
+        if (!p.classList.contains('hidden')) {
+          p.style.opacity = '1';
+          p.style.transform = 'translateY(0)';
+        }
+      });
+    });
+  }, 180);
+}
+
+// Wire all [data-filter] elements
+document.addEventListener('click', e => {
+  const trigger = e.target.closest('[data-filter]');
+  if (!trigger) return;
+  const category = trigger.dataset.filter;
+
+  applyFilter(category);
+
+  // Scroll to posts section if triggered from outside the section
+  const postsSection = document.getElementById('posts-section');
+  if (postsSection && !postsSection.contains(trigger)) {
+    e.preventDefault();
+    postsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  } else if (trigger.closest('.post-grid') || trigger.closest('.sec-head')) {
+    e.preventDefault();
+  }
+});
+</script>
+
+<script>
+(function(){
+  var b=document.querySelector('.mob-menu-btn');
+  var n=document.querySelector('.nav-links');
+  if(!b||!n)return;
+  b.addEventListener('click',function(){
+    var o=n.classList.toggle('mob-open');
+    b.classList.toggle('mob-open',o);
+    b.setAttribute('aria-expanded',String(o));
+    document.body.style.overflow=o?'hidden':'';
+  });
+  n.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      n.classList.remove('mob-open');
+      b.classList.remove('mob-open');
+      b.setAttribute('aria-expanded','false');
+      document.body.style.overflow='';
+    });
+  });
+})();
+</script>
+</body>
+</html>

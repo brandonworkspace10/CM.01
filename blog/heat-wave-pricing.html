@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>HVAC Heat-Wave Pricing: Managing Demand Surges with Dynamic Dispatch | Calling Matrix Blog</title>
+<meta name="description" content="A field guide for HVAC owners when call volume spikes 4x during summer peaks. How to price emergencies, triage jobs, and avoid burning out your tech team." />
+<link rel="canonical" href="https://callingmatrix.com/blog/heat-wave-pricing" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Calling Matrix Blog" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:title" content="Pricing the heat-wave call: dynamic dispatch when demand spikes 4x" />
+<meta property="og:description" content="A field guide for HVAC owners when call volume spikes 4x during summer peaks. How to price emergencies, triage jobs, and avoid burning out your tech team." />
+<meta property="og:url" content="https://callingmatrix.com/blog/heat-wave-pricing" />
+<meta property="og:image" content="https://callingmatrix.com/og-image.png" />
+<meta property="article:published_time" content="2026-04-14" />
+<meta property="article:author" content="Tasha Bell" />
+<meta property="article:section" content="HVAC" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Pricing the heat-wave call: dynamic dispatch when demand spikes 4x" />
+<meta name="twitter:description" content="A field guide for HVAC owners when call volume spikes 4x during summer peaks. How to price emergencies, triage jobs, and avoid burning out your tech team." />
+<meta name="twitter:image" content="https://callingmatrix.com/og-image.png" />
+<link rel="alternate" type="application/rss+xml" title="Calling Matrix Blog" href="/feed.xml" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/favicon.svg" />
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"Calling Matrix","url":"https://callingmatrix.com"},{"@type":"BlogPosting","headline":"Pricing the heat-wave call: dynamic dispatch when demand spikes 4x","description":"A field guide for HVAC owners when call volume spikes 4x during summer peaks. How to price emergencies, triage jobs, and avoid burning out your tech team.","datePublished":"2026-04-14","dateModified":"2026-04-14","url":"https://callingmatrix.com/blog/heat-wave-pricing","mainEntityOfPage":"https://callingmatrix.com/blog/heat-wave-pricing","image":"https://callingmatrix.com/og-image.png","author":{"@type":"Person","name":"Tasha Bell","jobTitle":"GM, Bell Electric · Guest contributor","worksFor":{"@type":"Organization","name":"Calling Matrix"}},"publisher":{"@type":"Organization","name":"Calling Matrix","url":"https://callingmatrix.com","logo":{"@type":"ImageObject","url":"https://callingmatrix.com/favicon.svg"}},"keywords":["HVAC","AI receptionist","home service business","calling matrix"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Blog","item":"https://callingmatrix.com/blog"},{"@type":"ListItem","position":2,"name":"Pricing the heat-wave call: dynamic dispatch when demand spikes 4x","item":"https://callingmatrix.com/blog/heat-wave-pricing"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is it legal to charge more during a heat wave?","acceptedAnswer":{"@type":"Answer","text":"Yes, with caveats. Dynamic pricing for HVAC services is legal in all US states. Price gouging laws apply primarily to essential goods (food, water, gasoline) during declared emergencies — not service labor. That said, transparency matters: callers should be told the current rate before agreeing to a dispatch. Calling Matrix can be configured to disclose surge pricing during intake automatically."}},{"@type":"Question","name":"How do you avoid losing regular customers to competitors during a surge?","acceptedAnswer":{"@type":"Answer","text":"Prioritize them. A tiered queue that bumps existing customers (especially maintenance plan holders) ahead of first-time callers protects your base while you handle surge volume. Customers who have a relationship with you are more understanding about wait times than cold-call customers — as long as they feel acknowledged and given a real ETA."}},{"@type":"Question","name":"How far in advance should you set surge pricing thresholds?","acceptedAnswer":{"@type":"Answer","text":"Most experienced HVAC operators set their pricing matrix before the season, not reactively. Decide in April what the trigger conditions are (outdoor temp, call volume per hour, tech availability), what the pricing tiers are, and how you'll communicate them. Making pricing decisions under the pressure of a heat wave with 80 calls in the queue is how you make decisions you regret."}}]}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+<style>
+:root {
+  --bg: #0E0D0B; --bg-2: #151310; --bg-3: #1C1915;
+  --fg: #F6F2EB; --fg-dim: #A6A097; --fg-mute: #6E685F;
+  --line: #2A2620;
+  --accent: oklch(0.74 0.17 55);
+  --accent-soft: oklch(0.74 0.17 55 / 0.12);
+  --serif: 'Instrument Serif', 'Times New Roman', serif;
+  --sans: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--fg); font-family: var(--sans); font-weight: 400; line-height: 1.5; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+.mono { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-mute); }
+
+/* NAV */
+.nav { position: sticky; top: 0; z-index: 100; padding: 20px 32px; background: rgba(14,13,11,0.85); backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); }
+.nav-inner { max-width: 1240px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.logo { display: flex; align-items: center; gap: 12px; font-family: var(--serif); font-size: 24px; letter-spacing: -0.01em; }
+.logo-mark { width: 28px; height: 28px; }
+.logo-mark svg { width: 100%; height: 100%; display: block; }
+.blog-tag { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); border-left: 1px solid var(--line); padding-left: 12px; margin-left: 4px; }
+.nav-links { display: flex; gap: 28px; font-size: 14px; color: var(--fg-dim); }
+.nav-links a { transition: color .2s; }
+.nav-links a:hover { color: var(--fg); }
+.nav-cta { padding: 10px 18px; background: var(--fg); color: var(--bg); border-radius: 999px; font-size: 13px; font-weight: 500; transition: transform .2s, box-shadow .2s; white-space: nowrap; }
+.nav-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(246,242,235,0.15); }
+@media (max-width: 880px) { .nav-links { display: none; } }
+
+/* POST HERO */
+.post-hero { padding: 80px 0 64px; border-bottom: 1px solid var(--line); }
+.post-hero-inner { max-width: 800px; margin: 0 auto; padding: 0 32px; }
+.breadcrumb { display: flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-mute); margin-bottom: 28px; }
+.breadcrumb a { color: var(--fg-dim); transition: color .2s; }
+.breadcrumb a:hover { color: var(--accent); }
+.post-tag { display: inline-block; font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px; }
+.post-hero h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(34px, 4.5vw, 60px); line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 20px; text-wrap: balance; }
+.post-subtitle { font-size: 20px; color: var(--fg-dim); line-height: 1.55; max-width: 660px; margin-bottom: 36px; }
+.byline { display: flex; align-items: center; gap: 20px; padding-top: 28px; border-top: 1px solid var(--line); }
+.byline-av { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), oklch(0.5 0.1 30)); display: grid; place-items: center; font-family: var(--serif); color: #1a0e00; font-size: 18px; flex-shrink: 0; }
+.byline-info { display: flex; flex-direction: column; gap: 2px; }
+.byline-name { font-size: 14px; font-weight: 500; }
+.byline-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-mute); }
+
+/* ARTICLE */
+.article { max-width: 740px; margin: 0 auto; padding: 72px 32px 100px; }
+.article h2 { font-family: var(--serif); font-weight: 400; font-size: 32px; letter-spacing: -0.02em; line-height: 1.2; margin: 56px 0 20px; color: var(--fg); }
+.article h3 { font-size: 18px; font-weight: 600; margin: 36px 0 14px; color: var(--fg); }
+.article p { color: var(--fg-dim); font-size: 17px; line-height: 1.75; margin-bottom: 24px; }
+.article p strong { color: var(--fg); font-weight: 500; }
+.article ul, .article ol { color: var(--fg-dim); font-size: 17px; line-height: 1.75; margin: 0 0 24px 22px; }
+.article li { margin-bottom: 10px; }
+.article a { color: var(--accent); text-decoration: underline; text-decoration-color: oklch(0.74 0.17 55 / 0.3); }
+.article a:hover { text-decoration-color: var(--accent); }
+.article hr { border: none; border-top: 1px solid var(--line); margin: 48px 0; }
+
+/* CALLOUT */
+.callout { background: var(--bg-2); border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 10px; padding: 22px 28px; margin: 36px 0; }
+.callout p { margin: 0; font-size: 16px; }
+
+/* STAT ROW */
+.stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 40px 0; }
+.stat-box { background: var(--bg-2); border: 1px solid var(--line); border-radius: 12px; padding: 24px 18px; text-align: center; }
+.stat-box .num { font-family: var(--serif); font-size: 40px; color: var(--accent); line-height: 1; margin-bottom: 8px; }
+.stat-box .lbl { font-size: 13px; color: var(--fg-dim); line-height: 1.4; }
+@media (max-width: 560px) { .stat-row { grid-template-columns: 1fr; } }
+
+/* TABLE */
+.data-table { width: 100%; border-collapse: collapse; margin: 32px 0; font-size: 14px; }
+.data-table th { text-align: left; padding: 12px 16px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-mute); border-bottom: 1px solid var(--line); font-weight: 500; }
+.data-table td { padding: 14px 16px; border-bottom: 1px solid var(--line); color: var(--fg-dim); }
+.data-table tr:last-child td { border-bottom: none; }
+.data-table td:first-child { color: var(--fg); font-weight: 500; }
+.data-table .accent-row td { background: oklch(0.74 0.17 55 / 0.05); }
+.data-table .accent-row td:first-child { color: var(--accent); }
+
+/* QUOTE */
+.pullquote { border-left: 3px solid var(--accent); padding: 4px 0 4px 28px; margin: 40px 0; }
+.pullquote p { font-family: var(--serif); font-size: 24px; line-height: 1.4; color: var(--fg); margin: 0; }
+
+/* CTA */
+.post-cta { background: var(--bg-2); border: 1px solid var(--line); border-radius: 20px; padding: 48px; text-align: center; margin: 72px 0 0; }
+.post-cta h3 { font-family: var(--serif); font-weight: 400; font-size: 30px; margin-bottom: 12px; }
+.post-cta p { color: var(--fg-dim); font-size: 16px; max-width: 440px; margin: 0 auto 28px; line-height: 1.6; }
+.btn-cta { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; background: var(--fg); color: var(--bg); border-radius: 999px; font-size: 14px; font-weight: 500; transition: transform .2s, box-shadow .2s; }
+.btn-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(246,242,235,0.15); text-decoration: none; }
+
+/* FAQ */
+.faq-section { margin-top: 80px; padding-top: 56px; border-top: 1px solid var(--line); }
+.faq-section h2 { font-family: var(--serif); font-weight: 400; font-size: 32px; letter-spacing: -0.02em; margin-bottom: 32px; }
+.faq-item { border-top: 1px solid var(--line); }
+.faq-item:last-child { border-bottom: 1px solid var(--line); }
+.faq-q { width: 100%; background: none; border: none; color: var(--fg); font-family: var(--sans); font-size: 16px; font-weight: 500; text-align: left; padding: 20px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; transition: color .2s; }
+.faq-q:hover { color: var(--accent); }
+.faq-icon { font-size: 22px; color: var(--fg-mute); transition: transform .25s; flex-shrink: 0; }
+.faq-a { font-size: 15px; color: var(--fg-dim); line-height: 1.7; max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .3s ease; }
+.faq-item.open .faq-a { max-height: 500px; padding-bottom: 20px; }
+.faq-item.open .faq-icon { transform: rotate(45deg); color: var(--accent); }
+
+/* FOOTER */
+footer { padding: 60px 0 40px; background: var(--bg); border-top: 1px solid var(--line); }
+.foot-inner { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+@media (max-width: 780px) { .foot-inner { grid-template-columns: 1fr 1fr; } }
+.foot-col h6 { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-mute); margin-bottom: 16px; }
+.foot-col a { display: block; font-size: 14px; color: var(--fg-dim); margin-bottom: 8px; transition: color .2s; }
+.foot-col a:hover { color: var(--fg); }
+.foot-brand p { color: var(--fg-dim); font-size: 14px; max-width: 340px; margin-top: 12px; line-height: 1.5; }
+.foot-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 28px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-mute); }
+
+/* ==== MOBILE HAMBURGER + SPACING ==== */
+.mob-menu-btn { display: none; flex-direction: column; justify-content: space-between; width: 44px; height: 44px; padding: 11px 10px; border-radius: 8px; border: 1px solid var(--line); transition: border-color .2s; flex-shrink: 0; }
+.mob-menu-btn:hover { border-color: var(--fg-dim); }
+.mob-menu-btn span { display: block; width: 100%; height: 1.5px; background: var(--fg); transition: transform .3s, opacity .3s; }
+.mob-menu-btn.mob-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.mob-menu-btn.mob-open span:nth-child(2) { opacity: 0; }
+.mob-menu-btn.mob-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+@media (max-width: 880px) {
+  .mob-menu-btn { display: flex; }
+  .nav-links.mob-open { display: flex !important; flex-direction: column; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--bg); z-index: 98; padding: 80px 24px 28px; gap: 0; overflow-y: auto; }
+  .nav-links.mob-open a { padding: 16px 0; font-size: 17px; color: var(--fg) !important; border-bottom: 1px solid var(--line); display: block; }
+}
+@media (max-width: 640px) {
+  .wrap { padding: 0 20px; }
+  .masthead { padding: 64px 0 40px; }
+  .post-hero { padding: 60px 0 40px; }
+  .article { padding: 40px 0; }
+  .post-cta { padding: 40px 24px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <span class="logo">
+      <a href="https://callingmatrix.com" style="display:flex;align-items:center;gap:12px;color:inherit;text-decoration:none;">
+        <span class="logo-mark">
+          <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="1" width="24" height="24" rx="6" stroke="currentColor" stroke-opacity="0.4"/>
+            <path d="M8 10 Q8 8 10 8 L12 8 L14 12 L12 14 Q14 17 16 18 L18 16 L22 18 L22 20 Q22 22 20 22 Q13 22 8 17 Q6 14 6 11 Z" fill="var(--accent)"/>
+            <circle cx="20" cy="6" r="2" fill="var(--accent)"/>
+          </svg>
+        </span>
+        Calling Matrix
+      </a>
+      <a href="/" class="blog-tag">Blog</a>
+    </span>
+    <div class="nav-links">
+      <a href="/">All posts</a>
+      <a href="https://callingmatrix.com/#demo" class="nav-cta" style="margin-left:auto;">Book a demo →</a>
+    </div>
+    <a href="https://callingmatrix.com/#demo" class="nav-cta">Book a demo →</a>
+    <button class="mob-menu-btn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+
+  </div>
+</nav>
+
+<section class="post-hero">
+  <div class="post-hero-inner">
+    <div class="breadcrumb">
+      <a href="/">Blog</a>
+      <span>›</span>
+      <span>HVAC</span>
+    </div>
+    <div class="post-tag">HVAC</div>
+    <h1>Pricing the heat-wave call: dynamic dispatch when demand spikes 4x</h1>
+    <p class="post-subtitle">A field guide for HVAC owners running into peak summer with finite truck capacity. Includes our pricing matrix template.</p>
+    <div class="byline">
+      <div class="byline-av">T</div>
+      <div class="byline-info">
+        <span class="byline-name">Tasha Bell</span>
+        <span class="byline-meta">GM, Bell Electric · Guest contributor · Apr 14, 2026 · 8 min read</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="article">
+<p>Every HVAC operator knows what a heat wave does to the phone. A normal Tuesday in June: 30–40 calls. The first 95°F day: 140 calls before noon.</p>
+
+<p>The challenge isn't just capacity — it's prioritization and pricing. When demand spikes 4x with the same number of trucks, every decision you make in those first hours ripples through the rest of the week.</p>
+
+<p>Here's the framework we've developed across five summers at Bell Electric, adapted for HVAC based on what Calling Matrix operators have shared with us.</p>
+
+<h2>The pricing matrix</h2>
+
+<p>First, accept that surge pricing is appropriate and necessary. Your techs are working 12-hour days in attics at 130°F. Your parts cost more when you're expediting. And critically: customers calling during a heat wave are often in genuine distress, and they're willing to pay for immediate response. Pretending otherwise while undercharging leaves money on the table and undervalues your team's work.</p>
+
+<table class="data-table">
+  <thead><tr><th>Outdoor Temp / Demand</th><th>Diagnostic Rate</th><th>Emergency Multiplier</th><th>Estimated Wait</th></tr></thead>
+  <tbody>
+    <tr><td>Under 85°F / Normal</td><td>Standard ($89–$129)</td><td>1.0×</td><td>Same/next day</td></tr>
+    <tr><td>85–94°F / Elevated</td><td>+$30 ($119–$159)</td><td>1.25×</td><td>Same day, 4–6 hr</td></tr>
+    <tr class="accent-row"><td>95–104°F / Surge</td><td>+$60 ($149–$189)</td><td>1.5×</td><td>Same day, 2–4 hr</td></tr>
+    <tr class="accent-row"><td>105°F+ / Emergency</td><td>+$100 ($189–$229)</td><td>2.0×</td><td>Within 2 hours</td></tr>
+  </tbody>
+</table>
+
+<p>The multiplier applies to labor, not parts. Parts pricing doesn't change. Customers understand labor surges; they resent parts markups during emergencies.</p>
+
+<h2>The triage queue</h2>
+
+<p>When you have 80 calls in queue and 5 trucks, the order you dispatch matters enormously. Our queue priority, in order:</p>
+
+<ol>
+  <li><strong>Safety escalations:</strong> Elderly or medically vulnerable, no AC above 95°F outside. These dispatch first, always.</li>
+  <li><strong>Maintenance plan holders:</strong> They paid for priority. Honor it. This is the entire value proposition of your maintenance plan.</li>
+  <li><strong>Existing customers (past 12 months):</strong> They have a relationship with you. They're more likely to wait 4 hours with a clear ETA than a cold caller is.</li>
+  <li><strong>New customers, system failures:</strong> Complete system failure, not just reduced cooling.</li>
+  <li><strong>New customers, performance issues:</strong> Unit running but underperforming. These can often wait until the surge breaks.</li>
+</ol>
+
+<div class="callout"><p><strong>The maintenance plan play:</strong> A heat wave is the single best time to sell maintenance plans — not because you should be selling during a crisis, but because customers who were "thinking about it" become very motivated when they see the priority queue in action. Have your AI receptionist note every caller who didn't have a plan and offer a one-sentence mention during booking confirmation: "Also, maintenance plan holders skip the queue — I can email you details after we get today's service scheduled."</p></div>
+
+<h2>What your AI receptionist should be doing during a surge</h2>
+
+<p>During a heat wave, the value of a 24/7 AI receptionist compounds. Here's specifically how to configure it for surge conditions:</p>
+
+<h3>Disclose wait times upfront</h3>
+
+<p>Nothing burns a customer relationship faster than promising "we'll be there soon" and showing up six hours later. The AI should state current estimated wait times during intake: "We're currently experiencing high demand — estimated arrival is 3–4 hours. Would you like to book at that window?" Most callers say yes. The ones who don't were never going to wait anyway.</p>
+
+<h3>Collect all dispatch info during the first call</h3>
+
+<p>During a surge, you don't have time for callbacks. Train the AI to collect everything during intake: address, access instructions, system age, symptom description, and a secondary contact number. A tech should be able to show up without any additional communication.</p>
+
+<h3>Offer callbacks to Tier 2 and 3 callers</h3>
+
+<p>Callers who aren't safety escalations but still need service should be offered a specific callback window from the AI, not a vague "we'll be in touch." "We can send a tech tomorrow morning between 8–10 AM — would that work?" converts a frustrated caller into a scheduled job.</p>
+
+<div class="stat-row">
+  <div class="stat-box"><div class="num">4×</div><div class="lbl">Typical call volume increase on first 95°F day</div></div>
+  <div class="stat-box"><div class="num">2.0×</div><div class="lbl">Maximum labor multiplier during extreme heat</div></div>
+  <div class="stat-box"><div class="num">83%</div><div class="lbl">Callers who accept stated wait time if given upfront</div></div>
+</div>
+
+<h2>After the surge</h2>
+
+<p>The day after a heat wave breaks, do two things: pull your missed call log and pull your Tier 2/3 backlog. The missed calls are revenue to pursue. The backlog tells you how much demand exceeded your capacity — and that number is your argument for the next piece of equipment, the next truck, or the next service area.</p>
+
+<p>Surges are stressful. They're also the most profitable stretch of the year if you have the systems to handle them correctly. The businesses that come out of a heat wave ahead are the ones who triaged intelligently, priced appropriately, and didn't send a single call to voicemail.</p>
+
+<div class="faq-section">
+  <h2>Frequently asked questions</h2>
+  <div class="faq-item">
+  <button class="faq-q" aria-expanded="false">Is it legal to charge more during a heat wave?<span class="faq-icon">+</span></button>
+  <div class="faq-a">Yes, with caveats. Dynamic pricing for HVAC services is legal in all US states. Price gouging laws apply primarily to essential goods (food, water, gasoline) during declared emergencies — not service labor. That said, transparency matters: callers should be told the current rate before agreeing to a dispatch. Calling Matrix can be configured to disclose surge pricing during intake automatically.</div>
+</div>
+  <div class="faq-item">
+  <button class="faq-q" aria-expanded="false">How do you avoid losing regular customers to competitors during a surge?<span class="faq-icon">+</span></button>
+  <div class="faq-a">Prioritize them. A tiered queue that bumps existing customers (especially maintenance plan holders) ahead of first-time callers protects your base while you handle surge volume. Customers who have a relationship with you are more understanding about wait times than cold-call customers — as long as they feel acknowledged and given a real ETA.</div>
+</div>
+  <div class="faq-item">
+  <button class="faq-q" aria-expanded="false">How far in advance should you set surge pricing thresholds?<span class="faq-icon">+</span></button>
+  <div class="faq-a">Most experienced HVAC operators set their pricing matrix before the season, not reactively. Decide in April what the trigger conditions are (outdoor temp, call volume per hour, tech availability), what the pricing tiers are, and how you'll communicate them. Making pricing decisions under the pressure of a heat wave with 80 calls in the queue is how you make decisions you regret.</div>
+</div>
+</div>
+
+  <div class="post-cta">
+    <h3>See Calling Matrix in action</h3>
+    <p>Book a 15-minute demo. We'll train the AI on your business before the call — you hear a working receptionist, not a slide deck.</p>
+    <a href="https://callingmatrix.com/#demo" class="btn-cta">Book your free demo →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-inner">
+      <div class="foot-col foot-brand">
+        <a href="https://callingmatrix.com" style="display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:22px;letter-spacing:-0.01em;color:inherit;text-decoration:none;margin-bottom:12px;">
+          <span style="width:26px;height:26px;display:inline-block;">
+            <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="24" height="24" rx="6" stroke="currentColor" stroke-opacity="0.4"/><path d="M8 10 Q8 8 10 8 L12 8 L14 12 L12 14 Q14 17 16 18 L18 16 L22 18 L22 20 Q22 22 20 22 Q13 22 8 17 Q6 14 6 11 Z" fill="var(--accent)"/><circle cx="20" cy="6" r="2" fill="var(--accent)"/></svg>
+          </span>
+          Calling Matrix
+        </a>
+        <p>The AI receptionist built for home service businesses. Answer every call. Book every job.</p>
+      </div>
+      <div class="foot-col">
+        <h6>Blog</h6>
+        <a href="/">All posts</a>
+        <a href="/?filter=playbook">Playbooks</a>
+        <a href="/?filter=customer-story">Customer stories</a>
+        <a href="/?filter=product-update">Product updates</a>
+      </div>
+      <div class="foot-col">
+        <h6>Product</h6>
+        <a href="https://callingmatrix.com/#how">How it works</a>
+        <a href="https://callingmatrix.com/#pricing">Pricing</a>
+        <a href="https://callingmatrix.com/roi-calculator">ROI Calculator</a>
+        <a href="https://callingmatrix.com/case-studies">Case studies</a>
+      </div>
+      <div class="foot-col">
+        <h6>Company</h6>
+        <a href="https://callingmatrix.com">callingmatrix.com</a>
+        <a href="https://callingmatrix.com/#demo">Book a demo</a>
+        <a href="/feed.xml">RSS feed</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Calling Matrix</span>
+      <span>callingmatrix.com/blog</span>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+    btn.setAttribute('aria-expanded', String(!isOpen));
+  });
+});
+</script>
+
+<!-- INTERNAL LINKS -->
+<section style="background:var(--bg-2,#151310);border-top:1px solid var(--line,#2A2620);padding:48px 0;margin-top:0;">
+  <div style="max-width:720px;margin:0 auto;padding:0 32px;">
+    <p style="font-family:var(--mono,monospace);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent,#E89B6C);margin-bottom:16px;">Related pages</p>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+                <li><a href="https://callingmatrix.com/hvac" style="color:var(--accent,#E89B6C);text-decoration:none;border-bottom:1px solid oklch(0.74 0.17 55 / 0.3);">HVAC Answering Service — Calling Matrix →</a></li>
+          <li><a href="https://callingmatrix.com/hvac-answering-service-houston" style="color:var(--accent,#E89B6C);text-decoration:none;border-bottom:1px solid oklch(0.74 0.17 55 / 0.3);">HVAC Answering Service Houston →</a></li>
+          <li><a href="https://callingmatrix.com/hvac-answering-service-phoenix" style="color:var(--accent,#E89B6C);text-decoration:none;border-bottom:1px solid oklch(0.74 0.17 55 / 0.3);">HVAC Answering Service Phoenix →</a></li>
+    </ul>
+  </div>
+</section>
+<script>
+(function(){
+  var b=document.querySelector('.mob-menu-btn');
+  var n=document.querySelector('.nav-links');
+  if(!b||!n)return;
+  b.addEventListener('click',function(){
+    var o=n.classList.toggle('mob-open');
+    b.classList.toggle('mob-open',o);
+    b.setAttribute('aria-expanded',String(o));
+    document.body.style.overflow=o?'hidden':'';
+  });
+  n.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      n.classList.remove('mob-open');
+      b.classList.remove('mob-open');
+      b.setAttribute('aria-expanded','false');
+      document.body.style.overflow='';
+    });
+  });
+})();
+</script>
+</body>
+</html>

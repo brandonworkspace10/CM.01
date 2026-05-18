@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Perfect Dispatcher Script: Built From 8,000 Home Service Calls | Calling Matrix Blog</title>
+<meta name="description" content="Word-for-word what your AI receptionist (or human one) should say in the first 12 seconds of a home service call — plus the intake questions that convert callers to booked jobs." />
+<link rel="canonical" href="https://callingmatrix.com/blog/dispatcher-script" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Calling Matrix Blog" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:title" content="The dispatcher script we built from 8,000 recorded calls" />
+<meta property="og:description" content="Word-for-word what your AI receptionist (or human one) should say in the first 12 seconds of a home service call — plus the intake questions that convert callers to booked jobs." />
+<meta property="og:url" content="https://callingmatrix.com/blog/dispatcher-script" />
+<meta property="og:image" content="https://callingmatrix.com/og-image.png" />
+<meta property="article:published_time" content="2026-04-08" />
+<meta property="article:author" content="Brandon Ortiz" />
+<meta property="article:section" content="Playbook" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="The dispatcher script we built from 8,000 recorded calls" />
+<meta name="twitter:description" content="Word-for-word what your AI receptionist (or human one) should say in the first 12 seconds of a home service call — plus the intake questions that convert callers to booked jobs." />
+<meta name="twitter:image" content="https://callingmatrix.com/og-image.png" />
+<link rel="alternate" type="application/rss+xml" title="Calling Matrix Blog" href="/feed.xml" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/favicon.svg" />
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"Calling Matrix","url":"https://callingmatrix.com"},{"@type":"BlogPosting","headline":"The dispatcher script we built from 8,000 recorded calls","description":"Word-for-word what your AI receptionist (or human one) should say in the first 12 seconds of a home service call — plus the intake questions that convert callers to booked jobs.","datePublished":"2026-04-08","dateModified":"2026-04-08","url":"https://callingmatrix.com/blog/dispatcher-script","mainEntityOfPage":"https://callingmatrix.com/blog/dispatcher-script","image":"https://callingmatrix.com/og-image.png","author":{"@type":"Person","name":"Brandon Ortiz","jobTitle":"Co-founder, Calling Matrix","worksFor":{"@type":"Organization","name":"Calling Matrix"}},"publisher":{"@type":"Organization","name":"Calling Matrix","url":"https://callingmatrix.com","logo":{"@type":"ImageObject","url":"https://callingmatrix.com/favicon.svg"}},"keywords":["Playbook","AI receptionist","home service business","calling matrix"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Blog","item":"https://callingmatrix.com/blog"},{"@type":"ListItem","position":2,"name":"The dispatcher script we built from 8,000 recorded calls","item":"https://callingmatrix.com/blog/dispatcher-script"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Should I mention the business name in the greeting?","acceptedAnswer":{"@type":"Answer","text":"Yes — every time, without exception. Callers often dial multiple businesses in sequence. Hearing the business name immediately confirms they reached the right number and triggers the mental shift from \"dialing\" to \"talking.\" Greetings without the business name create a half-second of \"did I call the right number?\" that undermines the caller's confidence before you've said anything."}},{"@type":"Question","name":"How long should the intake take?","acceptedAnswer":{"@type":"Answer","text":"Target 90–120 seconds for a standard booking, 60 seconds for a straightforward emergency where you dispatch first and collect details en route. The single biggest time sink in intake is re-asking questions — if you collect everything in the right order the first time, 90 seconds is plenty."}},{"@type":"Question","name":"What's the biggest mistake home service businesses make in their phone scripts?","acceptedAnswer":{"@type":"Answer","text":"Leading with \"How can I help you?\" instead of establishing who you are and being ready to help immediately. The question puts the burden on the caller to organize their thoughts and explain their problem from scratch. A better opening assumes the problem and asks the first qualifying question directly: \"Is this an emergency or can we schedule you for later this week?\""}},{"@type":"Question","name":"Does the same script work for HVAC, plumbing, and electrical?","acceptedAnswer":{"@type":"Answer","text":"The structure is the same; the qualifying questions differ. The core opening, name collection, and closing are identical. The middle section — the diagnostic intake — needs to be tailored to your trade. An HVAC intake asks about system type and temperature. A plumbing intake asks about active water. An electrical intake asks about panel location and whether anything is sparking. We provide trade-specific variants in the template."}}]}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+<style>
+:root {
+  --bg: #0E0D0B; --bg-2: #151310; --bg-3: #1C1915;
+  --fg: #F6F2EB; --fg-dim: #A6A097; --fg-mute: #6E685F;
+  --line: #2A2620;
+  --accent: oklch(0.74 0.17 55);
+  --accent-soft: oklch(0.74 0.17 55 / 0.12);
+  --serif: 'Instrument Serif', 'Times New Roman', serif;
+  --sans: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--fg); font-family: var(--sans); font-weight: 400; line-height: 1.5; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+.mono { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-mute); }
+
+/* NAV */
+.nav { position: sticky; top: 0; z-index: 100; padding: 20px 32px; background: rgba(14,13,11,0.85); backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); }
+.nav-inner { max-width: 1240px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.logo { display: flex; align-items: center; gap: 12px; font-family: var(--serif); font-size: 24px; letter-spacing: -0.01em; }
+.logo-mark { width: 28px; height: 28px; }
+.logo-mark svg { width: 100%; height: 100%; display: block; }
+.blog-tag { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); border-left: 1px solid var(--line); padding-left: 12px; margin-left: 4px; }
+.nav-links { display: flex; gap: 28px; font-size: 14px; color: var(--fg-dim); }
+.nav-links a { transition: color .2s; }
+.nav-links a:hover { color: var(--fg); }
+.nav-cta { padding: 10px 18px; background: var(--fg); color: var(--bg); border-radius: 999px; font-size: 13px; font-weight: 500; transition: transform .2s, box-shadow .2s; white-space: nowrap; }
+.nav-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(246,242,235,0.15); }
+@media (max-width: 880px) { .nav-links { display: none; } }
+
+/* POST HERO */
+.post-hero { padding: 80px 0 64px; border-bottom: 1px solid var(--line); }
+.post-hero-inner { max-width: 800px; margin: 0 auto; padding: 0 32px; }
+.breadcrumb { display: flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-mute); margin-bottom: 28px; }
+.breadcrumb a { color: var(--fg-dim); transition: color .2s; }
+.breadcrumb a:hover { color: var(--accent); }
+.post-tag { display: inline-block; font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px; }
+.post-hero h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(34px, 4.5vw, 60px); line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 20px; text-wrap: balance; }
+.post-subtitle { font-size: 20px; color: var(--fg-dim); line-height: 1.55; max-width: 660px; margin-bottom: 36px; }
+.byline { display: flex; align-items: center; gap: 20px; padding-top: 28px; border-top: 1px solid var(--line); }
+.byline-av { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), oklch(0.5 0.1 30)); display: grid; place-items: center; font-family: var(--serif); color: #1a0e00; font-size: 18px; flex-shrink: 0; }
+.byline-info { display: flex; flex-direction: column; gap: 2px; }
+.byline-name { font-size: 14px; font-weight: 500; }
+.byline-meta { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-mute); }
+
+/* ARTICLE */
+.article { max-width: 740px; margin: 0 auto; padding: 72px 32px 100px; }
+.article h2 { font-family: var(--serif); font-weight: 400; font-size: 32px; letter-spacing: -0.02em; line-height: 1.2; margin: 56px 0 20px; color: var(--fg); }
+.article h3 { font-size: 18px; font-weight: 600; margin: 36px 0 14px; color: var(--fg); }
+.article p { color: var(--fg-dim); font-size: 17px; line-height: 1.75; margin-bottom: 24px; }
+.article p strong { color: var(--fg); font-weight: 500; }
+.article ul, .article ol { color: var(--fg-dim); font-size: 17px; line-height: 1.75; margin: 0 0 24px 22px; }
+.article li { margin-bottom: 10px; }
+.article a { color: var(--accent); text-decoration: underline; text-decoration-color: oklch(0.74 0.17 55 / 0.3); }
+.article a:hover { text-decoration-color: var(--accent); }
+.article hr { border: none; border-top: 1px solid var(--line); margin: 48px 0; }
+
+/* CALLOUT */
+.callout { background: var(--bg-2); border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 10px; padding: 22px 28px; margin: 36px 0; }
+.callout p { margin: 0; font-size: 16px; }
+
+/* STAT ROW */
+.stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 40px 0; }
+.stat-box { background: var(--bg-2); border: 1px solid var(--line); border-radius: 12px; padding: 24px 18px; text-align: center; }
+.stat-box .num { font-family: var(--serif); font-size: 40px; color: var(--accent); line-height: 1; margin-bottom: 8px; }
+.stat-box .lbl { font-size: 13px; color: var(--fg-dim); line-height: 1.4; }
+@media (max-width: 560px) { .stat-row { grid-template-columns: 1fr; } }
+
+/* TABLE */
+.data-table { width: 100%; border-collapse: collapse; margin: 32px 0; font-size: 14px; }
+.data-table th { text-align: left; padding: 12px 16px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-mute); border-bottom: 1px solid var(--line); font-weight: 500; }
+.data-table td { padding: 14px 16px; border-bottom: 1px solid var(--line); color: var(--fg-dim); }
+.data-table tr:last-child td { border-bottom: none; }
+.data-table td:first-child { color: var(--fg); font-weight: 500; }
+.data-table .accent-row td { background: oklch(0.74 0.17 55 / 0.05); }
+.data-table .accent-row td:first-child { color: var(--accent); }
+
+/* QUOTE */
+.pullquote { border-left: 3px solid var(--accent); padding: 4px 0 4px 28px; margin: 40px 0; }
+.pullquote p { font-family: var(--serif); font-size: 24px; line-height: 1.4; color: var(--fg); margin: 0; }
+
+/* CTA */
+.post-cta { background: var(--bg-2); border: 1px solid var(--line); border-radius: 20px; padding: 48px; text-align: center; margin: 72px 0 0; }
+.post-cta h3 { font-family: var(--serif); font-weight: 400; font-size: 30px; margin-bottom: 12px; }
+.post-cta p { color: var(--fg-dim); font-size: 16px; max-width: 440px; margin: 0 auto 28px; line-height: 1.6; }
+.btn-cta { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; background: var(--fg); color: var(--bg); border-radius: 999px; font-size: 14px; font-weight: 500; transition: transform .2s, box-shadow .2s; }
+.btn-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(246,242,235,0.15); text-decoration: none; }
+
+/* FAQ */
+.faq-section { margin-top: 80px; padding-top: 56px; border-top: 1px solid var(--line); }
+.faq-section h2 { font-family: var(--serif); font-weight: 400; font-size: 32px; letter-spacing: -0.02em; margin-bottom: 32px; }
+.faq-item { border-top: 1px solid var(--line); }
+.faq-item:last-child { border-bottom: 1px solid var(--line); }
+.faq-q { width: 100%; background: none; border: none; color: var(--fg); font-family: var(--sans); font-size: 16px; font-weight: 500; text-align: left; padding: 20px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; transition: color .2s; }
+.faq-q:hover { color: var(--accent); }
+.faq-icon { font-size: 22px; color: var(--fg-mute); transition: transform .25s; flex-shrink: 0; }
+.faq-a { font-size: 15px; color: var(--fg-dim); line-height: 1.7; max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .3s ease; }
+.faq-item.open .faq-a { max-height: 500px; padding-bottom: 20px; }
+.faq-item.open .faq-icon { transform: rotate(45deg); color: var(--accent); }
+
+/* FOOTER */
+footer { padding: 60px 0 40px; background: var(--bg); border-top: 1px solid var(--line); }
+.foot-inner { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+@media (max-width: 780px) { .foot-inner { grid-template-columns: 1fr 1fr; } }
+.foot-col h6 { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-mute); margin-bottom: 16px; }
+.foot-col a { display: block; font-size: 14px; color: var(--fg-dim); margin-bottom: 8px; transition: color .2s; }
+.foot-col a:hover { color: var(--fg); }
+.foot-brand p { color: var(--fg-dim); font-size: 14px; max-width: 340px; margin-top: 12px; line-height: 1.5; }
+.foot-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 28px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-mute); }
+
+/* ==== MOBILE HAMBURGER + SPACING ==== */
+.mob-menu-btn { display: none; flex-direction: column; justify-content: space-between; width: 44px; height: 44px; padding: 11px 10px; border-radius: 8px; border: 1px solid var(--line); transition: border-color .2s; flex-shrink: 0; }
+.mob-menu-btn:hover { border-color: var(--fg-dim); }
+.mob-menu-btn span { display: block; width: 100%; height: 1.5px; background: var(--fg); transition: transform .3s, opacity .3s; }
+.mob-menu-btn.mob-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.mob-menu-btn.mob-open span:nth-child(2) { opacity: 0; }
+.mob-menu-btn.mob-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+@media (max-width: 880px) {
+  .mob-menu-btn { display: flex; }
+  .nav-links.mob-open { display: flex !important; flex-direction: column; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--bg); z-index: 98; padding: 80px 24px 28px; gap: 0; overflow-y: auto; }
+  .nav-links.mob-open a { padding: 16px 0; font-size: 17px; color: var(--fg) !important; border-bottom: 1px solid var(--line); display: block; }
+}
+@media (max-width: 640px) {
+  .wrap { padding: 0 20px; }
+  .masthead { padding: 64px 0 40px; }
+  .post-hero { padding: 60px 0 40px; }
+  .article { padding: 40px 0; }
+  .post-cta { padding: 40px 24px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <span class="logo">
+      <a href="https://callingmatrix.com" style="display:flex;align-items:center;gap:12px;color:inherit;text-decoration:none;">
+        <span class="logo-mark">
+          <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="1" width="24" height="24" rx="6" stroke="currentColor" stroke-opacity="0.4"/>
+            <path d="M8 10 Q8 8 10 8 L12 8 L14 12 L12 14 Q14 17 16 18 L18 16 L22 18 L22 20 Q22 22 20 22 Q13 22 8 17 Q6 14 6 11 Z" fill="var(--accent)"/>
+            <circle cx="20" cy="6" r="2" fill="var(--accent)"/>
+          </svg>
+        </span>
+        Calling Matrix
+      </a>
+      <a href="/" class="blog-tag">Blog</a>
+    </span>
+    <div class="nav-links">
+      <a href="/">All posts</a>
+      <a href="https://callingmatrix.com/#demo" class="nav-cta" style="margin-left:auto;">Book a demo →</a>
+    </div>
+    <a href="https://callingmatrix.com/#demo" class="nav-cta">Book a demo →</a>
+    <button class="mob-menu-btn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+
+  </div>
+</nav>
+
+<section class="post-hero">
+  <div class="post-hero-inner">
+    <div class="breadcrumb">
+      <a href="/">Blog</a>
+      <span>›</span>
+      <span>Playbook</span>
+    </div>
+    <div class="post-tag">Playbook</div>
+    <h1>The dispatcher script we built from 8,000 recorded calls</h1>
+    <p class="post-subtitle">Word-for-word what your AI receptionist (or human one) should say in the first 12 seconds. Free template inside.</p>
+    <div class="byline">
+      <div class="byline-av">B</div>
+      <div class="byline-info">
+        <span class="byline-name">Brandon Ortiz</span>
+        <span class="byline-meta">Co-founder, Calling Matrix · Apr 8, 2026 · 11 min read</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="article">
+<p>We've listened to over 8,000 recorded inbound calls to home service businesses. Calls that converted to booked jobs and calls that didn't. Calls where the customer felt confident and calls where they hung up frustrated. Calls where the dispatcher sounded like they'd done this a thousand times, and calls that clearly hadn't been thought through.</p>
+
+<p>The patterns are consistent enough that we've distilled them into a script template. This is not a rigid word-for-word script — it's a structure. The specific words should match your business's voice. The <em>order</em> of what you say is what matters.</p>
+
+<h2>The 12-second opening</h2>
+
+<p>The opening has three jobs: identify the business, signal readiness to help, and get the caller into motion. Everything else is secondary.</p>
+
+<div class="callout"><p><strong>What works:</strong> "Thank you for calling [Business Name] — I can help you today. Are you calling about an emergency or something we can schedule?"</p>
+<p style="margin-top:12px;"><strong>What doesn't:</strong> "Hello, [Business Name], how can I direct your call?" or "Thanks for calling, can you hold?"</p></div>
+
+<p>The difference: the first version immediately tells the caller (1) they reached the right place, (2) someone is ready to help right now, and (3) it frames the conversation around action. The second version creates ambiguity and passive phrasing. The hold request is a conversion killer — 30% of callers who are put on hold immediately after being answered hang up within 20 seconds.</p>
+
+<h2>The intake sequence</h2>
+
+<p>After the opening, collect information in this order — because each answer informs the next question:</p>
+
+<h3>Step 1: Nature of the issue (15–20 seconds)</h3>
+
+<p>Let them describe the problem in their own words. Don't interrupt. Your job in this step is to listen and identify whether this is an emergency, an urgent need, or a scheduling request.</p>
+
+<p>Signal words that mean emergency: "water everywhere," "can't stop it," "no heat/AC and it's [extreme temp]," "smell gas," "sparking," "flooding."</p>
+
+<p>Signal words that mean urgent-but-schedulable: "it's been happening for a few days," "it's leaking slowly," "the AC is struggling," "it's not as cold as usual."</p>
+
+<h3>Step 2: Location verification (10 seconds)</h3>
+
+<p>"Can I get your address to confirm you're in our service area?" — Do this early. Nothing is more frustrating than a four-minute intake that ends with "unfortunately we don't service that area." Get location second, every time.</p>
+
+<h3>Step 3: Contact information (15 seconds)</h3>
+
+<p>"What's the best number to reach you?" and "And your name?" — In that order. Callers are more likely to give accurate contact info before they've been asked their name, because they're still in "solve my problem" mode rather than "give a stranger my information" mode.</p>
+
+<h3>Step 4: Diagnostic specifics (30–45 seconds)</h3>
+
+<p>This section is trade-specific. For HVAC:</p>
+<ul>
+  <li>"How old is the system, roughly?"</li>
+  <li>"What's the temperature inside right now?"</li>
+  <li>"Is the unit running at all — can you hear it?"</li>
+  <li>"Have you noticed any water around the unit?"</li>
+</ul>
+
+<p>For plumbing:</p>
+<ul>
+  <li>"Is water actively coming out or has it slowed?"</li>
+  <li>"Have you been able to shut off the water supply?"</li>
+  <li>"Where in the house is the problem?"</li>
+</ul>
+
+<p>For electrical:</p>
+<ul>
+  <li>"Is it just one area of the house or a larger outage?"</li>
+  <li>"Do you smell anything burning?"</li>
+  <li>"Has the breaker been tripped or is it in the on position?"</li>
+</ul>
+
+<h3>Step 5: Set expectations and close (20 seconds)</h3>
+
+<p>This is where most scripts fail. A good close has three parts: what happens next, when it happens, and a confirmation the caller can count on.</p>
+
+<div class="callout"><p><strong>Strong close:</strong> "I've got you scheduled for [TIME WINDOW]. A technician named [NAME if known] will be there. You'll get a text confirmation in a few minutes, and they'll call 20 minutes before arrival. Is there anything else you need before I let you go?"</p></div>
+
+<p>The final question ("Is there anything else?") exists for one reason: it prevents the dreaded "oh actually—" call that comes 10 minutes later because the caller forgot to mention the access gate code or that the unit is on the roof. Let them surface that information now, while you're still on the line.</p>
+
+<h2>The full script, annotated</h2>
+
+<table class="data-table">
+  <thead><tr><th>Stage</th><th>What to say</th><th>Why</th></tr></thead>
+  <tbody>
+    <tr><td>Opening</td><td>"Thank you for calling [Business]. I can help you today — is this an emergency or can we schedule?"</td><td>Identifies business, signals readiness, frames the call</td></tr>
+    <tr><td>Listen</td><td>[Let them speak. Don't interrupt.]</td><td>Caller feels heard; you gather signal words</td></tr>
+    <tr><td>Location</td><td>"Let me get your address to confirm we serve your area."</td><td>Screens service area early</td></tr>
+    <tr><td>Contact</td><td>"Best number to reach you? And your name?"</td><td>Collects contact before name-ask mode</td></tr>
+    <tr><td>Diagnostics</td><td>[Trade-specific questions — see above]</td><td>Prepares tech; avoids on-site surprises</td></tr>
+    <tr class="accent-row"><td>Close</td><td>"You're scheduled for [WINDOW]. You'll get a text confirmation. Is there anything else?"</td><td>Sets expectation, prevents follow-up calls</td></tr>
+  </tbody>
+</table>
+
+<h2>Adapting this for AI</h2>
+
+<p>This script was built from human dispatcher analysis, but it maps directly to how Calling Matrix's AI is trained. The order of questions, the emergency signal words, the close — all of it runs on the same logic.</p>
+
+<p>The advantage of the AI version: it never gets tired, never rushes the diagnostic section because it's busy, and never skips the "is there anything else?" close at the end of a long day. The script runs the same at 11 PM on a Friday as it does at 9 AM on a Monday.</p>
+
+<p>If you're running human dispatchers, print this out and use it as training material. If you're running AI, share it with us — the training call is where we configure the diagnostic specifics for your trade and your business.</p>
+
+<p>Either way: the 12-second opening is the most important part. Get that right and the rest of the call is mostly logistics.</p>
+
+<div class="faq-section">
+  <h2>Frequently asked questions</h2>
+  <div class="faq-item">
+  <button class="faq-q" aria-expanded="false">Should I mention the business name in the greeting?<span class="faq-icon">+</span></button>
+  <div class="faq-a">Yes — every time, without exception. Callers often dial multiple businesses in sequence. Hearing the business name immediately confirms they reached the right number and triggers the mental shift from "dialing" to "talking." Greetings without the business name create a half-second of "did I call the right number?" that undermines the caller's confidence before you've said anything.</div>
+</div>
+  <div class="faq-item">
+  <button class="faq-q" aria-expanded="false">How long should the intake take?<span class="faq-icon">+</span></button>
+  <div class="faq-a">Target 90–120 seconds for a standard booking, 60 seconds for a straightforward emergency where you dispatch first and collect details en route. The single biggest time sink in intake is re-asking questions — if you collect everything in the right order the first time, 90 seconds is plenty.</div>
+</div>
+  <div class="faq-item">
+  <button class="faq-q" aria-expanded="false">What's the biggest mistake home service businesses make in their phone scripts?<span class="faq-icon">+</span></button>
+  <div class="faq-a">Leading with "How can I help you?" instead of establishing who you are and being ready to help immediately. The question puts the burden on the caller to organize their thoughts and explain their problem from scratch. A better opening assumes the problem and asks the first qualifying question directly: "Is this an emergency or can we schedule you for later this week?"</div>
+</div>
+  <div class="faq-item">
+  <button class="faq-q" aria-expanded="false">Does the same script work for HVAC, plumbing, and electrical?<span class="faq-icon">+</span></button>
+  <div class="faq-a">The structure is the same; the qualifying questions differ. The core opening, name collection, and closing are identical. The middle section — the diagnostic intake — needs to be tailored to your trade. An HVAC intake asks about system type and temperature. A plumbing intake asks about active water. An electrical intake asks about panel location and whether anything is sparking. We provide trade-specific variants in the template.</div>
+</div>
+</div>
+
+  <div class="post-cta">
+    <h3>See Calling Matrix in action</h3>
+    <p>Book a 15-minute demo. We'll train the AI on your business before the call — you hear a working receptionist, not a slide deck.</p>
+    <a href="https://callingmatrix.com/#demo" class="btn-cta">Book your free demo →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-inner">
+      <div class="foot-col foot-brand">
+        <a href="https://callingmatrix.com" style="display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:22px;letter-spacing:-0.01em;color:inherit;text-decoration:none;margin-bottom:12px;">
+          <span style="width:26px;height:26px;display:inline-block;">
+            <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="24" height="24" rx="6" stroke="currentColor" stroke-opacity="0.4"/><path d="M8 10 Q8 8 10 8 L12 8 L14 12 L12 14 Q14 17 16 18 L18 16 L22 18 L22 20 Q22 22 20 22 Q13 22 8 17 Q6 14 6 11 Z" fill="var(--accent)"/><circle cx="20" cy="6" r="2" fill="var(--accent)"/></svg>
+          </span>
+          Calling Matrix
+        </a>
+        <p>The AI receptionist built for home service businesses. Answer every call. Book every job.</p>
+      </div>
+      <div class="foot-col">
+        <h6>Blog</h6>
+        <a href="/">All posts</a>
+        <a href="/?filter=playbook">Playbooks</a>
+        <a href="/?filter=customer-story">Customer stories</a>
+        <a href="/?filter=product-update">Product updates</a>
+      </div>
+      <div class="foot-col">
+        <h6>Product</h6>
+        <a href="https://callingmatrix.com/#how">How it works</a>
+        <a href="https://callingmatrix.com/#pricing">Pricing</a>
+        <a href="https://callingmatrix.com/roi-calculator">ROI Calculator</a>
+        <a href="https://callingmatrix.com/case-studies">Case studies</a>
+      </div>
+      <div class="foot-col">
+        <h6>Company</h6>
+        <a href="https://callingmatrix.com">callingmatrix.com</a>
+        <a href="https://callingmatrix.com/#demo">Book a demo</a>
+        <a href="/feed.xml">RSS feed</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Calling Matrix</span>
+      <span>callingmatrix.com/blog</span>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+    btn.setAttribute('aria-expanded', String(!isOpen));
+  });
+});
+</script>
+
+<!-- INTERNAL LINKS -->
+<section style="background:var(--bg-2,#151310);border-top:1px solid var(--line,#2A2620);padding:48px 0;margin-top:0;">
+  <div style="max-width:720px;margin:0 auto;padding:0 32px;">
+    <p style="font-family:var(--mono,monospace);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent,#E89B6C);margin-bottom:16px;">Related pages</p>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+                <li><a href="https://callingmatrix.com" style="color:var(--accent,#E89B6C);text-decoration:none;border-bottom:1px solid oklch(0.74 0.17 55 / 0.3);">Calling Matrix — AI Receptionist for Home Service →</a></li>
+    </ul>
+  </div>
+</section>
+<script>
+(function(){
+  var b=document.querySelector('.mob-menu-btn');
+  var n=document.querySelector('.nav-links');
+  if(!b||!n)return;
+  b.addEventListener('click',function(){
+    var o=n.classList.toggle('mob-open');
+    b.classList.toggle('mob-open',o);
+    b.setAttribute('aria-expanded',String(o));
+    document.body.style.overflow=o?'hidden':'';
+  });
+  n.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      n.classList.remove('mob-open');
+      b.classList.remove('mob-open');
+      b.setAttribute('aria-expanded','false');
+      document.body.style.overflow='';
+    });
+  });
+})();
+</script>
+</body>
+</html>

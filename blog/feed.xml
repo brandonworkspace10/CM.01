@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>The Calling Matrix Blog</title>
+    <link>https://callingmatrix.com/blog</link>
+    <description>Field notes, playbooks, and product updates on AI receptionists, missed-call recovery, and running a better home service business.</description>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 12 May 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://callingmatrix.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <image>
+      <url>https://callingmatrix.com/og-image.png</url>
+      <title>The Calling Matrix Blog</title>
+      <link>https://callingmatrix.com/blog</link>
+    </image>
+
+    <item>
+      <title>Calling Matrix vs. Rosie AI: An Honest Comparison (2026)</title>
+      <link>https://callingmatrix.com/blog/calling-matrix-vs-rosie</link>
+      <guid isPermaLink="true">https://callingmatrix.com/blog/calling-matrix-vs-rosie</guid>
+      <pubDate>Tue, 12 May 2026 00:00:00 +0000</pubDate>
+      <author>Brandon Ortiz</author>
+      <description>Where Rosie wins (budget, quick setup), where Calling Matrix wins (custom voice, done-for-you setup). Which contractor should pick which.</description>
+      <category>Comparison</category>
+    </item>
+
+    <item>
+      <title>How Much Does an AI Receptionist Cost in 2026?</title>
+      <link>https://callingmatrix.com/blog/how-much-does-ai-receptionist-cost</link>
+      <guid isPermaLink="true">https://callingmatrix.com/blog/how-much-does-ai-receptionist-cost</guid>
+      <pubDate>Sat, 10 May 2026 00:00:00 +0000</pubDate>
+      <author>Rick Delgado</author>
+      <description>AI receptionist pricing from $49 to $800+/month. What drives the difference and how to figure out which tier actually makes your business more money.</description>
+      <category>Pricing</category>
+    </item>
+
+    <item>
+      <title>7 Best Answering Services for Cleaning Companies in 2026</title>
+      <link>https://callingmatrix.com/blog/best-answering-service-for-cleaning-companies</link>
+      <guid isPermaLink="true">https://callingmatrix.com/blog/best-answering-service-for-cleaning-companies</guid>
+      <pubDate>Thu, 08 May 2026 00:00:00 +0000</pubDate>
+      <author>Ana Reyes</author>
+      <description>Side-by-side comparison of the top 7 answering services for cleaning businesses — recurring booking, bilingual support, and who wins on customization.</description>
+      <category>Roundup</category>
+    </item>
+
+    <item>
+      <title>7 Best AI Receptionists for Electricians in 2026</title>
+      <link>https://callingmatrix.com/blog/best-ai-receptionist-for-electricians</link>
+      <guid isPermaLink="true">https://callingmatrix.com/blog/best-ai-receptionist-for-electricians</guid>
+      <pubDate>Mon, 05 May 2026 00:00:00 +0000</pubDate>
+      <author>Brandon Ortiz</author>
+      <description>Comparing Calling Matrix, Rosie AI, NextPhone, Smith.ai, Allo, Goodcall, and RealVoice AI on pricing, integrations, and bilingual support for electricians.</description>
+      <category>Roundup</category>
+    </item>
+
+    <item>
+      <title>The 14-second rule: why home service callers don't wait, and what to do about it</title>
+      <link>https://callingmatrix.com/blog/the-14-second-rule</link>
+      <guid isPermaLink="true">https://callingmatrix.com/blog/the-14-second-rule</guid>
+      <pubDate>Sun, 04 May 2026 00:00:00 +0000</pubDate>
+      <author>Brandon Ortiz</author>
+      <description>Across 1.2 million inbound service calls, we found the average customer hangs up at 14 seconds — then dials the next shop on Google Maps within 60. Here's how the best operators are answering inside that window.</description>
+      <category>Playbook</category>
+    </item>
+
+    <item>
+      <title>After-hours emergencies: the 3-tier routing model that keeps techs sane</title>
+      <link>https://callingmatrix.com/blog/after-hours-routing</link>
+      <guid isPermaLink="true">https://callingmatrix.com/blog/after-hours-routing</guid>
+      <pubDate>Fri, 02 May 2026 00:00:00 +0000</pubDate>
+      <author>Maya Chen</author>
+      <description>A simple decision tree for triaging burst pipes vs. routine inquiries — and why it cut Delgado HVAC's overnight escalations by 62%.</description>
+      <category>Playbook</category>
+    </item>
+
+    <item>
+      <title>Every missed call is worth $287. Here's the math.</title>
+      <link>https://callingmatrix.com/blog/missed-call-value</link>
+      <guid isPermaLink="true">https://callingmatrix.com/blog/missed-call-value</guid>
+      <pubDate>Mon, 28 Apr 2026 00:00:00 +0000</pubDate>
+      <author>Rick Delgado</author>
+      <description>We pulled lifetime-value data from 1,400 home service shops. The number per missed call surprised even us.</description>
+      <category>Missed-call recovery</category>
+    </item>
+
+    <item>
+      <title>Spanish-language calls now ship on every plan</title>
+      <link>https://callingmatrix.com/blog/spanish-language-calls</link>
+      <guid isPermaLink="true">https://callingmatrix.com/blog/spanish-language-calls</guid>
+      <pubDate>Thu, 24 Apr 2026 00:00:00 +0000</pubDate>
+      <author>Ana Reyes</author>
+      <description>Bilingual handoff, accent-aware booking, and what we learned testing it across 40 cities in Texas, Florida, and California.</description>
+      <category>Product update</category>
+    </item>
+
+    <item>
+      <title>Pham Plumbing: from 40 missed calls a week to zero in 90 days</title>
+      <link>https://callingmatrix.com/blog/pham-plumbing-case-study</link>
+      <guid isPermaLink="true">https://callingmatrix.com/blog/pham-plumbing-case-study</guid>
+      <pubDate>Sun, 19 Apr 2026 00:00:00 +0000</pubDate>
+      <author>Jason Pham</author>
+      <description>How a 4-truck shop in Sacramento went from dinner-table dispatching to a fully booked calendar — without hiring.</description>
+      <category>Customer story</category>
+    </item>
+
+    <item>
+      <title>Pricing the heat-wave call: dynamic dispatch when demand spikes 4x</title>
+      <link>https://callingmatrix.com/blog/heat-wave-pricing</link>
+      <guid isPermaLink="true">https://callingmatrix.com/blog/heat-wave-pricing</guid>
+      <pubDate>Mon, 14 Apr 2026 00:00:00 +0000</pubDate>
+      <author>Tasha Bell</author>
+      <description>A field guide for HVAC owners running into peak summer with finite truck capacity. Includes our pricing matrix template.</description>
+      <category>HVAC</category>
+    </item>
+
+    <item>
+      <title>The dispatcher script we built from 8,000 recorded calls</title>
+      <link>https://callingmatrix.com/blog/dispatcher-script</link>
+      <guid isPermaLink="true">https://callingmatrix.com/blog/dispatcher-script</guid>
+      <pubDate>Wed, 08 Apr 2026 00:00:00 +0000</pubDate>
+      <author>Brandon Ortiz</author>
+      <description>Word-for-word what your AI receptionist (or human one) should say in the first 12 seconds. Free template inside.</description>
+      <category>Playbook</category>
+    </item>
+
+  </channel>
+</rss>

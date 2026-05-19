@@ -4,17 +4,17 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" href="/favicon.svg">
   <title>Calling Matrix Pricing — AI Receptionist Plans for Home Service Businesses</title>
-  <meta name="description" content="After Hours from $297/mo. Starter $497/mo. Growth $797/mo. Scale custom. All plans include a one-time $997 setup fee. Month-to-month, no contracts.">
+  <meta name="description" content="After Hours $297/mo. Starter $497/mo. Growth $797/mo. Scale custom. Setup fee varies by plan — waived on annual billing. Month-to-month or annual, no lock-in.">
   <link rel="canonical" href="https://callingmatrix.com/pricing">
   <meta property="og:title" content="Calling Matrix Pricing — AI Receptionist Plans">
-  <meta property="og:description" content="After Hours $297 · Starter $497 · Growth $797 · Scale custom. One-time $997 setup. Month-to-month, no contracts.">
+  <meta property="og:description" content="After Hours $297 · Starter $497 · Growth $797 · Scale custom. Setup fee waived on annual. No long-term lock-in.">
   <meta property="og:url" content="https://callingmatrix.com/pricing">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://callingmatrix.com/og-image.png">
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Calling Matrix Pricing">
-  <meta name="twitter:description" content="After Hours $297 · Starter $497 · Growth $797 · Scale custom. No contracts.">
+  <meta name="twitter:description" content="After Hours $297 · Starter $497 · Growth $797 · Scale custom. Setup fee waived on annual billing. No lock-in.">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -64,7 +64,7 @@
           {
             "@type": "Question",
             "name": "What is the setup fee?",
-            "acceptedAnswer": { "@type": "Answer", "text": "All plans include a one-time $997 setup fee. This covers onboarding, custom AI training on your services and pricing, number porting or provisioning, and CRM integration." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Setup fees are tiered by plan: After Hours $297, Starter $497, Growth $997, Scale custom starting at $1,997. All setup fees are waived on annual billing." }
           },
           {
             "@type": "Question",
@@ -146,6 +146,23 @@
     .plan-hours-note { margin-top: 12px; font-size: 12px; text-align: center; color: var(--fg-mute); }
     .setup-note { text-align: center; margin-top: 32px; font-size: 14px; color: var(--fg-mute); }
     .setup-note strong { color: var(--fg-dim); }
+    /* Billing toggle */
+    .billing-toggle { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 0 auto 40px; flex-wrap: wrap; }
+    .toggle-btn { padding: 10px 22px; border: 1px solid var(--line); border-radius: 999px; font-size: 14px; font-family: var(--sans); cursor: pointer; transition: all .2s; background: transparent; color: var(--fg-dim); }
+    .toggle-btn.active { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+    .toggle-badge { display: inline-block; background: oklch(0.74 0.17 55 / 0.15); color: var(--accent); font-size: 11px; padding: 2px 8px; border-radius: 999px; margin-left: 6px; font-family: var(--mono); letter-spacing: 0.04em; vertical-align: middle; }
+    #pricing-wrap .price-annual { display: block; }
+    #pricing-wrap .price-monthly { display: none; }
+    #pricing-wrap .setup-annual { display: block; }
+    #pricing-wrap .setup-monthly { display: none; }
+    #pricing-wrap.billing-monthly .price-annual { display: none; }
+    #pricing-wrap.billing-monthly .price-monthly { display: block; }
+    #pricing-wrap.billing-monthly .setup-annual { display: none; }
+    #pricing-wrap.billing-monthly .setup-monthly { display: block; }
+    .plan-setup-note { font-size: 12px; color: var(--fg-mute); margin-top: 8px; line-height: 1.4; }
+    .plan-setup-note strong { color: var(--fg-dim); }
+    .plan-setup-note.setup-annual { color: oklch(0.74 0.17 55 / 0.9); }
+    .plan-annual-total { font-size: 12px; color: var(--fg-mute); margin-top: 3px; }
     .faq-section { padding: 72px 0; border-top: 1px solid var(--line); background: var(--bg-2); }
     .faq-inner { max-width: 720px; margin: 0 auto; }
     .faq-title { font-family: var(--serif); font-size: clamp(28px, 3vw, 40px); font-weight: 400; margin-bottom: 40px; text-align: center; }
@@ -192,16 +209,24 @@
     <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>›</span><span>Pricing</span></nav>
     <p class="eyebrow"><span class="dot"></span>Pricing</p>
     <h1>Pay less than a part-time hire.<br><span class="italic">Book more than a full team.</span></h1>
-    <p class="subtitle">All plans include a one-time $997 setup fee. Month-to-month — no long-term contracts. Start after hours, scale to 24/7 when you're ready.</p>
+    <p class="subtitle">Setup fee varies by plan — waived on annual. Month-to-month or annual. No long-term lock-in either way.</p>
   </div>
 </section>
 
 <section class="pricing-section">
-  <div class="wrap">
+  <div class="wrap" id="pricing-wrap">
+    <div class="billing-toggle" role="group" aria-label="Billing period">
+      <button class="toggle-btn" id="btn-monthly" aria-pressed="false" onclick="setBilling('monthly')">Monthly</button>
+      <button class="toggle-btn active" id="btn-annual" aria-pressed="true" onclick="setBilling('annual')">Annual <span class="toggle-badge">Save 10% + setup fee waived</span></button>
+    </div>
     <div class="pricing-grid">
       <div class="plan after-hours">
         <div class="plan-name">After Hours</div>
-        <div class="plan-price">$297<span class="unit">/ mo</span></div>
+        <div class="plan-price price-annual">$267<span class="unit">/ mo</span></div>
+        <div class="plan-annual-total price-annual">$3,204 billed annually</div>
+        <div class="plan-price price-monthly">$297<span class="unit">/ mo</span></div>
+        <div class="plan-setup-note setup-annual">Setup fee waived <span style="color:var(--fg-mute)">($297 value)</span></div>
+        <div class="plan-setup-note setup-monthly">One-time <strong>$297 setup fee</strong></div>
         <div class="hours-badge"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M6 1a5 5 0 100 10A5 5 0 006 1zm0 1.5V6l2.5 1.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>You set the hours</div>
         <p class="plan-desc">For owners who handle their own calls during the day — we cover everything outside your business hours so nothing slips overnight.</p>
         <ul class="plan-features">
@@ -218,7 +243,11 @@
       </div>
       <div class="plan">
         <div class="plan-name">Starter</div>
-        <div class="plan-price">$497<span class="unit">/ mo</span></div>
+        <div class="plan-price price-annual">$447<span class="unit">/ mo</span></div>
+        <div class="plan-annual-total price-annual">$5,364 billed annually</div>
+        <div class="plan-price price-monthly">$497<span class="unit">/ mo</span></div>
+        <div class="plan-setup-note setup-annual">Setup fee waived <span style="color:var(--fg-mute)">($497 value)</span></div>
+        <div class="plan-setup-note setup-monthly">One-time <strong>$497 setup fee</strong></div>
         <p class="plan-desc">For solo operators and 1-truck shops getting off voicemail for the first time.</p>
         <ul class="plan-features">
           <li>Up to 300 calls / month</li>
@@ -231,7 +260,11 @@
       </div>
       <div class="plan featured">
         <div class="plan-name">Growth</div>
-        <div class="plan-price">$797<span class="unit">/ mo</span></div>
+        <div class="plan-price price-annual">$717<span class="unit">/ mo</span></div>
+        <div class="plan-annual-total price-annual">$8,604 billed annually</div>
+        <div class="plan-price price-monthly">$797<span class="unit">/ mo</span></div>
+        <div class="plan-setup-note setup-annual">Setup fee waived <span style="color:var(--fg-mute)">($997 value)</span></div>
+        <div class="plan-setup-note setup-monthly">One-time <strong>$997 setup fee</strong></div>
         <p class="plan-desc">For 2-10 truck shops scaling bookings without scaling admin hires.</p>
         <ul class="plan-features">
           <li>Up to 800 calls / month</li>
@@ -246,7 +279,11 @@
       </div>
       <div class="plan">
         <div class="plan-name">Scale</div>
-        <div class="plan-price">Custom</div>
+        <div class="plan-price price-annual">Custom</div>
+        <div class="plan-annual-total price-annual" style="visibility:hidden">—</div>
+        <div class="plan-price price-monthly">Custom</div>
+        <div class="plan-setup-note setup-annual">Setup via sales</div>
+        <div class="plan-setup-note setup-monthly">Custom, starting at <strong>$1,997 setup</strong></div>
         <p class="plan-desc">For multi-location operators, franchises, and shops doing $5M+ in revenue.</p>
         <ul class="plan-features">
           <li>Unlimited call volume</li>
@@ -259,7 +296,7 @@
         <a href="#" class="btn btn-ghost" onclick="openCalendly();return false;">Talk to sales</a>
       </div>
     </div>
-    <p class="setup-note">All plans include a one-time <strong>$997 setup fee</strong> — covers onboarding, custom AI training, number porting, and CRM integration. <a href="/security" style="color:var(--fg-dim);text-decoration:underline;text-underline-offset:3px;">See our security &amp; SLA details →</a></p>
+    <p class="setup-note">Setup fee varies by plan — <strong>waived on annual billing</strong>. Monthly: After Hours $297, Starter $497, Growth $997, Scale custom. <a href="/security" style="color:var(--fg-dim);text-decoration:underline;text-underline-offset:3px;">See our security &amp; SLA details →</a></p>
   </div>
 </section>
 
@@ -268,12 +305,12 @@
     <h2 class="faq-title">Questions about <span class="italic">pricing.</span></h2>
     <div class="faq-list">
       <div class="faq-item open">
-        <div class="faq-q">Is there a long-term contract?</div>
-        <div class="faq-a">No. Every plan is month-to-month. Cancel anytime — no penalties, no lock-in.</div>
+        <div class="faq-q">Monthly or annual — what's the difference?</div>
+        <div class="faq-a">Monthly billing keeps you flexible — cancel anytime with 30 days notice, no penalties. Annual billing saves you 10% on your monthly rate <em>and</em> waives the setup fee entirely (a $297–$997 savings depending on plan). Most owners who know they want 24/7 coverage long-term take the annual option and come out ahead in month one.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">What does the $997 setup fee cover?</div>
-        <div class="faq-a">A 30-minute onboarding call, custom AI training on your services and pricing, number porting or provisioning, CRM and calendar integration, and a test call before you go live. Most shops are live within 48 hours of onboarding.</div>
+        <div class="faq-q">What does the setup fee cover?</div>
+        <div class="faq-a">A 30-minute onboarding call, custom AI training on your services and pricing, number porting or provisioning, CRM and calendar integration, and a test call before you go live. Setup fee is tiered: After Hours $297, Starter $497, Growth $997, Scale custom — and waived on annual billing. Most shops are live within 48 hours of onboarding.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">How does the After Hours plan work exactly?</div>
@@ -318,5 +355,6 @@ document.querySelectorAll('.faq-item').forEach(i=>i.addEventListener('click',()=
 const CALENDLY_URL='https://calendly.com/callingmatrix/30min';
 function openCalendly(){if(window.Calendly){Calendly.initPopupWidget({url:CALENDLY_URL});return;}if(!document.querySelector('link[href*="calendly"]')){const l=document.createElement('link');l.rel='stylesheet';l.href='https://assets.calendly.com/assets/external/widget.css';document.head.appendChild(l);}const s=document.createElement('script');s.src='https://assets.calendly.com/assets/external/widget.js';s.onload=()=>Calendly.initPopupWidget({url:CALENDLY_URL});document.head.appendChild(s);}
 document.addEventListener('click',function(e){var a=e.target.closest('a[href="/#demo"],a[href="#demo"]');if(!a)return;e.preventDefault();openCalendly();});
+function setBilling(mode){const w=document.getElementById('pricing-wrap');w.classList.toggle('billing-monthly',mode==='monthly');document.querySelectorAll('.toggle-btn').forEach(b=>{const on=b.id==='btn-'+mode;b.classList.toggle('active',on);b.setAttribute('aria-pressed',on?'true':'false');});}
 </script>
 </body></html>

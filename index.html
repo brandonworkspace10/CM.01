@@ -132,7 +132,7 @@
         { "@type": "Question", "name": "Can it integrate with my scheduling software?", "acceptedAnswer": { "@type": "Answer", "text": "Calling Matrix integrates directly with Housecall Pro, ServiceTitan, Jobber, FieldEdge, Workiz, Google Calendar, and Calendly. For software not on the standard list, we build custom API and webhook integrations. Every Calling Matrix setup is custom-built for your specific tools — not a generic template." } },
         { "@type": "Question", "name": "How fast can I get set up?", "acceptedAnswer": { "@type": "Answer", "text": "Most home service businesses are live in under 48 hours. We clone your dispatcher's script, train on your services and pricing, and port your number." } },
         { "@type": "Question", "name": "What happens to calls after hours?", "acceptedAnswer": { "@type": "Answer", "text": "On 24/7 plans, Calling Matrix answers every call around the clock — emergency calls route to your on-call tech, non-urgent calls get booked for the next available slot. On the After Hours plan, Calling Matrix activates only during your defined off-hours, captures leads, books appointments, and delivers a morning summary while you sleep." } },
-        { "@type": "Question", "name": "How much does Calling Matrix cost?", "acceptedAnswer": { "@type": "Answer", "text": "After Hours coverage starts at $297/month for owners who take their own calls during the day. Full 24/7 plans start at $497/month (Starter), $797/month (Growth), and custom pricing for Scale. All plans include a one-time $997 setup fee, unlimited call answering during covered hours, booking automation, and SMS follow-up. No per-minute billing." } },
+        { "@type": "Question", "name": "How much does Calling Matrix cost?", "acceptedAnswer": { "@type": "Answer", "text": "After Hours starts at $297/month ($267/mo billed annually). Starter is $497/month ($447/mo annually). Growth is $797/month ($717/mo annually). Scale is custom. Setup fees are tiered by plan ($297 After Hours, $497 Starter, $997 Growth, custom Scale) and are fully waived on annual billing. No per-minute charges." } },
         { "@type": "Question", "name": "What happens if the AI can't answer a question?", "acceptedAnswer": { "@type": "Answer", "text": "If a caller asks something outside the AI's training — a very specific pricing question or unusual scenario — it captures the caller's name and number and sends you a text immediately so you can call them back." } },
         { "@type": "Question", "name": "Does it work for all home service businesses or just HVAC?", "acceptedAnswer": { "@type": "Answer", "text": "Calling Matrix works for any home service business: HVAC, plumbing, electrical, roofing, cleaning, landscaping, pest control, and more. Each business gets a custom-trained receptionist based on its specific services, pricing, and service area." } },
         { "@type": "Question", "name": "Can I keep my existing phone number?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We port your existing business number to Calling Matrix in 1–3 business days so nothing changes for your customers. If you need a new number instead, we provision a local number for you — your choice." } },
@@ -926,6 +926,24 @@ h2.sec-title .italic { color: var(--accent); }
 }
 .hours-badge { display: inline-flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 10px; letter-spacing: .1em; color: oklch(0.65 0.12 260); background: oklch(0.55 0.12 260 / 0.1); border: 1px solid oklch(0.55 0.12 260 / 0.25); padding: 4px 10px; border-radius: 999px; margin-bottom: 16px; }
 .plan-hours-note { font-size: 12px; color: var(--fg-mute); margin-top: 10px; font-style: italic; }
+/* Billing toggle */
+.billing-toggle { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 0 auto 40px; flex-wrap: wrap; }
+.toggle-btn { padding: 10px 22px; border: 1px solid var(--line); border-radius: 999px; font-size: 14px; font-family: var(--sans); cursor: pointer; transition: all .2s; background: transparent; color: var(--fg-dim); }
+.toggle-btn.active { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.toggle-badge { display: inline-block; background: oklch(0.74 0.17 55 / 0.15); color: var(--accent); font-size: 11px; padding: 2px 8px; border-radius: 999px; margin-left: 6px; font-family: var(--mono); letter-spacing: 0.04em; vertical-align: middle; }
+/* Annual/monthly pricing toggle states */
+#pricing .price-annual { display: block; }
+#pricing .price-monthly { display: none; }
+#pricing .setup-annual { display: block; }
+#pricing .setup-monthly { display: none; }
+#pricing.billing-monthly .price-annual { display: none; }
+#pricing.billing-monthly .price-monthly { display: block; }
+#pricing.billing-monthly .setup-annual { display: none; }
+#pricing.billing-monthly .setup-monthly { display: block; }
+.plan-setup-note { font-size: 12px; color: var(--fg-mute); margin-top: 8px; line-height: 1.4; }
+.plan-setup-note strong { color: var(--fg-dim); }
+.plan-setup-note.setup-annual { color: oklch(0.74 0.17 55 / 0.9); }
+.plan-annual-total { font-size: 12px; color: var(--fg-mute); margin-top: 3px; }
 .plan {
   background: var(--bg-2);
   border: 1px solid var(--line);
@@ -1558,7 +1576,7 @@ footer {
     <!-- Founding cohort badge -->
     <div class="cohort-strip reveal in">
       <div class="cohort-dot"></div>
-      <span>Currently onboarding <strong>Q2 2026 cohort</strong> · Founding pricing available for next <strong>8 spots</strong></span>
+      <span>Next <strong>8 spots</strong>: setup fee waived ($997 value) · Q2 2026 cohort closing soon</span>
     </div>
 
     <div style="text-align:center;margin-top:40px;padding-top:32px;border-top:1px solid var(--line);">
@@ -1621,12 +1639,20 @@ footer {
     <div class="sec-head reveal in">
       <div class="sec-label"><span class="mono" data-i18n="pricing.label">06 / Pricing</span></div>
       <h2 class="sec-title" data-i18n="pricing.title">Pay less than a part-time hire. <span class="italic">Book more than a full team.</span></h2>
-      <p class="sec-sub" data-i18n="pricing.sub">All plans include a one-time $997 setup fee. Month-to-month — no long-term contracts. Prefer to take calls yourself during business hours? The After Hours plan captures everything while you sleep.</p>
+      <p class="sec-sub" data-i18n="pricing.sub">Setup fee varies by plan — waived on annual. Month-to-month or annual. No long-term lock-in either way.</p>
+    </div>
+    <div class="billing-toggle reveal in" role="group" aria-label="Billing period">
+      <button class="toggle-btn" id="btn-monthly" aria-pressed="false" onclick="setBilling('monthly')">Monthly</button>
+      <button class="toggle-btn active" id="btn-annual" aria-pressed="true" onclick="setBilling('annual')">Annual <span class="toggle-badge">Save 10% + setup fee waived</span></button>
     </div>
     <div class="pricing-grid">
       <div class="plan after-hours reveal in">
         <div class="plan-name" data-i18n="plan.ah.name">After Hours</div>
-        <div class="plan-price">$297<span class="unit">/ mo</span></div>
+        <div class="plan-price price-annual">$267<span class="unit">/ mo</span></div>
+        <div class="plan-annual-total price-annual">$3,204 billed annually</div>
+        <div class="plan-price price-monthly">$297<span class="unit">/ mo</span></div>
+        <div class="plan-setup-note setup-annual">Setup fee waived <span style="color:var(--fg-mute)">($297 value)</span></div>
+        <div class="plan-setup-note setup-monthly">One-time <strong>$297 setup fee</strong></div>
         <div class="hours-badge">
           <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M6 1a5 5 0 100 10A5 5 0 006 1zm0 1.5V6l2.5 1.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <span data-i18n="plan.ah.badge">You set the hours</span>
@@ -1646,7 +1672,11 @@ footer {
       </div>
       <div class="plan reveal in">
         <div class="plan-name" data-i18n="plan.starter.name">Starter</div>
-        <div class="plan-price">$497<span class="unit">/ mo</span></div>
+        <div class="plan-price price-annual">$447<span class="unit">/ mo</span></div>
+        <div class="plan-annual-total price-annual">$5,364 billed annually</div>
+        <div class="plan-price price-monthly">$497<span class="unit">/ mo</span></div>
+        <div class="plan-setup-note setup-annual">Setup fee waived <span style="color:var(--fg-mute)">($497 value)</span></div>
+        <div class="plan-setup-note setup-monthly">One-time <strong>$497 setup fee</strong></div>
         <p class="plan-desc" data-i18n="plan.starter.desc">For solo operators and 1-truck shops getting off voicemail for the first time.</p>
         <ul class="plan-features">
           <li data-i18n="plan.starter.f1">Up to 300 calls / month</li>
@@ -1659,7 +1689,11 @@ footer {
       </div>
       <div class="plan featured reveal d1 in">
         <div class="plan-name" data-i18n="plan.growth.name">Growth</div>
-        <div class="plan-price">$797<span class="unit">/ mo</span></div>
+        <div class="plan-price price-annual">$717<span class="unit">/ mo</span></div>
+        <div class="plan-annual-total price-annual">$8,604 billed annually</div>
+        <div class="plan-price price-monthly">$797<span class="unit">/ mo</span></div>
+        <div class="plan-setup-note setup-annual">Setup fee waived <span style="color:var(--fg-mute)">($997 value)</span></div>
+        <div class="plan-setup-note setup-monthly">One-time <strong>$997 setup fee</strong></div>
         <p class="plan-desc" data-i18n="plan.growth.desc">For 2-10 truck shops scaling bookings without scaling admin hires.</p>
         <ul class="plan-features">
           <li data-i18n="plan.growth.f1">Up to 800 calls / month</li>
@@ -1674,7 +1708,11 @@ footer {
       </div>
       <div class="plan reveal d2 in">
         <div class="plan-name" data-i18n="plan.scale.name">Scale</div>
-        <div class="plan-price" data-i18n="plan.scale.price">Custom</div>
+        <div class="plan-price price-annual">Custom</div>
+        <div class="plan-annual-total price-annual" style="visibility:hidden">—</div>
+        <div class="plan-price price-monthly">Custom</div>
+        <div class="plan-setup-note setup-annual">Setup via sales</div>
+        <div class="plan-setup-note setup-monthly">Custom, starting at <strong>$1,997 setup</strong></div>
         <p class="plan-desc" data-i18n="plan.scale.desc">For multi-location operators, franchises, and shops doing $5M+ in revenue.</p>
         <ul class="plan-features">
           <li data-i18n="plan.scale.f1">Unlimited call volume</li>
@@ -2148,6 +2186,17 @@ howIO.observe(document.querySelector('.how'));
 document.querySelectorAll('.faq-item').forEach(item => {
   item.addEventListener('click', () => item.classList.toggle('open'));
 });
+
+/* ======= BILLING TOGGLE ======= */
+function setBilling(mode) {
+  const section = document.getElementById('pricing');
+  section.classList.toggle('billing-monthly', mode === 'monthly');
+  document.querySelectorAll('.toggle-btn').forEach(btn => {
+    const isActive = btn.id === 'btn-' + mode;
+    btn.classList.toggle('active', isActive);
+    btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+  });
+}
 
 </script>
 

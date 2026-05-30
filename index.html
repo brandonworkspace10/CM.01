@@ -645,9 +645,7 @@ h2.sec-title .italic { color: var(--accent); }
   gap: 16px;
 }
 @media (max-width: 980px) { .feat-grid { grid-template-columns: 1fr; } }
-.feat-grid .feat:last-child { grid-column: 1 / -1; }
-.feat-grid .feat:last-child .viz-route { flex-direction: row; gap: 12px; }
-.feat-grid .feat:last-child .route-row { flex: 1; }
+.feat-grid .feat:last-child { grid-column: 1; grid-row: 2; }
 .feat {
   background: var(--bg);
   border: 1px solid var(--line);
@@ -658,19 +656,19 @@ h2.sec-title .italic { color: var(--accent); }
   transition: border-color .3s, transform .3s;
 }
 .feat:hover { border-color: oklch(0.74 0.17 55 / 0.5); transform: translateY(-3px); }
-.feat.large { grid-column: span 1; grid-row: span 2; padding: 36px; }
+.feat.large { grid-column: span 1; grid-row: span 1; padding: 36px; }
 @media (max-width: 980px) { .feat.large { grid-row: span 1; } }
 .feat h3 { font-family: var(--serif); font-size: 28px; font-weight: 400; letter-spacing: -0.01em; margin-bottom: 12px; line-height: 1.1; }
 .feat p { font-size: 14.5px; color: var(--fg-dim); line-height: 1.55; }
 .feat .mono { margin-bottom: 24px; }
 
 /* Feature: 24/7 clock */
-.viz-clock { height: 180px; display: grid; place-items: center; margin-bottom: 24px; }
-.clock-ring { width: 140px; height: 140px; border-radius: 50%; border: 1px dashed var(--line); position: relative; display: grid; place-items: center; }
+.viz-clock { height: 120px; display: grid; place-items: center; margin-bottom: 24px; }
+.clock-ring { width: 100px; height: 100px; border-radius: 50%; border: 1px dashed var(--line); position: relative; display: grid; place-items: center; }
 .clock-ring::before { content: ''; position: absolute; inset: 10px; border-radius: 50%; border: 1px solid var(--line); }
-.clock-hand { position: absolute; top: 50%; left: 50%; width: 2px; height: 50px; background: var(--accent); transform-origin: top center; animation: spin 8s linear infinite; }
+.clock-hand { position: absolute; top: 50%; left: 50%; width: 2px; height: 34px; background: var(--accent); transform-origin: top center; animation: spin 8s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
-.clock-center { font-family: var(--serif); font-size: 32px; color: var(--fg); z-index: 2; }
+.clock-center { font-family: var(--serif); font-size: 24px; color: var(--fg); z-index: 2; }
 .clock-labels { position: absolute; inset: 0; font-family: var(--mono); font-size: 9px; color: var(--fg-mute); letter-spacing: 0.1em; }
 .clock-labels span { position: absolute; }
 .clock-labels .l12 { top: -16px; left: 50%; transform: translateX(-50%); }
@@ -1374,6 +1372,9 @@ footer {
             <h4 data-i18n="step4.h4">We go live — and keep tuning.</h4>
             <p data-i18n="step4.p">You get a live dashboard, every call recording, and a human specialist who tunes the AI monthly based on what your customers actually ask.</p>
           </div>
+        </div>
+        <div style="margin-top: 32px;">
+          <a href="#" class="btn btn-primary" onclick="event.preventDefault(); openCalendly(); return false;" data-i18n="how.cta">Get your free strategy call →</a>
         </div>
       </div>
       <div class="how-viz">

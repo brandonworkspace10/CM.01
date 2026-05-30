@@ -5,7 +5,6 @@
   "nav.faq": "Preguntas",
   "nav.blog": "Blog",
   "nav.cta": "Reservar demo →",
-
   "hero.eyebrow": "Nunca pierdas otra llamada de servicio",
   "hero.sub": "Imagínalo como contratar a un <strong>empleado de IA a medida</strong> para tu negocio — uno que contesta cada llamada, agenda cada trabajo, hace las preguntas correctas y dirige las emergencias a una persona real. Nosotros lo construimos, entrenamos y gestionamos por ti. Trabaja 24/7, 365 días al año. <strong>En vivo en 48 horas.</strong>",
   "hero.cta1": "Demo gratis de 15 min",
@@ -13,9 +12,7 @@
   "hero.stat1": "Llamadas contestadas",
   "hero.stat2": "Tiempo de respuesta",
   "hero.stat3": "Más reservas",
-
   "marquee.label": "Se conecta con tus herramientas favoritas",
-
   "problem.label": "01 / El problema",
   "problem.title": "La llamada que perdiste acaba de convertirse en <span class=\"italic\">el mejor día de tu competencia.</span>",
   "problem.sub": "Los clientes de servicios del hogar no dejan mensajes de voz. No esperan hasta el lunes. Llaman al siguiente negocio en la lista — y ahí está el dinero que se escapa en silencio de tu negocio.",
@@ -26,7 +23,6 @@
   "problem.stat3.h3": "de los llamantes no dejan mensaje de voz",
   "problem.stat3.p": "Llamarán al siguiente negocio en Google Maps antes de que termines el trabajo actual. Nueve de cada diez nunca vuelven a llamar.",
   "problem.tagline": "Eres bueno en tu trabajo. No deberías perder el siguiente porque <span class=\"strike\">estás ocupado haciéndolo.</span>",
-
   "feat.label": "02 / Lo que hace",
   "feat.title": "Tu empleado de IA personalizado — <span class=\"italic\">nunca termina su turno, nunca pierde un trabajo.</span>",
   "feat.sub": "Especializado en cuatro cosas: contestar cada llamada, agendar citas en tu calendario, hacer las preguntas correctas al cliente y dirigir emergencias a una persona real. 100% a cargo nuestro. Cero gestión continua.",
@@ -42,7 +38,6 @@
   "feat4.p": "Confirma citas, persigue ausentes, reactiva cotizaciones que se enfriaron. Recupera 1 de cada 5 en promedio.",
   "feat5.h3": "Se conecta con lo que ya usas.",
   "feat5.p": "Porta tu número en 24 horas. Mantén tu CRM, despachador y sistema tecnológico existentes.",
-
   "how.label": "03 / Cómo funciona",
   "how.title": "Empieza a capturar las llamadas que has estado perdiendo. <span class=\"italic\">Desde hoy.</span>",
   "how.cta": "Obtén tu llamada estratégica gratis →",
@@ -62,14 +57,11 @@
   "panel3.p": "Las reservas aparecen en Housecall Pro, ServiceTitan, Jobber o Google Cal en tiempo real.",
   "panel4.h5": "Día 3+ · Reservando trabajos",
   "panel4.p": "Panel en vivo, grabaciones y ajuste mensual por un especialista humano real.",
-
   "strip.stat1": "más reservas en 90 días",
   "strip.stat2": "tiempo promedio de respuesta",
   "strip.stat3": "incluidos festivos y 2am",
   "strip.stat4": "satisfacción del cliente en llamadas",
-
   "proof.label": "04 / Resultados",
-
   "why.label": "05 / Por qué Calling Matrix",
   "why.title": "El manual del servicio de contestación, <span class=\"italic\">reescrito para 2026.</span>",
   "compare.head.human": "Servicio de contestación humano",
@@ -80,7 +72,6 @@
   "compare.row4": "Funciona 24/7/365",
   "compare.row5": "Seguimiento automático",
   "compare.row6": "Costo por reserva",
-
   "pricing.label": "06 / Precios",
   "pricing.title": "Paga menos que una contratación a tiempo parcial. <span class=\"italic\">Reserva más que un equipo completo.</span>",
   "pricing.sub": "La tarifa de configuración varía según el plan — exenta en plan anual. Mensual o anual. Sin compromisos a largo plazo.",
@@ -125,14 +116,11 @@
   "plan.scale.f6": "SLA de disponibilidad del 99.99%",
   "plan.support": "Soporte continuo",
   "plan.scale.cta": "Hablar con ventas",
-
   "faq.label": "07 / Preguntas frecuentes",
   "faq.title": "Preguntas que recibimos en cada demo.",
-
   "final.title": "Tu teléfono está sonando <span class=\"italic\">ahora mismo.</span>",
   "final.sub": "Cada minuto que esperas es una llamada que va al buzón de voz — o a un competidor que sí contestó.",
   "final.cta": "Reservar demo gratis →",
-
   "footer.tagline": "Recepcionista de IA 24/7 para negocios de servicios del hogar. Contesta cada llamada. Reserva cada trabajo.",
   "footer.col.built": "Industrias",
   "footer.col.product": "Producto",
@@ -145,7 +133,6 @@
   "footer.pricing": "Precios",
   "footer.faq": "Preguntas",
   "footer.how": "Cómo funciona",
-
   "ind.nav.features": "Funciones",
   "ind.nav.faq": "Preguntas",
   "ind.nav.pricing": "Precios",
@@ -160,8 +147,7 @@
   "ind.foot.how": "Cómo funciona",
   "ind.foot.blog": "Blog",
   "ind.foot.copy": "© 2026 Calling Matrix. Todos los derechos reservados.",
-
-  "hvac.eyebrow": "Para empresas de HVAC",
+  "hvac.eyebrow": "Servicio de Contestación HVAC — Diseñado para empresas de HVAC",
   "hvac.h1": "Nunca pierdas una emergencia<br>de AC — <span class=\"italic accent\">ni una llamada.</span>",
   "hvac.sub": "Cuando el AC de un cliente falla a las 2 AM, llaman a la primera empresa que contesta. Calling Matrix responde cada llamada <strong>24/7</strong>, enruta emergencias a técnicos de guardia y programa mantenimientos automáticamente.",
   "hvac.cta1": "Demo gratis de 15 min",
@@ -203,8 +189,7 @@
   "hvac.final.h2": "Deja de perder trabajos<br><span class=\"italic\">al buzón de voz.</span>",
   "hvac.final.p": "Descubre cómo las empresas de HVAC están reservando 37% más trabajos con un recepcionista de IA que nunca toma un día libre — ni durante olas de calor, ni a las 2 AM, ni en días festivos.",
   "hvac.final.cta": "Demo gratis de 15 min",
-
-  "plumbing.eyebrow": "Para empresas de plomería",
+  "plumbing.eyebrow": "Servicio de Contestación de Plomería — Diseñado para plomeros",
   "plumbing.h1": "Cada llamada de plomería respondida —<br><span class=\"italic accent\">día, noche, fin de semana.</span>",
   "plumbing.sub": "Las tuberías rotas, fugas y desagües tapados no siguen un horario de 9 a 5. Calling Matrix enruta <strong>emergencias a tu plomero de guardia</strong> y reserva trabajos no urgentes sin que tengas que hacer nada.",
   "plumbing.cta1": "Demo gratis de 15 min",
@@ -246,8 +231,7 @@
   "plumbing.final.h2": "Tu teléfono suena mientras<br><span class=\"italic\">estás en el trabajo.</span>",
   "plumbing.final.p": "Deja que Calling Matrix maneje las llamadas. Tú enfócate en el trabajo. Nos aseguraremos de que cada cliente potencial se convierta en un trabajo reservado.",
   "plumbing.final.cta": "Demo gratis de 15 min",
-
-  "electrical.eyebrow": "Para contratistas eléctricos",
+  "electrical.eyebrow": "Servicio de Contestación Eléctrico — Diseñado para electricistas",
   "electrical.h1": "Reserva más trabajos eléctricos<br>sin <span class=\"italic accent\">contestar el teléfono.</span>",
   "electrical.sub": "Los remodelados comerciales, actualizaciones de panel e instalaciones de generadores son demasiado valiosos para perder. Calling Matrix <strong>captura cada cliente potencial</strong>, califica el trabajo y agenda la estimación mientras estás en el campo.",
   "electrical.cta1": "Demo gratis de 15 min",
@@ -289,8 +273,7 @@
   "electrical.final.h2": "Deja de perder trabajos de $650<br><span class=\"italic\">al buzón de voz.</span>",
   "electrical.final.p": "Cada llamada que pierde tu teléfono es un trabajo en el camión de tu competidor. Calling Matrix se asegura de que eso nunca vuelva a pasar.",
   "electrical.final.cta": "Demo gratis de 15 min",
-
-  "roofing.eyebrow": "Para contratistas de techado",
+  "roofing.eyebrow": "Servicio de Contestación de Techado — Diseñado para techadores",
   "roofing.h1": "Llega la temporada de tormentas.<br>Cada llamada es un <span class=\"italic accent\">trabajo de $12,000.</span>",
   "roofing.sub": "Una granizada puede generar más llamadas de las que tu equipo puede contestar en una semana. Calling Matrix maneja <strong>cada consulta</strong>, califica el daño, programa la estimación y hace seguimiento hasta que reservan.",
   "roofing.cta1": "Demo gratis de 15 min",
@@ -332,8 +315,7 @@
   "roofing.final.h2": "La próxima tormenta está llegando.<br><span class=\"italic\">Prepárate.</span>",
   "roofing.final.p": "Los contratistas de techado que usan Calling Matrix capturan cada cliente de tormenta — incluso a las 2 AM. Agenda una demo de 15 minutos para verlo en acción.",
   "roofing.final.cta": "Demo gratis de 15 min",
-
-  "cleaning.eyebrow": "Para empresas de limpieza",
+  "cleaning.eyebrow": "Servicio de Contestación de Limpieza — Diseñado para negocios de limpieza",
   "cleaning.h1": "Reserva más trabajos de limpieza<br>mientras ya estás <span class=\"italic accent\">limpiando.</span>",
   "cleaning.sub": "Estás dirigiendo un equipo. Tu teléfono está sonando con un nuevo cliente. Calling Matrix maneja cada consulta, <strong>reserva citas recurrentes</strong> y hace seguimiento de cada cotización — para que nada se pierda.",
   "cleaning.cta1": "Demo gratis de 15 min",

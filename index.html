@@ -405,12 +405,12 @@ h1.hero-title .swap::after {
   border-top: 1px solid var(--line);
 }
 .hero-proof .stat-num { font-family: var(--serif); font-size: 38px; line-height: 1; letter-spacing: -0.02em; margin-bottom: 6px; }
-.hero-proof .stat-lbl { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-mute); }
+.hero-proof .stat-lbl { font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-mute); }
 @media (max-width: 480px) {
   .hero-proof { flex-wrap: nowrap; gap: 0; justify-content: space-between; }
   .hero-proof > div { flex: 1; }
   .hero-proof .stat-num { font-size: 26px; }
-  .hero-proof .stat-lbl { font-size: 9px; letter-spacing: 0.08em; }
+  .hero-proof .stat-lbl { font-size: 12px; letter-spacing: 0.08em; }
 }
 
 /* --- Live call card in hero --- */
@@ -456,7 +456,7 @@ h1.hero-title .swap::after {
 .caller-num { font-family: var(--mono); font-size: 11px; color: var(--fg-mute); }
 .call-status {
   display: flex; align-items: center; gap: 8px;
-  font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+  font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--accent);
 }
 .call-status .live-dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; animation: pulse 1.5s infinite; }
@@ -492,7 +492,7 @@ h1.hero-title .swap::after {
 .msg.customer .msg-bubble { background: var(--bg-3); border: 1px solid var(--line); border-bottom-left-radius: 4px; }
 .msg.ai .msg-bubble { background: var(--accent-soft); color: var(--fg); border: 1px solid oklch(0.74 0.17 55 / 0.3); border-bottom-right-radius: 4px; }
 .msg-tag {
-  font-family: var(--mono); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase;
+  font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--fg-mute); margin-top: 4px; display: block;
 }
 .typing-bubble { background: var(--bg-3); border: 1px solid var(--line); padding: 12px 14px; border-radius: 14px; border-bottom-right-radius: 4px; display: inline-flex; gap: 4px; }
@@ -514,7 +514,7 @@ h1.hero-title .swap::after {
 }
 .booking-chip.show { opacity: 1; transform: none; }
 .booking-chip .check { width: 22px; height: 22px; border-radius: 50%; background: var(--accent); color: #1a0e00; display: grid; place-items: center; flex-shrink: 0; font-weight: 700; font-size: 13px; }
-.booking-chip .meta { font-family: var(--mono); font-size: 10px; color: var(--fg-mute); margin-top: 2px; letter-spacing: 0.12em; text-transform: uppercase; }
+.booking-chip .meta { font-family: var(--mono); font-size: 12px; color: var(--fg-mute); margin-top: 2px; letter-spacing: 0.12em; text-transform: uppercase; }
 
 /* ============ SECTION ============ */
 section { padding: 140px 0; position: relative; }
@@ -585,7 +585,7 @@ h2.sec-title .italic { color: var(--accent); }
 .marquee-label {
   text-align: center;
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--fg-mute);
@@ -669,7 +669,7 @@ h2.sec-title .italic { color: var(--accent); }
 .clock-hand { position: absolute; top: 50%; left: 50%; width: 2px; height: 34px; background: var(--accent); transform-origin: top center; animation: spin 8s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
 .clock-center { font-family: var(--serif); font-size: 24px; color: var(--fg); z-index: 2; }
-.clock-labels { position: absolute; inset: 0; font-family: var(--mono); font-size: 9px; color: var(--fg-mute); letter-spacing: 0.1em; }
+.clock-labels { position: absolute; inset: 0; font-family: var(--mono); font-size: 12px; color: var(--fg-mute); letter-spacing: 0.1em; }
 .clock-labels span { position: absolute; }
 .clock-labels .l12 { top: -16px; left: 50%; transform: translateX(-50%); }
 .clock-labels .l6 { bottom: -16px; left: 50%; transform: translateX(-50%); }
@@ -678,7 +678,7 @@ h2.sec-title .italic { color: var(--accent); }
 
 /* Feature: calendar */
 .viz-cal { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin-bottom: 20px; }
-.cal-cell { aspect-ratio: 1; border-radius: 6px; background: var(--bg-3); display: grid; place-items: center; font-family: var(--mono); font-size: 10px; color: var(--fg-mute); }
+.cal-cell { aspect-ratio: 1; border-radius: 6px; background: var(--bg-3); display: grid; place-items: center; font-family: var(--mono); font-size: 12px; color: var(--fg-mute); }
 .cal-cell.booked { background: var(--accent); color: #1a0e00; font-weight: 600; animation: bookIn .6s backwards; }
 .cal-cell.booked.d1 { animation-delay: .1s; }
 .cal-cell.booked.d2 { animation-delay: .3s; }
@@ -699,7 +699,7 @@ h2.sec-title .italic { color: var(--accent); }
 
 /* Feature: integrations */
 .viz-int { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
-.int-chip { padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--fg-dim); text-transform: uppercase; }
+.int-chip { padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em; color: var(--fg-dim); text-transform: uppercase; }
 
 /* Feature: call routing */
 .viz-route { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
@@ -712,7 +712,7 @@ h2.sec-title .italic { color: var(--accent); }
 .route-dot.green { background: var(--accent); }
 .route-dot.dim { background: var(--fg-mute); }
 .route-label { color: var(--fg-dim); flex: 1; }
-.route-dest { font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; color: var(--fg-mute); }
+.route-dest { font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; color: var(--fg-mute); }
 
 /* ============ HOW IT WORKS ============ */
 .how { }
@@ -754,7 +754,7 @@ h2.sec-title .italic { color: var(--accent); }
 .strip-inner { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
 @media (max-width: 780px) { .strip-inner { grid-template-columns: repeat(2, 1fr); } }
 .stat-big { font-family: var(--serif); font-size: clamp(48px, 6vw, 72px); line-height: 0.9; letter-spacing: -0.03em; }
-.stat-lbl-d { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(26,14,0,0.7); margin-top: 10px; }
+.stat-lbl-d { font-family: var(--mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(26,14,0,0.7); margin-top: 10px; }
 
 /* ============ TESTIMONIALS ============ */
 .tests-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -802,7 +802,7 @@ h2.sec-title .italic { color: var(--accent); }
   letter-spacing: -0.03em;
   color: var(--accent);
 }
-.ps-lbl { font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--fg-mute); line-height: 1.4; }
+.ps-lbl { font-family: var(--mono); font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--fg-mute); line-height: 1.4; }
 
 /* ============ CASE STUDY CARDS ============ */
 .case-grid {
@@ -827,11 +827,11 @@ h2.sec-title .italic { color: var(--accent); }
 }
 .case-av { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), oklch(0.5 0.1 30)); display: grid; place-items: center; font-family: var(--serif); color: #1a0e00; font-size: 16px; flex-shrink: 0; }
 .case-biz { font-size: 14px; font-weight: 600; }
-.case-industry { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
+.case-industry { font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
 .case-body { padding: 24px 28px; display: flex; flex-direction: column; gap: 16px; }
 .case-row { display: flex; gap: 12px; }
 .case-col { flex: 1; }
-.case-col-lbl { font-family: var(--mono); font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--fg-mute); margin-bottom: 4px; }
+.case-col-lbl { font-family: var(--mono); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--fg-mute); margin-bottom: 4px; }
 .case-col-val { font-size: 13px; line-height: 1.5; color: var(--fg); }
 .case-col-val.good { color: oklch(0.72 0.18 145); font-weight: 500; }
 .case-result {
@@ -908,7 +908,7 @@ h2.sec-title .italic { color: var(--accent); }
     border-radius: 0;
     border: none;
   }
-  .compare-table .head { font-size: 10px; padding: 14px 12px; }
+  .compare-table .head { font-size: 12px; padding: 14px 12px; }
   .compare-table > div { padding: 14px 12px; font-size: 13px; }
 }
 
@@ -922,10 +922,10 @@ h2.sec-title .italic { color: var(--accent); }
   content: 'New';
   position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
   padding: 4px 14px; background: oklch(0.55 0.12 260); color: #fff;
-  font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+  font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
   border-radius: 999px; font-weight: 600;
 }
-.hours-badge { display: inline-flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 10px; letter-spacing: .1em; color: oklch(0.65 0.12 260); background: oklch(0.55 0.12 260 / 0.1); border: 1px solid oklch(0.55 0.12 260 / 0.25); padding: 4px 10px; border-radius: 999px; margin-bottom: 16px; }
+.hours-badge { display: inline-flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 12px; letter-spacing: .1em; color: oklch(0.65 0.12 260); background: oklch(0.55 0.12 260 / 0.1); border: 1px solid oklch(0.55 0.12 260 / 0.25); padding: 4px 10px; border-radius: 999px; margin-bottom: 16px; }
 .plan-hours-note { font-size: 12px; color: var(--fg-mute); margin-top: 10px; font-style: italic; }
 /* Billing toggle */
 .billing-toggle { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 0 auto 40px; flex-wrap: wrap; }
@@ -959,7 +959,7 @@ h2.sec-title .italic { color: var(--accent); }
   content: 'Most popular';
   position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
   padding: 4px 14px; background: var(--accent); color: #1a0e00;
-  font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+  font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
   border-radius: 999px; font-weight: 600;
 }
 .plan-name { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-mute); margin-bottom: 10px; }
@@ -1055,7 +1055,7 @@ h2.sec-title .italic { color: var(--accent); }
   white-space: nowrap;
 }
 .news-form button:hover { transform: translateY(-1px); box-shadow: 0 8px 24px -8px oklch(0.74 0.17 55 / 0.6); }
-.news-fine { margin-top: 14px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-mute); }
+.news-fine { margin-top: 14px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-mute); }
 
 /* ============ FOOTER ============ */
 footer {
@@ -1065,7 +1065,7 @@ footer {
 }
 .foot-inner { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
 @media (max-width: 780px) { .foot-inner { grid-template-columns: 1fr 1fr; } }
-.foot-col h6 { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-mute); margin-bottom: 16px; }
+.foot-col h6 { font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-mute); margin-bottom: 16px; }
 .foot-col a { display: block; font-size: 14px; color: var(--fg-dim); margin-bottom: 8px; transition: color .2s; }
 .foot-col a:hover { color: var(--fg); }
 .foot-brand p { color: var(--fg-dim); font-size: 14px; max-width: 340px; margin-top: 12px; line-height: 1.5; }
@@ -1192,6 +1192,15 @@ footer {
 <div class="marquee-section">
   <div class="marquee-label" data-i18n="marquee.label">Connects with your favorite tools</div>
 
+  <!-- Static integration list for search crawlers and LLMs — visually hidden, semantically present -->
+  <ul style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;" aria-hidden="true">
+    <li>Housecall Pro integration</li><li>ServiceTitan integration</li><li>Jobber integration</li>
+    <li>FieldEdge integration</li><li>Workiz integration</li><li>Google Calendar integration</li>
+    <li>Calendly integration</li><li>Zapier integration</li><li>QuickBooks integration</li>
+    <li>Stripe integration</li><li>HubSpot integration</li><li>Slack integration</li>
+    <li>Custom API integration</li><li>Webhook integration</li>
+  </ul>
+
   <!-- Row 1 — slides left -->
   <div class="marquee-track">
     <div class="marquee-inner left" id="marqueeRow1"></div>
@@ -1264,7 +1273,7 @@ footer {
 
       <div class="feat reveal d1 in">
         <div class="mono">Booking</div>
-        <div class="viz-cal" id="vizCal"><div class="cal-cell" style="font-size: 9px;">M</div><div class="cal-cell" style="font-size: 9px;">T</div><div class="cal-cell booked" style="font-size: 9px;">●</div><div class="cal-cell" style="font-size: 9px;">T</div><div class="cal-cell" style="font-size: 9px;">F</div><div class="cal-cell booked" style="font-size: 9px;">●</div><div class="cal-cell" style="font-size: 9px;">S</div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell booked">●</div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell booked">●</div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell booked">●</div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell booked">●</div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell booked">●</div></div>
+        <div class="viz-cal" id="vizCal"><div class="cal-cell" style="font-size: 12px;">M</div><div class="cal-cell" style="font-size: 12px;">T</div><div class="cal-cell booked" style="font-size: 12px;">●</div><div class="cal-cell" style="font-size: 12px;">T</div><div class="cal-cell" style="font-size: 12px;">F</div><div class="cal-cell booked" style="font-size: 12px;">●</div><div class="cal-cell" style="font-size: 12px;">S</div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell booked">●</div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell booked">●</div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell booked">●</div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell booked">●</div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell"></div><div class="cal-cell booked">●</div></div>
         <h3 data-i18n="feat2.h3">Books &amp; reschedules — straight into your calendar.</h3>
         <p data-i18n="feat2.p">Integrates with Housecall Pro, ServiceTitan, Jobber, and Google Calendar. Checks your team's availability, respects territory rules, holds the slot.</p>
       </div>
@@ -2468,4 +2477,31 @@ document.getElementById('contactForm').addEventListener('submit', async function
   });
 })();
 </script>
+
+<!-- Sticky mobile CTA -->
+<div id="mob-sticky-cta" aria-hidden="true">
+  <a href="#" onclick="event.preventDefault(); openCalendly(); return false;">Get your free strategy call →</a>
+</div>
+<style>
+#mob-sticky-cta { display: none; }
+@media (max-width: 720px) {
+  #mob-sticky-cta {
+    display: block;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 190;
+    padding: 14px 20px calc(14px + env(safe-area-inset-bottom));
+    background: var(--accent);
+    text-align: center;
+  }
+  #mob-sticky-cta a {
+    color: #1a0e00;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+  body { padding-bottom: 72px; }
+}
+</style>
 </body></html>

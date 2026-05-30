@@ -645,6 +645,9 @@ h2.sec-title .italic { color: var(--accent); }
   gap: 16px;
 }
 @media (max-width: 980px) { .feat-grid { grid-template-columns: 1fr; } }
+.feat-grid .feat:last-child { grid-column: 1 / -1; }
+.feat-grid .feat:last-child .viz-route { flex-direction: row; gap: 12px; }
+.feat-grid .feat:last-child .route-row { flex: 1; }
 .feat {
   background: var(--bg);
   border: 1px solid var(--line);

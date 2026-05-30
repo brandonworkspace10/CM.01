@@ -23,7 +23,7 @@
   "problem.stat2.p": "A missed service call isn't just a lead — it's the full lifetime value of a customer who was ready to book today. <span style=\"display:block;margin-top:8px;font-size:10px;color:var(--fg-mute);letter-spacing:0;text-transform:none;\">Source: Contractor In Charge, missed call cost analysis</span>",
   "problem.stat3.h3": "of callers won't leave a voicemail",
   "problem.stat3.p": "They'll call the next shop on Google Maps before you've finished the current job. Nine out of ten never call back. <span style=\"display:block;margin-top:8px;font-size:10px;color:var(--fg-mute);letter-spacing:0;text-transform:none;\">Source: BIA/Kelsey research</span>",
-  "problem.tagline": "You shouldn't have to choose between <span class=\"strike\">answering the phone</span> and actually doing the job you're paid for.",
+  "problem.tagline": "You're good at your job. You shouldn't be losing the next one because <span class=\"strike\">you're busy doing it.</span>",
   "feat.label": "02 / What it does",
   "feat.title": "Your custom AI employee — <span class=\"italic\">never clocks out, never misses a job.</span>",
   "feat.sub": "Specialized in four things: answering every call, booking appointments on your calendar, asking the right customer questions, and routing emergencies to a real human. 100% done-for-you. Zero ongoing management.",

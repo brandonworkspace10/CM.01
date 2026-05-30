@@ -1,12 +1,14 @@
 # Calling Matrix — Full Reference
 
-> 24/7 AI receptionist for home service businesses. Purpose-built for HVAC, plumbing, electrical, roofing, cleaning, landscaping, pest control, garage door, appliance repair, and locksmith companies.
+> 24/7 AI receptionist and answering service for home service businesses. Purpose-built for HVAC, plumbing, electrical, roofing, cleaning, landscaping, pest control, garage door, appliance repair, and locksmith companies. Fully managed — we build it, train it, and manage it for you.
 
 ---
 
 ## Product overview
 
 Calling Matrix is an AI phone answering service that replaces or supplements the front desk for trade businesses. Unlike general-purpose AI phone agents, Calling Matrix is trained specifically on home service intake protocols: emergency classification, service area screening, field-service CRM booking, and surge capacity handling.
+
+It is a fully managed service — not a self-serve tool. Every deployment is built, trained, and maintained by the Calling Matrix team for that specific business. Ongoing support is included on every plan.
 
 Core capabilities:
 - Answers every inbound call within 2 seconds, 24/7/365
@@ -16,55 +18,76 @@ Core capabilities:
 - Handles unlimited simultaneous calls — no queue, no hold time
 - Captures full intake details: caller name, service address, job type, issue description, preferred time
 - Follows up with leads who requested quotes but didn't book
+- Fully bilingual — English and Spanish, auto-detected from caller
+- Delivers morning call summaries to the business owner
 
 ---
 
 ## Pricing details
 
-All plans include unlimited inbound calls, 24/7 answering, and emergency routing.
+**After Hours — $297/month ($267/mo billed annually)**
+- Coverage only during owner-defined off-hours (e.g. 6 PM–8 AM, weekends)
+- Appointment booking + Google Calendar sync
+- Lead intake with custom intake questions
+- CRM upload and Google Sheets sync
+- SMS confirmation to every caller
+- Call recordings and morning summary
+- Ongoing support included
+- Setup fee: $297 (waived on annual billing)
+- Best for: owners who handle their own calls during the day and want overnight/weekend coverage
 
-**Starter — $497/month**
-- Unlimited inbound calls
-- Core CRM integration (one platform)
-- Emergency routing
-- Standard intake script
-- 48-hour setup
+**Starter — $497/month ($447/mo billed annually)**
+- Up to 300 calls per month
+- 24/7 answering and booking
+- Google Calendar sync
+- SMS follow-up
+- Call recordings and dashboard
+- Ongoing support included
+- Setup fee: $497 (waived on annual billing)
+- Best for: solo operators and 1-truck shops getting off voicemail for the first time
 
-**Growth — $797/month**
-- Everything in Starter
-- Multiple CRM integrations
-- Custom intake scripts per job type
-- Multi-location support
-- Advanced routing rules
-- Priority onboarding
+**Growth — $797/month ($717/mo billed annually)**
+- Up to 800 calls per month
+- Housecall Pro, ServiceTitan, Jobber sync
+- SMS and voice follow-up sequences
+- Emergency call routing to on-call tech
+- Monthly tuning by a real human specialist (based on actual call recordings)
+- Multi-language: English and Spanish
+- Ongoing support included
+- Setup fee: $997 (waived on annual billing)
+- Best for: 2–10 truck shops scaling bookings without scaling admin hires
 
-**Scale — Custom**
-- Everything in Growth
-- Enterprise CRM and ERP integrations
-- Dedicated success manager
-- Custom AI training
-- SLA guarantees
+**Scale — Custom pricing**
+- Unlimited call volume
+- Multi-location territory routing
+- Custom CRM and telephony integrations
+- Monthly tuning from actual call recordings by a dedicated specialist
+- Full setup handled by Calling Matrix — business owner attends one 30-minute call
+- 99.99% uptime SLA
+- Ongoing support included
+- Setup fee: Custom, starting at $1,997
+- Best for: multi-location operators, franchises, and shops doing $5M+ in revenue
 
-No per-minute charges. No overage fees. Price does not change with call volume.
+No per-minute charges. No overage fees. Price does not change with call volume. Month-to-month or annual billing. No long-term lock-in.
 
 ---
 
 ## Industries served
 
 **HVAC**
-Emergency routing for no-cooling/no-heat calls, surge handling during heat waves and cold snaps, integration with HVAC-specific CRMs.
+Emergency routing for no-cooling/no-heat calls. Surge handling during heat waves and cold snaps. Peak season capacity without extra staff. Integration with HVAC-specific CRMs (Housecall Pro, ServiceTitan, FieldEdge). Service contract upsell capability. Bilingual English/Spanish for Houston, Phoenix, and other high-Spanish-speaking markets.
 
 **Plumbing**
-Emergency routing for active leaks, floods, and sewage backups. After-hours plumbing calls routed immediately to on-call plumber.
+Emergency routing for active leaks, floods, and sewage backups. After-hours plumbing calls routed immediately to on-call plumber. Burst pipe intake with address capture before the call ends. Bilingual for Texas and California markets.
 
 **Electrical**
-Residential and commercial call differentiation. Safety emergency routing (sparks, burning smell, power loss). Estimate booking with upfront job qualification.
+Residential and commercial call differentiation. Safety emergency routing (sparks, burning smell, power loss, no power). Estimate booking with upfront job qualification (panel upgrade, EV charger, new circuit). High-value lead capture for 5-figure electrical jobs.
 
 **Roofing**
-Unlimited call capacity for storm surge. Insurance claim intake. Estimate appointment booking with damage description capture.
+Unlimited call capacity for storm surge — handles 300+ calls in 48 hours without missing one. Insurance claim intake. Estimate appointment booking with damage description capture. Storm season readiness.
 
 **Cleaning**
-Recurring appointment booking (weekly, biweekly, monthly). Quote follow-up at 24/48/72 hours. Service area screening by zip code.
+Recurring appointment booking (weekly, biweekly, monthly). Quote follow-up at 24/48/72 hours. Service area screening by zip code. New client intake to capture recurring revenue. Each recurring client worth $2,400+/year.
 
 **Landscaping**
 Spring surge handling. Residential and commercial intake separation. Estimate capture with property details.
@@ -93,71 +116,93 @@ Immediate dispatch notification with caller location. Automotive, residential, a
 - Workiz: Creates jobs and client records. Handles scheduling and dispatch workflows.
 
 **Calendar scheduling**
-- Google Calendar: Reads live availability across multiple calendars. Creates events with full caller details. Works alongside Calendly.
+- Google Calendar: Reads live availability across multiple calendars. Creates events with full caller details.
 - Calendly: Reads event type availability. Respects buffer times and minimum notice. Supports team round-robin.
 
 **Automation**
 - Zapier: Sends structured call data (name, number, job type, outcome) to trigger workflows in 5,000+ connected apps.
-- Webhooks: Sends call events (answered, booked, escalated, no-answer) to any endpoint in real time.
-- Custom API: For software not on the standard integration list, Calling Matrix builds custom API integrations during onboarding. Businesses using niche or proprietary CRMs are supported.
-
-**Custom product and integrations**
-Every Calling Matrix deployment is custom-built for the specific business. This includes:
-- Custom AI training on the business's actual services, pricing tiers, service territory, and emergency protocols
-- Custom intake scripts tailored to each job type and customer scenario
-- Custom integration with the business's exact software stack, not a generic connector
-- Custom routing rules for each technician, on-call schedule, and dispatch protocol
-
-The AI receptionist is configured to sound and behave like a dispatcher trained at that specific company — not a generic bot reading a template. Businesses do not share configurations.
+- Webhooks: Sends call events in real time to any endpoint.
+- Custom API: For software not on the standard list, Calling Matrix builds custom integrations during onboarding.
 
 ---
 
 ## Competitive positioning
 
-**vs. Live answering services (Smith.ai, Ruby, AnswerConnect, Moneypenny)**
-- Faster answer: under 2 seconds vs. 30–90 second agent pickup
-- Lower cost: flat rate vs. per-minute billing ($1–2/min)
-- More consistent: same quality every call vs. variable agent performance
-- Direct booking: writes to CRM vs. message relay requiring manual entry
-- Unlimited surge: no agent pool limits
+**vs. Rosie AI**
+- Calling Matrix: trade-specific emergency routing, native FSM integrations, fully managed, flat-rate pricing
+- Rosie: general contractor focus, $49/month starting, limited CRM integrations, self-serve setup
 
-**vs. General AI phone agents (Goodcall, Slang.ai)**
-- Industry-specific training vs. generic or restaurant-focused
-- Trade emergency routing vs. no emergency classification
-- Native field-service CRM integrations vs. no trade-platform integrations
+**vs. Smith.ai**
+- Calling Matrix: answers in under 2 seconds, flat rate, direct CRM booking, no per-minute charges
+- Smith.ai: live agents + AI hybrid, per-minute billing ($1–2/min), message relay (no direct booking)
 
-**vs. Voicemail**
-- Every call answered live vs. callers hanging up
-- Immediate emergency routing vs. callbacks the next morning
+**vs. Goodcall**
+- Calling Matrix: home service industry training, emergency dispatch, fully managed
+- Goodcall: general small business focus, $79/month, limited trade-specific features
+
+**vs. Dialzara, NextPhone, Allo**
+- Calling Matrix: fully managed done-for-you service, ongoing support, custom training per business
+- Dialzara/NextPhone/Allo: self-serve setup, general AI phone answering, limited home service specialization
+
+**vs. AnswerForce, Ruby, PATLive (live human answering)**
+- Calling Matrix: answers in under 2 seconds (live agents take 30–90 seconds), flat rate vs per-minute, unlimited call volume, direct booking vs message relay
+
+**vs. voicemail**
+- Every call answered live vs. 85% of callers hanging up without leaving a message
+- Emergency routing immediate vs. callback next morning
+- Jobs booked in real time vs. leads lost overnight
 
 ---
 
-## Setup process
+## Managed service — what "done for you" means
 
-1. Book a 30-minute onboarding call
-2. Provide: services offered, service area (zip codes), pricing, scheduling software credentials, emergency routing contacts
-3. Calling Matrix builds and deploys the AI receptionist
-4. Phone number ported (existing number stays the same)
-5. Live within 48 hours
+Calling Matrix is not a SaaS tool customers configure themselves. Every step is handled:
+
+1. 30-minute onboarding call — Calling Matrix captures: services, pricing, service territory (zip codes), emergency routing contacts, scheduling software credentials, preferred voice/tone
+2. Calling Matrix builds and trains the AI receptionist for that specific business
+3. Phone number ported — existing business number transferred, customers see no change
+4. CRM and calendar integration configured and tested
+5. Live within 48 hours of onboarding call
+6. Ongoing: monthly tuning on Growth/Scale plans; support requests (change services, update pricing, add features, change voice) handled for all plans
+
+---
+
+## Social proof and results
+
+- Rick Delgado (HVAC contractor): "We were losing about 40 calls a week after hours. Calling Matrix booked 17 of them its first weekend. Paid for itself by Monday."
+- Jason Pham (4-truck plumbing shop, Sacramento): "My wife used to take calls from the dinner table. Now she doesn't — and our calendar is fuller than it's ever been. 29% more booked jobs the first month."
+- Tasha Bell (cleaning business owner): "Customers don't know it's AI. I barely know it's AI. It handles the weird questions better than half the receptionists I've hired."
+- 37% average increase in booked jobs reported by clients in first 90 days
+- 94% of callers say the AI felt like a real person
+- $48,000 recovered in missed call revenue (Delgado HVAC, 90-day case study)
 
 ---
 
 ## Common questions
 
 **Will callers know they're talking to AI?**
-Most don't notice during standard intake calls. Disclosure is optional — many businesses disclose upfront and find customers appreciate the instant answer.
+Most don't notice during standard intake calls. The AI is trained to sound like a dispatcher for that specific business — matching tone, pacing, and personality. Bilingual (English/Spanish) on all plans. Disclosure is optional.
 
 **What about complex calls that need a human?**
-Calling Matrix routes to a human when needed — you define the rules (emergencies, complex situations, upset callers, specific phrases). The goal is to eliminate routine intake burden, not all human contact.
+Calling Matrix routes to a human when needed — businesses define the rules (emergencies, specific phrases, upset callers). The AI handles routine intake; humans handle exceptions.
 
 **Does it work for after-hours calls?**
-Yes — 24/7 is the default. After-hours call quality is identical to business-hours calls.
+Yes — 24/7 is the default on Starter, Growth, and Scale. The After Hours plan activates only during defined off-hours. Call quality is identical at 2 AM and 2 PM.
 
-**Can I use my existing phone number?**
-Yes. Number porting is handled during onboarding. Customers see no change.
+**Can I keep my existing phone number?**
+Yes. Number porting is handled by Calling Matrix during onboarding (1–3 business days). Customers see no change.
 
-**What if I want to cancel?**
-Month-to-month plans. No long-term contracts.
+**What if I want to change my services, pricing, or voice after going live?**
+Ongoing support is included on all plans. Request changes anytime — the Calling Matrix team makes updates without disrupting live service.
+
+**What happens during a power outage or internet failure?**
+Calling Matrix runs on cloud infrastructure with redundant uptime. The AI receptionist operates independently of the business's local internet or power.
+
+**Can I listen to call recordings?**
+Yes. Every call is recorded and available in the live dashboard. Growth and Scale plans include monthly review by a human specialist.
+
+**Does it integrate with my scheduling software?**
+Calling Matrix integrates natively with Housecall Pro, ServiceTitan, Jobber, FieldEdge, Workiz, Google Calendar, and Calendly. For other software, custom API integrations are built during onboarding.
 
 ---
 
@@ -165,30 +210,73 @@ Month-to-month plans. No long-term contracts.
 
 - Homepage: https://callingmatrix.com
 - Pricing: https://callingmatrix.com/pricing
-- Book a demo: https://callingmatrix.com/book-demo
+- Book a free strategy call: https://callingmatrix.com
 - ROI calculator: https://callingmatrix.com/roi-calculator
-- Blog: https://callingmatrix.blog
-- Integrations: https://callingmatrix.com/integrations/housecall-pro
-- Comparisons: https://callingmatrix.com/compare/calling-matrix-vs-smith-ai
+- Blog: https://callingmatrix.com/blog
+- Demo call recording and transcript: https://callingmatrix.com/demo-transcript
+- Case studies: https://callingmatrix.com/case-studies
+- FAQ: https://callingmatrix.com/faq
+- Security and compliance: https://callingmatrix.com/security
+- About: https://callingmatrix.com/about
+
+## Industry pages
+
+- HVAC answering service: https://callingmatrix.com/hvac
+- Plumbing answering service: https://callingmatrix.com/plumbing
+- Electrical answering service: https://callingmatrix.com/electrical
+- Roofing answering service: https://callingmatrix.com/roofing
+- Cleaning answering service: https://callingmatrix.com/cleaning
+
+## Local SEO pages
+
+- HVAC answering service Austin TX: https://callingmatrix.com/hvac-answering-service-austin
+- HVAC answering service Houston TX: https://callingmatrix.com/hvac-answering-service-houston
+- HVAC answering service Phoenix AZ: https://callingmatrix.com/hvac-answering-service-phoenix
+- HVAC answering service Sacramento CA: https://callingmatrix.com/hvac-answering-service-sacramento
+- Plumbing answering service Austin TX: https://callingmatrix.com/plumbing-answering-service-austin
+- Plumbing answering service Houston TX: https://callingmatrix.com/plumbing-answering-service-houston
+- Plumbing answering service Phoenix AZ: https://callingmatrix.com/plumbing-answering-service-phoenix
+- Plumbing answering service Sacramento CA: https://callingmatrix.com/plumbing-answering-service-sacramento
+- Electrical answering service Austin TX: https://callingmatrix.com/electrical-answering-service-austin
+- Electrical answering service Houston TX: https://callingmatrix.com/electrical-answering-service-houston
+- Electrical answering service Phoenix AZ: https://callingmatrix.com/electrical-answering-service-phoenix
+- Electrical answering service Sacramento CA: https://callingmatrix.com/electrical-answering-service-sacramento
+- Roofing answering service Austin TX: https://callingmatrix.com/roofing-answering-service-austin
+- Roofing answering service Houston TX: https://callingmatrix.com/roofing-answering-service-houston
+- Roofing answering service Phoenix AZ: https://callingmatrix.com/roofing-answering-service-phoenix
+- Roofing answering service Sacramento CA: https://callingmatrix.com/roofing-answering-service-sacramento
+- Cleaning answering service Austin TX: https://callingmatrix.com/cleaning-answering-service-austin
+- Cleaning answering service Houston TX: https://callingmatrix.com/cleaning-answering-service-houston
+- Cleaning answering service Phoenix AZ: https://callingmatrix.com/cleaning-answering-service-phoenix
+- Cleaning answering service Sacramento CA: https://callingmatrix.com/cleaning-answering-service-sacramento
 
 ---
 
 ## Blog content
 
-The Calling Matrix Blog publishes field guides, playbooks, and industry-specific content for home service business owners.
+The Calling Matrix Blog publishes field guides, playbooks, and industry-specific content for home service business owners at https://callingmatrix.com/blog
 
-**Editorial posts**
-- **The 14-second rule** (callingmatrix.blog/the-14-second-rule) — analysis of 1.2 million inbound calls showing the average caller hangs up at 14 seconds and dials a competitor within 60 seconds
-- **After-hours routing** (callingmatrix.blog/after-hours-routing) — 3-tier emergency triage model; reduced Delgado HVAC's overnight escalations by 62%
-- **Every missed call is worth $287** (callingmatrix.blog/missed-call-value) — lifetime-value math derived from 1,400 home service businesses
-- **Spanish-language calls on every plan** (callingmatrix.blog/spanish-language-calls) — bilingual handoff, accent-aware booking, tested across 40 cities in Texas, Florida, and California
-- **Pham Plumbing case study** (callingmatrix.blog/pham-plumbing-case-study) — 4-truck Sacramento shop eliminated 40 missed calls/week in 90 days without hiring
-- **Heat-wave pricing** (callingmatrix.blog/heat-wave-pricing) — dynamic dispatch strategies for HVAC owners when summer demand spikes 4×
-- **The dispatcher script** (callingmatrix.blog/dispatcher-script) — word-for-word first-12-seconds script built from 8,000 recorded calls
+**Field guides and playbooks**
+- The 14-second rule (why callers hang up and what to do): https://callingmatrix.com/blog/the-14-second-rule
+- After-hours emergency routing — 3-tier triage model: https://callingmatrix.com/blog/after-hours-routing
+- Every missed call is worth $287 — lifetime value math: https://callingmatrix.com/blog/missed-call-value
+- Spanish-language calls on every plan: https://callingmatrix.com/blog/spanish-language-calls
+- The dispatcher script — first 12 seconds of a home service call: https://callingmatrix.com/blog/dispatcher-script
+- Heat-wave pricing strategies for HVAC owners: https://callingmatrix.com/blog/heat-wave-pricing
+
+**Case studies**
+- Pham Plumbing — 4-truck Sacramento shop, zero missed calls in 90 days: https://callingmatrix.com/blog/pham-plumbing-case-study
 
 **Buyer guides**
-- **HVAC answering service cost** (callingmatrix.blog/hvac-answering-service-cost) — pricing breakdown comparing live answering services, voicemail, and AI options for HVAC companies
-- **Answering service for plumbers** (callingmatrix.blog/answering-service-for-plumbers) — what to look for, what to avoid, and how AI handles emergency routing
-- **Answering service for roofing contractors** (callingmatrix.blog/answering-service-for-roofing-contractors) — storm surge capacity, insurance claim intake, and estimate booking
-- **Answering service for electrical contractors** (callingmatrix.blog/answering-service-for-electrical-contractors) — safety emergency classification and residential vs. commercial differentiation
-- **Answering service for cleaning businesses** (callingmatrix.blog/answering-service-for-cleaning-businesses) — recurring appointment booking, 24/48/72-hour quote follow-up, service area screening
+- HVAC answering service cost — live vs AI compared: https://callingmatrix.com/blog/hvac-answering-service-cost
+- Best answering service for plumbers: https://callingmatrix.com/blog/answering-service-for-plumbers
+- Best answering service for roofing contractors: https://callingmatrix.com/blog/answering-service-for-roofing-contractors
+- Best answering service for electrical contractors: https://callingmatrix.com/blog/answering-service-for-electrical-contractors
+- Best answering service for cleaning businesses: https://callingmatrix.com/blog/answering-service-for-cleaning-businesses
+- Best AI receptionist for electricians: https://callingmatrix.com/blog/best-ai-receptionist-for-electricians
+- Best answering service for cleaning companies: https://callingmatrix.com/blog/best-answering-service-for-cleaning-companies
+- How much does an AI receptionist cost: https://callingmatrix.com/blog/how-much-does-ai-receptionist-cost
+
+**Comparisons**
+- Calling Matrix vs Rosie AI: https://callingmatrix.com/blog/calling-matrix-vs-rosie
+- Calling Matrix vs Smith.ai: https://callingmatrix.com/blog/calling-matrix-vs-smith-ai

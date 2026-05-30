@@ -354,11 +354,10 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 h1.hero-title {
   font-family: var(--serif);
   font-weight: 400;
-  font-size: clamp(42px, 6.2vw, 88px);
-  line-height: 1.0;
+  font-size: clamp(30px, 4vw, 60px);
+  line-height: 1.05;
   letter-spacing: -0.025em;
   margin-bottom: 28px;
-  text-wrap: balance;
 }
 h1.hero-title .swap {
   display: inline-block;
@@ -517,7 +516,7 @@ h1.hero-title .swap::after {
 .booking-chip .meta { font-family: var(--mono); font-size: 12px; color: var(--fg-mute); margin-top: 2px; letter-spacing: 0.12em; text-transform: uppercase; }
 
 /* ============ SECTION ============ */
-section { padding: 140px 0; position: relative; }
+section { padding: 120px 0; position: relative; }
 .sec-head { margin-bottom: 72px; max-width: 780px; }
 .sec-label { margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
 .sec-label::before { content: ''; width: 24px; height: 1px; background: var(--accent); }
@@ -1086,11 +1085,20 @@ footer {
   .mob-menu-btn { display: flex; }
   .nav-links.mob-open { display: flex !important; flex-direction: column; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--bg); z-index: 98; padding: 80px 24px 28px; gap: 0; overflow-y: auto; border-top: 1px solid var(--line); }
   .nav-links.mob-open a, .nav-links.mob-open button { padding: 16px 0; font-size: 17px; color: var(--fg) !important; border-bottom: 1px solid var(--line); display: block; width: 100%; text-align: left; background: none; }
-  section { padding: 72px 0; }
-  .hero { min-height: unset; padding: 100px 0 60px; }
-  .final { padding: 80px 0; }
+  section { padding: 60px 0; }
+  .hero { min-height: unset; padding: 90px 0 52px; }
+  .final { padding: 72px 0; }
   .wrap { padding: 0 20px; }
   .foot-bottom { flex-direction: column; gap: 16px; align-items: center; text-align: center; }
+}
+
+/* Tablet (720px–1080px) */
+@media (min-width: 721px) and (max-width: 1080px) {
+  section { padding: 90px 0; }
+  .hero { padding: 120px 0 72px; }
+  .final { padding: 80px 0; }
+  .wrap { padding: 0 28px; }
+  h1.hero-title { font-size: clamp(32px, 4.5vw, 52px); }
 }
 </style>
 </head>
@@ -1134,8 +1142,7 @@ footer {
     <div>
       <span class="eyebrow reveal in"><span class="dot"></span><span data-i18n="hero.eyebrow">Never miss another service call</span></span>
       <h1 class="hero-title reveal d1 in">
-        AI Receptionist for<br>
-        <span class="swap">Home Service Companies</span>
+        AI Receptionist for <span class="swap">Home Service Companies</span>
       </h1>
       <p class="hero-sub reveal d2 in" data-i18n="hero.sub">
         Think of it as hiring a <strong>tailored AI employee</strong> for your business — one that answers every call, books every job, asks the right customer questions, and routes emergencies to a real human. We build it, train it, and manage it for you. Works 24/7, 365 days a year. <strong>Live in 48 hours.</strong>

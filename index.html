@@ -70,7 +70,7 @@
       "description": "AI receptionist service built for home service businesses — HVAC, plumbing, electrical, roofing, and cleaning.",
       "url": "https://callingmatrix.com",
 
-      "email": "callingmatrix@gmail.com",
+      "email": "hi@callingmatrix.com",
       "priceRange": "$$",
       "currenciesAccepted": "USD",
       "paymentAccepted": "Credit Card",
@@ -1065,7 +1065,8 @@ footer {
   border-top: 1px solid var(--line);
   background: var(--bg);
 }
-.foot-inner { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+.foot-inner { display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+@media (max-width: 980px) { .foot-inner { grid-template-columns: 2fr 1fr 1fr; } }
 @media (max-width: 780px) { .foot-inner { grid-template-columns: 1fr 1fr; } }
 .foot-col h6 { font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-mute); margin-bottom: 16px; }
 .foot-col a { display: block; font-size: 14px; color: var(--fg-dim); margin-bottom: 8px; transition: color .2s; }
@@ -1148,7 +1149,7 @@ footer {
         <span class="ai-label">AI Receptionist</span> for <span class="swap">Home Service Companies</span>
       </h1>
       <p class="hero-sub reveal d2 in" data-i18n="hero.sub">
-        Think of it as hiring a <strong>tailored AI employee</strong> for your business — one that answers every call, books every job, asks the right customer questions, and routes emergencies to a real human. We build it, train it, and manage it for you. Works 24/7, 365 days a year. <strong>Live in 48 hours.</strong>
+        It's the <strong>AI receptionist</strong> that replaces your answering service — a tailored AI employee that answers every call, books every job, asks the right customer questions, and routes emergencies to a real human. We build it, train it, and manage it for you. Works 24/7, 365 days a year. <strong>Live in 48 hours.</strong>
       </p>
       <div class="cta-row reveal d3 in">
         <a href="#demo" class="btn btn-primary">
@@ -1874,6 +1875,21 @@ footer {
         <a href="/cleaning">Cleaning</a>
       </div>
       <div class="foot-col">
+        <h6>Integrations</h6>
+        <a href="/servicetitan">ServiceTitan</a>
+        <a href="/jobber">Jobber</a>
+        <a href="/housecall-pro">Housecall Pro</a>
+      </div>
+      <div class="foot-col">
+        <h6>Service areas</h6>
+        <a href="/hvac-answering-service-houston">Houston, TX</a>
+        <a href="/hvac-answering-service-los-angeles">Los Angeles, CA</a>
+        <a href="/hvac-answering-service-dallas">Dallas, TX</a>
+        <a href="/hvac-answering-service-phoenix">Phoenix, AZ</a>
+        <a href="/hvac-answering-service-austin">Austin, TX</a>
+        <a href="/hvac-answering-service-atlanta">Atlanta, GA</a>
+      </div>
+      <div class="foot-col">
         <h6 data-i18n="footer.col.company">Company</h6>
         <a href="/about" data-i18n="footer.about">About</a>
         <a href="/case-studies">Case studies</a>
@@ -2375,7 +2391,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
     btn.textContent = 'Send message →';
     btn.style.opacity = '1';
     btn.disabled = false;
-    status.textContent = (err.message || 'Something went wrong') + ' — or email callingmatrix@gmail.com';
+    status.textContent = (err.message || 'Something went wrong') + ' — or email hi@callingmatrix.com';
     status.style.display = 'block';
     status.style.color = '#ff6b6b';
     status.style.textTransform = 'none';

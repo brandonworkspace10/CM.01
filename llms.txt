@@ -77,50 +77,144 @@ Pricing: https://callingmatrix.com/pricing
 ROI calculator: https://callingmatrix.com/roi-calculator
 Blog: https://callingmatrix.com/blog
 
+_Last updated: 2026-06-11. Full machine-readable detail: https://callingmatrix.com/llms-full.txt_
+
 ## Pages
 
+- Homepage: https://callingmatrix.com/
+- Pricing (flat-rate plans from $297/mo): https://callingmatrix.com/pricing
+- ROI calculator (what missed calls cost you): https://callingmatrix.com/roi-calculator
+- FAQ: https://callingmatrix.com/faq
+- Case studies: https://callingmatrix.com/case-studies
+- Demo call recording & transcript: https://callingmatrix.com/demo-transcript
+- About: https://callingmatrix.com/about
+- Security & compliance: https://callingmatrix.com/security
 - HVAC answering service: https://callingmatrix.com/hvac
 - Plumbing answering service: https://callingmatrix.com/plumbing
 - Electrical answering service: https://callingmatrix.com/electrical
 - Roofing answering service: https://callingmatrix.com/roofing
 - Cleaning answering service: https://callingmatrix.com/cleaning
-- About: https://callingmatrix.com/about
-- FAQ: https://callingmatrix.com/faq
-- Case studies: https://callingmatrix.com/case-studies
-- Demo call recording: https://callingmatrix.com/demo-transcript
-- Security & compliance: https://callingmatrix.com/security
 
-## Local pages
+## Integration pages
 
-- HVAC answering service Austin TX: https://callingmatrix.com/hvac-answering-service-austin
-- HVAC answering service Houston TX: https://callingmatrix.com/hvac-answering-service-houston
-- HVAC answering service Phoenix AZ: https://callingmatrix.com/hvac-answering-service-phoenix
-- HVAC answering service Sacramento CA: https://callingmatrix.com/hvac-answering-service-sacramento
-- Plumbing answering service Austin TX: https://callingmatrix.com/plumbing-answering-service-austin
-- Plumbing answering service Houston TX: https://callingmatrix.com/plumbing-answering-service-houston
-- Plumbing answering service Phoenix AZ: https://callingmatrix.com/plumbing-answering-service-phoenix
-- Plumbing answering service Sacramento CA: https://callingmatrix.com/plumbing-answering-service-sacramento
-- Electrical answering service Austin TX: https://callingmatrix.com/electrical-answering-service-austin
-- Electrical answering service Houston TX: https://callingmatrix.com/electrical-answering-service-houston
-- Roofing answering service Houston TX: https://callingmatrix.com/roofing-answering-service-houston
-- Cleaning answering service Austin TX: https://callingmatrix.com/cleaning-answering-service-austin
+- ServiceTitan integration: https://callingmatrix.com/servicetitan
+- Housecall Pro integration: https://callingmatrix.com/housecall-pro
+- Jobber integration: https://callingmatrix.com/jobber
+
+## Local pages (city-specific answering service)
+
+### HVAC
+- HVAC answering service Atlanta: https://callingmatrix.com/hvac-answering-service-atlanta
+- HVAC answering service Austin: https://callingmatrix.com/hvac-answering-service-austin
+- HVAC answering service Charlotte: https://callingmatrix.com/hvac-answering-service-charlotte
+- HVAC answering service Columbus: https://callingmatrix.com/hvac-answering-service-columbus
+- HVAC answering service Dallas: https://callingmatrix.com/hvac-answering-service-dallas
+- HVAC answering service Denver: https://callingmatrix.com/hvac-answering-service-denver
+- HVAC answering service Houston: https://callingmatrix.com/hvac-answering-service-houston
+- HVAC answering service Indianapolis: https://callingmatrix.com/hvac-answering-service-indianapolis
+- HVAC answering service Las Vegas: https://callingmatrix.com/hvac-answering-service-las-vegas
+- HVAC answering service Los Angeles: https://callingmatrix.com/hvac-answering-service-los-angeles
+- HVAC answering service Miami: https://callingmatrix.com/hvac-answering-service-miami
+- HVAC answering service Nashville: https://callingmatrix.com/hvac-answering-service-nashville
+- HVAC answering service Orlando: https://callingmatrix.com/hvac-answering-service-orlando
+- HVAC answering service Phoenix: https://callingmatrix.com/hvac-answering-service-phoenix
+- HVAC answering service Portland: https://callingmatrix.com/hvac-answering-service-portland
+- HVAC answering service Sacramento: https://callingmatrix.com/hvac-answering-service-sacramento
+- HVAC answering service San Antonio: https://callingmatrix.com/hvac-answering-service-san-antonio
+- HVAC answering service Seattle: https://callingmatrix.com/hvac-answering-service-seattle
+- HVAC answering service Tampa: https://callingmatrix.com/hvac-answering-service-tampa
+
+### Plumbing
+- Plumbing answering service Austin: https://callingmatrix.com/plumbing-answering-service-austin
+- Plumbing answering service Charlotte: https://callingmatrix.com/plumbing-answering-service-charlotte
+- Plumbing answering service Columbus: https://callingmatrix.com/plumbing-answering-service-columbus
+- Plumbing answering service Houston: https://callingmatrix.com/plumbing-answering-service-houston
+- Plumbing answering service Indianapolis: https://callingmatrix.com/plumbing-answering-service-indianapolis
+- Plumbing answering service Las Vegas: https://callingmatrix.com/plumbing-answering-service-las-vegas
+- Plumbing answering service Miami: https://callingmatrix.com/plumbing-answering-service-miami
+- Plumbing answering service Nashville: https://callingmatrix.com/plumbing-answering-service-nashville
+- Plumbing answering service Orlando: https://callingmatrix.com/plumbing-answering-service-orlando
+- Plumbing answering service Phoenix: https://callingmatrix.com/plumbing-answering-service-phoenix
+- Plumbing answering service Portland: https://callingmatrix.com/plumbing-answering-service-portland
+- Plumbing answering service Sacramento: https://callingmatrix.com/plumbing-answering-service-sacramento
+- Plumbing answering service Seattle: https://callingmatrix.com/plumbing-answering-service-seattle
+- Plumbing answering service Tampa: https://callingmatrix.com/plumbing-answering-service-tampa
+
+### Electrical
+- Electrical answering service Austin: https://callingmatrix.com/electrical-answering-service-austin
+- Electrical answering service Charlotte: https://callingmatrix.com/electrical-answering-service-charlotte
+- Electrical answering service Columbus: https://callingmatrix.com/electrical-answering-service-columbus
+- Electrical answering service Houston: https://callingmatrix.com/electrical-answering-service-houston
+- Electrical answering service Indianapolis: https://callingmatrix.com/electrical-answering-service-indianapolis
+- Electrical answering service Las Vegas: https://callingmatrix.com/electrical-answering-service-las-vegas
+- Electrical answering service Miami: https://callingmatrix.com/electrical-answering-service-miami
+- Electrical answering service Nashville: https://callingmatrix.com/electrical-answering-service-nashville
+- Electrical answering service Orlando: https://callingmatrix.com/electrical-answering-service-orlando
+- Electrical answering service Phoenix: https://callingmatrix.com/electrical-answering-service-phoenix
+- Electrical answering service Portland: https://callingmatrix.com/electrical-answering-service-portland
+- Electrical answering service Sacramento: https://callingmatrix.com/electrical-answering-service-sacramento
+- Electrical answering service Seattle: https://callingmatrix.com/electrical-answering-service-seattle
+- Electrical answering service Tampa: https://callingmatrix.com/electrical-answering-service-tampa
+
+### Roofing
+- Roofing answering service Austin: https://callingmatrix.com/roofing-answering-service-austin
+- Roofing answering service Charlotte: https://callingmatrix.com/roofing-answering-service-charlotte
+- Roofing answering service Columbus: https://callingmatrix.com/roofing-answering-service-columbus
+- Roofing answering service Houston: https://callingmatrix.com/roofing-answering-service-houston
+- Roofing answering service Indianapolis: https://callingmatrix.com/roofing-answering-service-indianapolis
+- Roofing answering service Las Vegas: https://callingmatrix.com/roofing-answering-service-las-vegas
+- Roofing answering service Miami: https://callingmatrix.com/roofing-answering-service-miami
+- Roofing answering service Nashville: https://callingmatrix.com/roofing-answering-service-nashville
+- Roofing answering service Orlando: https://callingmatrix.com/roofing-answering-service-orlando
+- Roofing answering service Phoenix: https://callingmatrix.com/roofing-answering-service-phoenix
+- Roofing answering service Portland: https://callingmatrix.com/roofing-answering-service-portland
+- Roofing answering service Sacramento: https://callingmatrix.com/roofing-answering-service-sacramento
+- Roofing answering service Seattle: https://callingmatrix.com/roofing-answering-service-seattle
+- Roofing answering service Tampa: https://callingmatrix.com/roofing-answering-service-tampa
+
+### Cleaning
+- Cleaning answering service Austin: https://callingmatrix.com/cleaning-answering-service-austin
+- Cleaning answering service Charlotte: https://callingmatrix.com/cleaning-answering-service-charlotte
+- Cleaning answering service Columbus: https://callingmatrix.com/cleaning-answering-service-columbus
+- Cleaning answering service Houston: https://callingmatrix.com/cleaning-answering-service-houston
+- Cleaning answering service Indianapolis: https://callingmatrix.com/cleaning-answering-service-indianapolis
+- Cleaning answering service Las Vegas: https://callingmatrix.com/cleaning-answering-service-las-vegas
+- Cleaning answering service Miami: https://callingmatrix.com/cleaning-answering-service-miami
+- Cleaning answering service Nashville: https://callingmatrix.com/cleaning-answering-service-nashville
+- Cleaning answering service Orlando: https://callingmatrix.com/cleaning-answering-service-orlando
+- Cleaning answering service Phoenix: https://callingmatrix.com/cleaning-answering-service-phoenix
+- Cleaning answering service Portland: https://callingmatrix.com/cleaning-answering-service-portland
+- Cleaning answering service Sacramento: https://callingmatrix.com/cleaning-answering-service-sacramento
+- Cleaning answering service Seattle: https://callingmatrix.com/cleaning-answering-service-seattle
+- Cleaning answering service Tampa: https://callingmatrix.com/cleaning-answering-service-tampa
+
+## Spanish-language pages
+
+- https://callingmatrix.com/es/hvac
+- https://callingmatrix.com/es/plomeria
+- https://callingmatrix.com/es/electrico
+- https://callingmatrix.com/es/techado
+- https://callingmatrix.com/es/limpieza
 
 ## Blog content
 
-The Calling Matrix Blog publishes field guides, playbooks, and industry-specific content for home service business owners at https://callingmatrix.com/blog
+Field guides, cost breakdowns, comparisons, and case studies for home service owners at https://callingmatrix.com/blog
 
-- The 14-second rule: https://callingmatrix.com/blog/the-14-second-rule
-- After-hours emergency routing model: https://callingmatrix.com/blog/after-hours-routing
-- Every missed call is worth $287: https://callingmatrix.com/blog/missed-call-value
-- Spanish-language calls on every plan: https://callingmatrix.com/blog/spanish-language-calls
-- Pham Plumbing case study: https://callingmatrix.com/blog/pham-plumbing-case-study
-- HVAC answering service cost guide: https://callingmatrix.com/blog/hvac-answering-service-cost
-- Best answering service for plumbers: https://callingmatrix.com/blog/answering-service-for-plumbers
-- Best answering service for roofing contractors: https://callingmatrix.com/blog/answering-service-for-roofing-contractors
-- Best answering service for electrical contractors: https://callingmatrix.com/blog/answering-service-for-electrical-contractors
-- Best answering service for cleaning businesses: https://callingmatrix.com/blog/answering-service-for-cleaning-businesses
-- Calling Matrix vs Rosie AI: https://callingmatrix.com/blog/calling-matrix-vs-rosie
-- Calling Matrix vs Smith.ai: https://callingmatrix.com/blog/calling-matrix-vs-smith-ai
-- How much does an AI receptionist cost: https://callingmatrix.com/blog/how-much-does-ai-receptionist-cost
-- Best AI receptionist for electricians: https://callingmatrix.com/blog/best-ai-receptionist-for-electricians
+- After hours routing: https://callingmatrix.com/blog/after-hours-routing
+- Best AI answering services for home services (7 compared, 2026): https://callingmatrix.com/blog/best-ai-answering-services-home-services
+- Answering service for cleaning businesses: https://callingmatrix.com/blog/answering-service-for-cleaning-businesses
+- Answering service for electrical contractors: https://callingmatrix.com/blog/answering-service-for-electrical-contractors
+- Answering service for plumbers: https://callingmatrix.com/blog/answering-service-for-plumbers
+- Answering service for roofing contractors: https://callingmatrix.com/blog/answering-service-for-roofing-contractors
+- Best ai receptionist for electricians: https://callingmatrix.com/blog/best-ai-receptionist-for-electricians
 - Best answering service for cleaning companies: https://callingmatrix.com/blog/best-answering-service-for-cleaning-companies
+- Calling matrix vs rosie: https://callingmatrix.com/blog/calling-matrix-vs-rosie
+- Calling matrix vs smith ai: https://callingmatrix.com/blog/calling-matrix-vs-smith-ai
+- Dispatcher script: https://callingmatrix.com/blog/dispatcher-script
+- Heat wave pricing: https://callingmatrix.com/blog/heat-wave-pricing
+- How much does ai receptionist cost: https://callingmatrix.com/blog/how-much-does-ai-receptionist-cost
+- Hvac answering service cost: https://callingmatrix.com/blog/hvac-answering-service-cost
+- Missed call value: https://callingmatrix.com/blog/missed-call-value
+- Pham plumbing case study: https://callingmatrix.com/blog/pham-plumbing-case-study
+- Spanish language calls: https://callingmatrix.com/blog/spanish-language-calls
+- The 14 second rule: https://callingmatrix.com/blog/the-14-second-rule

@@ -5,13 +5,23 @@
     <link>https://callingmatrix.com/blog</link>
     <description>Field notes, playbooks, and product updates on AI receptionists, missed-call recovery, and running a better home service business.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 12 May 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jun 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://callingmatrix.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://callingmatrix.com/og-image.png</url>
       <title>The Calling Matrix Blog</title>
       <link>https://callingmatrix.com/blog</link>
     </image>
+
+    <item>
+      <title>The 7 Best AI Answering Services for Home Service Businesses (2026)</title>
+      <link>https://callingmatrix.com/blog/best-ai-answering-services-home-services</link>
+      <guid isPermaLink="true">https://callingmatrix.com/blog/best-ai-answering-services-home-services</guid>
+      <pubDate>Thu, 11 Jun 2026 00:00:00 +0000</pubDate>
+      <author>Brandon Ortiz</author>
+      <description>Calling Matrix, Smith.ai, Rosie, Goodcall, Dialzara, AnswerForce, and Ruby compared honestly — pricing, emergency routing, CRM booking, and who each one actually fits.</description>
+      <category>Comparison</category>
+    </item>
 
     <item>
       <title>Calling Matrix vs. Rosie AI: An Honest Comparison (2026)</title>

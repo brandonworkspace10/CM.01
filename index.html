@@ -1104,6 +1104,43 @@ footer {
   .wrap { padding: 0 28px; }
   h1.hero-title { font-size: clamp(32px, 4.5vw, 52px); }
 }
+
+/* ==== SUBTLE POLISH LAYER (additive — safe to remove as one block) ==== */
+::selection { background: oklch(0.74 0.17 55 / 0.26); color: var(--fg); }
+* { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 2px solid oklch(0.74 0.17 55 / 0.65); outline-offset: 3px; border-radius: 6px; }
+@media (pointer: fine) {
+  html { scrollbar-width: thin; scrollbar-color: var(--line) transparent; }
+  body::-webkit-scrollbar { width: 11px; }
+  body::-webkit-scrollbar-track { background: var(--bg); }
+  body::-webkit-scrollbar-thumb { background: var(--line); border-radius: 999px; border: 3px solid var(--bg); }
+  body::-webkit-scrollbar-thumb:hover { background: var(--fg-mute); }
+}
+/* Nav links — underline grows from left */
+.nav-links a { position: relative; }
+.nav-links a::after { content: ''; position: absolute; left: 0; bottom: -5px; height: 1px; width: 100%; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform .35s cubic-bezier(.2,.7,.2,1); }
+.nav-links a:hover::after { transform: scaleX(1); }
+.nav-links.mob-open a::after { display: none; }
+/* Buttons — icon nudge + smoothing */
+.btn { transition: transform .2s cubic-bezier(.2,.7,.2,1), box-shadow .3s; }
+.btn svg { transition: transform .3s cubic-bezier(.2,.7,.2,1); }
+.btn:hover svg { transform: translateX(3px); }
+/* Primary CTA — one-pass shine sweep */
+.btn-primary { position: relative; overflow: hidden; }
+.btn-primary::after { content: ''; position: absolute; top: 0; left: -80%; width: 55%; height: 100%; background: linear-gradient(115deg, transparent, rgba(255,255,255,0.22), transparent); transform: skewX(-18deg); transition: left .65s cubic-bezier(.2,.7,.2,1); pointer-events: none; }
+.btn-primary:hover::after { left: 130%; }
+/* Cards — soft accent depth on hover */
+.feat, .test, .case-card, .plan { transition: border-color .3s, transform .3s cubic-bezier(.2,.7,.2,1), box-shadow .35s; }
+.feat:hover, .test:hover, .case-card:hover, .plan:hover { box-shadow: 0 20px 44px -26px oklch(0.74 0.17 55 / 0.5); }
+/* Footer links — gentle slide */
+.foot-col a { transition: color .2s, transform .2s cubic-bezier(.2,.7,.2,1); }
+.foot-col a:hover { transform: translateX(3px); }
+/* FAQ — accent the marker on hover */
+.faq-plus::before, .faq-plus::after { transition: transform .3s, background .25s; }
+.faq-item:hover .faq-plus::before, .faq-item:hover .faq-plus::after { background: var(--accent); }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}
 </style>
 </head>
 <body>

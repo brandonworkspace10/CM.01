@@ -16,7 +16,7 @@ END_MARKER = '<!-- /CALLBACK-WIDGET -->'
 # ---------------------------------------------------------------------------
 
 FULL_SNIPPET = MARKER + '''
-<div id="cmCallbackPill" style="position:fixed;bottom:24px;left:18px;z-index:480;display:flex;align-items:center;gap:8px;background:var(--bg-2,#151310);border:1px solid var(--line,#2A2620);border-radius:999px;padding:11px 18px 11px 14px;box-shadow:0 4px 20px rgba(0,0,0,.45);cursor:pointer;font-family:var(--sans,sans-serif);font-size:13px;font-weight:500;color:var(--fg,#F6F2EB);transition:transform .2s,box-shadow .2s;" onclick="openCmCallback()" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
+<div id="cmCallbackPill" style="position:fixed;bottom:24px;left:18px;z-index:480;display:flex;align-items:center;gap:8px;background:var(--bg-2,#151310);border:1px solid var(--line,#2A2620);border-radius:999px;padding:11px 18px 11px 14px;box-shadow:0 4px 20px rgba(0,0,0,.45);cursor:pointer;font-family:var(--sans,sans-serif);font-size:13px;font-weight:500;color:var(--fg,#F6F2EB);" onclick="openCmCallback()" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
   <span style="width:8px;height:8px;border-radius:50%;background:var(--accent,#E89B6C);flex:none;"></span>
   Request a callback
 </div>
@@ -43,7 +43,27 @@ FULL_SNIPPET = MARKER + '''
 <script>
 (function(){
   function $(id){return document.getElementById(id);}
+  var pill = $('cmCallbackPill');
+  function isMobile(){ return window.matchMedia('(max-width: 780px)').matches; }
+  var peekTimer;
+  function cmPeek(){
+    if (!pill || !isMobile()) return;
+    pill.style.opacity = '0.22';
+    pill.style.transform = 'translateX(-62%)';
+  }
+  function cmReveal(){
+    if (!pill || !isMobile()) return;
+    pill.style.opacity = '1';
+    pill.style.transform = 'translateX(0)';
+    clearTimeout(peekTimer);
+    peekTimer = setTimeout(cmPeek, 5000);
+  }
+  if (pill) {
+    pill.style.transition = 'opacity .6s ease, transform .6s ease, box-shadow .2s ease';
+    if (isMobile()) { cmPeek(); setTimeout(cmReveal, 1200); }
+  }
   window.openCmCallback = function(){
+    cmReveal();
     var p = $('cmCallbackPanel'); if(!p) return;
     p.style.display='block';
     requestAnimationFrame(function(){ p.style.transform='translateY(0)'; p.style.opacity='1'; });
@@ -52,6 +72,7 @@ FULL_SNIPPET = MARKER + '''
     var p = $('cmCallbackPanel'); if(!p) return;
     p.style.transform='translateY(16px)'; p.style.opacity='0';
     setTimeout(function(){ p.style.display='none'; }, 300);
+    cmPeek();
   };
   document.addEventListener('keydown', function(e){ if(e.key==='Escape') window.closeCmCallback(); });
   var f = $('cmCallbackForm');
@@ -83,7 +104,7 @@ FULL_SNIPPET = MARKER + '''
 # ---------------------------------------------------------------------------
 
 FULL_SNIPPET_ES = MARKER + '''
-<div id="cmCallbackPill" style="position:fixed;bottom:24px;left:18px;z-index:480;display:flex;align-items:center;gap:8px;background:var(--bg-2,#151310);border:1px solid var(--line,#2A2620);border-radius:999px;padding:11px 18px 11px 14px;box-shadow:0 4px 20px rgba(0,0,0,.45);cursor:pointer;font-family:var(--sans,sans-serif);font-size:13px;font-weight:500;color:var(--fg,#F6F2EB);transition:transform .2s,box-shadow .2s;" onclick="openCmCallback()" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
+<div id="cmCallbackPill" style="position:fixed;bottom:24px;left:18px;z-index:480;display:flex;align-items:center;gap:8px;background:var(--bg-2,#151310);border:1px solid var(--line,#2A2620);border-radius:999px;padding:11px 18px 11px 14px;box-shadow:0 4px 20px rgba(0,0,0,.45);cursor:pointer;font-family:var(--sans,sans-serif);font-size:13px;font-weight:500;color:var(--fg,#F6F2EB);" onclick="openCmCallback()" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
   <span style="width:8px;height:8px;border-radius:50%;background:var(--accent,#E89B6C);flex:none;"></span>
   Solicitar una llamada
 </div>
@@ -110,7 +131,27 @@ FULL_SNIPPET_ES = MARKER + '''
 <script>
 (function(){
   function $(id){return document.getElementById(id);}
+  var pill = $('cmCallbackPill');
+  function isMobile(){ return window.matchMedia('(max-width: 780px)').matches; }
+  var peekTimer;
+  function cmPeek(){
+    if (!pill || !isMobile()) return;
+    pill.style.opacity = '0.22';
+    pill.style.transform = 'translateX(-62%)';
+  }
+  function cmReveal(){
+    if (!pill || !isMobile()) return;
+    pill.style.opacity = '1';
+    pill.style.transform = 'translateX(0)';
+    clearTimeout(peekTimer);
+    peekTimer = setTimeout(cmPeek, 5000);
+  }
+  if (pill) {
+    pill.style.transition = 'opacity .6s ease, transform .6s ease, box-shadow .2s ease';
+    if (isMobile()) { cmPeek(); setTimeout(cmReveal, 1200); }
+  }
   window.openCmCallback = function(){
+    cmReveal();
     var p = $('cmCallbackPanel'); if(!p) return;
     p.style.display='block';
     requestAnimationFrame(function(){ p.style.transform='translateY(0)'; p.style.opacity='1'; });
@@ -119,6 +160,7 @@ FULL_SNIPPET_ES = MARKER + '''
     var p = $('cmCallbackPanel'); if(!p) return;
     p.style.transform='translateY(16px)'; p.style.opacity='0';
     setTimeout(function(){ p.style.display='none'; }, 300);
+    cmPeek();
   };
   document.addEventListener('keydown', function(e){ if(e.key==='Escape') window.closeCmCallback(); });
   var f = $('cmCallbackForm');
@@ -151,11 +193,40 @@ FULL_SNIPPET_ES = MARKER + '''
 # ---------------------------------------------------------------------------
 
 PILL_ONLY_SNIPPET = MARKER + '''
-<div id="cmCallbackPill" style="position:fixed;bottom:24px;left:18px;z-index:480;display:flex;align-items:center;gap:8px;background:var(--bg-2,#151310);border:1px solid var(--line,#2A2620);border-radius:999px;padding:11px 18px 11px 14px;box-shadow:0 4px 20px rgba(0,0,0,.45);cursor:pointer;font-family:var(--sans,sans-serif);font-size:13px;font-weight:500;color:var(--fg,#F6F2EB);transition:transform .2s,box-shadow .2s;" onclick="openContact()" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
+<div id="cmCallbackPill" style="position:fixed;bottom:24px;left:18px;z-index:480;display:flex;align-items:center;gap:8px;background:var(--bg-2,#151310);border:1px solid var(--line,#2A2620);border-radius:999px;padding:11px 18px 11px 14px;box-shadow:0 4px 20px rgba(0,0,0,.45);cursor:pointer;font-family:var(--sans,sans-serif);font-size:13px;font-weight:500;color:var(--fg,#F6F2EB);" onclick="openContact()" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
   <span style="width:8px;height:8px;border-radius:50%;background:var(--accent,#E89B6C);flex:none;"></span>
   Request a callback
 </div>
+<script>
+(function(){
+  var pill = document.getElementById('cmCallbackPill');
+  function isMobile(){ return window.matchMedia('(max-width: 780px)').matches; }
+  var peekTimer;
+  function cmPeek(){
+    if (!pill || !isMobile()) return;
+    pill.style.opacity = '0.22';
+    pill.style.transform = 'translateX(-62%)';
+  }
+  function cmReveal(){
+    if (!pill || !isMobile()) return;
+    pill.style.opacity = '1';
+    pill.style.transform = 'translateX(0)';
+    clearTimeout(peekTimer);
+    peekTimer = setTimeout(cmPeek, 5000);
+  }
+  if (pill) {
+    pill.style.transition = 'opacity .6s ease, transform .6s ease, box-shadow .2s ease';
+    if (isMobile()) { cmPeek(); setTimeout(cmReveal, 1200); }
+    pill.addEventListener('click', cmReveal);
+  }
+})();
+</script>
 ''' + END_MARKER + '\n'
+
+
+# get-a-quote.html already has its own dedicated lead form — the floating
+# widget would be a redundant second CTA on that page.
+EXCLUDE = {'get-a-quote.html'}
 
 
 def target_files():
@@ -164,6 +235,7 @@ def target_files():
     files += glob.glob(os.path.join(ROOT, 'blog', '*.html'))
     files += glob.glob(os.path.join(ROOT, 'lp', '*.html'))
     files += glob.glob(os.path.join(ROOT, 'es', '*.html'))
+    files = [f for f in files if os.path.relpath(f, ROOT) not in EXCLUDE]
     return sorted(files)
 
 
@@ -179,9 +251,22 @@ def pick_snippet(path):
 def inject(path):
     with open(path, encoding='utf-8') as f:
         html = f.read()
-    if MARKER in html:
-        return 'skip'
     snippet = pick_snippet(path)
+
+    if MARKER in html:
+        start = html.find(MARKER)
+        end_idx = html.find(END_MARKER, start)
+        if end_idx == -1:
+            return 'malformed'
+        end = end_idx + len(END_MARKER)
+        existing_block = html[start:end]
+        if existing_block == snippet.rstrip('\n'):
+            return 'unchanged'
+        new_html = html[:start] + snippet.rstrip('\n') + html[end:]
+        with open(path, 'w', encoding='utf-8') as f:
+            f.write(new_html)
+        return 'updated'
+
     idx = html.rfind('</body>')
     if idx == -1:
         return 'no-body-tag'
@@ -196,11 +281,12 @@ def main():
     for path in target_files():
         results[os.path.relpath(path, ROOT)] = inject(path)
     injected = [k for k, v in results.items() if v == 'injected']
-    skipped = [k for k, v in results.items() if v == 'skip']
-    failed = [k for k, v in results.items() if v not in ('injected', 'skip')]
-    print(f"Injected: {len(injected)}  Skipped (already has marker): {len(skipped)}  Failed: {len(failed)}")
+    updated = [k for k, v in results.items() if v == 'updated']
+    unchanged = [k for k, v in results.items() if v == 'unchanged']
+    failed = [k for k, v in results.items() if v not in ('injected', 'updated', 'unchanged')]
+    print(f"Injected: {len(injected)}  Updated: {len(updated)}  Unchanged: {len(unchanged)}  Failed: {len(failed)}")
     if failed:
-        print("FAILED FILES:", failed)
+        print("FAILED FILES:", [(k, results[k]) for k in failed])
 
 
 if __name__ == '__main__':

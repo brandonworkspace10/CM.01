@@ -488,7 +488,7 @@ function openCalendly() {
 }
 </script>
 <!-- CALLBACK-WIDGET -->
-<div id="cmCallbackPill" style="position:fixed;bottom:24px;left:18px;z-index:480;display:flex;align-items:center;gap:8px;background:var(--bg-2,#151310);border:1px solid var(--line,#2A2620);border-radius:999px;padding:11px 18px 11px 14px;box-shadow:0 4px 20px rgba(0,0,0,.45);cursor:pointer;font-family:var(--sans,sans-serif);font-size:13px;font-weight:500;color:var(--fg,#F6F2EB);transition:transform .2s,box-shadow .2s;" onclick="openCmCallback()" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
+<div id="cmCallbackPill" style="position:fixed;bottom:24px;left:18px;z-index:480;display:flex;align-items:center;gap:8px;background:var(--bg-2,#151310);border:1px solid var(--line,#2A2620);border-radius:999px;padding:11px 18px 11px 14px;box-shadow:0 4px 20px rgba(0,0,0,.45);cursor:pointer;font-family:var(--sans,sans-serif);font-size:13px;font-weight:500;color:var(--fg,#F6F2EB);" onclick="openCmCallback()" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
   <span style="width:8px;height:8px;border-radius:50%;background:var(--accent,#E89B6C);flex:none;"></span>
   Request a callback
 </div>
@@ -515,7 +515,27 @@ function openCalendly() {
 <script>
 (function(){
   function $(id){return document.getElementById(id);}
+  var pill = $('cmCallbackPill');
+  function isMobile(){ return window.matchMedia('(max-width: 780px)').matches; }
+  var peekTimer;
+  function cmPeek(){
+    if (!pill || !isMobile()) return;
+    pill.style.opacity = '0.22';
+    pill.style.transform = 'translateX(-62%)';
+  }
+  function cmReveal(){
+    if (!pill || !isMobile()) return;
+    pill.style.opacity = '1';
+    pill.style.transform = 'translateX(0)';
+    clearTimeout(peekTimer);
+    peekTimer = setTimeout(cmPeek, 5000);
+  }
+  if (pill) {
+    pill.style.transition = 'opacity .6s ease, transform .6s ease, box-shadow .2s ease';
+    if (isMobile()) { cmPeek(); setTimeout(cmReveal, 1200); }
+  }
   window.openCmCallback = function(){
+    cmReveal();
     var p = $('cmCallbackPanel'); if(!p) return;
     p.style.display='block';
     requestAnimationFrame(function(){ p.style.transform='translateY(0)'; p.style.opacity='1'; });
@@ -524,6 +544,7 @@ function openCalendly() {
     var p = $('cmCallbackPanel'); if(!p) return;
     p.style.transform='translateY(16px)'; p.style.opacity='0';
     setTimeout(function(){ p.style.display='none'; }, 300);
+    cmPeek();
   };
   document.addEventListener('keydown', function(e){ if(e.key==='Escape') window.closeCmCallback(); });
   var f = $('cmCallbackForm');

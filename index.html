@@ -557,6 +557,8 @@ h2.sec-title .italic { color: var(--accent); }
   color: var(--accent);
   margin-bottom: 16px;
   font-feature-settings: "ss01";
+  opacity: 0;
+  transition: opacity 1s ease;
 }
 .big-num .suf { font-size: 40px; vertical-align: super; }
 .problem-cell h3 { font-size: 18px; font-weight: 500; margin-bottom: 8px; }
@@ -2100,6 +2102,8 @@ const countIO = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (!e.isIntersecting) return;
     const el = e.target;
+    const fadeTarget = el.closest('.big-num') || el;
+    fadeTarget.style.opacity = '1';
     const target = parseFloat(el.dataset.count);
     const suffix = el.dataset.suffix || '';
     const dur = 1400;

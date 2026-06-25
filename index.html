@@ -406,7 +406,7 @@ h1.hero-title .ai-label {
   padding-top: 28px;
   border-top: 1px solid var(--line);
 }
-.hero-proof .stat-num { font-family: var(--serif); font-size: 38px; line-height: 1; letter-spacing: -0.02em; margin-bottom: 6px; }
+.hero-proof .stat-num { font-family: var(--serif); font-size: 38px; line-height: 1; letter-spacing: -0.02em; margin-bottom: 6px; opacity: 0; transition: opacity 1s ease; }
 .hero-proof .stat-lbl { font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-mute); }
 @media (max-width: 480px) {
   .hero-proof { flex-wrap: nowrap; gap: 0; justify-content: space-between; }
@@ -2104,6 +2104,8 @@ const countIO = new IntersectionObserver((entries) => {
     const el = e.target;
     const fadeTarget = el.closest('.big-num') || el;
     fadeTarget.style.opacity = '1';
+    countIO.unobserve(el);
+    if (!el.dataset.count) return;
     const target = parseFloat(el.dataset.count);
     const suffix = el.dataset.suffix || '';
     const dur = 1400;
@@ -2118,10 +2120,9 @@ const countIO = new IntersectionObserver((entries) => {
       else el.textContent = (isFloat ? target.toFixed(1) : target) + suffix;
     };
     requestAnimationFrame(step);
-    countIO.unobserve(el);
   });
 }, { threshold: 0.5 });
-document.querySelectorAll('[data-count]').forEach(el => countIO.observe(el));
+document.querySelectorAll('[data-count], .hero-proof .stat-num').forEach(el => countIO.observe(el));
 
 /* ======= Waveform bars ======= */
 const wf = document.getElementById('waveform');

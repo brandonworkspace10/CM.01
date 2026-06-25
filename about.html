@@ -179,7 +179,7 @@
       <a href="/blog">Blog</a>
       <a href="/about" style="color:var(--fg);">About</a>
     </div>
-    <a href="#" class="nav-cta" onclick="openCalendly();return false;">Book a demo →</a>
+    <a href="#" class="nav-cta" onclick="openCalendly();return false;">Book a consultation →</a>
   </div>
 </nav>
 
@@ -287,7 +287,7 @@
   <h2>See it answer a real call.</h2>
   <p>30 minutes. We'll show you exactly what your callers would hear — and what your calendar would look like after week one.</p>
   <a href="#" class="btn btn-primary" onclick="openCalendly();return false;">
-    Book a free demo
+    Book a free consultation
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </a>
 </div>
@@ -344,7 +344,7 @@ function openCalendly() {
   document.head.appendChild(s);
 }
 document.addEventListener('click', function(e) {
-  var a = e.target.closest('a[href="/#demo"],a[href="#demo"]');
+  var a = e.target.closest('a[href="/#consultation"],a[href="#consultation"]');
   if (!a) return; e.preventDefault(); openCalendly();
 });
 </script>

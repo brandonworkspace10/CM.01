@@ -213,7 +213,7 @@
       <a href="/#faq">FAQ</a>
       <a href="/blog">Blog</a>
     </div>
-    <a href="/#demo" class="nav-cta">Book a demo →</a>
+    <a href="/#consultation" class="nav-cta">Book a consultation →</a>
     <button class="mob-menu-btn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
 
   </div>
@@ -633,7 +633,7 @@
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
     <br>
-    <a href="/#demo" class="btn-ghost">Book a free demo →</a>
+    <a href="/#consultation" class="btn-ghost">Book a free consultation →</a>
   </div>
 
 </article>
@@ -677,7 +677,7 @@ window.addEventListener('scroll', () => {
 });
 const CALENDLY_URL='https://calendly.com/callingmatrix/30min';
 function openCalendly(){if(window.Calendly){Calendly.initPopupWidget({url:CALENDLY_URL});return;}if(!document.querySelector('link[href*="calendly"]')){const l=document.createElement('link');l.rel='stylesheet';l.href='https://assets.calendly.com/assets/external/widget.css';document.head.appendChild(l);}const s=document.createElement('script');s.src='https://assets.calendly.com/assets/external/widget.js';s.onload=()=>Calendly.initPopupWidget({url:CALENDLY_URL});document.head.appendChild(s);}
-document.addEventListener('click',function(e){var a=e.target.closest('a[href="/#demo"],a[href="#demo"]');if(!a)return;e.preventDefault();openCalendly();});
+document.addEventListener('click',function(e){var a=e.target.closest('a[href="/#consultation"],a[href="#consultation"]');if(!a)return;e.preventDefault();openCalendly();});
 </script>
 
 <!-- INTERNAL LINKS -->

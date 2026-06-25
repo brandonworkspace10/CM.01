@@ -92,7 +92,7 @@ PAGES = [
     ],
     'final_h2': 'Stop losing Austin jobs to<br><span class="italic">voicemail.</span>',
     'final_p': "See how Austin HVAC companies are booking 37% more jobs with an AI receptionist that never takes a day off — not during heat waves, not at 2 AM, not on holidays.",
-    'final_cta': 'Book a free 15-min demo',
+    'final_cta': 'Book a free 15-min consultation',
     'faq_ld': [
       ('Does it handle Austin heat wave surge?', "Yes. Calling Matrix handles 10x normal call volume during Austin's summer heat waves without any staffing changes. Every caller gets a live answer within 2 seconds, whether it's your 10th call or your 200th."),
       ('Can it serve Greater Austin including Round Rock, Cedar Park, and Pflugerville?', "Yes. During onboarding we load your full service territory -- zip codes, cities, and suburbs -- so the AI books calls inside your area and declines calls outside it."),
@@ -147,7 +147,7 @@ PAGES = [
     ],
     'final_h2': 'Stop losing Sacramento jobs to<br><span class="italic">voicemail.</span>',
     'final_p': "See how Sacramento HVAC companies are booking more jobs with an AI receptionist that never takes a day off — not during heat domes, not at 2 AM, not on holidays.",
-    'final_cta': 'Book a free 15-min demo',
+    'final_cta': 'Book a free 15-min consultation',
     'faq_ld': [
       ("Can it handle Sacramento's summer heat dome call spikes?", "Yes. When a heat dome settles over the Central Valley and your call volume triples overnight, Calling Matrix answers every call within 2 seconds -- no additional staff, no overflow to voicemail."),
       ('Can it serve the greater Sacramento area including Elk Grove, Folsom, and Roseville?', "Yes. We load your full service territory during onboarding -- zip codes, cities, and suburbs -- so bookings stay inside your coverage area."),
@@ -202,7 +202,7 @@ PAGES = [
     ],
     'final_h2': 'Stop losing Houston jobs to<br><span class="italic">voicemail.</span>',
     'final_p': "See how Houston HVAC companies are booking more jobs with a bilingual AI receptionist that answers in English and Spanish — 24/7, no exceptions.",
-    'final_cta': 'Book a free 15-min demo',
+    'final_cta': 'Book a free 15-min consultation',
     'faq_ld': [
       ('Does it answer in both English and Spanish?', "Yes. Calling Matrix automatically detects the caller's preferred language and answers in English or Spanish."),
       ('Can it handle Harris County and surrounding areas like Sugar Land and The Woodlands?', "Yes. We load your complete service territory during onboarding so the AI books calls inside your area and politely declines calls outside it."),
@@ -257,7 +257,7 @@ PAGES = [
     ],
     'final_h2': 'Stop losing Phoenix jobs to<br><span class="italic">voicemail.</span>',
     'final_p': "See how Phoenix HVAC companies are booking more jobs with an AI receptionist that answers every call — not during 115-degree heat waves, not at 2 AM, not on holidays.",
-    'final_cta': 'Book a free 15-min demo',
+    'final_cta': 'Book a free 15-min consultation',
     'faq_ld': [
       ('Does it handle Phoenix emergency AC calls differently?', "Yes. When a caller reports no cooling during extreme heat, Calling Matrix treats it as an emergency and immediately texts your on-call tech with the caller's name, address, and issue description. No delays, no voicemail."),
       ('Does it handle monsoon season calls?', "Yes. Calling Matrix handles the spike in emergency calls during monsoon season without adding staff -- every caller gets answered within 2 seconds."),
@@ -313,7 +313,7 @@ PAGES = [
     ],
     'final_h2': 'Your Austin phone rings while<br><span class="italic">you\'re on the job.</span>',
     'final_p': "Let Calling Matrix handle every Austin call. You focus on the work. Every lead turns into a booked job.",
-    'final_cta': 'Book a free 15-min demo',
+    'final_cta': 'Book a free 15-min consultation',
     'faq_ld': [
       ("Can it identify Austin flooding emergencies from heavy spring rains?", "Yes. Calling Matrix listens for urgency indicators -- active flooding, water heater failure, sewage backup -- and immediately dispatches your on-call plumber with the caller's name, address, and situation."),
       ('Can it serve Greater Austin including Cedar Park, Round Rock, and Pflugerville?', "Yes. We load your full service territory during onboarding so every booking stays inside your coverage area."),
@@ -368,7 +368,7 @@ PAGES = [
     ],
     'final_h2': 'Your Sacramento phone rings while<br><span class="italic">you\'re on the job.</span>',
     'final_p': "Let Calling Matrix handle every Sacramento call. Every lead turns into a booked job — including the ones that come in at 2 AM.",
-    'final_cta': 'Book a free 15-min demo',
+    'final_cta': 'Book a free 15-min consultation',
     'faq_ld': [
       ("Can it route Sacramento flooding emergencies after winter storms?", "Yes. Calling Matrix identifies active flooding, burst pipes, and sewage backups and immediately texts your on-call plumber with the caller's name, address, and situation."),
       ("Do Sacramento plumbers really get that many after-hours calls?", "Yes. Sacramento's Pham Plumbing captured 14 after-hours jobs in their first month with Calling Matrix -- jobs that had previously gone straight to voicemail and been lost to competitors."),
@@ -423,7 +423,7 @@ PAGES = [
     ],
     'final_h2': 'Your Houston phone rings while<br><span class="italic">you\'re on the job.</span>',
     'final_p': "Let Calling Matrix handle every Houston call in English and Spanish. Every lead turns into a booked job — no matter when they call.",
-    'final_cta': 'Book a free 15-min demo',
+    'final_cta': 'Book a free 15-min consultation',
     'faq_ld': [
       ('Does it answer plumbing calls in both English and Spanish?', "Yes. Calling Matrix automatically detects the caller's preferred language and responds fluently in English or Spanish."),
       ('Can it handle Harris County flooding emergency surges?', "Yes. During flood events, Calling Matrix handles any volume spike -- 10 calls or 500 -- answering every caller within 2 seconds without adding staff."),
@@ -478,7 +478,7 @@ PAGES = [
     ],
     'final_h2': 'Your Phoenix phone rings while<br><span class="italic">you\'re on the job.</span>',
     'final_p': "Let Calling Matrix handle every Phoenix call. Hard water repairs, monsoon flood emergencies, routine bookings — every lead turns into a booked job.",
-    'final_cta': 'Book a free 15-min demo',
+    'final_cta': 'Book a free 15-min consultation',
     'faq_ld': [
       ('Does it handle hard water and water softener calls?', "Yes. We train the AI on your service types -- including water softener installation, descaling, and pipe repair from hard water damage."),
       ('Can it route Phoenix monsoon flooding emergencies?', "Yes. Calling Matrix identifies flooding emergencies and immediately dispatches your on-call plumber with the caller's name, address, and situation -- no delays."),
@@ -592,7 +592,7 @@ def build_page(p):
       <a href="/#pricing">Pricing</a>
       <a href="https://callingmatrix.blog">Blog</a>
     </nav>
-    <a href="#" class="nav-cta" onclick="openCalendly();return false;">Book a demo</a>
+    <a href="#" class="nav-cta" onclick="openCalendly();return false;">Book a consultation</a>
   </div>
 </nav>
 
@@ -605,7 +605,7 @@ def build_page(p):
     <p class="hero-sub reveal in d2">{p['hero_sub']}</p>
     <div class="cta-row reveal in d3">
       <a href="#" class="btn btn-primary" onclick="openCalendly();return false;">
-        <span>Book a free 15-min demo</span>
+        <span>Book a free 15-min consultation</span>
         {ARROW_SVG}
       </a>
       <a href="#features" class="btn btn-ghost">See how it works &rarr;</a>

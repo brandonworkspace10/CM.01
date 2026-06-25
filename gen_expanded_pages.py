@@ -506,7 +506,7 @@ def build_page(city_data, industry):
       <a href="/#pricing">Pricing</a>
       <a href="/blog">Blog</a>
     </nav>
-    <a href="#" class="nav-cta" onclick="openCalendly();return false;">Book a demo</a>
+    <a href="#" class="nav-cta" onclick="openCalendly();return false;">Book a consultation</a>
   </div>
 </nav>
 
@@ -519,7 +519,7 @@ def build_page(city_data, industry):
     <p class="hero-sub reveal in d2">{hero_sub}</p>
     <div class="cta-row reveal in d3">
       <a href="#" class="btn btn-primary" onclick="openCalendly();return false;">
-        <span>Book a free 15-min demo</span>
+        <span>Book a free 15-min consultation</span>
         {ARROW_SVG}
       </a>
       <a href="#features" class="btn btn-ghost">See how it works &rarr;</a>
@@ -575,7 +575,7 @@ def build_page(city_data, industry):
     <h2 class="reveal in">Stop losing {city} jobs to<br><span class="italic">voicemail.</span></h2>
     <p class="reveal in d1">See how {city} {ind_name.lower()} companies are booking more jobs with an AI receptionist that never takes a day off.</p>
     <a href="#" class="btn btn-primary reveal in d2" onclick="openCalendly();return false;">
-      <span>Book a free 15-min demo</span>
+      <span>Book a free 15-min consultation</span>
       {ARROW_SVG}
     </a>
   </div>

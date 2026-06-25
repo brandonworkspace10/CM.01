@@ -224,7 +224,7 @@
       <a href="/case-studies" style="color:var(--fg);">Customers</a>
       <a href="/blog">Blog</a>
     </div>
-    <a href="/#demo" class="nav-cta">Book a demo →</a>
+    <a href="/#consultation" class="nav-cta">Book a consultation →</a>
   </div>
 </nav>
 
@@ -446,8 +446,8 @@
 <!-- CTA -->
 <section class="page-cta">
   <h2>Ready to stop losing calls?</h2>
-  <p>Book a 15-minute demo. We train the AI on your business before the call — you'll hear a working receptionist, not a sales pitch.</p>
-  <a href="/#demo" class="btn-primary">Book your free demo →</a>
+  <p>Book a 15-minute consultation. We train the AI on your business before the call — you'll hear a working receptionist, not a sales pitch.</p>
+  <a href="/#consultation" class="btn-primary">Book your free consultation →</a>
   <span class="cta-sub">No credit card. Setup in 48 hours. Cancel anytime.</span>
 </section>
 
@@ -473,7 +473,7 @@
         <a href="/blog">Blog</a>
         <a href="/case-studies">Case studies</a>
         <a href="/faq">FAQ</a>
-        <a href="/#demo">Book a demo</a>
+        <a href="/#consultation">Book a consultation</a>
       </div>
     </div>
     <div class="foot-bottom">
@@ -488,7 +488,7 @@
   window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 10), { passive: true });
   const CALENDLY_URL='https://calendly.com/callingmatrix/30min';
   function openCalendly(){if(window.Calendly){Calendly.initPopupWidget({url:CALENDLY_URL});return;}if(!document.querySelector('link[href*="calendly"]')){const l=document.createElement('link');l.rel='stylesheet';l.href='https://assets.calendly.com/assets/external/widget.css';document.head.appendChild(l);}const s=document.createElement('script');s.src='https://assets.calendly.com/assets/external/widget.js';s.onload=()=>Calendly.initPopupWidget({url:CALENDLY_URL});document.head.appendChild(s);}
-  document.addEventListener('click',function(e){var a=e.target.closest('a[href="/#demo"],a[href="#demo"]');if(!a)return;e.preventDefault();openCalendly();});
+  document.addEventListener('click',function(e){var a=e.target.closest('a[href="/#consultation"],a[href="#consultation"]');if(!a)return;e.preventDefault();openCalendly();});
 </script>
 <script>
 (function(){

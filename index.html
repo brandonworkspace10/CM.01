@@ -1475,7 +1475,7 @@ footer {
     </div>
     <div class="how-inner">
       <div class="steps" id="steps">
-        <div class="step" data-step="0" data-active="false">
+        <div class="step" data-step="0" data-active="true">
           <div class="num">01</div>
           <div>
             <h4 data-i18n="step1.h4">We clone your best dispatcher.</h4>
@@ -1496,7 +1496,7 @@ footer {
             <p data-i18n="step3.p">When we book it, it shows up on your schedule automatically. When you cancel it, we update in real time. Works with Housecall Pro, ServiceTitan, Jobber, and Google Calendar.</p>
           </div>
         </div>
-        <div class="step" data-step="3" data-active="true">
+        <div class="step" data-step="3" data-active="false">
           <div class="num">04</div>
           <div>
             <h4 data-i18n="step4.h4">We go live — and keep tuning.</h4>
@@ -1508,7 +1508,7 @@ footer {
         </div>
       </div>
       <div class="how-viz">
-        <div class="how-panel" data-panel="0">
+        <div class="how-panel active" data-panel="0">
           <div class="panel-icon">
             <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="12" r="5" stroke="currentColor" stroke-width="1.5"></circle><path d="M6 26c0-5 4-9 10-9s10 4 10 9" stroke="currentColor" stroke-width="1.5"></path></svg>
           </div>
@@ -1529,7 +1529,7 @@ footer {
           <h5 data-i18n="panel3.h5">Day 2 · Calendar synced</h5>
           <p data-i18n="panel3.p">Bookings drop into Housecall Pro, ServiceTitan, Jobber, or Google Cal in real time.</p>
         </div>
-        <div class="how-panel active" data-panel="3">
+        <div class="how-panel" data-panel="3">
           <div class="panel-icon">
             <svg viewBox="0 0 32 32" fill="none"><path d="M4 20l6-6 5 5 8-9 5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="10" cy="14" r="1.5" fill="currentColor"></circle><circle cx="15" cy="19" r="1.5" fill="currentColor"></circle><circle cx="23" cy="10" r="1.5" fill="currentColor"></circle></svg>
           </div>
@@ -2303,7 +2303,7 @@ function setStep(i) {
   panels.forEach(p => p.classList.toggle('active', parseInt(p.dataset.panel) === i));
 }
 function cycleSteps() {
-  stepTimer = setInterval(() => { setStep((activeStep + 1) % steps.length); }, 3800);
+  stepTimer = setInterval(() => { setStep((activeStep + 1) % steps.length); }, 8000);
 }
 steps.forEach(s => s.addEventListener('click', () => {
   clearInterval(stepTimer);

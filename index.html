@@ -2555,28 +2555,13 @@ document.getElementById('contactForm').addEventListener('submit', async function
 </div>
 <script>
 (function(){
-  var mob = document.getElementById('langFloatMob');
-  if (!mob) return;
-  var timer;
-  function peek() { mob.classList.remove('show'); mob.classList.add('peek'); }
-  function reveal() {
-    mob.classList.remove('peek'); mob.classList.add('show');
-    clearTimeout(timer);
-    timer = setTimeout(peek, 5000);
-  }
-  reveal();
-  mob.addEventListener('click', function() { reveal(); });
-  mob.querySelectorAll('.lang-btn').forEach(function(btn) {
-    btn.addEventListener('click', function(e) {
-      e.stopPropagation();
-      if (window.cmSetLang) window.cmSetLang(btn.getAttribute('data-lang'));
-      reveal();
-    });
-  });
+  // Peek/reveal cycling for #langFloatMob is handled by the synced
+  // callback-widget script (window.cmRevealAll) further down the page —
+  // this just adds an extra reveal trigger when the hero scrolls into view.
   var hero = document.querySelector('.hero');
   if (hero) {
     new IntersectionObserver(function(entries) {
-      if (entries[0].isIntersecting) reveal();
+      if (entries[0].isIntersecting && window.cmRevealAll) window.cmRevealAll();
     }, { threshold: 0.25 }).observe(hero);
   }
 })();
@@ -2637,25 +2622,28 @@ document.getElementById('contactForm').addEventListener('submit', async function
 <script>
 (function(){
   var pill = document.getElementById('cmCallbackPill');
+  var lang = document.getElementById('langFloatMob');
   function isMobile(){ return window.matchMedia('(max-width: 780px)').matches; }
   var peekTimer;
   function cmPeek(){
-    if (!pill || !isMobile()) return;
-    pill.style.opacity = '0.22';
-    pill.style.transform = 'translateX(-62%)';
+    if (!isMobile()) return;
+    if (pill) { pill.style.opacity = '0.22'; pill.style.transform = 'translateX(-62%)'; }
+    if (lang) { lang.classList.remove('show'); lang.classList.add('peek'); }
   }
   function cmReveal(){
-    if (!pill || !isMobile()) return;
-    pill.style.opacity = '1';
-    pill.style.transform = 'translateX(0)';
+    if (!isMobile()) return;
+    if (pill) { pill.style.opacity = '1'; pill.style.transform = 'translateX(0)'; }
+    if (lang) { lang.classList.remove('peek'); lang.classList.add('show'); }
     clearTimeout(peekTimer);
     peekTimer = setTimeout(cmPeek, 5000);
   }
+  window.cmRevealAll = cmReveal;
   if (pill) {
     pill.style.transition = 'opacity .6s ease, transform .6s ease, box-shadow .2s ease';
-    if (isMobile()) { cmPeek(); setTimeout(cmReveal, 1200); }
     pill.addEventListener('click', cmReveal);
   }
+  if (isMobile()) { cmPeek(); setTimeout(cmReveal, 1200); }
+  if (lang) lang.addEventListener('click', cmReveal);
 })();
 </script>
 <!-- /CALLBACK-WIDGET -->

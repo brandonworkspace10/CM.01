@@ -616,7 +616,7 @@ h2.sec-title .italic { color: var(--accent); }
 }
 .marquee-inner.left  { animation: marquee-left  40s linear infinite; will-change: transform; }
 .marquee-inner.right { animation: marquee-right 40s linear infinite; will-change: transform; }
-.marquee-track:hover .marquee-inner { animation-duration: 120s; }
+/* hover speed handled by JS updatePlaybackRate — no CSS rule needed */
 @keyframes marquee-left  { 0% { transform: translateX(0); }     100% { transform: translateX(-50%); } }
 @keyframes marquee-right { 0% { transform: translateX(-50%); }  100% { transform: translateX(0); } }
 
@@ -2429,6 +2429,20 @@ function buildRow(el, items) {
 }
 buildRow(document.getElementById('marqueeRow1'), row1Logos);
 buildRow(document.getElementById('marqueeRow2'), row2Logos);
+
+/* ======= Marquee hover — slow without glitch ======= */
+document.querySelectorAll('.marquee-track').forEach(track => {
+  track.addEventListener('mouseenter', () => {
+    track.querySelectorAll('.marquee-inner').forEach(inner => {
+      inner.getAnimations().forEach(a => a.updatePlaybackRate(0.25));
+    });
+  });
+  track.addEventListener('mouseleave', () => {
+    track.querySelectorAll('.marquee-inner').forEach(inner => {
+      inner.getAnimations().forEach(a => a.updatePlaybackRate(1));
+    });
+  });
+});
 
 /* ======= Contact Modal ======= */
 function openContact() {

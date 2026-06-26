@@ -579,11 +579,28 @@ h2.sec-title .italic { color: var(--accent); }
   max-width: 900px;
 }
 .problem-tagline .strike {
-  color: var(--fg-mute);
-  text-decoration: line-through;
-  text-decoration-color: var(--accent);
-  text-decoration-thickness: 2px;
+  position: relative;
+  display: inline-block;
+  color: var(--fg-mute);                 /* final (and no-JS) state: muted */
+  transition: color .8s ease;
 }
+.problem-tagline .strike::after {       /* the crossing line — animatable */
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  top: 56%;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(1);                  /* final (and no-JS) state: drawn */
+  transform-origin: left center;
+  transition: transform .85s cubic-bezier(.2,.7,.2,1);
+}
+/* When JS is active, start it looking like the normal letters beside it */
+html.js-strike .problem-tagline .strike { color: var(--fg); }
+html.js-strike .problem-tagline .strike::after { transform: scaleX(0); }
+/* …then fade to muted + draw the line once .struck is added (1.2s after in view) */
+html.js-strike .problem-tagline.struck .strike { color: var(--fg-mute); }
+html.js-strike .problem-tagline.struck .strike::after { transform: scaleX(1); }
 
 /* ============ INTEGRATIONS MARQUEE ============ */
 .marquee-section {
@@ -2115,6 +2132,22 @@ requestAnimationFrame(() => {
     }
   });
 });
+
+/* ======= Tagline strike-through: looks normal on entry, crosses out 1.2s later ======= */
+(function() {
+  const tagline = document.querySelector('.problem-tagline');
+  if (!tagline) return;
+  document.documentElement.classList.add('js-strike'); // start un-struck (normal letters)
+  const strikeIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        setTimeout(() => tagline.classList.add('struck'), 1200);
+        strikeIO.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.45 });
+  strikeIO.observe(tagline);
+})();
 
 /* ======= Count up ======= */
 const countIO = new IntersectionObserver((entries) => {

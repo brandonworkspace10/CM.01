@@ -1809,20 +1809,20 @@ footer {
       <p class="sec-sub" data-i18n="pricing.sub">Go annual and get 2 months free + setup waived. Month-to-month also available. No long-term lock-in either way.</p>
     </div>
     <div class="billing-toggle reveal in" role="group" aria-label="Billing period">
-      <span class="toggle-label" data-mode="monthly" onclick="setBilling('monthly')">Monthly</span>
+      <span class="toggle-label" data-mode="monthly" onclick="setBilling('monthly')" data-i18n="pricing.monthly">Monthly</span>
       <button class="billing-switch" id="billing-switch" role="switch" aria-checked="true" onclick="toggleBilling()" aria-label="Toggle annual billing">
         <span class="billing-switch-knob"></span>
       </button>
-      <span class="toggle-label" data-mode="annual" onclick="setBilling('annual')">Annual <span class="toggle-badge">2 months free</span></span>
+      <span class="toggle-label" data-mode="annual" onclick="setBilling('annual')"><span data-i18n="pricing.annual">Annual</span> <span class="toggle-badge" data-i18n="pricing.monthsfree">2 months free</span></span>
     </div>
     <div class="pricing-grid">
       <div class="plan after-hours reveal in">
         <div class="plan-name" data-i18n="plan.ah.name">After Hours</div>
         <div class="plan-price price-annual">$2,970<span class="unit">/ yr</span></div>
         <div class="plan-price price-monthly">$297<span class="unit">/ mo</span></div>
-        <div class="plan-setup-note setup-annual">2 months free <span style="color:var(--fg-mute)">($594 value)</span></div>
-        <div class="plan-setup-note setup-annual" style="margin-top:4px">Setup waived <span style="color:var(--fg-mute)">($297 value)</span></div>
-        <div class="plan-setup-note setup-monthly">One-time <strong>$297 setup fee</strong></div>
+        <div class="plan-setup-note setup-annual"><span data-i18n="pricing.monthsfree">2 months free</span> <span style="color:var(--fg-mute)">($594 <span data-i18n="pricing.value">value</span>)</span></div>
+        <div class="plan-setup-note setup-annual" style="margin-top:4px"><span data-i18n="pricing.setupwaived">Setup waived</span> <span style="color:var(--fg-mute)">($297 <span data-i18n="pricing.value">value</span>)</span></div>
+        <div class="plan-setup-note setup-monthly"><span data-i18n="pricing.onetimefee">One-time setup fee</span> <strong>$297</strong></div>
         <div class="hours-badge">
           <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M6 1a5 5 0 100 10A5 5 0 006 1zm0 1.5V6l2.5 1.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <span data-i18n="plan.ah.badge">You set the hours</span>
@@ -1845,9 +1845,9 @@ footer {
         <div class="plan-name" data-i18n="plan.starter.name">Starter</div>
         <div class="plan-price price-annual">$4,970<span class="unit">/ yr</span></div>
         <div class="plan-price price-monthly">$497<span class="unit">/ mo</span></div>
-        <div class="plan-setup-note setup-annual">2 months free <span style="color:var(--fg-mute)">($994 value)</span></div>
-        <div class="plan-setup-note setup-annual" style="margin-top:4px">Setup waived <span style="color:var(--fg-mute)">($497 value)</span></div>
-        <div class="plan-setup-note setup-monthly">One-time <strong>$497 setup fee</strong></div>
+        <div class="plan-setup-note setup-annual"><span data-i18n="pricing.monthsfree">2 months free</span> <span style="color:var(--fg-mute)">($994 <span data-i18n="pricing.value">value</span>)</span></div>
+        <div class="plan-setup-note setup-annual" style="margin-top:4px"><span data-i18n="pricing.setupwaived">Setup waived</span> <span style="color:var(--fg-mute)">($497 <span data-i18n="pricing.value">value</span>)</span></div>
+        <div class="plan-setup-note setup-monthly"><span data-i18n="pricing.onetimefee">One-time setup fee</span> <strong>$497</strong></div>
         <p class="plan-desc" data-i18n="plan.starter.desc">For solo operators and 1-truck shops getting off voicemail for the first time.</p>
         <ul class="plan-features">
           <li data-i18n="plan.starter.f1">Up to 300 calls / month</li>
@@ -1863,9 +1863,9 @@ footer {
         <div class="plan-name" data-i18n="plan.growth.name">Growth</div>
         <div class="plan-price price-annual">$7,970<span class="unit">/ yr</span></div>
         <div class="plan-price price-monthly">$797<span class="unit">/ mo</span></div>
-        <div class="plan-setup-note setup-annual">2 months free <span style="color:var(--fg-mute)">($1,594 value)</span></div>
-        <div class="plan-setup-note setup-annual" style="margin-top:4px">Setup waived <span style="color:var(--fg-mute)">($997 value)</span></div>
-        <div class="plan-setup-note setup-monthly">One-time <strong>$997 setup fee</strong></div>
+        <div class="plan-setup-note setup-annual"><span data-i18n="pricing.monthsfree">2 months free</span> <span style="color:var(--fg-mute)">($1,594 <span data-i18n="pricing.value">value</span>)</span></div>
+        <div class="plan-setup-note setup-annual" style="margin-top:4px"><span data-i18n="pricing.setupwaived">Setup waived</span> <span style="color:var(--fg-mute)">($997 <span data-i18n="pricing.value">value</span>)</span></div>
+        <div class="plan-setup-note setup-monthly"><span data-i18n="pricing.onetimefee">One-time setup fee</span> <strong>$997</strong></div>
         <p class="plan-desc" data-i18n="plan.growth.desc">For 2-10 truck shops scaling bookings without scaling admin hires.</p>
         <ul class="plan-features">
           <li data-i18n="plan.growth.f1">Up to 800 calls / month</li>

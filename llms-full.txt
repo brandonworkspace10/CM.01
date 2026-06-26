@@ -25,7 +25,7 @@ Core capabilities:
 
 ## Pricing details
 
-**After Hours — $297/month ($267/mo billed annually)**
+**After Hours — $297/month, or $2,970/year (2 months free)**
 - Coverage only during owner-defined off-hours (e.g. 6 PM–8 AM, weekends)
 - Appointment booking + Google Calendar sync
 - Lead intake with custom intake questions
@@ -36,7 +36,7 @@ Core capabilities:
 - Setup fee: $297 (waived on annual billing)
 - Best for: owners who handle their own calls during the day and want overnight/weekend coverage
 
-**Starter — $497/month ($447/mo billed annually)**
+**Starter — $497/month, or $4,970/year (2 months free)**
 - Up to 300 calls per month
 - 24/7 answering and booking
 - Google Calendar sync
@@ -46,7 +46,7 @@ Core capabilities:
 - Setup fee: $497 (waived on annual billing)
 - Best for: solo operators and 1-truck shops getting off voicemail for the first time
 
-**Growth — $797/month ($717/mo billed annually)**
+**Growth — $797/month, or $7,970/year (2 months free)**
 - Up to 800 calls per month
 - Housecall Pro, ServiceTitan, Jobber sync
 - SMS and voice follow-up sequences
@@ -68,7 +68,7 @@ Core capabilities:
 - Setup fee: Custom, starting at $1,997
 - Best for: multi-location operators, franchises, and shops doing $5M+ in revenue
 
-No per-minute charges. No overage fees. Price does not change with call volume. Month-to-month or annual billing. No long-term lock-in.
+Annual billing gives 2 months free (pay for 10 months, get 12) and waives the one-time setup fee — a combined year-one savings of up to $2,591 on the Growth plan. No per-minute charges. No overage fees. Price does not change with call volume. Month-to-month or annual billing. No long-term lock-in.
 
 ---
 

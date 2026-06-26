@@ -939,12 +939,13 @@ h2.sec-title .italic { color: var(--accent); }
 .plan-hours-note { font-size: 12px; color: var(--fg-mute); margin-top: 10px; font-style: italic; }
 /* Billing toggle */
 .billing-toggle { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 0 auto 40px; }
-.toggle-label { font-size: 15px; color: var(--fg-dim); cursor: pointer; user-select: none; transition: color .2s; }
-.toggle-label[data-mode="annual"] { color: var(--fg); }
-#pricing.billing-monthly .toggle-label[data-mode="annual"] { color: var(--fg-dim); }
-#pricing.billing-monthly .toggle-label[data-mode="monthly"] { color: var(--fg); }
-.billing-switch { position: relative; width: 46px; height: 26px; background: var(--accent); border: none; border-radius: 999px; cursor: pointer; padding: 0; flex-shrink: 0; }
-.billing-switch-knob { position: absolute; top: 4px; left: 4px; width: 18px; height: 18px; background: var(--bg); border-radius: 50%; transition: transform .25s cubic-bezier(.4,0,.2,1); transform: translateX(20px); }
+.toggle-label { font-size: 15px; color: var(--fg-dim); cursor: pointer; user-select: none; transition: color .2s, font-weight .2s; font-weight: 400; }
+.toggle-label[data-mode="annual"] { color: var(--fg); font-weight: 500; }
+#pricing.billing-monthly .toggle-label[data-mode="annual"] { color: var(--fg-dim); font-weight: 400; }
+#pricing.billing-monthly .toggle-label[data-mode="monthly"] { color: var(--fg); font-weight: 500; }
+.billing-switch { position: relative; width: 52px; height: 30px; background: var(--accent); border: none; border-radius: 999px; cursor: pointer; padding: 0; flex-shrink: 0; box-shadow: inset 0 1px 3px rgba(0,0,0,0.25); transition: box-shadow .2s; }
+.billing-switch:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.billing-switch-knob { position: absolute; top: 4px; left: 4px; width: 22px; height: 22px; background: #fff; border-radius: 50%; transition: transform .25s cubic-bezier(.4,0,.2,1); transform: translateX(22px); box-shadow: 0 1px 4px rgba(0,0,0,0.4); }
 #pricing.billing-monthly .billing-switch-knob { transform: translateX(0); }
 .toggle-badge { display: inline-block; background: oklch(0.74 0.17 55 / 0.15); color: var(--accent); font-size: 11px; padding: 2px 8px; border-radius: 999px; margin-left: 6px; font-family: var(--mono); letter-spacing: 0.04em; vertical-align: middle; }
 /* Annual/monthly pricing toggle states */

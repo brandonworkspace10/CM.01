@@ -2457,7 +2457,7 @@ buildRow(document.getElementById('marqueeRow2'), row2Logos);
       var signed = Math.max(-1, Math.min(1, ((r.left + r.width / 2) - cx) / hw)); // -1 left .. +1 right
       var prox = 1 - Math.abs(signed);            // 1 at center, 0 at edges
       var s = (0.8 + 0.2 * prox).toFixed(3);      // center cards larger
-      var rotY = (-signed * 32).toFixed(2);       // left faces right, right faces left -> oval
+      var rotY = (-signed * 46).toFixed(2);       // left faces right, right faces left -> oval
       chip.style.transform = 'perspective(800px) rotateY(' + rotY + 'deg) scale(' + s + ')';
     });
     requestAnimationFrame(update);

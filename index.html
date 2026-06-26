@@ -938,9 +938,14 @@ h2.sec-title .italic { color: var(--accent); }
 .hours-badge { display: inline-flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 12px; letter-spacing: .1em; color: oklch(0.65 0.12 260); background: oklch(0.55 0.12 260 / 0.1); border: 1px solid oklch(0.55 0.12 260 / 0.25); padding: 4px 10px; border-radius: 999px; margin-bottom: 16px; }
 .plan-hours-note { font-size: 12px; color: var(--fg-mute); margin-top: 10px; font-style: italic; }
 /* Billing toggle */
-.billing-toggle { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 0 auto 40px; flex-wrap: wrap; }
-.toggle-btn { padding: 10px 22px; border: 1px solid var(--line); border-radius: 999px; font-size: 14px; font-family: var(--sans); cursor: pointer; transition: all .2s; background: transparent; color: var(--fg-dim); }
-.toggle-btn.active { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.billing-toggle { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 0 auto 40px; }
+.toggle-label { font-size: 15px; color: var(--fg-dim); cursor: pointer; user-select: none; transition: color .2s; }
+.toggle-label[data-mode="annual"] { color: var(--fg); }
+#pricing.billing-monthly .toggle-label[data-mode="annual"] { color: var(--fg-dim); }
+#pricing.billing-monthly .toggle-label[data-mode="monthly"] { color: var(--fg); }
+.billing-switch { position: relative; width: 46px; height: 26px; background: var(--accent); border: none; border-radius: 999px; cursor: pointer; padding: 0; flex-shrink: 0; }
+.billing-switch-knob { position: absolute; top: 4px; left: 4px; width: 18px; height: 18px; background: var(--bg); border-radius: 50%; transition: transform .25s cubic-bezier(.4,0,.2,1); transform: translateX(20px); }
+#pricing.billing-monthly .billing-switch-knob { transform: translateX(0); }
 .toggle-badge { display: inline-block; background: oklch(0.74 0.17 55 / 0.15); color: var(--accent); font-size: 11px; padding: 2px 8px; border-radius: 999px; margin-left: 6px; font-family: var(--mono); letter-spacing: 0.04em; vertical-align: middle; }
 /* Annual/monthly pricing toggle states */
 #pricing .price-annual { display: block; }
@@ -1782,8 +1787,11 @@ footer {
       <p class="sec-sub" data-i18n="pricing.sub">Go annual and get 2 months free + setup waived. Month-to-month also available. No long-term lock-in either way.</p>
     </div>
     <div class="billing-toggle reveal in" role="group" aria-label="Billing period">
-      <button class="toggle-btn" id="btn-monthly" aria-pressed="false" onclick="setBilling('monthly')">Monthly</button>
-      <button class="toggle-btn active" id="btn-annual" aria-pressed="true" onclick="setBilling('annual')">Annual <span class="toggle-badge">2 months free</span></button>
+      <span class="toggle-label" data-mode="monthly" onclick="setBilling('monthly')">Monthly</span>
+      <button class="billing-switch" id="billing-switch" role="switch" aria-checked="true" onclick="toggleBilling()" aria-label="Toggle annual billing">
+        <span class="billing-switch-knob"></span>
+      </button>
+      <span class="toggle-label" data-mode="annual" onclick="setBilling('annual')">Annual <span class="toggle-badge">2 months free</span></span>
     </div>
     <div class="pricing-grid">
       <div class="plan after-hours reveal in">
@@ -2331,13 +2339,13 @@ document.querySelectorAll('.faq-item').forEach(item => {
 
 /* ======= BILLING TOGGLE ======= */
 function setBilling(mode) {
-  const section = document.getElementById('pricing');
-  section.classList.toggle('billing-monthly', mode === 'monthly');
-  document.querySelectorAll('.toggle-btn').forEach(btn => {
-    const isActive = btn.id === 'btn-' + mode;
-    btn.classList.toggle('active', isActive);
-    btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
-  });
+  document.getElementById('pricing').classList.toggle('billing-monthly', mode === 'monthly');
+  const sw = document.getElementById('billing-switch');
+  if (sw) sw.setAttribute('aria-checked', mode === 'annual' ? 'true' : 'false');
+}
+function toggleBilling() {
+  const isMonthly = document.getElementById('pricing').classList.contains('billing-monthly');
+  setBilling(isMonthly ? 'annual' : 'monthly');
 }
 
 </script>

@@ -611,8 +611,7 @@ h2.sec-title .italic { color: var(--accent); }
   -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 20%, black 80%, transparent 100%);
 }
 .marquee-track + .marquee-track { margin-top: 14px; }
-.marquee-track--top { transform: rotateX(-7deg) rotateY(9deg);  transform-origin: center bottom; }
-.marquee-track--bot { transform: rotateX(7deg)  rotateY(-9deg); transform-origin: center top; }
+/* rows are flat; the oval curve is applied per-card in JS (each card gets its own perspective) */
 .marquee-inner {
   display: flex;
   gap: 12px;
@@ -2444,7 +2443,8 @@ function buildRow(el, items) {
 buildRow(document.getElementById('marqueeRow1'), row1Logos);
 buildRow(document.getElementById('marqueeRow2'), row2Logos);
 
-/* ======= Marquee chip scale — bigger in center, smaller at edges ======= */
+/* ======= Marquee oval curve — cards bow toward you in the center, ======= */
+/* ======= curve away symmetrically toward both edges (left == right) ======= */
 (function(){
   var section = document.querySelector('.marquee-section');
   if (!section) return;
@@ -2454,9 +2454,11 @@ buildRow(document.getElementById('marqueeRow2'), row2Logos);
     var hw = sr.width / 2;
     section.querySelectorAll('.logo-chip').forEach(function(chip) {
       var r = chip.getBoundingClientRect();
-      var dist = Math.abs((r.left + r.width / 2) - cx) / hw;
-      var s = (0.78 + 0.22 * Math.max(0, 1 - dist)).toFixed(3);
-      chip.style.transform = 'scale(' + s + ')';
+      var signed = Math.max(-1, Math.min(1, ((r.left + r.width / 2) - cx) / hw)); // -1 left .. +1 right
+      var prox = 1 - Math.abs(signed);            // 1 at center, 0 at edges
+      var s = (0.8 + 0.2 * prox).toFixed(3);      // center cards larger
+      var rotY = (-signed * 32).toFixed(2);       // left faces right, right faces left -> oval
+      chip.style.transform = 'perspective(800px) rotateY(' + rotY + 'deg) scale(' + s + ')';
     });
     requestAnimationFrame(update);
   }

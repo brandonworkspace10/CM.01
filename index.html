@@ -535,8 +535,8 @@ section { padding: 120px 0; position: relative; }
 .sec-label::before { content: ''; width: 24px; height: 1px; background: var(--accent); }
 h2.sec-title {
   font-family: var(--serif); font-weight: 400;
-  font-size: clamp(40px, 5.2vw, 64px);
-  line-height: 1.02; letter-spacing: -0.02em;
+  font-size: clamp(30px, 5.2vw, 64px);
+  line-height: 1.05; letter-spacing: -0.02em;
   margin-bottom: 20px;
 }
 h2.sec-title .italic { color: var(--accent); }
@@ -1133,6 +1133,11 @@ footer {
   .final { padding: 72px 0; }
   .wrap { padding: 0 20px; }
   .foot-bottom { flex-direction: column; gap: 16px; align-items: center; text-align: center; }
+  /* section headers run too tall/loose on phones — tighten the rhythm */
+  .sec-head { margin-bottom: 40px; }
+  .sec-label { margin-bottom: 14px; }
+  h2.sec-title { margin-bottom: 14px; }
+  .sec-sub { font-size: 16px; }
 }
 
 /* Tablet (720px–1080px) */

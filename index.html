@@ -2625,8 +2625,12 @@ document.getElementById('contactForm').addEventListener('submit', async function
     });
   }
 
-  document.querySelectorAll('.lang-btn').forEach(function(btn) {
-    btn.addEventListener('click', function() { setLang(btn.getAttribute('data-lang')); });
+  // Delegate clicks so .lang-btn elements added later in the document
+  // (e.g. the mobile floating switcher below) are handled too, regardless
+  // of where they appear relative to this script.
+  document.addEventListener('click', function(e) {
+    var btn = e.target.closest ? e.target.closest('.lang-btn') : null;
+    if (btn) setLang(btn.getAttribute('data-lang'));
   });
 
   window.cmSetLang = setLang;

@@ -107,6 +107,13 @@ _Last updated: 2026-06-11. Full machine-readable detail: https://callingmatrix.c
 - Electrical answering service: https://callingmatrix.com/electrical
 - Roofing answering service: https://callingmatrix.com/roofing
 - Cleaning answering service: https://callingmatrix.com/cleaning
+- Garage door answering service: https://callingmatrix.com/garage-door
+- Pest control answering service: https://callingmatrix.com/pest-control
+- Restoration answering service: https://callingmatrix.com/restoration
+- Appliance repair answering service: https://callingmatrix.com/appliance-repair
+- Virtual receptionist for home services: https://callingmatrix.com/virtual-receptionist
+- After-hours answering service: https://callingmatrix.com/after-hours-answering-service
+- Bilingual (English + Spanish) answering service: https://callingmatrix.com/bilingual-answering-service
 
 ## Integration pages
 
@@ -221,6 +228,90 @@ _Last updated: 2026-06-11. Full machine-readable detail: https://callingmatrix.c
 - Cleaning answering service Seattle: https://callingmatrix.com/cleaning-answering-service-seattle
 - Cleaning answering service Tampa: https://callingmatrix.com/cleaning-answering-service-tampa
 
+### Garage Door
+- Garage Door answering service Atlanta: https://callingmatrix.com/garage-door-answering-service-atlanta
+- Garage Door answering service Austin: https://callingmatrix.com/garage-door-answering-service-austin
+- Garage Door answering service Charlotte: https://callingmatrix.com/garage-door-answering-service-charlotte
+- Garage Door answering service Columbus: https://callingmatrix.com/garage-door-answering-service-columbus
+- Garage Door answering service Dallas: https://callingmatrix.com/garage-door-answering-service-dallas
+- Garage Door answering service Denver: https://callingmatrix.com/garage-door-answering-service-denver
+- Garage Door answering service Houston: https://callingmatrix.com/garage-door-answering-service-houston
+- Garage Door answering service Indianapolis: https://callingmatrix.com/garage-door-answering-service-indianapolis
+- Garage Door answering service Las Vegas: https://callingmatrix.com/garage-door-answering-service-las-vegas
+- Garage Door answering service Los Angeles: https://callingmatrix.com/garage-door-answering-service-los-angeles
+- Garage Door answering service Miami: https://callingmatrix.com/garage-door-answering-service-miami
+- Garage Door answering service Nashville: https://callingmatrix.com/garage-door-answering-service-nashville
+- Garage Door answering service Orlando: https://callingmatrix.com/garage-door-answering-service-orlando
+- Garage Door answering service Phoenix: https://callingmatrix.com/garage-door-answering-service-phoenix
+- Garage Door answering service Portland: https://callingmatrix.com/garage-door-answering-service-portland
+- Garage Door answering service Sacramento: https://callingmatrix.com/garage-door-answering-service-sacramento
+- Garage Door answering service San Antonio: https://callingmatrix.com/garage-door-answering-service-san-antonio
+- Garage Door answering service Seattle: https://callingmatrix.com/garage-door-answering-service-seattle
+- Garage Door answering service Tampa: https://callingmatrix.com/garage-door-answering-service-tampa
+
+### Pest Control
+- Pest Control answering service Atlanta: https://callingmatrix.com/pest-control-answering-service-atlanta
+- Pest Control answering service Austin: https://callingmatrix.com/pest-control-answering-service-austin
+- Pest Control answering service Charlotte: https://callingmatrix.com/pest-control-answering-service-charlotte
+- Pest Control answering service Columbus: https://callingmatrix.com/pest-control-answering-service-columbus
+- Pest Control answering service Dallas: https://callingmatrix.com/pest-control-answering-service-dallas
+- Pest Control answering service Denver: https://callingmatrix.com/pest-control-answering-service-denver
+- Pest Control answering service Houston: https://callingmatrix.com/pest-control-answering-service-houston
+- Pest Control answering service Indianapolis: https://callingmatrix.com/pest-control-answering-service-indianapolis
+- Pest Control answering service Las Vegas: https://callingmatrix.com/pest-control-answering-service-las-vegas
+- Pest Control answering service Los Angeles: https://callingmatrix.com/pest-control-answering-service-los-angeles
+- Pest Control answering service Miami: https://callingmatrix.com/pest-control-answering-service-miami
+- Pest Control answering service Nashville: https://callingmatrix.com/pest-control-answering-service-nashville
+- Pest Control answering service Orlando: https://callingmatrix.com/pest-control-answering-service-orlando
+- Pest Control answering service Phoenix: https://callingmatrix.com/pest-control-answering-service-phoenix
+- Pest Control answering service Portland: https://callingmatrix.com/pest-control-answering-service-portland
+- Pest Control answering service Sacramento: https://callingmatrix.com/pest-control-answering-service-sacramento
+- Pest Control answering service San Antonio: https://callingmatrix.com/pest-control-answering-service-san-antonio
+- Pest Control answering service Seattle: https://callingmatrix.com/pest-control-answering-service-seattle
+- Pest Control answering service Tampa: https://callingmatrix.com/pest-control-answering-service-tampa
+
+### Restoration
+- Restoration answering service Atlanta: https://callingmatrix.com/restoration-answering-service-atlanta
+- Restoration answering service Austin: https://callingmatrix.com/restoration-answering-service-austin
+- Restoration answering service Charlotte: https://callingmatrix.com/restoration-answering-service-charlotte
+- Restoration answering service Columbus: https://callingmatrix.com/restoration-answering-service-columbus
+- Restoration answering service Dallas: https://callingmatrix.com/restoration-answering-service-dallas
+- Restoration answering service Denver: https://callingmatrix.com/restoration-answering-service-denver
+- Restoration answering service Houston: https://callingmatrix.com/restoration-answering-service-houston
+- Restoration answering service Indianapolis: https://callingmatrix.com/restoration-answering-service-indianapolis
+- Restoration answering service Las Vegas: https://callingmatrix.com/restoration-answering-service-las-vegas
+- Restoration answering service Los Angeles: https://callingmatrix.com/restoration-answering-service-los-angeles
+- Restoration answering service Miami: https://callingmatrix.com/restoration-answering-service-miami
+- Restoration answering service Nashville: https://callingmatrix.com/restoration-answering-service-nashville
+- Restoration answering service Orlando: https://callingmatrix.com/restoration-answering-service-orlando
+- Restoration answering service Phoenix: https://callingmatrix.com/restoration-answering-service-phoenix
+- Restoration answering service Portland: https://callingmatrix.com/restoration-answering-service-portland
+- Restoration answering service Sacramento: https://callingmatrix.com/restoration-answering-service-sacramento
+- Restoration answering service San Antonio: https://callingmatrix.com/restoration-answering-service-san-antonio
+- Restoration answering service Seattle: https://callingmatrix.com/restoration-answering-service-seattle
+- Restoration answering service Tampa: https://callingmatrix.com/restoration-answering-service-tampa
+
+### Appliance Repair
+- Appliance Repair answering service Atlanta: https://callingmatrix.com/appliance-repair-answering-service-atlanta
+- Appliance Repair answering service Austin: https://callingmatrix.com/appliance-repair-answering-service-austin
+- Appliance Repair answering service Charlotte: https://callingmatrix.com/appliance-repair-answering-service-charlotte
+- Appliance Repair answering service Columbus: https://callingmatrix.com/appliance-repair-answering-service-columbus
+- Appliance Repair answering service Dallas: https://callingmatrix.com/appliance-repair-answering-service-dallas
+- Appliance Repair answering service Denver: https://callingmatrix.com/appliance-repair-answering-service-denver
+- Appliance Repair answering service Houston: https://callingmatrix.com/appliance-repair-answering-service-houston
+- Appliance Repair answering service Indianapolis: https://callingmatrix.com/appliance-repair-answering-service-indianapolis
+- Appliance Repair answering service Las Vegas: https://callingmatrix.com/appliance-repair-answering-service-las-vegas
+- Appliance Repair answering service Los Angeles: https://callingmatrix.com/appliance-repair-answering-service-los-angeles
+- Appliance Repair answering service Miami: https://callingmatrix.com/appliance-repair-answering-service-miami
+- Appliance Repair answering service Nashville: https://callingmatrix.com/appliance-repair-answering-service-nashville
+- Appliance Repair answering service Orlando: https://callingmatrix.com/appliance-repair-answering-service-orlando
+- Appliance Repair answering service Phoenix: https://callingmatrix.com/appliance-repair-answering-service-phoenix
+- Appliance Repair answering service Portland: https://callingmatrix.com/appliance-repair-answering-service-portland
+- Appliance Repair answering service Sacramento: https://callingmatrix.com/appliance-repair-answering-service-sacramento
+- Appliance Repair answering service San Antonio: https://callingmatrix.com/appliance-repair-answering-service-san-antonio
+- Appliance Repair answering service Seattle: https://callingmatrix.com/appliance-repair-answering-service-seattle
+- Appliance Repair answering service Tampa: https://callingmatrix.com/appliance-repair-answering-service-tampa
+
 ## Spanish-language pages
 
 - https://callingmatrix.com/es/hvac
@@ -251,3 +342,5 @@ Field guides, cost breakdowns, comparisons, and case studies for home service ow
 - Pham plumbing case study: https://callingmatrix.com/blog/pham-plumbing-case-study
 - Spanish language calls: https://callingmatrix.com/blog/spanish-language-calls
 - The 14 second rule: https://callingmatrix.com/blog/the-14-second-rule
+- Ruby Receptionist alternative (2026): https://callingmatrix.com/blog/ruby-receptionist-alternative
+- AnswerConnect alternative (2026): https://callingmatrix.com/blog/answerconnect-alternative

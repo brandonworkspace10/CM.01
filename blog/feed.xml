@@ -5,13 +5,33 @@
     <link>https://callingmatrix.com/blog</link>
     <description>Field notes, playbooks, and product updates on AI receptionists, missed-call recovery, and running a better home service business.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 03 Jul 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://callingmatrix.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://callingmatrix.com/og-image.png</url>
       <title>The Calling Matrix Blog</title>
       <link>https://callingmatrix.com/blog</link>
     </image>
+
+    <item>
+      <title>The Best Ruby Receptionist Alternative for Home Service Businesses (2026)</title>
+      <link>https://callingmatrix.com/blog/ruby-receptionist-alternative</link>
+      <guid isPermaLink="true">https://callingmatrix.com/blog/ruby-receptionist-alternative</guid>
+      <pubDate>Fri, 03 Jul 2026 00:00:00 +0000</pubDate>
+      <author>Brandon Ortiz</author>
+      <description>Ruby's per-minute live answering vs. a flat-rate AI receptionist built for the trades — an honest breakdown of pricing, routing, and who should pick which.</description>
+      <category>Comparison</category>
+    </item>
+
+    <item>
+      <title>The Best AnswerConnect Alternative for Home Service Businesses (2026)</title>
+      <link>https://callingmatrix.com/blog/answerconnect-alternative</link>
+      <guid isPermaLink="true">https://callingmatrix.com/blog/answerconnect-alternative</guid>
+      <pubDate>Fri, 03 Jul 2026 00:00:00 +0000</pubDate>
+      <author>Brandon Ortiz</author>
+      <description>24/7 live answering billed by the minute vs. a flat-rate AI receptionist that books jobs into your scheduling software. Where each one actually wins.</description>
+      <category>Comparison</category>
+    </item>
 
     <item>
       <title>The 7 Best AI Answering Services for Home Service Businesses (2026)</title>

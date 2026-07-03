@@ -8,6 +8,10 @@ const INDUSTRIES = {
   electrical: { line1: 'Never lose another',     line2: 'electrical lead.',         sub: 'Built for electricians — captures high-value leads, books estimates automatically.' },
   roofing:    { line1: 'Storm surge?',           line2: 'Every call answered.',     sub: 'Built for roofers — handles 300+ calls after a storm, books every estimate.' },
   cleaning:   { line1: 'Your crews clean.',      line2: 'We answer the phone.',     sub: 'Built for cleaning businesses — books recurring jobs, follows up on quotes.' },
+  'garage-door':      { line1: 'Stuck door at 9 PM?',   line2: 'Every call answered.',   sub: 'Built for garage door companies — dispatches emergencies, books repairs 24/7.' },
+  'pest-control':     { line1: 'Panic calls answered.', line2: 'Plans booked.',          sub: 'Built for pest control — books treatments, sets up recurring plans automatically.' },
+  restoration:        { line1: 'Water spreads fast.',   line2: 'So do we.',              sub: 'Built for restoration — captures insurance details, dispatches crews instantly.' },
+  'appliance-repair': { line1: 'Dead fridge?',          line2: 'Answered in 2 seconds.', sub: 'Built for appliance repair — captures brand & model, books repairs automatically.' },
 };
 
 const DEFAULT = {

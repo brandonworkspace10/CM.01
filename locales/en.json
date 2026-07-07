@@ -1,6 +1,7 @@
 {
   "nav.how": "How it works",
   "nav.features": "Features",
+  "nav.services": "Services",
   "nav.pricing": "Pricing",
   "nav.faq": "FAQ",
   "nav.blog": "Blog",
@@ -281,6 +282,7 @@
   "cleaning.faq5.a": "48 hours from your onboarding call. Most cleaning businesses start booking new clients the same week.",
   "cleaning.final.h2": "Every missed call is a<br><span class=\"italic\">recurring client lost.</span>",
   "ind.nav.features": "Features",
+  "ind.nav.services": "Services",
   "ind.nav.faq": "FAQ",
   "ind.nav.pricing": "Pricing",
   "ind.nav.blog": "Blog",

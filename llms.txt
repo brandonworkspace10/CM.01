@@ -8,6 +8,18 @@ Calling Matrix is an AI phone receptionist and answering service for trade busin
 
 Every deployment is custom-built for that specific business: trained on their services, pricing, service territory, emergency protocols, and existing software stack. Ongoing support is included on every plan — businesses can request changes to services, voice, or features at any time.
 
+## Services
+
+Beyond the flagship 24/7 AI receptionist, Calling Matrix provides a full AI front office for home service businesses:
+
+- **AI Receptionist** (flagship) — answers every inbound call in under 2 seconds, qualifies callers, books jobs, routes emergencies: https://callingmatrix.com/virtual-receptionist
+- **Missed Call Text Back** — texts every missed caller within seconds, then AI two-way texting qualifies and books the job; the entry-level option for businesses not ready to hand over their phones: https://callingmatrix.com/missed-call-text-back
+- **AI Lead Follow-Up** — calls and texts every web form / Angi / Thumbtack lead within 60 seconds, runs persistent multi-touch sequences, chases unsold estimates, and reactivates past-customer databases: https://callingmatrix.com/ai-lead-follow-up
+- **AI Appointment Setter** — outbound booking: works lead lists, quote requests, and customer lists by call and text, books confirmed appointments into field-service software, and cuts no-shows with automatic reminders: https://callingmatrix.com/ai-appointment-setter
+- **Review & Reputation Automation** — post-job review requests by text, unhappy-customer alerts before they post publicly, and AI-drafted responses to every review: https://callingmatrix.com/review-reputation-automation
+
+All services overview: https://callingmatrix.com/services
+
 ## Who it's for
 
 Home service businesses that lose revenue to missed calls: technicians who can't answer while on a job, owners who don't have front-desk staff, businesses that need after-hours coverage without hiring, and companies that handle surge volume (storm season for HVAC and roofing, spring for landscaping). Works for solo operators and multi-truck shops alike.
@@ -90,7 +102,7 @@ Pricing: https://callingmatrix.com/pricing
 ROI calculator: https://callingmatrix.com/roi-calculator
 Blog: https://callingmatrix.com/blog
 
-_Last updated: 2026-06-11. Full machine-readable detail: https://callingmatrix.com/llms-full.txt_
+_Last updated: 2026-07-06. Full machine-readable detail: https://callingmatrix.com/llms-full.txt_
 
 ## Pages
 
@@ -111,7 +123,12 @@ _Last updated: 2026-06-11. Full machine-readable detail: https://callingmatrix.c
 - Pest control answering service: https://callingmatrix.com/pest-control
 - Restoration answering service: https://callingmatrix.com/restoration
 - Appliance repair answering service: https://callingmatrix.com/appliance-repair
+- All services overview: https://callingmatrix.com/services
 - Virtual receptionist for home services: https://callingmatrix.com/virtual-receptionist
+- AI lead follow-up: https://callingmatrix.com/ai-lead-follow-up
+- AI appointment setter: https://callingmatrix.com/ai-appointment-setter
+- Missed call text back: https://callingmatrix.com/missed-call-text-back
+- Review & reputation automation: https://callingmatrix.com/review-reputation-automation
 - After-hours answering service: https://callingmatrix.com/after-hours-answering-service
 - Bilingual (English + Spanish) answering service: https://callingmatrix.com/bilingual-answering-service
 

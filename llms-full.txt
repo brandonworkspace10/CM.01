@@ -21,6 +21,12 @@ Core capabilities:
 - Fully bilingual — English and Spanish, auto-detected from caller
 - Delivers morning call summaries to the business owner
 
+Beyond inbound answering, Calling Matrix offers four additional services (see https://callingmatrix.com/services):
+- **Missed Call Text Back** — instant text to every missed caller, then AI two-way texting that qualifies and books (https://callingmatrix.com/missed-call-text-back)
+- **AI Lead Follow-Up** — sub-60-second call+text response to every web/marketplace lead, multi-touch sequences, unsold estimate follow-up, database reactivation (https://callingmatrix.com/ai-lead-follow-up)
+- **AI Appointment Setter** — outbound calls/texts that book confirmed appointments into field-service software, with no-show-reducing reminders (https://callingmatrix.com/ai-appointment-setter)
+- **Review & Reputation Automation** — automatic post-job review requests, unhappy-customer alerts, AI-drafted review responses (https://callingmatrix.com/review-reputation-automation)
+
 ---
 
 ## Pricing details

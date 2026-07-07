@@ -1,6 +1,7 @@
 {
   "nav.how": "Cómo funciona",
   "nav.features": "Funciones",
+  "nav.services": "Servicios",
   "nav.pricing": "Precios",
   "nav.faq": "Preguntas",
   "nav.blog": "Blog",
@@ -140,6 +141,7 @@
   "footer.faq": "Preguntas",
   "footer.how": "Cómo funciona",
   "ind.nav.features": "Funciones",
+  "ind.nav.services": "Servicios",
   "ind.nav.faq": "Preguntas",
   "ind.nav.pricing": "Precios",
   "ind.nav.blog": "Blog",

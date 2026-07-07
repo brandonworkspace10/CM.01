@@ -262,6 +262,18 @@
   .nav.scrolled .logo-mark{width:18px;height:18px}
 }
 </style>
+<style id="cm-page-fade">
+/* ==== PAGE TRANSITION FADE ==== */
+@view-transition{navigation:auto}
+::view-transition-old(root){animation-duration:.28s;animation-timing-function:ease}
+::view-transition-new(root){animation-duration:.28s;animation-timing-function:ease}
+@keyframes cmPageIn{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion: no-preference){
+  @supports not (view-transition-name: root){
+    body{animation:cmPageIn .3s ease both}
+  }
+}
+</style>
 </head>
 <body>
 

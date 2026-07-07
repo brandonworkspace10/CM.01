@@ -147,6 +147,7 @@
   "plan.scale.f5": "We handle the whole setup — you show up for 30 minutes",
   "plan.scale.f6": "99.99% uptime SLA",
   "plan.support": "Ongoing support",
+  "plan.addons": "Need more than answering? <a href=\"/services\" style=\"color:var(--accent);text-decoration:none;\">Missed call text back, lead follow-up, appointment setting &amp; review automation</a> — scoped and priced on your free consultation, same flat-monthly philosophy.",
   "plan.scale.cta": "Talk to sales",
   "faq.label": "07 / FAQ",
   "faq.title": "Questions we get on every consultation call.",

@@ -146,6 +146,7 @@
   "plan.scale.f5": "Incorporación de servicio premium",
   "plan.scale.f6": "SLA de disponibilidad del 99.99%",
   "plan.support": "Soporte continuo",
+  "plan.addons": "¿Necesitas más que contestar? <a href=\"/services\" style=\"color:var(--accent);text-decoration:none;\">Texto a llamadas perdidas, seguimiento de leads, agendado de citas y automatización de reseñas</a> — se define y cotiza en tu consulta gratuita, misma filosofía de tarifa mensual fija.",
   "plan.scale.cta": "Hablar con ventas",
   "faq.label": "07 / Preguntas frecuentes",
   "faq.title": "Preguntas que recibimos en cada consulta.",

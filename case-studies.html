@@ -239,9 +239,9 @@
 .nav-dd:hover .nav-dd-box a:nth-child(6){transition-delay:.34s}
 .nav-links.mob-open .nav-dd-box a{opacity:1;transform:none;transition:none}
 .nav-dd-box a{position:relative}
-.nav-dd-box a::before,.nav-dd-box a::after{content:'';position:absolute;bottom:6px;height:1px;background:var(--accent,#E89B6C);transform:scaleX(0);transition:transform .28s cubic-bezier(.2,.7,.2,1)}
-.nav-dd-box a::before{left:12px;right:50%;transform-origin:left}
-.nav-dd-box a::after{left:50%;right:12px;transform-origin:right}
+.nav-dd-box a::before,.nav-dd-box a::after{content:'';position:absolute;bottom:6px;height:1px;background:var(--accent,#E89B6C);transform:scaleX(0);transition:transform .45s cubic-bezier(.2,.7,.2,1),left .18s ease-out,right .18s ease-out}
+.nav-dd-box a::before{left:12px;right:calc(100% - var(--mx,50%));transform-origin:left}
+.nav-dd-box a::after{left:var(--mx,50%);right:12px;transform-origin:right}
 .nav-dd-box a:hover::before,.nav-dd-box a:hover::after{transform:scaleX(1)}
 .nav-links.mob-open .nav-dd-box a::before,.nav-links.mob-open .nav-dd-box a::after{display:none}
 /* ---- /Services nav dropdown ---- */
@@ -635,5 +635,14 @@
 })();
 </script>
 <!-- /CALLBACK-WIDGET -->
+<script id="cm-dd-mx">
+document.addEventListener('pointermove',function(e){
+  var a=e.target&&e.target.closest?e.target.closest('.nav-dd-box a'):null;
+  if(!a)return;
+  var r=a.getBoundingClientRect();
+  var x=Math.min(Math.max(e.clientX-r.left,16),r.width-16);
+  a.style.setProperty('--mx',x+'px');
+},true);
+</script>
 </body>
 </html>

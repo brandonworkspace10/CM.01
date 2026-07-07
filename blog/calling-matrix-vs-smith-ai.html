@@ -161,6 +161,30 @@
   </style>
   <script defer src="/_vercel/insights/script.js"></script>
   <script src="https://analytics.ahrefs.com/analytics.js" data-key="94z1bOhN7RVx3o2W/eEUbQ" async></script>
+<style id="cm-nav-dd">
+/* ---- Services nav dropdown ---- */
+.nav-dd{position:relative}
+.nav-dd>a{display:inline-flex;align-items:center;gap:6px}
+.nav-dd .dd-c{display:inline-block;width:6px;height:6px;border-right:1.3px solid currentColor;border-bottom:1.3px solid currentColor;transform:rotate(45deg);margin:-2px 0 0 1px;transition:transform .18s;flex:none}
+.nav-dd:hover .dd-c,.nav-dd:focus-within .dd-c{transform:rotate(225deg);margin-top:2px}
+.nav-links.mob-open .dd-c{display:none}
+.nav-dd-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(6px);padding-top:14px;opacity:0;visibility:hidden;transition:opacity .18s,transform .18s,visibility .18s;z-index:120}
+.nav-dd:hover .nav-dd-menu,.nav-dd:focus-within .nav-dd-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.nav-dd-box{background:var(--bg-2,#151310);border:1px solid var(--line,#2A2620);border-radius:16px;box-shadow:0 18px 44px rgba(0,0,0,.5);padding:10px;width:308px}
+.nav-dd-box a{display:block;padding:10px 12px;border-radius:10px;text-decoration:none}
+.nav-dd-box a:hover{background:var(--bg-3,#1C1915)}
+.nav-dd-box .t{display:block;font-size:13.5px;font-weight:500;color:var(--fg,#F6F2EB);letter-spacing:0}
+.nav-dd-box .d{display:block;font-size:11.5px;color:var(--fg-mute,#6E685F);margin-top:2px;letter-spacing:0;text-transform:none}
+.nav-dd-box a.all{border-top:1px solid var(--line,#2A2620);margin-top:6px;padding-top:12px;border-radius:0;color:var(--accent,#E89B6C);font-size:12.5px;font-weight:500}
+.nav-links.mob-open .nav-dd{width:100%}
+.nav-links.mob-open .nav-dd-menu{position:static;transform:none;opacity:1;visibility:visible;padding-top:0;transition:none}
+.nav-links.mob-open .nav-dd-box{background:transparent;border:0;box-shadow:none;padding:0;width:100%}
+.nav-links.mob-open .nav-dd-box a{padding:12px 0 12px 18px!important;border-radius:0}
+.nav-links.mob-open .nav-dd-box .t{font-size:15px}
+.nav-links.mob-open .nav-dd-box a.all{border-top:0}
+/* ---- /Services nav dropdown ---- */
+</style>
+<style>.nav:has(.nav-links.mob-open){backdrop-filter:none;-webkit-backdrop-filter:none}</style>
 </head>
 <body>
 
@@ -173,7 +197,7 @@
     <div class="nav-links">
       <a href="https://callingmatrix.com/#how">How it works</a>
       <a href="https://callingmatrix.com/#features">Features</a>
-      <a href="https://callingmatrix.com/services">Services</a>
+      <div class="nav-dd"><a href="https://callingmatrix.com/services">Services<span class="dd-c"></span></a><div class="nav-dd-menu"><div class="nav-dd-box"><a href="https://callingmatrix.com/virtual-receptionist"><span class="t">AI Receptionist</span><span class="d">24/7 inbound answering &amp; booking</span></a><a href="https://callingmatrix.com/missed-call-text-back"><span class="t">Missed Call Text Back</span><span class="d">Instant text saves every missed call</span></a><a href="https://callingmatrix.com/ai-lead-follow-up"><span class="t">AI Lead Follow-Up</span><span class="d">Every lead called &amp; texted in 60s</span></a><a href="https://callingmatrix.com/ai-appointment-setter"><span class="t">AI Appointment Setter</span><span class="d">Outbound booking &amp; reminders</span></a><a href="https://callingmatrix.com/review-reputation-automation"><span class="t">Review &amp; Reputation Automation</span><span class="d">Five-star reviews on autopilot</span></a><a href="https://callingmatrix.com/services" class="all">All services →</a></div></div></div>
       <a href="https://callingmatrix.com/#pricing">Pricing</a>
       <a href="/blog">Blog</a>
     </div>

@@ -12,8 +12,9 @@ BASE = "https://callingmatrix.com"
 # ---------------------------------------------------------------- shared tail
 src = open("virtual-receptionist.html").read()
 TAIL = src[src.index("<footer>"):]
-# add Services to the footer Product column
-TAIL = TAIL.replace('<h6>Product</h6>', '<h6>Product</h6><a href="/services">Services</a>', 1)
+# add Services to the footer Product column (skip if already present)
+if '<h6>Product</h6><a href="/services">' not in TAIL:
+    TAIL = TAIL.replace('<h6>Product</h6>', '<h6>Product</h6><a href="/services">Services</a>', 1)
 
 LOGO = '<a href="/" class="logo"><span class="logo-mark"><svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="24" height="24" rx="6" stroke="currentColor" stroke-opacity="0.4"></rect><path d="M8 10 Q8 8 10 8 L12 8 L14 12 L12 14 Q14 17 16 18 L18 16 L22 18 L22 20 Q22 22 20 22 Q13 22 8 17 Q6 14 6 11 Z" fill="var(--accent)"></path><circle cx="20" cy="6" r="2" fill="var(--accent)"></circle></svg></span>Calling Matrix</a>'
 
@@ -33,6 +34,22 @@ def icon(name):
     return f'<div class="feat-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none">{ICONS[name]}</svg></div>'
 
 ARROW = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+
+# hover dropdown for the Services nav item (styles live in shared.css)
+DD_ITEMS = [
+    ("virtual-receptionist", "AI Receptionist", "24/7 inbound answering &amp; booking"),
+    ("missed-call-text-back", "Missed Call Text Back", "Instant text saves every missed call"),
+    ("ai-lead-follow-up", "AI Lead Follow-Up", "Every lead called &amp; texted in 60s"),
+    ("ai-appointment-setter", "AI Appointment Setter", "Outbound booking &amp; reminders"),
+    ("review-reputation-automation", "Review &amp; Reputation Automation", "Five-star reviews on autopilot"),
+]
+
+def services_dd(active=False):
+    rows = "".join(f'<a href="/{s}"><span class="t">{l}</span><span class="d">{d}</span></a>' for s, l, d in DD_ITEMS)
+    rows += '<a href="/services" class="all">All services →</a>'
+    cls = ' class="active"' if active else ""
+    return (f'<div class="nav-dd"><a href="/services"{cls}>Services<span class="dd-c"></span></a>'
+            f'<div class="nav-dd-menu"><div class="nav-dd-box">{rows}</div></div></div>')
 
 def link_li(href, label):
     return f'<li><a href="{href}" style="font-size:15px;color:var(--fg-dim,#B8B0A0);transition:color .2s;text-decoration:none;" onmouseover="this.style.color=\'var(--accent,#E89B6C)\'" onmouseout="this.style.color=\'var(--fg-dim,#B8B0A0)\'">{label} →</a></li>'
@@ -95,7 +112,7 @@ def head(p):
 <nav class="nav" id="nav">
   <div class="nav-inner">
     {LOGO}
-    <nav class="nav-links"><a href="/services"{' class="active"' if p["slug"] == "services" else ""}>Services</a><a href="#features">Features</a><a href="#faq">FAQ</a><a href="/pricing">Pricing</a><a href="/blog">Blog</a></nav>
+    <nav class="nav-links">{services_dd(active=p["slug"] == "services")}<a href="#features">Features</a><a href="#faq">FAQ</a><a href="/pricing">Pricing</a><a href="/blog">Blog</a></nav>
     <a href="#" class="nav-cta" onclick="openCalendly();return false;">Book a consultation</a>
     <button class="mob-menu-btn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>

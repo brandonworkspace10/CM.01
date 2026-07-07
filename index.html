@@ -54,15 +54,7 @@
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Cloud",
       "description": "24/7 AI receptionist that answers questions, books and cancels appointments, and follows up with customers for home service businesses.",
-      "offers": { "@type": "Offer", "price": "497", "priceCurrency": "USD" },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "bestRating": "5",
-        "worstRating": "1",
-        "reviewCount": "14",
-        "ratingCount": "14"
-      }
+      "offers": { "@type": "Offer", "price": "497", "priceCurrency": "USD" }
     },
     {
       "@type": "LocalBusiness",
@@ -81,9 +73,11 @@
       "serviceType": [
         "AI Receptionist",
         "Virtual Answering Service",
-        "Appointment Booking Automation",
         "24/7 Call Answering",
-        "Customer Follow-Up Automation"
+        "Missed Call Text Back",
+        "AI Lead Follow-Up",
+        "AI Appointment Setting",
+        "Review and Reputation Automation"
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -95,35 +89,7 @@
         ]
       },
       "knowsAbout": ["HVAC", "Plumbing", "Electrical", "Roofing", "Cleaning", "Home Services"],
-      "sameAs": ["https://twitter.com/callingmatrix","https://linkedin.com/company/callingmatrix","https://instagram.com/callingmatrix"],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "bestRating": "5",
-        "worstRating": "1",
-        "reviewCount": "14",
-        "ratingCount": "14"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-          "author": { "@type": "Person", "name": "Rick Delgado" },
-          "reviewBody": "We were losing about 40 calls a week after hours. Calling Matrix booked 17 of them its first weekend. Paid for itself by Monday."
-        },
-        {
-          "@type": "Review",
-          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-          "author": { "@type": "Person", "name": "Jason Pham" },
-          "reviewBody": "My wife used to take calls from the dinner table. Now she doesn't — and our calendar is fuller than it's ever been. 29% more booked jobs the first month."
-        },
-        {
-          "@type": "Review",
-          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-          "author": { "@type": "Person", "name": "Tasha Bell" },
-          "reviewBody": "Customers don't know it's AI. I barely know it's AI. It handles the weird questions better than half the receptionists I've hired."
-        }
-      ]
+      "sameAs": ["https://twitter.com/callingmatrix","https://linkedin.com/company/callingmatrix","https://instagram.com/callingmatrix"]
     },
     {
       "@type": "FAQPage",
@@ -1604,6 +1570,59 @@ footer {
           <p data-i18n="panel4.p">Live dashboard, recordings, and monthly tuning by a real human specialist.</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="svcs" id="services">
+  <style>
+    .svcs{padding:110px 0;background:var(--bg-2);border-top:1px solid var(--line)}
+    .svcs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:48px}
+    @media(max-width:1100px){.svcs-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:640px){.svcs-grid{grid-template-columns:1fr}}
+    .svc-card{display:flex;flex-direction:column;background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:26px 22px;text-decoration:none;transition:transform .25s,border-color .25s}
+    .svc-card:hover{transform:translateY(-4px);border-color:var(--accent)}
+    .svc-card h3{font-family:var(--serif);font-size:20px;font-weight:400;color:var(--fg);margin:12px 0 10px;line-height:1.25}
+    .svc-card p{font-size:13.5px;line-height:1.6;color:var(--fg-dim);flex:1}
+    .svc-card .go{margin-top:16px;font-size:12.5px;font-weight:500;color:var(--accent)}
+    .svcs-foot{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:36px}
+    .svcs-foot .note{font-size:12.5px;color:var(--fg-mute)}
+  </style>
+  <div class="wrap">
+    <div class="sec-head reveal in">
+      <div class="sec-label"><span class="mono" data-i18n="svc.label">04 / More than answering</span></div>
+      <h2 class="sec-title" data-i18n="svc.title">Answering the phone is just the start. <span class="italic">Meet the rest of the system.</span></h2>
+    </div>
+    <div class="svcs-grid">
+      <a class="svc-card reveal in" href="/missed-call-text-back">
+        <div class="mono" style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--fg-mute);">The safety net</div>
+        <h3 data-i18n="svc.c1.h">Missed Call Text Back</h3>
+        <p data-i18n="svc.c1.p">Can't pick up? The caller gets a text within seconds — and the AI books the job from there instead of losing it to voicemail.</p>
+        <span class="go" data-i18n="svc.more">Learn more →</span>
+      </a>
+      <a class="svc-card reveal in d1" href="/ai-lead-follow-up">
+        <div class="mono" style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--fg-mute);">Speed to lead</div>
+        <h3 data-i18n="svc.c2.h">AI Lead Follow-Up</h3>
+        <p data-i18n="svc.c2.p">Every web, Angi, and Thumbtack lead called and texted within 60 seconds — then followed up until they book or say no.</p>
+        <span class="go" data-i18n="svc.more">Learn more →</span>
+      </a>
+      <a class="svc-card reveal in d2" href="/ai-appointment-setter">
+        <div class="mono" style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--fg-mute);">Outbound booking</div>
+        <h3 data-i18n="svc.c3.h">AI Appointment Setter</h3>
+        <p data-i18n="svc.c3.p">Outbound calls and texts that fill your calendar — quotes chased, appointments confirmed, no-shows reminded away.</p>
+        <span class="go" data-i18n="svc.more">Learn more →</span>
+      </a>
+      <a class="svc-card reveal in d3" href="/review-reputation-automation">
+        <div class="mono" style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--fg-mute);">Close the loop</div>
+        <h3 data-i18n="svc.c4.h">Review &amp; Reputation Automation</h3>
+        <p data-i18n="svc.c4.p">Every finished job becomes a review request by text. More five-star Google reviews — every one answered for you.</p>
+        <span class="go" data-i18n="svc.more">Learn more →</span>
+      </a>
+    </div>
+    <div class="svcs-foot reveal in">
+      <a href="/services" class="btn btn-ghost" data-i18n="svc.cta">Explore all services →</a>
+      <span class="note" data-i18n="svc.note">Each service is scoped and priced on your free consultation.</span>
     </div>
   </div>
 </section>
